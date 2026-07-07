@@ -1,9 +1,19 @@
-# "一生一芯"工程项目
+# ICS2025 Programming Assignment
 
-这是"一生一芯"的工程项目. 通过运行
+This project is the programming assignment of the class ICS(Introduction to Computer System)
+in Department of Computer Science and Technology, Nanjing University.
+
+For the guide of this programming assignment,
+refer to https://nju-projectn.github.io/ics-pa-gitbook/ics2025/
+
+To initialize, run
 ```bash
 bash init.sh subproject-name
 ```
-进行初始化, 具体请参考[实验讲义][lecture note].
+See `init.sh` for more details.
 
-[lecture note]: https://ysyx.oscc.cc/docs/
+The following subprojects/components are included. Some of them are not fully implemented.
+* [NEMU](https://github.com/NJU-ProjectN/nemu)
+* [Abstract-Machine](https://github.com/NJU-ProjectN/abstract-machine)
+* [Nanos-lite](https://github.com/NJU-ProjectN/nanos-lite)
+* [Navy-apps](https://github.com/NJU-ProjectN/navy-apps)
