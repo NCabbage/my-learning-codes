@@ -3,7 +3,7 @@ include ../Makefile
 
 # 定义编译相关的变量
 VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
-SOURCES = sim_t1.cpp t1.v
+SOURCES = csrc/sim_t1.cpp vsrc/t1.v
 TARGET = sim_t1
 
 # 默认目标：编译并运行
