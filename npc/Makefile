@@ -3,8 +3,8 @@ include ../Makefile
 
 # 定义编译相关的变量
 VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
-SOURCES = csrc/sim_t1.cpp vsrc/t1.v
-TARGET = sim_t1
+SOURCES = csrc/sim_top.cpp vsrc/top.v
+TARGET = sim_top
 WAVE = /wave.fst
 TOPNAME = top
 NXDC_FILES = constr/top.nxdc
@@ -42,11 +42,11 @@ CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
 
 $(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
 	@rm -rf $(OBJ_DIR)
-	$(VERILATOR) $(VERILATOR_CFLAGS) \
-		--top-module $(TOPNAME) $^ \		#$^是找到生成$(BIN)所需的全部文件
+		$(VERILATOR) $(VERILATOR_CFLAGS) \
+		--top-module $(TOPNAME) $^ \
 		$(addprefix -CFLAGS , $(CXXFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
 		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
-		
+		#$^是找到生成$(BIN)所需的全部文件
 # 默认目标：编译并运行
 all: default
 
@@ -61,7 +61,7 @@ sim:
 # 运行目标
 run:
 	cd obj_dir; \
-	./Vt1 \
+	./Vtop \
 
 watch:
 	gtkwave obj_dir/wave.fst
