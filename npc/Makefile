@@ -5,9 +5,53 @@ include ../Makefile
 VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
 SOURCES = csrc/sim_t1.cpp vsrc/t1.v
 TARGET = sim_t1
+WAVE = /wave.fst
+TOPNAME = top
+NXDC_FILES = constr/top.nxdc
+INC_PATH ?=
 
+VERILATOR = verilator
+VERILATOR_CFLAGS += -MMD --build -cc  \
+				-O3 --x-assign fast --x-initial fast --noassert
+
+BUILD_DIR = ./build
+OBJ_DIR = $(BUILD_DIR)/obj_dir
+BIN = $(BUILD_DIR)/$(TOPNAME)			#是一个nvboard的程序
+
+default: $(BIN)
+
+$(shell mkdir -p $(BUILD_DIR))
+
+# constraint file
+SRC_AUTO_BIND = $(abspath $(BUILD_DIR)/auto_bind.cpp)			
+
+$(SRC_AUTO_BIND): $(NXDC_FILES)						
+	python3 $(NVBOARD_HOME)/scripts/auto_pin_bind.py $^ $@		#确定文件依赖关系，没有就用py生成一个
+
+# project source
+VSRCS = $(shell find $(abspath ./vsrc) -name "*.v")
+CSRCS = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*.cpp")
+CSRCS += $(SRC_AUTO_BIND)
+
+# rules for NVBoard
+include $(NVBOARD_HOME)/scripts/nvboard.mk
+
+# rules for verilator
+INCFLAGS = $(addprefix -I, $(INC_PATH))
+CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
+
+$(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
+	@rm -rf $(OBJ_DIR)
+	$(VERILATOR) $(VERILATOR_CFLAGS) \
+		--top-module $(TOPNAME) $^ \		#$^是找到生成$(BIN)所需的全部文件
+		$(addprefix -CFLAGS , $(CXXFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
+		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
+		
 # 默认目标：编译并运行
-all: sim run
+all: default
+
+nv: $(BIN)
+	@$^
 
 # 编译目标
 sim:
@@ -16,11 +60,16 @@ sim:
 
 # 运行目标
 run:
-	./obj_dir/Vt1
+	cd obj_dir; \
+	./Vt1 \
+
+watch:
+	gtkwave obj_dir/wave.fst
 
 # 清理目标
 clean:
 	rm -rf obj_dir
 	rm -f wave.fst
+	rm -rf $(BUILD_DIR)
 
-.PHONY: all sim run clean
+.PHONY: all sim run clean default
