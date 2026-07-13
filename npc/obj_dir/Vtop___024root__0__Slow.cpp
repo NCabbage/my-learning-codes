@@ -9,6 +9,8 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.__Vtrigprevexpr___TOP__clk__0 = vlSelfRef.clk;
+    vlSelfRef.__Vtrigprevexpr___TOP__rst__0 = vlSelfRef.rst;
     vlSelfRef.__Vtrigprevexpr___TOP__a__0 = vlSelfRef.a;
     vlSelfRef.__Vtrigprevexpr___TOP__b__0 = vlSelfRef.b;
 }
@@ -126,10 +128,16 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63
         VL_DBG_MSGS("         No '" + tag + "' region triggers active\n");
     }
     if ((1U & (IData)(triggers[0U]))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @( a)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @( clk)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 1U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @( b)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @( rst)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 2U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 2 is active: @( a)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 3U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 3 is active: @( b)\n");
     }
     if ((1U & (IData)(triggers[1U]))) {
         VL_DBG_MSGS("         '" + tag + "' region trigger index 64 is active: Internal 'ico' trigger - first iteration\n");
@@ -143,6 +151,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
+    vlSelf->clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16707436170211756652ull);
+    vlSelf->rst = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 18209466448985614591ull);
     vlSelf->a = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 510903276987443985ull);
     vlSelf->b = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16900879642891266615ull);
     vlSelf->f = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6217145520856553898ull);
@@ -152,6 +162,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
         vlSelf->__VicoTriggered[__Vi0] = 0;
     }
+    vlSelf->__Vtrigprevexpr___TOP__clk__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__rst__0 = 0;
     vlSelf->__Vtrigprevexpr___TOP__a__0 = 0;
     vlSelf->__Vtrigprevexpr___TOP__b__0 = 0;
     vlSelf->__VicoDidInit = 0;
