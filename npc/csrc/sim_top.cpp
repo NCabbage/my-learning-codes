@@ -10,7 +10,7 @@ int main(int argc, char** argv){
   contextp->commandArgs(argc, argv);
     // 创建顶层模块实例
   Vtop* top = new Vtop{contextp};
-	Verilated::traceEverOn(true); //打开追踪
+	contextp->traceEverOn(true); //打开追踪
 	VerilatedFstC *tfp= new VerilatedFstC;   //初始化fst对象指针
   top->trace(tfp,99);
   tfp->open("wave.fst");  //保存位置
