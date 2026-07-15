@@ -7,8 +7,8 @@
 
 int main(int argc, char** argv){
   	VerilatedContext* contextp = new VerilatedContext;
-  	contextp->commandArgs(argc, argv);
-  	printf("命令行接收到的参数个数: %d\n", contextp->argc());
+  	contextp->commandArgs(argc, argv);	// 接收传入的参数
+
     // 创建顶层模块实例
   	Vtop* top = new Vtop{contextp};
 	contextp->traceEverOn(true); //打开追踪
