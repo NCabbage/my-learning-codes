@@ -3,7 +3,7 @@ include ../Makefile
 
 # 定义编译相关的变量
 VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
-SOURCES = csrc/sim_top.cpp vsrc/top.v vsrc/light.v
+SOURCES = csrc/sim_top.cpp vsrc/light.v vsrc/top.v 
 TARGET = sim_top
 WAVE = /wave.fst
 TOPNAME = top
