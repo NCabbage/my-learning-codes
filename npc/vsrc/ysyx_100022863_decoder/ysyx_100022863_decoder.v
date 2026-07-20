@@ -2,11 +2,11 @@ module ysyx_100022863_decoder(
 	input					[1:0]		x			,
 	input									En		.
 
-	output	wire	[3:0]		y
+	output	reg		[3:0]		y
 );
 
 always@(*)
-	if(en)
+	if(En)
 	begin
 		case(x)
 			2'd00 : y = 4'd0001;
