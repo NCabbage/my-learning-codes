@@ -1,8 +1,8 @@
 module ysyx_100022863_decoder(
-	input				[1:0]		x			,
-	input								En		.
+	input					[1:0]		x			,
+	input									En		.
 
-	output	reg	[3:0]		y
+	output	wire	[3:0]		y
 )
 
 always@(*)
