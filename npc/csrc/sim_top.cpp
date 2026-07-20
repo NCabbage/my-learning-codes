@@ -28,7 +28,7 @@ int main(int argc, char** argv){
 //		assert(top->f == (a ^ b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
-  //  contextp->timeInc(1);// 增加时间步长
+    contextp->timeInc(1);// 增加时间步长
 	}
 
 	    // 仿真结束后，调用 close() 关闭 VCD 文件。关闭文件是确保所有数据被正确保存的重要步骤。
