@@ -19,7 +19,6 @@ int main(int argc, char** argv){
 	int En = 0;
 	while(clk < 1000){ 
 		clk ++;
-		top->clk = clk & 0x3;
 		int x = rand() & 0b11;
 		if(clk > 5) En = 1;
 		top->x = x;
