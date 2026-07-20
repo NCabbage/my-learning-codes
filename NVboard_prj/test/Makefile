@@ -72,4 +72,11 @@ clean:
 	rm -f wave.fst
 	rm -rf $(BUILD_DIR)
 
+yosys:
+	make -C /home/cappage/yosys-sta sta \
+    	DESIGN=top SDC_FILE=/home/cappage/ysyx-workbench/NVboard_prj/test/sdc/default.sdc \
+    	CLK_FREQ_MHZ=200 CLK_PORT_NAME=clk O=/home/cappage/ysyx-workbench/NVboard_prj/test/result\
+    	RTL_FILES="/home/cappage/ysyx-workbench/NVboard_prj/test/vsrc/top.v \
+    	/home/cappage/ysyx-workbench/NVboard_prj/test/vsrc/light.v"
+
 .PHONY: all sim run clean default

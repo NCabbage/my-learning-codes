@@ -3,12 +3,13 @@ include ../Makefile
 
 # 定义编译相关的变量
 VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
-SOURCES = csrc/sim_top.cpp vsrc/top.v
+SOURCES = csrc/sim/sim_top.cpp $(shell find $(abspath ./vsrc) -name "*.v")
 TARGET = sim_top
 WAVE = /wave.fst
 TOPNAME = top
 NXDC_FILES = constr/top.nxdc
 INC_PATH ?=
+TEST ?= NONE
 
 VERILATOR = verilator
 VERILATOR_CFLAGS += -MMD --build -cc  \
@@ -56,7 +57,7 @@ nv: $(BIN)
 # 编译目标
 sim:
 	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	verilator $(VFLAGS) $(SOURCES)
+	verilator $(VFLAGS) -CFLAGS -DTEST_$(TEST) $(SOURCES)
 
 # 运行目标
 run:
