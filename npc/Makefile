@@ -9,7 +9,6 @@ WAVE = /wave.fst
 TOPNAME = top
 NXDC_FILES = constr/top.nxdc
 INC_PATH ?=
-TEST ?= NONE
 
 VERILATOR = verilator
 VERILATOR_CFLAGS += -MMD --build -cc  \
@@ -57,7 +56,7 @@ nv: $(BIN)
 # 编译目标
 sim:
 	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	verilator $(VFLAGS) --top-module top -CFLAGS -DTEST_$(TEST) -Wno-UNUSEDSIGNAL $(SOURCES)
+	verilator $(VFLAGS) $(SOURCES)
 
 # 运行目标
 run:
