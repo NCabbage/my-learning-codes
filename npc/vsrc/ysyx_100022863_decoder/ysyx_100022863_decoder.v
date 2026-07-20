@@ -3,7 +3,7 @@ module ysyx_100022863_decoder(
 	input									En		.
 
 	output	wire	[3:0]		y
-)
+);
 
 always@(*)
 	if(en)
