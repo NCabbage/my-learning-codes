@@ -12,7 +12,7 @@ yysyx_100022863_decoder ysyx_100022863_decoder_inst1(
 	.y		(y[3:0])
 );
 
-syx_100022863_decoder ysyx_100022863_decoder_inst1(
+syx_100022863_decoder ysyx_100022863_decoder_inst2(
 
 	.x		(x[1:0])	,
 	.En		(En &  x[2]),
