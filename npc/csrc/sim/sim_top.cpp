@@ -17,9 +17,12 @@ int main(int argc, char** argv){
   tfp->open("wave.fst");  //保存位置
 	int clk = 0;
 	int En = 0;
+	int cnt = 1;
 	while(clk < 1000){ 
 		clk ++;
-		int x = rand() & 0b1111;
+		int x = cnt & 0b1111;
+		if(x) cnt << 1;
+		else cnt = 1;
 		if(clk > 5) En = 1;
 		top->x = x;
 		top->en = En;
