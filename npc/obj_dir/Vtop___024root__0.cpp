@@ -33,17 +33,29 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     {
         // Inlined CFunc: _eval_triggers_vec__ico
         vlSelfRef.__VicoTriggered[0U] = (QData)((IData)(
-                                                        ((((IData)(vlSelfRef.En) 
-                                                           != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__En__0)) 
-                                                          << 1U) 
-                                                         | ((IData)(vlSelfRef.x) 
-                                                            != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__x__0)))));
-        vlSelfRef.__Vtrigprevexpr___TOP__x__0 = vlSelfRef.x;
+                                                        (((((IData)(vlSelfRef.En) 
+                                                            != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__En__0)) 
+                                                           << 3U) 
+                                                          | (((IData)(vlSelfRef.ysyx_100022863_decoder__02Ex) 
+                                                              != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__ysyx_100022863_decoder__02Ex__0)) 
+                                                             << 2U)) 
+                                                         | ((((IData)(vlSelfRef.en) 
+                                                              != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__en__0)) 
+                                                             << 1U) 
+                                                            | ((IData)(vlSelfRef.top__02Ex) 
+                                                               != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__top__02Ex__0))))));
+        vlSelfRef.__Vtrigprevexpr___TOP__top__02Ex__0 
+            = vlSelfRef.top__02Ex;
+        vlSelfRef.__Vtrigprevexpr___TOP__en__0 = vlSelfRef.en;
+        vlSelfRef.__Vtrigprevexpr___TOP__ysyx_100022863_decoder__02Ex__0 
+            = vlSelfRef.ysyx_100022863_decoder__02Ex;
         vlSelfRef.__Vtrigprevexpr___TOP__En__0 = vlSelfRef.En;
         if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.__VicoDidInit)))))) {
             vlSelfRef.__VicoDidInit = 1U;
             vlSelfRef.__VicoTriggered[0U] = (1ULL | vlSelfRef.__VicoTriggered[0U]);
             vlSelfRef.__VicoTriggered[0U] = (2ULL | vlSelfRef.__VicoTriggered[0U]);
+            vlSelfRef.__VicoTriggered[0U] = (4ULL | vlSelfRef.__VicoTriggered[0U]);
+            vlSelfRef.__VicoTriggered[0U] = (8ULL | vlSelfRef.__VicoTriggered[0U]);
         }
     }
 #ifdef VL_DEBUG
@@ -58,23 +70,24 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
             if ((3ULL & vlSelfRef.__VicoTriggered[0U])) {
                 {
                     // Inlined CFunc: _ico_comb__TOP__0
-                    vlSelfRef.y = (((((IData)(vlSelfRef.En) 
-                                      & ((IData)(vlSelfRef.x) 
-                                         >> 2U)) ? 
-                                     (0x0000000fU & 
-                                      (0x8421U >> (0x0000000cU 
-                                                   & ((IData)(vlSelfRef.x) 
-                                                      << 2U))))
-                                      : 0U) << 4U) 
-                                   | (((~ ((IData)(vlSelfRef.x) 
-                                           >> 2U)) 
-                                       & (IData)(vlSelfRef.En))
-                                       ? (0x0000000fU 
-                                          & (0x8421U 
-                                             >> (0x0000000cU 
-                                                 & ((IData)(vlSelfRef.x) 
-                                                    << 2U))))
-                                       : 0U));
+                    vlSelfRef.top__02Ey = ((IData)(vlSelfRef.en)
+                                            ? (3U & 
+                                               (0x00030210U 
+                                                >> 
+                                                ((IData)(vlSelfRef.top__02Ex) 
+                                                 << 1U)))
+                                            : 0U);
+                }
+            }
+            if ((0x000000000000000cULL & vlSelfRef.__VicoTriggered[0U])) {
+                {
+                    // Inlined CFunc: _ico_comb__TOP__1
+                    vlSelfRef.ysyx_100022863_decoder__02Ey 
+                        = ((IData)(vlSelfRef.En) ? 
+                           (0x0000000fU & (0x8421U 
+                                           >> ((IData)(vlSelfRef.ysyx_100022863_decoder__02Ex) 
+                                               << 2U)))
+                            : 0U);
                 }
             }
         }
@@ -108,8 +121,15 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if (VL_UNLIKELY(((vlSelfRef.x & 0xf8U)))) {
-        Verilated::overWidthError("x");
+    if (VL_UNLIKELY(((vlSelfRef.top__02Ex & 0xf0U)))) {
+        Verilated::overWidthError("top.x");
+    }
+    if (VL_UNLIKELY(((vlSelfRef.en & 0xfeU)))) {
+        Verilated::overWidthError("en");
+    }
+    if (VL_UNLIKELY(((vlSelfRef.ysyx_100022863_decoder__02Ex 
+                      & 0xfcU)))) {
+        Verilated::overWidthError("ysyx_100022863_decoder.x");
     }
     if (VL_UNLIKELY(((vlSelfRef.En & 0xfeU)))) {
         Verilated::overWidthError("En");

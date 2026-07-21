@@ -22,29 +22,12 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
-    bufp->chgCData(oldp+0,(vlSelfRef.x),3);
-    bufp->chgBit(oldp+1,(vlSelfRef.En));
-    bufp->chgCData(oldp+2,(vlSelfRef.y),8);
-    bufp->chgCData(oldp+3,((3U & (IData)(vlSelfRef.x))),2);
-    bufp->chgBit(oldp+4,(((~ ((IData)(vlSelfRef.x) 
-                              >> 2U)) & (IData)(vlSelfRef.En))));
-    bufp->chgCData(oldp+5,((((~ ((IData)(vlSelfRef.x) 
-                                 >> 2U)) & (IData)(vlSelfRef.En))
-                             ? (0x0000000fU & (0x8421U 
-                                               >> (0x0000000cU 
-                                                   & ((IData)(vlSelfRef.x) 
-                                                      << 2U))))
-                             : 0U)),4);
-    bufp->chgBit(oldp+6,(((IData)(vlSelfRef.En) & ((IData)(vlSelfRef.x) 
-                                                   >> 2U))));
-    bufp->chgCData(oldp+7,((((IData)(vlSelfRef.En) 
-                             & ((IData)(vlSelfRef.x) 
-                                >> 2U)) ? (0x0000000fU 
-                                           & (0x8421U 
-                                              >> (0x0000000cU 
-                                                  & ((IData)(vlSelfRef.x) 
-                                                     << 2U))))
-                             : 0U)),4);
+    bufp->chgCData(oldp+0,(vlSelfRef.top__02Ex),4);
+    bufp->chgBit(oldp+1,(vlSelfRef.en));
+    bufp->chgCData(oldp+2,(vlSelfRef.top__02Ey),2);
+    bufp->chgCData(oldp+3,(vlSelfRef.ysyx_100022863_decoder__02Ex),2);
+    bufp->chgBit(oldp+4,(vlSelfRef.En));
+    bufp->chgCData(oldp+5,(vlSelfRef.ysyx_100022863_decoder__02Ey),4);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedFst* /*unused*/) {

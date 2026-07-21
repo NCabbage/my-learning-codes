@@ -56,7 +56,7 @@ nv: $(BIN)
 # 编译目标
 sim:
 	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	verilator $(VFLAGS) $(SOURCES)
+	verilator $(VFLAGS) --top-module top $(SOURCES)
 
 # 运行目标
 run:
