@@ -9,11 +9,8 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.__Vtrigprevexpr___TOP__top__02Ex__0 = vlSelfRef.top__02Ex;
+    vlSelfRef.__Vtrigprevexpr___TOP__x__0 = vlSelfRef.x;
     vlSelfRef.__Vtrigprevexpr___TOP__en__0 = vlSelfRef.en;
-    vlSelfRef.__Vtrigprevexpr___TOP__ysyx_100022863_decoder__02Ex__0 
-        = vlSelfRef.ysyx_100022863_decoder__02Ex;
-    vlSelfRef.__Vtrigprevexpr___TOP__En__0 = vlSelfRef.En;
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
@@ -109,20 +106,12 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
             // Inlined CFunc: _eval_stl
             if ((1ULL & vlSelfRef.__VstlTriggered[0U])) {
                 {
-                    // Inlined CFunc: _stl_sequent__TOP__0
-                    vlSelfRef.top__02Ey = ((IData)(vlSelfRef.en)
-                                            ? (3U & 
-                                               (0x00030210U 
-                                                >> 
-                                                ((IData)(vlSelfRef.top__02Ex) 
+                    // Inlined CFunc: _ico_comb__TOP__0
+                    vlSelfRef.y = ((IData)(vlSelfRef.en)
+                                    ? (3U & (0x00030210U 
+                                             >> ((IData)(vlSelfRef.x) 
                                                  << 1U)))
-                                            : 0U);
-                    vlSelfRef.ysyx_100022863_decoder__02Ey 
-                        = ((IData)(vlSelfRef.En) ? 
-                           (0x0000000fU & (0x8421U 
-                                           >> ((IData)(vlSelfRef.ysyx_100022863_decoder__02Ex) 
-                                               << 2U)))
-                            : 0U);
+                                    : 0U);
                 }
             }
         }
@@ -140,16 +129,10 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63
         VL_DBG_MSGS("         No '" + tag + "' region triggers active\n");
     }
     if ((1U & (IData)(triggers[0U]))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @( top.x)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @( x)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 1U)))) {
         VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @( en)\n");
-    }
-    if ((1U & (IData)((triggers[0U] >> 2U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 2 is active: @( ysyx_100022863_decoder.x)\n");
-    }
-    if ((1U & (IData)((triggers[0U] >> 3U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 3 is active: @( En)\n");
     }
     if ((1U & (IData)(triggers[1U]))) {
         VL_DBG_MSGS("         '" + tag + "' region trigger index 64 is active: Internal 'ico' trigger - first iteration\n");
@@ -163,21 +146,16 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
-    vlSelf->top__02Ex = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 2865466605943996498ull);
+    vlSelf->x = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 9409450202036847209ull);
     vlSelf->en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7710216835639188562ull);
-    vlSelf->top__02Ey = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 11261967329568811419ull);
-    vlSelf->ysyx_100022863_decoder__02Ex = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 534940658982682624ull);
-    vlSelf->En = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11270037715688928974ull);
-    vlSelf->ysyx_100022863_decoder__02Ey = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 13500387625498916306ull);
+    vlSelf->y = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 11123243248953317070ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
     for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
         vlSelf->__VicoTriggered[__Vi0] = 0;
     }
-    vlSelf->__Vtrigprevexpr___TOP__top__02Ex__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__x__0 = 0;
     vlSelf->__Vtrigprevexpr___TOP__en__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__ysyx_100022863_decoder__02Ex__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__En__0 = 0;
     vlSelf->__VicoDidInit = 0;
 }

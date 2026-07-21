@@ -22,7 +22,7 @@ int main(int argc, char** argv){
 		int x = rand() & 0b1111;
 		if(clk > 5) En = 1;
 		top->x = x;
-		top->en = en;
+		top->en = En;
 		top->eval();
 		printf("x = %x, y = %x, En = %d\n", top->x, top->y, top->en);
 //		assert(top->f == (a ^ b));
