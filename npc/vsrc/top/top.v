@@ -1,22 +1,15 @@
 module top(
-	input		[2:0]		x		,
+	input		[3:0]		x		,
 	input						En	,
 
-	output	[7:0]		y	
+	output	[1:0]		y	
 );
 
-ysyx_100022863_decoder ysyx_100022863_decoder_inst1(
+ysyx_100022863_encoder ysyx_100022863_encoder_inst(
 
-	.x		(x[1:0])	,
-	.En		(En & ~x[2]),
-	.y		(y[3:0])
-);
-
-ysyx_100022863_decoder ysyx_100022863_decoder_inst2(
-
-	.x		(x[1:0])	,
-	.En		(En &  x[2]),
-	.y		(y[7:4])
+	.x		(x)	,
+	.En		(en),
+	.y		(y)
 );
 
 endmodule

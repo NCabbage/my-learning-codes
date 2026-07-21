@@ -19,12 +19,12 @@ int main(int argc, char** argv){
 	int En = 0;
 	while(clk < 1000){ 
 		clk ++;
-		int x = rand() & 0b111;
+		int x = rand() & 0b1111;
 		if(clk > 5) En = 1;
 		top->x = x;
-		top->En = En;
+		top->en = en;
 		top->eval();
-		printf("x = %x, y = %x, En = %d\n", top->x, top->y, top->En);
+		printf("x = %x, y = %x, En = %d\n", top->x, top->y, top->en);
 //		assert(top->f == (a ^ b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
