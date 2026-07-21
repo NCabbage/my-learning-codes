@@ -1,6 +1,6 @@
 module top(
 	input		[3:0]		x		,
-	input						En	,
+	input						en	,
 
 	output	[1:0]		y	
 );
@@ -8,7 +8,7 @@ module top(
 ysyx_100022863_encoder ysyx_100022863_encoder_inst(
 
 	.x		(x)	,
-	.En		(en),
+	.en		(en),
 	.y		(y)
 );
 
