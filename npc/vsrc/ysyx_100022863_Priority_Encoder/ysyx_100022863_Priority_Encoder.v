@@ -7,7 +7,7 @@ module ysyx_100022863_Priority_Encoder(
 
 );
 
-integer i;
+integer i=0;
 
 always@(*)begin
 	if(en)begin
