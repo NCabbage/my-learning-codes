@@ -7,7 +7,7 @@ module ysyx_100022863_Priority_Encoder(
 
 );
 
-integer i=0;
+integer i;
 
 always@(*)begin
 	if(en)begin
@@ -15,6 +15,7 @@ always@(*)begin
 		for(i=0;i<=3;i=i+1)
 			if(x[i] == 1) y = i[1:0];
 	end
-	y = 0;
+	else
+		y = 0;
 end
 endmodule
