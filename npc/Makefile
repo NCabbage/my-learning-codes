@@ -71,5 +71,16 @@ clean:
 	rm -rf obj_dir
 	rm -f wave.fst
 	rm -rf $(BUILD_DIR)
+	
+#记得修改地址	
+clean_yosys:
+	-rm -rf /home/cappage/ysyx-workbench/npc/result/ysyx_1000863_encoder
+
+yosys:
+	make -C /home/cappage/yosys-sta sta \
+    	DESIGN=top SDC_FILE=/home/cappage/ysyx-workbench/npc/sdc/default.sdc \
+    	CLK_FREQ_MHZ=200 CLK_PORT_NAME=clk O=/home/cappage/ysyx-workbench/npc/result/ysyx_1000863_encoder\
+    	RTL_FILES="/home/cappage/ysyx-workbench/npc/vsrc/top/top.v \
+    	/home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_encoder/ysyx_100022863_encoder.v"
 
 .PHONY: all sim run clean default

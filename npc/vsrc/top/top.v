@@ -5,7 +5,7 @@ module top(
 	output	[1:0]		y	
 );
 
-ysyx_100022863_encoder ysyx_100022863_encoder_inst(
+ysyx_100022863_Priority_Encoder ysyx_100022863_Priority_Encoder_inst(
 
 	.x		(x)	,
 	.en		(en),
