@@ -11,9 +11,10 @@ integer i;
 
 always@(*)begin
 	if(en)begin
+		y = 0;
 		for(i=0;i<=3;i=i+1)
 			if(x[i] == 1) y = i[1:0];
 	end
-	y = i[1:0];
+	y = 0;
 end
 endmodule
