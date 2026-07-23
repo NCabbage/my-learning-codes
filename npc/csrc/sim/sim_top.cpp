@@ -5,9 +5,6 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
-int A = [-1];
-int B = [-1];
-
 int main(int argc, char** argv){
   VerilatedContext* contextp = new VerilatedContext;
   contextp->commandArgs(argc, argv);	// 接收传入的参数
