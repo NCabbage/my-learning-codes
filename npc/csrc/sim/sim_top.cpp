@@ -21,9 +21,13 @@ int main(int argc, char** argv){
 	while(clk < 1000){ 
 		clk ++;
 /////////////////////////////////////////////变量赋值
-		int a = rand() & 0xffffffff;
-		int b = rand() & 0xffffffff;
-		int add_flag = rand() & 0x1;
+//		int a = rand() & 0xffffffff;
+//		int b = rand() & 0xffffffff;
+//		int add_flag = rand() & 0x1;
+		int a = 0x80000000;
+		int b = 0x80000000;
+		int add_flag = 1;
+	
 		top->A = a;
 		top->B = b;
 		top->add_flag = add_flag;
