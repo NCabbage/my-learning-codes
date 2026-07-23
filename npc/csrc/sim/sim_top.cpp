@@ -21,8 +21,8 @@ int main(int argc, char** argv){
 	while(clk < 1000){ 
 		clk ++;
 /////////////////////////////////////////////变量赋值
-		int a = 0xffffffff;
-		int b = 0xffffffff;
+		int a = 0x7fffffff;
+		int b = 0x7fffffff;
 		int add_flag = 0;
 		top->A = a;
 		top->B = b;
