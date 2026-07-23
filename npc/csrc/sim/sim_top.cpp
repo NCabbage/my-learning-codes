@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 //		int b = rand() & 0xffffffff;
 //		int add_flag = rand() & 0x1;
 		int a = 0x80000000;
-		int b = 0x80000000;
+		int b = 0x00000001;
 		int add_flag = 1;
 	
 		top->A = a;
