@@ -12,8 +12,6 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     vlSelfRef.__Vtrigprevexpr___TOP__add_flag__0 = vlSelfRef.add_flag;
     vlSelfRef.__Vtrigprevexpr___TOP__A__0 = vlSelfRef.A;
     vlSelfRef.__Vtrigprevexpr___TOP__B__0 = vlSelfRef.B;
-    vlSelfRef.__Vtrigprevexpr___TOP____pinNumber7__0 
-        = vlSelfRef.__pinNumber7;
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
@@ -155,9 +153,6 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63
     if ((1U & (IData)((triggers[0U] >> 2U)))) {
         VL_DBG_MSGS("         '" + tag + "' region trigger index 2 is active: @( B)\n");
     }
-    if ((1U & (IData)((triggers[0U] >> 3U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 3 is active: @( __pinNumber7)\n");
-    }
     if ((1U & (IData)(triggers[1U]))) {
         VL_DBG_MSGS("         '" + tag + "' region trigger index 64 is active: Internal 'ico' trigger - first iteration\n");
     }
@@ -176,7 +171,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16664408842984530663ull);
     vlSelf->overflow = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16341344440165733293ull);
     vlSelf->carry = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16970673489425401941ull);
-    vlSelf->__pinNumber7 = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9208160661597459495ull);
     vlSelf->top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5748729018526759806ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
@@ -187,6 +181,5 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->__Vtrigprevexpr___TOP__add_flag__0 = 0;
     vlSelf->__Vtrigprevexpr___TOP__A__0 = 0;
     vlSelf->__Vtrigprevexpr___TOP__B__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP____pinNumber7__0 = 0;
     vlSelf->__VicoDidInit = 0;
 }

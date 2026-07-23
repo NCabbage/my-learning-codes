@@ -33,12 +33,9 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     {
         // Inlined CFunc: _eval_triggers_vec__ico
         vlSelfRef.__VicoTriggered[0U] = (QData)((IData)(
-                                                        (((((IData)(vlSelfRef.__pinNumber7) 
-                                                            != (IData)(vlSelfRef.__Vtrigprevexpr___TOP____pinNumber7__0)) 
-                                                           << 3U) 
-                                                          | ((vlSelfRef.B 
-                                                              != vlSelfRef.__Vtrigprevexpr___TOP__B__0) 
-                                                             << 2U)) 
+                                                        (((vlSelfRef.B 
+                                                           != vlSelfRef.__Vtrigprevexpr___TOP__B__0) 
+                                                          << 2U) 
                                                          | (((vlSelfRef.A 
                                                               != vlSelfRef.__Vtrigprevexpr___TOP__A__0) 
                                                              << 1U) 
@@ -48,14 +45,11 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
             = vlSelfRef.add_flag;
         vlSelfRef.__Vtrigprevexpr___TOP__A__0 = vlSelfRef.A;
         vlSelfRef.__Vtrigprevexpr___TOP__B__0 = vlSelfRef.B;
-        vlSelfRef.__Vtrigprevexpr___TOP____pinNumber7__0 
-            = vlSelfRef.__pinNumber7;
         if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.__VicoDidInit)))))) {
             vlSelfRef.__VicoDidInit = 1U;
             vlSelfRef.__VicoTriggered[0U] = (1ULL | vlSelfRef.__VicoTriggered[0U]);
             vlSelfRef.__VicoTriggered[0U] = (2ULL | vlSelfRef.__VicoTriggered[0U]);
             vlSelfRef.__VicoTriggered[0U] = (4ULL | vlSelfRef.__VicoTriggered[0U]);
-            vlSelfRef.__VicoTriggered[0U] = (8ULL | vlSelfRef.__VicoTriggered[0U]);
         }
     }
 #ifdef VL_DEBUG
@@ -130,9 +124,6 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
     // Body
     if (VL_UNLIKELY(((vlSelfRef.add_flag & 0xfeU)))) {
         Verilated::overWidthError("add_flag");
-    }
-    if (VL_UNLIKELY(((vlSelfRef.__pinNumber7 & 0xfeU)))) {
-        Verilated::overWidthError("__pinNumber7");
     }
 }
 #endif  // VL_DEBUG

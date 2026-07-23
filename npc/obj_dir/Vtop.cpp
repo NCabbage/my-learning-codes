@@ -13,7 +13,6 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , add_flag{vlSymsp->TOP.add_flag}
     , overflow{vlSymsp->TOP.overflow}
     , carry{vlSymsp->TOP.carry}
-    , __pinNumber7{vlSymsp->TOP.__pinNumber7}
     , A{vlSymsp->TOP.A}
     , B{vlSymsp->TOP.B}
     , result{vlSymsp->TOP.result}

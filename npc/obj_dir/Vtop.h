@@ -32,7 +32,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&add_flag,0,0);
     VL_OUT8(&overflow,0,0);
     VL_OUT8(&carry,0,0);
-    VL_IN8(&__pinNumber7,0,0);
     VL_IN(&A,31,0);
     VL_IN(&B,31,0);
     VL_OUT(&result,31,0);

@@ -17,11 +17,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VL_IN8(add_flag,0,0);
     VL_OUT8(overflow,0,0);
     VL_OUT8(carry,0,0);
-    VL_IN8(__pinNumber7,0,0);
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__add_flag__0;
-    CData/*0:0*/ __Vtrigprevexpr___TOP____pinNumber7__0;
     CData/*0:0*/ __VicoDidInit;
     CData/*0:0*/ __VicoPhaseResult;
     VL_IN(A,31,0);

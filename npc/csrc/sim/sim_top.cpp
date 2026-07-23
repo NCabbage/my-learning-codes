@@ -23,15 +23,14 @@ int main(int argc, char** argv){
 	int cnt = 1;
 	while(clk < 1000){ 
 		clk ++;
+/////////////////////////////////////////////变量赋值
 		int a = -1;
 		int b = -1;
 		int add_flag = 0;
-		if(x) cnt << 1;
-		else cnt = 1;
-		if(clk > 5) En = 1;
 		top->A = a;
 		top->B = b;
 		top->add_flag = add_flag;
+/////////////////////////////////////////////////////////
 		top->eval();
 		printf("A = %x, B = %x, result = %x, overfolw = %d\n", top->A, top->B, top->result, top->overflow);
 //		assert(top->f == (a ^ b));
