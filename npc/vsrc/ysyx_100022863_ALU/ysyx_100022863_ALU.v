@@ -1,14 +1,14 @@
 module ysyx_100022863_ALU(
-	input		[3:0]		A					,
-	input		[3:0]		B					,
-	input		[2:0]		func			,
-	input						en				,
+	input				[3:0]		A					,
+	input				[3:0]		B					,
+	input				[2:0]		func			,
+	input								en				,
 
-	output	[3:0]		result		,
-	output					overflow	,
-	output					A_big			,
-	output					equ				,
-	output					carry
+	output	reg	[3:0]		result		,
+	output	reg					overflow	,
+	output	reg					A_big			,
+	output	reg					equ				,
+	output	reg					carry
 );
 
 wire	[4:0]	t_no_cin;
