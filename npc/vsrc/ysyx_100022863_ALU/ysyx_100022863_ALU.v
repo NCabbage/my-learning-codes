@@ -96,6 +96,14 @@ always@(*)begin
 			end
 		endcase
 	end
+	else begin
+			t_no_cin			= 0								;
+			carry					= 0								;
+			overflow			= 0								;
+			result				= 0								;
+			A_big					= 0								;	
+			equ						= 0								;
+	end
 end
 
 endmodule
