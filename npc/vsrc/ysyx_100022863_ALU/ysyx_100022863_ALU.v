@@ -19,7 +19,7 @@ always@(*)begin
 			000 : begin
 				t_no_cin = {4{1'b0}} ^ B;
 				{carry, result} = A + t_no_cin;
-				overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
+				overflow = (A[3] == t_no_cin[3]) && (result[3] != A[3]);
 				equ = 0;
 				A_big = 0;
 			end
@@ -27,7 +27,7 @@ always@(*)begin
 			001 : begin
 				t_no_cin = {4{1'b1}} ^ B;
 				{carry, result} = A + t_no_cin + 1;
-				overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
+				overflow = (A[3] == t_no_cin[3]) && (result[3] != A[3]);
 				equ = 0;
 				A_big = 0;
 			end
