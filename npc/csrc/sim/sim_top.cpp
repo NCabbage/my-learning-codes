@@ -5,6 +5,9 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
+int A = [-1];
+int B = [-1];
+
 int main(int argc, char** argv){
   VerilatedContext* contextp = new VerilatedContext;
   contextp->commandArgs(argc, argv);	// 接收传入的参数
@@ -20,14 +23,17 @@ int main(int argc, char** argv){
 	int cnt = 1;
 	while(clk < 1000){ 
 		clk ++;
-		int x = rand() & 0b1111;
+		int a = -1;
+		int b = -1;
+		int add_flag = 0;
 		if(x) cnt << 1;
 		else cnt = 1;
 		if(clk > 5) En = 1;
-		top->x = x;
-		top->en = En;
+		top->A = a;
+		top->B = b;
+		top->add_flag = add_flag;
 		top->eval();
-		printf("x = %x, y = %x, En = %d\n", top->x, top->y, top->en);
+		printf("A = %x, B = %x, result = %x, overfolw = %d\n", top->A, top->B, top->result, top->overflow);
 //		assert(top->f == (a ^ b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据

@@ -1,15 +1,22 @@
 module top(
-	input		[3:0]		x		,
-	input						en	,
+	input							add_flag	,
+	input		[31:0]		A					,
+	input		[31:0]		B					,
 
-	output	[1:0]		y	
+	output	[31:0]		result		,
+	output						overflow	,
+	output						carry			,
 );
 
-ysyx_100022863_Priority_Encoder ysyx_100022863_Priority_Encoder_inst(
+ysyx_100022863_ALU ysyx_100022863_ALU_inst(
 
-	.x		(x)	,
-	.en		(en),
-	.y		(y)
+	.add_flag			(add_flag		),	
+	.A						(A					),
+	.B						(B					),
+            
+	.result				(result			),
+	.overflow			(overflow		),
+	.carry				(carry			)
 );
 
 endmodule
