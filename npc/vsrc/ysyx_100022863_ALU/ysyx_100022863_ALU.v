@@ -9,7 +9,7 @@ module ysyx_100022863_ALU(
 	output					carry
 );
 
-wire	t_no_cin;
+wire	[31:0]	t_no_cin;
 
 assign t_no_cin = {32{add_flag}} ^ B;
 assign {carry, result} = A + t_no_cin;
