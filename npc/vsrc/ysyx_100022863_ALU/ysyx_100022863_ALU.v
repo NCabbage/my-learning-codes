@@ -1,18 +1,101 @@
 module ysyx_100022863_ALU(
+	input		[3:0]		A					,
+	input		[3:0]		B					,
+	input		[2:0]		func			,
+	input						en				,
 
-	input						add_flag	,
-	input		[31:0]	A					,
-	input		[31:0]	B					,
-
-	output	[31:0]	result		,
+	output	[3:0]		result		,
 	output					overflow	,
+	output					A_big			,
+	output					equ				,
 	output					carry
 );
 
-wire	[31:0]	t_no_cin;
+wire	[4:0]	t_no_cin;
 
-assign t_no_cin = {32{add_flag}} ^ B;
-assign {carry, result} = A + t_no_cin + add_flag;
-assign overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
+always@(*)begin
+	if(en)begin
+		case(func)
+			000 : begin
+				t_no_cin = {32{1'b0}} ^ B;
+				{carry, result} = A + t_no_cin;
+				overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
+				equ = 0;
+				A_big = 0;
+			end
+
+			001 : begin
+				t_no_cin = {32{1'b1}} ^ B;
+				{carry, result} = A + t_no_cin + 1;
+				overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
+				equ = 0;
+				A_big = 0;
+			end
+
+			010 : begin
+				t_no_cin			= 0			;
+				carry					= 0			;
+				overflow			= 0			;
+				result				= ~A		;
+				A_big					= 0			;
+				equ						=	0			;
+			end
+
+			011 : begin
+				t_no_cin			= 0			;
+				carry					= 0			;
+				overflow			= 0			;
+				A_big					= 0			;
+				result				= A & B	;
+				equ						=	0			;
+			end
+
+			100:begin
+				t_no_cin			= 0			;
+				carry					= 0			;
+				overflow			= 0			;
+				A_big					= 0			;
+				result				= A | B	;
+				equ						=	0			;
+			end
+
+			101:begin
+				t_no_cin			= 0			;
+				carry					= 0			;
+				overflow			= 0			;
+				A_big					= 0			;
+				result				= A ^ B	;
+				equ						=	0			;	
+			end
+
+			110:begin
+				t_no_cin			= 0								;
+				carry					= 0								;
+				overflow			= 0								;
+				result				= 0								;
+				A_big					= (A > B) ? 1 : 0	;
+				equ						=	0								;
+			end
+
+			111:begin
+				t_no_cin			= 0								;
+				carry					= 0								;
+				overflow			= 0								;
+				result				= 0								;
+				A_big					= 0								;	
+				equ						= (A == B) ? 1 : 0;
+			end
+
+			default:begin	
+				t_no_cin			= 0								;
+				carry					= 0								;
+				overflow			= 0								;
+				result				= 0								;
+				A_big					= 0								;	
+				equ						= 0								;
+			end
+		endcase
+	end
+end
 
 endmodule

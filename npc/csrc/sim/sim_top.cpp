@@ -21,20 +21,19 @@ int main(int argc, char** argv){
 	while(clk < 1000){ 
 		clk ++;
 /////////////////////////////////////////////变量赋值
-//		int a = rand() & 0xffffffff;
-//		int b = rand() & 0xffffffff;
-//		int add_flag = rand() & 0x1;
-		int a = 0xffffffff;
-		int b = 0x00000001;
-		int add_flag = 1;
+		int A = rand() & 0xf;
+		int B = rand() & 0xf;
+		int func = rand() & 0x7;
+		if(clk > 5)	En = 1;
 	
-		top->A = a;
-		top->B = b;
-		top->add_flag = add_flag;
+		top->A = A;
+		top->B = B;
+		top->func = func;
+		top->en = En;
 /////////////////////////////////////////////////////////
 		top->eval();
-		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
-		assert(top->result == (a + b) || top->result == (a - b));
+//		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
+//		assert(top->result == (a + b) || top->result == (a - b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
   	contextp->timeInc(1);// 增加时间步长
