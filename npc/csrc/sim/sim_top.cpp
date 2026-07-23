@@ -23,7 +23,7 @@ int main(int argc, char** argv){
 /////////////////////////////////////////////变量赋值
 		int a = 0x80000000;
 		int b = 0x80000000;
-		int add_flag = 0;
+		int add_flag = 1;
 		top->A = a;
 		top->B = b;
 		top->add_flag = add_flag;
