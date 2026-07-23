@@ -29,7 +29,7 @@ int main(int argc, char** argv){
 		top->add_flag = add_flag;
 /////////////////////////////////////////////////////////
 		top->eval();
-		printf("A = %x, B = %x, result = %x, overfolw = %d\n", top->A, top->B, top->result, top->overflow);
+		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->f == (a ^ b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
