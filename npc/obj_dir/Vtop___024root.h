@@ -14,16 +14,22 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
   public:
 
     // DESIGN SPECIFIC STATE
-    VL_IN8(x,3,0);
-    VL_IN8(en,0,0);
-    VL_OUT8(y,1,0);
+    VL_IN8(add_flag,0,0);
+    VL_OUT8(overflow,0,0);
+    VL_OUT8(carry,0,0);
+    VL_IN8(__pinNumber7,0,0);
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
-    CData/*3:0*/ __Vtrigprevexpr___TOP__x__0;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__en__0;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__add_flag__0;
+    CData/*0:0*/ __Vtrigprevexpr___TOP____pinNumber7__0;
     CData/*0:0*/ __VicoDidInit;
     CData/*0:0*/ __VicoPhaseResult;
-    IData/*31:0*/ top__DOT__ysyx_100022863_Priority_Encoder_inst__DOT__i;
+    VL_IN(A,31,0);
+    VL_IN(B,31,0);
+    VL_OUT(result,31,0);
+    IData/*31:0*/ top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin;
+    IData/*31:0*/ __Vtrigprevexpr___TOP__A__0;
+    IData/*31:0*/ __Vtrigprevexpr___TOP__B__0;
     VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
     VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
 

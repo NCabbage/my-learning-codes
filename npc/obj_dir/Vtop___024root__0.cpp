@@ -22,9 +22,6 @@ bool Vtop___024root___trigger_anySet__ico(const VlUnpacked<QData/*63:0*/, 2> &in
 #ifdef VL_DEBUG
 VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63:0*/, 2> &triggers, const std::string &tag);
 #endif  // VL_DEBUG
-extern const VlUnpacked<CData/*1:0*/, 32> Vtop__ConstPool__TABLE_h6200736f_0;
-extern const VlUnpacked<CData/*1:0*/, 32> Vtop__ConstPool__TABLE_he389c61c_0;
-extern const VlUnpacked<IData/*31:0*/, 32> Vtop__ConstPool__TABLE_h62be5548_0;
 
 bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_phase__ico\n"); );
@@ -36,17 +33,29 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     {
         // Inlined CFunc: _eval_triggers_vec__ico
         vlSelfRef.__VicoTriggered[0U] = (QData)((IData)(
-                                                        ((((IData)(vlSelfRef.en) 
-                                                           != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__en__0)) 
-                                                          << 1U) 
-                                                         | ((IData)(vlSelfRef.x) 
-                                                            != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__x__0)))));
-        vlSelfRef.__Vtrigprevexpr___TOP__x__0 = vlSelfRef.x;
-        vlSelfRef.__Vtrigprevexpr___TOP__en__0 = vlSelfRef.en;
+                                                        (((((IData)(vlSelfRef.__pinNumber7) 
+                                                            != (IData)(vlSelfRef.__Vtrigprevexpr___TOP____pinNumber7__0)) 
+                                                           << 3U) 
+                                                          | ((vlSelfRef.B 
+                                                              != vlSelfRef.__Vtrigprevexpr___TOP__B__0) 
+                                                             << 2U)) 
+                                                         | (((vlSelfRef.A 
+                                                              != vlSelfRef.__Vtrigprevexpr___TOP__A__0) 
+                                                             << 1U) 
+                                                            | ((IData)(vlSelfRef.add_flag) 
+                                                               != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__add_flag__0))))));
+        vlSelfRef.__Vtrigprevexpr___TOP__add_flag__0 
+            = vlSelfRef.add_flag;
+        vlSelfRef.__Vtrigprevexpr___TOP__A__0 = vlSelfRef.A;
+        vlSelfRef.__Vtrigprevexpr___TOP__B__0 = vlSelfRef.B;
+        vlSelfRef.__Vtrigprevexpr___TOP____pinNumber7__0 
+            = vlSelfRef.__pinNumber7;
         if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.__VicoDidInit)))))) {
             vlSelfRef.__VicoDidInit = 1U;
             vlSelfRef.__VicoTriggered[0U] = (1ULL | vlSelfRef.__VicoTriggered[0U]);
             vlSelfRef.__VicoTriggered[0U] = (2ULL | vlSelfRef.__VicoTriggered[0U]);
+            vlSelfRef.__VicoTriggered[0U] = (4ULL | vlSelfRef.__VicoTriggered[0U]);
+            vlSelfRef.__VicoTriggered[0U] = (8ULL | vlSelfRef.__VicoTriggered[0U]);
         }
     }
 #ifdef VL_DEBUG
@@ -58,22 +67,34 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     if (__VicoExecute) {
         {
             // Inlined CFunc: _eval_ico
-            if ((3ULL & vlSelfRef.__VicoTriggered[0U])) {
+            if ((5ULL & vlSelfRef.__VicoTriggered[0U])) {
                 {
                     // Inlined CFunc: _ico_comb__TOP__0
-                    CData/*4:0*/ __Vinline_0__eval_ico___Vinline_1__ico_comb__TOP__0___Vtableidx1;
-                    __Vinline_0__eval_ico___Vinline_1__ico_comb__TOP__0___Vtableidx1 = 0;
-                    __Vinline_0__eval_ico___Vinline_1__ico_comb__TOP__0___Vtableidx1 
-                        = (((IData)(vlSelfRef.x) << 1U) 
-                           | (IData)(vlSelfRef.en));
-                    vlSelfRef.y = Vtop__ConstPool__TABLE_h6200736f_0
-                        [__Vinline_0__eval_ico___Vinline_1__ico_comb__TOP__0___Vtableidx1];
-                    if ((2U & Vtop__ConstPool__TABLE_he389c61c_0
-                         [__Vinline_0__eval_ico___Vinline_1__ico_comb__TOP__0___Vtableidx1])) {
-                        vlSelfRef.top__DOT__ysyx_100022863_Priority_Encoder_inst__DOT__i 
-                            = Vtop__ConstPool__TABLE_h62be5548_0
-                            [__Vinline_0__eval_ico___Vinline_1__ico_comb__TOP__0___Vtableidx1];
-                    }
+                    vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
+                        = (vlSelfRef.B ^ (- (IData)((IData)(vlSelfRef.add_flag))));
+                }
+            }
+            if ((7ULL & vlSelfRef.__VicoTriggered[0U])) {
+                {
+                    // Inlined CFunc: _ico_comb__TOP__1
+                    vlSelfRef.carry = (1U & (IData)(
+                                                    (1ULL 
+                                                     & (((QData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin)) 
+                                                         + (QData)((IData)(vlSelfRef.A))) 
+                                                        >> 0x00000020U))));
+                    vlSelfRef.result = (vlSelfRef.A 
+                                        + vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin);
+                    vlSelfRef.overflow = (((1U & (vlSelfRef.A 
+                                                  >> 0x0000001eU)) 
+                                           == (1U & 
+                                               (vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
+                                                >> 0x0000001eU))) 
+                                          & ((1U & 
+                                              (vlSelfRef.A 
+                                               >> 0x0000001eU)) 
+                                             != (1U 
+                                                 & (vlSelfRef.result 
+                                                    >> 0x0000001eU))));
                 }
             }
         }
@@ -107,11 +128,11 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if (VL_UNLIKELY(((vlSelfRef.x & 0xf0U)))) {
-        Verilated::overWidthError("x");
+    if (VL_UNLIKELY(((vlSelfRef.add_flag & 0xfeU)))) {
+        Verilated::overWidthError("add_flag");
     }
-    if (VL_UNLIKELY(((vlSelfRef.en & 0xfeU)))) {
-        Verilated::overWidthError("en");
+    if (VL_UNLIKELY(((vlSelfRef.__pinNumber7 & 0xfeU)))) {
+        Verilated::overWidthError("__pinNumber7");
     }
 }
 #endif  // VL_DEBUG

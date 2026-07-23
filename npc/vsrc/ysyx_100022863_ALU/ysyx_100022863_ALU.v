@@ -1,8 +1,8 @@
 module ysyx_100022863_ALU(
 
 	input						add_flag	,
-	input		[31:0]	A,
-	input		[31:0]	B,
+	input		[31:0]	A					,
+	input		[31:0]	B					,
 
 	output	[31:0]	result		,
 	output					overflow	,

@@ -9,8 +9,11 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.__Vtrigprevexpr___TOP__x__0 = vlSelfRef.x;
-    vlSelfRef.__Vtrigprevexpr___TOP__en__0 = vlSelfRef.en;
+    vlSelfRef.__Vtrigprevexpr___TOP__add_flag__0 = vlSelfRef.add_flag;
+    vlSelfRef.__Vtrigprevexpr___TOP__A__0 = vlSelfRef.A;
+    vlSelfRef.__Vtrigprevexpr___TOP__B__0 = vlSelfRef.B;
+    vlSelfRef.__Vtrigprevexpr___TOP____pinNumber7__0 
+        = vlSelfRef.__pinNumber7;
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
@@ -82,10 +85,6 @@ VL_ATTR_COLD bool Vtop___024root___trigger_anySet__stl(const VlUnpacked<QData/*6
     return (0U);
 }
 
-extern const VlUnpacked<CData/*1:0*/, 32> Vtop__ConstPool__TABLE_h6200736f_0;
-extern const VlUnpacked<CData/*1:0*/, 32> Vtop__ConstPool__TABLE_he389c61c_0;
-extern const VlUnpacked<IData/*31:0*/, 32> Vtop__ConstPool__TABLE_h62be5548_0;
-
 VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_phase__stl\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -110,20 +109,27 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
             // Inlined CFunc: _eval_stl
             if ((1ULL & vlSelfRef.__VstlTriggered[0U])) {
                 {
-                    // Inlined CFunc: _ico_comb__TOP__0
-                    CData/*4:0*/ __Vinline_0__eval_stl___Vinline_0__ico_comb__TOP__0___Vtableidx1;
-                    __Vinline_0__eval_stl___Vinline_0__ico_comb__TOP__0___Vtableidx1 = 0;
-                    __Vinline_0__eval_stl___Vinline_0__ico_comb__TOP__0___Vtableidx1 
-                        = (((IData)(vlSelfRef.x) << 1U) 
-                           | (IData)(vlSelfRef.en));
-                    vlSelfRef.y = Vtop__ConstPool__TABLE_h6200736f_0
-                        [__Vinline_0__eval_stl___Vinline_0__ico_comb__TOP__0___Vtableidx1];
-                    if ((2U & Vtop__ConstPool__TABLE_he389c61c_0
-                         [__Vinline_0__eval_stl___Vinline_0__ico_comb__TOP__0___Vtableidx1])) {
-                        vlSelfRef.top__DOT__ysyx_100022863_Priority_Encoder_inst__DOT__i 
-                            = Vtop__ConstPool__TABLE_h62be5548_0
-                            [__Vinline_0__eval_stl___Vinline_0__ico_comb__TOP__0___Vtableidx1];
-                    }
+                    // Inlined CFunc: _stl_sequent__TOP__0
+                    vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
+                        = (vlSelfRef.B ^ (- (IData)((IData)(vlSelfRef.add_flag))));
+                    vlSelfRef.carry = (1U & (IData)(
+                                                    (1ULL 
+                                                     & (((QData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin)) 
+                                                         + (QData)((IData)(vlSelfRef.A))) 
+                                                        >> 0x00000020U))));
+                    vlSelfRef.result = (vlSelfRef.A 
+                                        + vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin);
+                    vlSelfRef.overflow = (((1U & (vlSelfRef.A 
+                                                  >> 0x0000001eU)) 
+                                           == (1U & 
+                                               (vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
+                                                >> 0x0000001eU))) 
+                                          & ((1U & 
+                                              (vlSelfRef.A 
+                                               >> 0x0000001eU)) 
+                                             != (1U 
+                                                 & (vlSelfRef.result 
+                                                    >> 0x0000001eU))));
                 }
             }
         }
@@ -141,10 +147,16 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63
         VL_DBG_MSGS("         No '" + tag + "' region triggers active\n");
     }
     if ((1U & (IData)(triggers[0U]))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @( x)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @( add_flag)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 1U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @( en)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @( A)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 2U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 2 is active: @( B)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 3U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 3 is active: @( __pinNumber7)\n");
     }
     if ((1U & (IData)(triggers[1U]))) {
         VL_DBG_MSGS("         '" + tag + "' region trigger index 64 is active: Internal 'ico' trigger - first iteration\n");
@@ -158,17 +170,23 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
-    vlSelf->x = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 9409450202036847209ull);
-    vlSelf->en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7710216835639188562ull);
-    vlSelf->y = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 11123243248953317070ull);
-    vlSelf->top__DOT__ysyx_100022863_Priority_Encoder_inst__DOT__i = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3010562562309163224ull);
+    vlSelf->add_flag = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11476609991649639657ull);
+    vlSelf->A = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3969090544990846983ull);
+    vlSelf->B = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 149303876845869574ull);
+    vlSelf->result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16664408842984530663ull);
+    vlSelf->overflow = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16341344440165733293ull);
+    vlSelf->carry = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16970673489425401941ull);
+    vlSelf->__pinNumber7 = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9208160661597459495ull);
+    vlSelf->top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5748729018526759806ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
     for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
         vlSelf->__VicoTriggered[__Vi0] = 0;
     }
-    vlSelf->__Vtrigprevexpr___TOP__x__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__en__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__add_flag__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__A__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__B__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP____pinNumber7__0 = 0;
     vlSelf->__VicoDidInit = 0;
 }

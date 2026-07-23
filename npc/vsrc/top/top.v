@@ -5,7 +5,7 @@ module top(
 
 	output	[31:0]		result		,
 	output						overflow	,
-	output						carry			,
+	output						carry			
 );
 
 ysyx_100022863_ALU ysyx_100022863_ALU_inst(
