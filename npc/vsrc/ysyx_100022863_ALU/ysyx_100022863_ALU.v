@@ -11,13 +11,13 @@ module ysyx_100022863_ALU(
 	output	reg					carry
 );
 
-wire	[4:0]	t_no_cin;
+wire	[3:0]	t_no_cin;
 
 always@(*)begin
 	if(en)begin
 		case(func)
 			000 : begin
-				t_no_cin = {32{1'b0}} ^ B;
+				t_no_cin = {4{1'b0}} ^ B;
 				{carry, result} = A + t_no_cin;
 				overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
 				equ = 0;
@@ -25,7 +25,7 @@ always@(*)begin
 			end
 
 			001 : begin
-				t_no_cin = {32{1'b1}} ^ B;
+				t_no_cin = {4{1'b1}} ^ B;
 				{carry, result} = A + t_no_cin + 1;
 				overflow = (A[31] == t_no_cin[31]) && (result[31] != A[31]);
 				equ = 0;
