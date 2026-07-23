@@ -21,16 +21,16 @@ int main(int argc, char** argv){
 	while(clk < 1000){ 
 		clk ++;
 /////////////////////////////////////////////变量赋值
-		int a = 0x80000000;
-		int b = 0x80000000;
-		int add_flag = 1;
+		int a = rand() & 0xffffffff;
+		int b = rand() & 0xffffffff;
+		int add_flag = rand() & 0x1;
 		top->A = a;
 		top->B = b;
 		top->add_flag = add_flag;
 /////////////////////////////////////////////////////////
 		top->eval();
 		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
-//		assert(top->f == (a ^ b));
+		assert(top->result == (a + b) || top->result == (a - b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
   	contextp->timeInc(1);// 增加时间步长
