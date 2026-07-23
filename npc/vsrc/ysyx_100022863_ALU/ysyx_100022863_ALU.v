@@ -11,7 +11,7 @@ module ysyx_100022863_ALU(
 	output	reg					carry
 );
 
-wire	[3:0]	t_no_cin;
+reg	[3:0]	t_no_cin;
 
 always@(*)begin
 	if(en)begin
