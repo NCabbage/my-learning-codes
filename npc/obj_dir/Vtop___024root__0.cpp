@@ -19,6 +19,69 @@ bool Vtop___024root___trigger_anySet__ico(const VlUnpacked<QData/*63:0*/, 2> &in
     return (0U);
 }
 
+void Vtop___024root___ico_comb__TOP__0(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___ico_comb__TOP__0\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    if (vlSelfRef.en) {
+        if (((0U == (IData)(vlSelfRef.func)) | (1U 
+                                                == (IData)(vlSelfRef.func)))) {
+            if ((0U == (IData)(vlSelfRef.func))) {
+                vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
+                    = vlSelfRef.B;
+                vlSelfRef.carry = (1U & (((IData)(vlSelfRef.A) 
+                                          + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin)) 
+                                         >> 4U));
+                vlSelfRef.result = (0x0000000fU & ((IData)(vlSelfRef.A) 
+                                                   + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin)));
+                vlSelfRef.overflow = (((1U & ((IData)(vlSelfRef.A) 
+                                              >> 3U)) 
+                                       == (1U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin) 
+                                                 >> 3U))) 
+                                      & ((1U & ((IData)(vlSelfRef.result) 
+                                                >> 3U)) 
+                                         != (1U & ((IData)(vlSelfRef.A) 
+                                                   >> 3U))));
+            } else if ((1U == (IData)(vlSelfRef.func))) {
+                vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
+                    = (0x0000000fU & (~ (IData)(vlSelfRef.B)));
+                vlSelfRef.carry = (1U & (((IData)(1U) 
+                                          + ((IData)(vlSelfRef.A) 
+                                             + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin))) 
+                                         >> 4U));
+                vlSelfRef.result = (0x0000000fU & ((IData)(1U) 
+                                                   + 
+                                                   ((IData)(vlSelfRef.A) 
+                                                    + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin))));
+                vlSelfRef.overflow = (((1U & ((IData)(vlSelfRef.A) 
+                                              >> 3U)) 
+                                       == (1U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin) 
+                                                 >> 3U))) 
+                                      & ((1U & ((IData)(vlSelfRef.result) 
+                                                >> 3U)) 
+                                         != (1U & ((IData)(vlSelfRef.A) 
+                                                   >> 3U))));
+            } else {
+                vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = 0U;
+                vlSelfRef.carry = 0U;
+                vlSelfRef.overflow = 0U;
+                vlSelfRef.result = 0U;
+            }
+        } else {
+            vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = 0U;
+            vlSelfRef.carry = 0U;
+            vlSelfRef.overflow = 0U;
+            vlSelfRef.result = 0U;
+        }
+    } else {
+        vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = 0U;
+        vlSelfRef.carry = 0U;
+        vlSelfRef.overflow = 0U;
+        vlSelfRef.result = 0U;
+    }
+}
+
 #ifdef VL_DEBUG
 VL_ATTR_COLD void Vtop___024root___dump_triggers__ico(const VlUnpacked<QData/*63:0*/, 2> &triggers, const std::string &tag);
 #endif  // VL_DEBUG
@@ -65,89 +128,8 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     if (__VicoExecute) {
         {
             // Inlined CFunc: _eval_ico
-            if ((8ULL & vlSelfRef.__VicoTriggered[0U])) {
-                {
-                    // Inlined CFunc: _ico_sequent__TOP__0
-                    if (vlSelfRef.en) {
-                        vlSelfRef.A_big = 0U;
-                    }
-                }
-            }
             if ((0x000000000000000fULL & vlSelfRef.__VicoTriggered[0U])) {
-                {
-                    // Inlined CFunc: _ico_comb__TOP__0
-                    if (vlSelfRef.en) {
-                        vlSelfRef.equ = (((0U == (IData)(vlSelfRef.func)) 
-                                          | (1U == (IData)(vlSelfRef.func))) 
-                                         && ((0U != (IData)(vlSelfRef.func)) 
-                                             && ((1U 
-                                                  != (IData)(vlSelfRef.func)) 
-                                                 && (((IData)(vlSelfRef.A) 
-                                                      == (IData)(vlSelfRef.B))
-                                                      ? 1U
-                                                      : 0U))));
-                        if (((0U == (IData)(vlSelfRef.func)) 
-                             | (1U == (IData)(vlSelfRef.func)))) {
-                            if ((0U == (IData)(vlSelfRef.func))) {
-                                vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
-                                    = vlSelfRef.B;
-                                vlSelfRef.carry = (1U 
-                                                   & (((IData)(vlSelfRef.A) 
-                                                       + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin)) 
-                                                      >> 4U));
-                                vlSelfRef.result = 
-                                    (0x0000000fU & 
-                                     ((IData)(vlSelfRef.A) 
-                                      + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin)));
-                                vlSelfRef.overflow 
-                                    = (((1U & ((IData)(vlSelfRef.A) 
-                                               >> 3U)) 
-                                        == (1U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin) 
-                                                  >> 3U))) 
-                                       & ((1U & ((IData)(vlSelfRef.result) 
-                                                 >> 3U)) 
-                                          != (1U & 
-                                              ((IData)(vlSelfRef.A) 
-                                               >> 3U))));
-                            } else if ((1U == (IData)(vlSelfRef.func))) {
-                                vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin 
-                                    = (0x0000000fU 
-                                       & (~ (IData)(vlSelfRef.B)));
-                                vlSelfRef.carry = (1U 
-                                                   & (((IData)(1U) 
-                                                       + 
-                                                       ((IData)(vlSelfRef.A) 
-                                                        + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin))) 
-                                                      >> 4U));
-                                vlSelfRef.result = 
-                                    (0x0000000fU & 
-                                     ((IData)(1U) + 
-                                      ((IData)(vlSelfRef.A) 
-                                       + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin))));
-                                vlSelfRef.overflow 
-                                    = (((1U & ((IData)(vlSelfRef.A) 
-                                               >> 3U)) 
-                                        == (1U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin) 
-                                                  >> 3U))) 
-                                       & ((1U & ((IData)(vlSelfRef.result) 
-                                                 >> 3U)) 
-                                          != (1U & 
-                                              ((IData)(vlSelfRef.A) 
-                                               >> 3U))));
-                            } else {
-                                vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = 0U;
-                                vlSelfRef.carry = 0U;
-                                vlSelfRef.overflow = 0U;
-                                vlSelfRef.result = 0U;
-                            }
-                        } else {
-                            vlSelfRef.top__DOT__ysyx_100022863_ALU_inst__DOT__t_no_cin = 0U;
-                            vlSelfRef.carry = 0U;
-                            vlSelfRef.overflow = 0U;
-                            vlSelfRef.result = 0U;
-                        }
-                    }
-                }
+                Vtop___024root___ico_comb__TOP__0(vlSelf);
             }
         }
     }

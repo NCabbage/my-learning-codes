@@ -16,7 +16,7 @@ reg	[3:0]	t_no_cin;
 always@(*)begin
 	if(en)begin
 		case(func)
-			000 : begin
+			3'b000 : begin
 				t_no_cin = {4{1'b0}} ^ B;
 				{carry, result} = A + t_no_cin;
 				overflow = (A[3] == t_no_cin[3]) && (result[3] != A[3]);
@@ -24,7 +24,7 @@ always@(*)begin
 				A_big = 0;
 			end
 
-			001 : begin
+			3'b001 : begin
 				t_no_cin = {4{1'b1}} ^ B;
 				{carry, result} = A + t_no_cin + 1;
 				overflow = (A[3] == t_no_cin[3]) && (result[3] != A[3]);
@@ -32,7 +32,7 @@ always@(*)begin
 				A_big = 0;
 			end
 
-			010 : begin
+			3'b010 : begin
 				t_no_cin			= 0			;
 				carry					= 0			;
 				overflow			= 0			;
@@ -41,7 +41,7 @@ always@(*)begin
 				equ						=	0			;
 			end
 
-			011 : begin
+			3'b011 : begin
 				t_no_cin			= 0			;
 				carry					= 0			;
 				overflow			= 0			;
@@ -50,7 +50,7 @@ always@(*)begin
 				equ						=	0			;
 			end
 
-			100:begin
+			3'b100:begin
 				t_no_cin			= 0			;
 				carry					= 0			;
 				overflow			= 0			;
@@ -59,7 +59,7 @@ always@(*)begin
 				equ						=	0			;
 			end
 
-			101:begin
+			3'b101:begin
 				t_no_cin			= 0			;
 				carry					= 0			;
 				overflow			= 0			;
@@ -68,7 +68,7 @@ always@(*)begin
 				equ						=	0			;	
 			end
 
-			110:begin
+			3'b110:begin
 				t_no_cin			= 0								;
 				carry					= 0								;
 				overflow			= 0								;
@@ -77,7 +77,7 @@ always@(*)begin
 				equ						=	0								;
 			end
 
-			111:begin
+			3'b111:begin
 				t_no_cin			= 0								;
 				carry					= 0								;
 				overflow			= 0								;
@@ -86,7 +86,7 @@ always@(*)begin
 				equ						= (A == B) ? 1 : 0;
 			end
 
-			default:begin	
+			default : begin	
 				t_no_cin			= 0								;
 				carry					= 0								;
 				overflow			= 0								;
