@@ -21,7 +21,7 @@ ysyx_100022863_ALU ysyx_100022863_ALU_inst(
  .	overflow	(overflow	),
  .	A_big			(A_big		),
  .	equ				(equ			),
- .	carry			(carry		),
+ .	carry			(carry		)
 
 );
 
