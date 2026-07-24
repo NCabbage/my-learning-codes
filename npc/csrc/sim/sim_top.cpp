@@ -23,7 +23,6 @@ int main(int argc, char** argv){
 /////////////////////////////////////////////
 	while(clk < 1000){ 
 		clk ++;
-		top->eval();
 /////////////////////////////////////////////变量赋值
 		func = rand() & 0x7;
 		if(clk > 3)	rst_n = 0;
@@ -38,6 +37,7 @@ int main(int argc, char** argv){
 		}
 
 		top->clk			= clk & 0x1	;
+		top->eval();
 		top->rst_n		= rst_n			;
 		top->func			= func			;
 		top->in				= in				;
