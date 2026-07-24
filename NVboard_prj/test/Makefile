@@ -26,7 +26,8 @@ $(shell mkdir -p $(BUILD_DIR))
 SRC_AUTO_BIND = $(abspath $(BUILD_DIR)/auto_bind.cpp)			
 
 $(SRC_AUTO_BIND): $(NXDC_FILES)						
-	python3 $(NVBOARD_HOME)/scripts/auto_pin_bind.py $^ $@		#确定文件依赖关系，没有就用py生成一个
+	python3 $(NVBOARD_HOME)/scripts/auto_pin_bind.py $^ $@		
+	#确定文件依赖关系，没有就用py生成一个
 
 # project source
 VSRCS = $(shell find $(abspath ./vsrc) -name "*.v")

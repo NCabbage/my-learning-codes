@@ -16,37 +16,26 @@ int main(int argc, char** argv){
   top->trace(tfp,99);
   tfp->open("wave.fst");  //保存位置
 	int clk = 0;
-	int En = 0;
+	int rst_n = 1;
 /////////////////////////////////////////////
-	int A = 0, B = 0, func = 0;
+	int in = 0, left_in = 0, func = 0;
 
 /////////////////////////////////////////////
 	while(clk < 1000){ 
 		clk ++;
 /////////////////////////////////////////////变量赋值
-//		int A = rand() & 0xf;
-//		int B = rand() & 0xf;
-//		int func = rand() & 0x7;
-		if(clk > 3)	En = 1;
-		
-		if(clk == 6){
-			A = 0xf;
-			B = 0x2;
-			func = 0;
-		}else if(clk == 7){
-			A = 0x7;	
-			B = 0x2;
-		}else if(clk == 8){
-			A = 0x8;
-			B = 0xF;
-		}else if(clk == 9){
-			A = 0x0;
-			B = 0x1;
-			func = 001;
-		}else if(clk == 10){
-			A = 0x8;
-			B = 0x1;
+		func = rand() & 0x7;
+		if(clk > 3)	rst_n = 0;
+
+		if(func == 0x1){
+			in = rand() & 0xf;
+		}else if(func == 0x5){
+			left_in = rand() & 0x1;	
+		}else{
+			left_in = 0;
+			in = 0;
 		}
+
 		top->A = A;
 		top->B = B;
 		top->func = func;
