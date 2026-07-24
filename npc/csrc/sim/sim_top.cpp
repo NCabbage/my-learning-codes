@@ -27,7 +27,7 @@ int main(int argc, char** argv){
 //		int A = rand() & 0xf;
 //		int B = rand() & 0xf;
 //		int func = rand() & 0x7;
-		if(clk > 5)	En = 1;
+		if(clk > 3)	En = 1;
 		
 		if(clk == 6){
 			A = 0xf;
