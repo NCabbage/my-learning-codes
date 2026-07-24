@@ -35,7 +35,7 @@ int main(int argc, char** argv){
 			func = 0;
 		}else if(clk == 7){
 			A = 0x7;	
-			B = 0x1;
+			B = 0x2;
 		}else if(clk == 8){
 			A = 0x8;
 			B = 0xF;
