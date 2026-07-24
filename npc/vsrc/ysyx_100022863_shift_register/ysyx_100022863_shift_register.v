@@ -11,7 +11,7 @@ module ysyx_100022863_shift_register(
 
 reg		[7:0]		Q;
 
-always@(posedge clk or rst_n)begin
+always@(posedge clk)begin
 	if(rst_n)begin
 		Q			<= 8'b0;
 		out		<= 8'b0;
