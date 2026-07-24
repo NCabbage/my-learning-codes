@@ -23,13 +23,14 @@ int main(int argc, char** argv){
 /////////////////////////////////////////////
 	while(clk < 1000){ 
 		clk ++;
+		op->eval();
 /////////////////////////////////////////////变量赋值
 		func = rand() & 0x7;
 		if(clk > 3)	rst_n = 0;
 
 		if(func == 0x1){
 			in = rand() & 0xf;
-		}else if(func == 0x5){
+		}else if(func == 0x5 && clk % 2 == 0){
 			left_in = rand() & 0x1;	
 		}else{
 			left_in = 0;
@@ -42,7 +43,6 @@ int main(int argc, char** argv){
 		top->in				= in				;
 		top->left_in	= left_in		;
 /////////////////////////////////////////////////////////
-		top->eval();
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->result == (a + b) || top->result == (a - b));
 
