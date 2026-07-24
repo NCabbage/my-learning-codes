@@ -36,10 +36,11 @@ int main(int argc, char** argv){
 			in = 0;
 		}
 
-		top->A = A;
-		top->B = B;
-		top->func = func;
-		top->en = En;
+		top->clk			= clk & 0x1	;
+		top->rst_n		= rst_n			;
+		top->func			= func			;
+		top->in				= in				;
+		top->left_in	= left_in		;
 /////////////////////////////////////////////////////////
 		top->eval();
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
