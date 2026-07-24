@@ -52,7 +52,7 @@ always@(posedge clk or rst_n)begin
 			end
 
 			default : begin
-				Q <= 8;b0;
+				Q <= 8'b0;
 			end
 		endcase
 	end
