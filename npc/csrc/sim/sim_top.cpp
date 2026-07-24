@@ -31,7 +31,7 @@ int main(int argc, char** argv){
 		
 		if(clk == 6){
 			A = 0xf;
-			B = 0x1;
+			B = 0x2;
 			func = 0;
 		}else if(clk == 7){
 			A = 0x7;	
