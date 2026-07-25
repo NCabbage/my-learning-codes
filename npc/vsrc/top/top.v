@@ -15,7 +15,7 @@ ysyx_100022863_shift_register ysyx_100022863_shift_register_inst(
 	.LR				(LR			).
 	.AL				(AL			).
        
-	.dout			(dout		).
+	.dout			(dout		)
 );
 
 endmodule
