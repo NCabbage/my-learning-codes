@@ -21,7 +21,7 @@ always@(*)begin
 		end
 	end
 	else begin
-		if(!AL)begin
+		if(!LR)begin
 			dout = cnt >> shamt;
 		end
 		else begin
