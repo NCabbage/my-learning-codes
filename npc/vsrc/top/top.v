@@ -1,13 +1,13 @@
 module top(
 	input										clk			,
-	output				[7:0]			out			,
+	output				[7:0]			out			
 
 );
 
 ysyx_100022863_LFSR ysyx_100022863_LFSR_inst(
 
 	.clk			(clk		),	 
-	.out			(out		),
+	.out			(out		)
 );
 
 endmodule
