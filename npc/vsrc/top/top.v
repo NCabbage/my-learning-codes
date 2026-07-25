@@ -12,8 +12,8 @@ ysyx_100022863_shift_register ysyx_100022863_shift_register_inst(
 
 	.din			(din		),	 
 	.shamt		(shamt	),
-	.LR				(LR			).
-	.AL				(AL			).
+	.LR				(LR			),
+	.AL				(AL			),
        
 	.dout			(dout		)
 );
