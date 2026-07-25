@@ -65,23 +65,15 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
     if (__VicoExecute) {
         {
             // Inlined CFunc: _eval_ico
-            if ((3ULL & vlSelfRef.__VicoTriggered[0U])) {
+            if ((7ULL & vlSelfRef.__VicoTriggered[0U])) {
                 {
                     // Inlined CFunc: _ico_comb__TOP__0
-                    vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0 
-                        = (0x000000ffU & ((IData)(vlSelfRef.din) 
-                                          << (IData)(vlSelfRef.shamt)));
-                }
-            }
-            if ((0x000000000000000fULL & vlSelfRef.__VicoTriggered[0U])) {
-                {
-                    // Inlined CFunc: _ico_comb__TOP__1
-                    vlSelfRef.dout = ((IData)(vlSelfRef.AL)
-                                       ? (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                       : ((IData)(vlSelfRef.LR)
-                                           ? (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                           : ((IData)(vlSelfRef.din) 
-                                              >> (IData)(vlSelfRef.shamt))));
+                    vlSelfRef.dout = (0x000000ffU & 
+                                      ((IData)(vlSelfRef.LR)
+                                        ? ((IData)(vlSelfRef.din) 
+                                           << (IData)(vlSelfRef.shamt))
+                                        : ((IData)(vlSelfRef.din) 
+                                           >> (IData)(vlSelfRef.shamt))));
                 }
             }
         }

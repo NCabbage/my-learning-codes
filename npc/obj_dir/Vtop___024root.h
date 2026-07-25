@@ -19,7 +19,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VL_IN8(LR,0,0);
     VL_IN8(AL,0,0);
     VL_OUT8(dout,7,0);
-    CData/*7:0*/ __VdfgRegularize_h6e95ff9d_0_0;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*7:0*/ __Vtrigprevexpr___TOP__din__0;

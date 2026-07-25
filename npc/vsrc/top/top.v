@@ -1,21 +1,13 @@
 module top(
-	input				[7:0]			din			,
-	input				[2:0]			shamt		,
-	input									LR			,
-	input									AL			,
-
-	output	reg	[7:0]			dout
+	input										clk			,
+	output				[7:0]			out			,
 
 );
 
-ysyx_100022863_Barre_Shifter ysyx_100022863_Barre_Shifter_inst(
+ysyx_100022863_LFSR ysyx_100022863_LFSR_inst(
 
-	.din			(din		),	 
-	.shamt		(shamt	),
-	.LR				(LR			),
-	.AL				(AL			),
-       
-	.dout			(dout		)
+	.clk			(clk		),	 
+	.out			(out		),
 );
 
 endmodule

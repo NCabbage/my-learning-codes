@@ -108,16 +108,13 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
             // Inlined CFunc: _eval_stl
             if ((1ULL & vlSelfRef.__VstlTriggered[0U])) {
                 {
-                    // Inlined CFunc: _stl_sequent__TOP__0
-                    vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0 
-                        = (0x000000ffU & ((IData)(vlSelfRef.din) 
-                                          << (IData)(vlSelfRef.shamt)));
-                    vlSelfRef.dout = ((IData)(vlSelfRef.AL)
-                                       ? (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                       : ((IData)(vlSelfRef.LR)
-                                           ? (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                           : ((IData)(vlSelfRef.din) 
-                                              >> (IData)(vlSelfRef.shamt))));
+                    // Inlined CFunc: _ico_comb__TOP__0
+                    vlSelfRef.dout = (0x000000ffU & 
+                                      ((IData)(vlSelfRef.LR)
+                                        ? ((IData)(vlSelfRef.din) 
+                                           << (IData)(vlSelfRef.shamt))
+                                        : ((IData)(vlSelfRef.din) 
+                                           >> (IData)(vlSelfRef.shamt))));
                 }
             }
         }
@@ -163,7 +160,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->LR = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5215092035378683467ull);
     vlSelf->AL = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15911437864729183017ull);
     vlSelf->dout = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 11474705599699299244ull);
-    vlSelf->__VdfgRegularize_h6e95ff9d_0_0 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
