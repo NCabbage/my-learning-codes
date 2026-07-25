@@ -1,4 +1,4 @@
-module ysyx_100022863_Barrel_shifter(
+module ysyx_100022863_Barrel_Shifter(
 	input				[7:0]			din			,
 	input				[2:0]			shamt		,
 	input									LR			,

@@ -14,19 +14,22 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
   public:
 
     // DESIGN SPECIFIC STATE
-    VL_IN8(clk,0,0);
-    VL_IN8(rst_n,0,0);
-    VL_IN8(func,2,0);
-    VL_IN8(in,7,0);
-    VL_IN8(left_in,0,0);
-    VL_OUT8(out,7,0);
-    CData/*7:0*/ top__DOT__ysyx_100022863_shift_register_inst__DOT__Q;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
-    CData/*0:0*/ __VactPhaseResult;
-    CData/*0:0*/ __VnbaPhaseResult;
-    IData/*31:0*/ __VactIterCount;
-    VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
-    VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+    VL_IN8(din,7,0);
+    VL_IN8(shamt,2,0);
+    VL_IN8(LR,0,0);
+    VL_IN8(AL,0,0);
+    VL_OUT8(dout,7,0);
+    CData/*7:0*/ __VdfgRegularize_h6e95ff9d_0_0;
+    CData/*0:0*/ __VstlFirstIteration;
+    CData/*0:0*/ __VstlPhaseResult;
+    CData/*7:0*/ __Vtrigprevexpr___TOP__din__0;
+    CData/*2:0*/ __Vtrigprevexpr___TOP__shamt__0;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__LR__0;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__AL__0;
+    CData/*0:0*/ __VicoDidInit;
+    CData/*0:0*/ __VicoPhaseResult;
+    VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
+    VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;

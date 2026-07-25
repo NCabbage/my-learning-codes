@@ -22,13 +22,12 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
-    bufp->chgBit(oldp+0,(vlSelfRef.clk));
-    bufp->chgBit(oldp+1,(vlSelfRef.rst_n));
-    bufp->chgCData(oldp+2,(vlSelfRef.func),3);
-    bufp->chgCData(oldp+3,(vlSelfRef.in),8);
-    bufp->chgBit(oldp+4,(vlSelfRef.left_in));
-    bufp->chgCData(oldp+5,(vlSelfRef.out),8);
-    bufp->chgCData(oldp+6,(vlSelfRef.top__DOT__ysyx_100022863_shift_register_inst__DOT__Q),8);
+    bufp->chgCData(oldp+0,(vlSelfRef.din),8);
+    bufp->chgCData(oldp+1,(vlSelfRef.shamt),3);
+    bufp->chgBit(oldp+2,(vlSelfRef.LR));
+    bufp->chgBit(oldp+3,(vlSelfRef.AL));
+    bufp->chgCData(oldp+4,(vlSelfRef.dout),8);
+    bufp->chgCData(oldp+5,(vlSelfRef.din),8);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedFst* /*unused*/) {
