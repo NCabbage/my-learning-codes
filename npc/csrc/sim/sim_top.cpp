@@ -26,11 +26,11 @@ int main(int argc, char** argv){
 		shamt = rand() & 0x7;
 		LR = rand() & 0x1;
 		AL = rand() & 0x1;
-		top->eval();
 		top->din			= din				;
 		top->shamt		= shamt			;
 		top->LR				= LR				;
 		top->AL				= AL				;
+		top->eval();
 /////////////////////////////////////////////////////////
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->result == (a + b) || top->result == (a - b));
