@@ -80,8 +80,8 @@ clean_yosys:
 yosys:
 	make -C /home/cappage/yosys-sta sta \
     	DESIGN=top SDC_FILE=/home/cappage/ysyx-workbench/npc/sdc/default.sdc \
-    	CLK_FREQ_MHZ=200 CLK_PORT_NAME=clk O=/home/cappage/ysyx-workbench/npc/result/ysyx_1000863_encoder\
+    	CLK_FREQ_MHZ=200 CLK_PORT_NAME=clk O=/home/cappage/ysyx-workbench/npc/result/ysyx_1000863_shift_register\
     	RTL_FILES="/home/cappage/ysyx-workbench/npc/vsrc/top/top.v \
-    	/home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_encoder/ysyx_100022863_encoder.v"
+    	/home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_shift_register/ysyx_100022863_shift_register.v"
 
 .PHONY: all sim run clean default

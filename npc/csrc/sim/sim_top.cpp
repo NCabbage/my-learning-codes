@@ -16,32 +16,21 @@ int main(int argc, char** argv){
   top->trace(tfp,99);
   tfp->open("wave.fst");  //保存位置
 	int clk = 0;
-	int rst_n = 1;
 /////////////////////////////////////////////
-	int in = 0, left_in = 0, func = 0;
-
+	int din = 0, shamt = 0, LR = 0, AL = 0;
 /////////////////////////////////////////////
 	while(clk < 1000){ 
 		clk ++;
 /////////////////////////////////////////////变量赋值
-		func = rand() & 0x7;
-		if(clk > 3)	rst_n = 0;
-
-		if(func == 0x1){
-			in = rand() & 0xf;
-		}else if(func == 0x5 && clk % 2 == 0){
-			left_in = rand() & 0x1;	
-		}else{
-			left_in = 0;
-			in = 0;
-		}
-
-		top->clk			= clk & 0x1	;
+		din = rand() & 0xff;
+		shamt = rand() & 0x7;
+		LR = rand() & 0x1;
+		AL = rand() & 0x1;
 		top->eval();
-		top->rst_n		= rst_n			;
-		top->func			= func			;
-		top->in				= in				;
-		top->left_in	= left_in		;
+		top->din			= din				;
+		top->shamt		= shamt			;
+		top->LR				= LR				;
+		top->AL				= AL				;
 /////////////////////////////////////////////////////////
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->result == (a + b) || top->result == (a - b));

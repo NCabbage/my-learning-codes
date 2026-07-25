@@ -1,24 +1,21 @@
 module top(
-	input									clk				,
-	input									rst_n			,
-	input					[2:0]		func			,
-	input					[7:0]		in				,
-	input									left_in		,
+	input				[7:0]			din			,
+	input				[2:0]			shamt		,
+	input									LR			,
+	input									AL			,
 
-	output	reg		[7:0]		out
+	output	reg	[7:0]			dout
 
 );
 
 ysyx_100022863_shift_register ysyx_100022863_shift_register_inst(
 
-	.clk			(clk		),
-	.rst_n		(rst_n	),
-	.func			(func		),
-	.in				(in			),
-	.left_in	(left_in),
-
-	.out			(out		)
-
+	.din			(din		),	 
+	.shamt		(shamt	),
+	.LR				(LR			).
+	.AL				(AL			).
+       
+	.dout			(dout		).
 );
 
 endmodule
