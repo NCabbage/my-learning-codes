@@ -10,10 +10,10 @@ module ysyx_100022863_Barrel_shifter(
 always@(*)begin
 	if(!AL)begin
 		if(!LR)begin
-			dout = {shamt{1;b0}, din[7:shamt]};
+			dout = {shamt{1:b0}, din[7:shamt]};
 		end
 		else begin
-			dout = {din[7-shamt:1], shamt{1;b0}};
+			dout = {din[7-shamt:1], shamt{1:b0}};
 		end
 	end
 	else begin
@@ -21,7 +21,7 @@ always@(*)begin
 			dout = {shamt{din[7]}, din[7:shamt]};
 		end
 		else begin
-			dout = {din[7-shamt:1], shamt{1;b0}};
+			dout = {din[7-shamt:1], shamt{1:b0}};
 		end
 	end
 
