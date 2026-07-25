@@ -7,21 +7,25 @@ module ysyx_100022863_Barrel_shifter(
 	output	reg	[7:0]			dout
 );
 
+wire signed		[7:0]		cnt;
+
+assign cnt = din;
+
 always@(*)begin
 	if(!AL)begin
 		if(!LR)begin
-			dout = {shamt{1'b0}, din[7:shamt]};
+			dout = din >> shamt;
 		end
 		else begin
-			dout = {din[7-shamt:1], shamt{1'b0}};
+			dout = din << shamt;
 		end
 	end
 	else begin
 		if(!AL)begin
-			dout = {shamt{din[7]}, din[7'shamt]};
+			dout = cnt >> shamt;
 		end
 		else begin
-			dout = {din[7-shamt:1], shamt{1'b0}};
+			dout = cnt << shamt;
 		end
 	end
 
