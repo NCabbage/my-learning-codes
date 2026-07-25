@@ -8,7 +8,7 @@ module top(
 
 );
 
-ysyx_100022863_Barrel_Shifter ysyx_100022863_Barrel_Shifter_inst(
+ysyx_100022863_Barre_Shifter ysyx_100022863_Barre_Shifter_inst(
 
 	.din			(din		),	 
 	.shamt		(shamt	),
