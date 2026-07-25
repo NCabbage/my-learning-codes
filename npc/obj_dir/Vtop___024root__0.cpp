@@ -68,6 +68,8 @@ void Vtop___024root___trigger_clear__act(VlUnpacked<QData/*63:0*/, 1> &out) {
     } while ((1U > n));
 }
 
+extern const VlUnpacked<CData/*7:0*/, 512> Vtop__ConstPool__TABLE_h92d857ed_0;
+
 bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_phase__nba\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -82,13 +84,13 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
             if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
                 {
                     // Inlined CFunc: _nba_sequent__TOP__0
-                    vlSelfRef.out = ((0x00000080U & 
-                                      (VL_REDXOR_8(
-                                                   (0x1dU 
-                                                    & (IData)(vlSelfRef.out))) 
-                                       << 7U)) | (0x0000007fU 
-                                                  & ((IData)(vlSelfRef.out) 
-                                                     >> 1U)));
+                    SData/*8:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vtableidx1;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vtableidx1 = 0;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vtableidx1 
+                        = (((IData)(vlSelfRef.out) 
+                            << 1U) | (IData)(vlSelfRef.rst_n));
+                    vlSelfRef.out = Vtop__ConstPool__TABLE_h92d857ed_0
+                        [__Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vtableidx1];
                 }
             }
         }
@@ -137,6 +139,9 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
     // Body
     if (VL_UNLIKELY(((vlSelfRef.clk & 0xfeU)))) {
         Verilated::overWidthError("clk");
+    }
+    if (VL_UNLIKELY(((vlSelfRef.rst_n & 0xfeU)))) {
+        Verilated::overWidthError("rst_n");
     }
 }
 #endif  // VL_DEBUG

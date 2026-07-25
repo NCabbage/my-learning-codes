@@ -23,6 +23,7 @@ int main(int argc, char** argv){
 		clk ++;
 		if(clk < 5) rst_n = 0;
 		else rst_n = 1;
+		top -> rst_n;
 /////////////////////////////////////////////变量赋值
 		
 		top->eval();

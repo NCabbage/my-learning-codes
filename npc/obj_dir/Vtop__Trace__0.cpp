@@ -23,7 +23,8 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
     bufp->chgBit(oldp+0,(vlSelfRef.clk));
-    bufp->chgCData(oldp+1,(vlSelfRef.out),8);
+    bufp->chgBit(oldp+1,(vlSelfRef.rst_n));
+    bufp->chgCData(oldp+2,(vlSelfRef.out),8);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedFst* /*unused*/) {
