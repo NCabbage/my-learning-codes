@@ -5,6 +5,8 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
+const		period_ns = 10;
+
 int main(int argc, char** argv){
   VerilatedContext* contextp = new VerilatedContext;
   contextp->commandArgs(argc, argv);	// 接收传入的参数
@@ -15,14 +17,14 @@ int main(int argc, char** argv){
 	VerilatedFstC *tfp= new VerilatedFstC;   //初始化fst对象指针
   top->trace(tfp,99);
   tfp->open("wave.fst");  //保存位置
-	int clk = 0;
+	bool clk = 0;
 	int rst_n;
 /////////////////////////////////////////////
 	int w;
 /////////////////////////////////////////////
-	while(clk < 1000){ 
-		clk ++;
-		if(clk < 5) rst_n = 0;
+	while(cnt < 100000){
+		if(cnt % (period_ns/2) == 0) clk = ~clk;	
+		if(cnt < 5 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 /////////////////////////////////////////////变量赋值
 		w = rand() & 0x1;
