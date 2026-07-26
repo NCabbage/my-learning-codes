@@ -24,12 +24,12 @@ int main(int argc, char** argv){
 		clk ++;
 		if(clk < 5) rst_n = 0;
 		else rst_n = 1;
-		top->rst_n = rst_n;
 /////////////////////////////////////////////变量赋值
 		w = rand() & 0x1;
 		top->clk = clk & 0x1	;
 		top->eval();
 		top->w = w;
+		top->rst_n = rst_n;
 /////////////////////////////////////////////////////////
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->result == (a + b) || top->result == (a - b));
