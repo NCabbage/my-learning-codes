@@ -17,8 +17,7 @@ parameter		A = 4'd0000,
 						H = 4'b0111,
 						I = 4'b1000;
 
-reg		[3:0]	state			;
-wire	[3:0]	next_state;
+reg		[3:0]	state, next_state;
 
 always@(posedge clk)
 	if(!rst_n)
