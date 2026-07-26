@@ -23,7 +23,7 @@ int main(int argc, char** argv){
 	int w;
 /////////////////////////////////////////////
 	while(cnt < 100000){
-		if(cnt % (period_ns*1000/2) == 0) clk = ~clk;	
+		if(cnt % (period_ns*1000/2) == 0) clk = 1 ^ clk;	
 		if(cnt < 5 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
@@ -34,7 +34,7 @@ int main(int argc, char** argv){
 		top->w = w;
 		top->rst_n = rst_n;
 /////////////////////////////////////////////////////////
-		if(cnt % (period_ns*1000/2) == 0) printf("ok");
+//		if(cnt % (period_ns*1000/2) == 0) printf("ok");
 //		assert(top->result == (a + b) || top->result == (a - b));
 
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
