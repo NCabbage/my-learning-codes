@@ -5,7 +5,7 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
-const		period_ns = 10;
+const int	period_ns = 10;
 
 int main(int argc, char** argv){
   VerilatedContext* contextp = new VerilatedContext;
