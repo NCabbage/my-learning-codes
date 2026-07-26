@@ -27,9 +27,10 @@ int main(int argc, char** argv){
 		else rst_n = 1;
 		cnt ++;
 /////////////////////////////////////////////变量赋值
-		if(cnt % (period_ns*1000/2) == 0){ clk = 1 ^ clk;	
+		if(cnt % (period_ns*1000/2) == 0){ 
+			clk = 1 ^ clk;	
 			w = rand() & 0x1;
-			top->clk = cnt & 0x1	;
+			top->clk = clk;
 			top->eval();
 			top->w = w;
 			top->rst_n = rst_n;
