@@ -16,6 +16,8 @@ void Vtop___024root__trace_chg_0(void* voidSelf, VerilatedFst::Buffer* bufp) {
     Vtop___024root__trace_chg_0_sub_0((&vlSymsp->TOP), bufp);
 }
 
+extern const VlUnpacked<CData/*3:0*/, 64> Vtop__ConstPool__TABLE_h680b5c63_0;
+
 void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buffer* bufp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root__trace_chg_0_sub_0\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -24,7 +26,13 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
     bufp->chgBit(oldp+0,(vlSelfRef.clk));
     bufp->chgBit(oldp+1,(vlSelfRef.rst_n));
-    bufp->chgCData(oldp+2,(vlSelfRef.out),8);
+    bufp->chgBit(oldp+2,(vlSelfRef.w));
+    bufp->chgBit(oldp+3,(vlSelfRef.z));
+    bufp->chgCData(oldp+4,(vlSelfRef.top__DOT__ysyx_100022863_FSM_inst__DOT__state),4);
+    bufp->chgCData(oldp+5,(Vtop__ConstPool__TABLE_h680b5c63_0
+                           [(((IData)(vlSelfRef.w) 
+                              << 5U) | (((IData)(vlSelfRef.top__DOT__ysyx_100022863_FSM_inst__DOT__state) 
+                                         << 1U) | (IData)(vlSelfRef.rst_n)))]),4);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedFst* /*unused*/) {

@@ -16,7 +16,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst_n,0,0);
-    VL_OUT8(out,7,0);
+    VL_IN8(w,0,0);
+    VL_OUT8(z,0,0);
+    CData/*3:0*/ top__DOT__ysyx_100022863_FSM_inst__DOT__state;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;

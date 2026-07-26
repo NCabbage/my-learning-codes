@@ -27,9 +27,9 @@ int main(int argc, char** argv){
 		top->rst_n = rst_n;
 /////////////////////////////////////////////变量赋值
 		w = rand() & 0x1;
-		top->w = w;
 		top->clk = clk & 0x1	;
 		top->eval();
+		top->w = w;
 /////////////////////////////////////////////////////////
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->result == (a + b) || top->result == (a - b));
