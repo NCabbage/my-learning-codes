@@ -6,7 +6,7 @@
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
 const int	period_ns = 10;
-
+int cnt;
 int main(int argc, char** argv){
   VerilatedContext* contextp = new VerilatedContext;
   contextp->commandArgs(argc, argv);	// 接收传入的参数
