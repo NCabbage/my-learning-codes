@@ -18,6 +18,7 @@ int main(int argc, char** argv){
 	int clk = 0;
 	int rst_n;
 /////////////////////////////////////////////
+	int w;
 /////////////////////////////////////////////
 	while(clk < 1000){ 
 		clk ++;
@@ -25,9 +26,10 @@ int main(int argc, char** argv){
 		else rst_n = 1;
 		top->rst_n = rst_n;
 /////////////////////////////////////////////变量赋值
-		
-		top->eval();
+		w = rand() & 0x1;
+		top->w = w;
 		top->clk = clk & 0x1	;
+		top->eval();
 /////////////////////////////////////////////////////////
 //		printf("A = %x, B = %x, result = %x, carry =  %d, overfolw = %d\n", top->A, top->B, top->result, top->carry, top->overflow);
 //		assert(top->result == (a + b) || top->result == (a - b));

@@ -1,16 +1,18 @@
 module top(
 	input										clk			,
 	input										rst_n		,
+	input										w				,
 
-	output				[7:0]			out			
+	output									z			
 
 );
 
-ysyx_100022863_LFSR ysyx_100022863_LFSR_inst(
+ysyx_100022863_FSM ysyx_100022863_FSM_inst(
 
 	.clk			(clk		),	 
 	.rst_n		(rst_n	),
-	.out			(out		)
+	.z				(z			),
+	.w				(w			)
 );
 
 endmodule
