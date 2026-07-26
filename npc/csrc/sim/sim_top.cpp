@@ -23,16 +23,17 @@ int main(int argc, char** argv){
 	int w;
 /////////////////////////////////////////////
 	while(cnt < 100000){
-		if(cnt % (period_ns*1000/2) == 0) clk = 1 ^ clk;	
 		if(cnt < 5 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
 /////////////////////////////////////////////变量赋值
-		w = rand() & 0x1;
-		top->clk = clk & 0x1	;
-		top->eval();
-		top->w = w;
-		top->rst_n = rst_n;
+		if(cnt % (period_ns*1000/2) == 0){ clk = 1 ^ clk;	
+			w = rand() & 0x1;
+			top->clk = cnt & 0x1	;
+			top->eval();
+			top->w = w;
+			top->rst_n = rst_n;
+		}
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
 //		assert(top->result == (a + b) || top->result == (a - b));
