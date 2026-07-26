@@ -27,7 +27,7 @@ always@(posedge clk)
 
 always@(*)
 	if(!rst_n)
-		z = 0;
+		next_state = A;
 	else
 		case(state)
 			A :
