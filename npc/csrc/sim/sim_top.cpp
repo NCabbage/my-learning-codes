@@ -24,7 +24,7 @@ int main(int argc, char** argv){
 /////////////////////////////////////////////
 	while(cnt < 100000){
 		cnt ++;
-		if(cnt % (period_ns/2) == 0) clk = ~clk;	
+		if(cnt % (period_ns*1000/2) == 0) clk = ~clk;	
 		if(cnt < 5 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 /////////////////////////////////////////////变量赋值
