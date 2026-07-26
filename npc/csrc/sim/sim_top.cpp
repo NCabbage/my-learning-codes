@@ -6,7 +6,7 @@
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
 const int	period_ns = 10;
-int cnt;
+int cnt = 0;
 int main(int argc, char** argv){
   VerilatedContext* contextp = new VerilatedContext;
   contextp->commandArgs(argc, argv);	// 接收传入的参数
@@ -23,6 +23,7 @@ int main(int argc, char** argv){
 	int w;
 /////////////////////////////////////////////
 	while(cnt < 100000){
+		cnt ++;
 		if(cnt % (period_ns/2) == 0) clk = ~clk;	
 		if(cnt < 5 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
