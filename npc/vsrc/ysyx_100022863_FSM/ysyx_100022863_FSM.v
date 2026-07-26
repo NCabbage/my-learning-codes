@@ -4,7 +4,7 @@ module ysyx_100022863_FSM(
 	input					w			,
 	input					rst_n	,
 
-	output				z
+	output	reg		z
 );
 
 parameter		A = 4'd0000,
