@@ -48,7 +48,7 @@ int main(int argc, char** argv){
 			ps_data = send(~ps_clk && ps_clk, 60, count, ps_data_cnt, num, "11101110000", s);
 	}
 
-		clk = count & 0x1;	
+		clk = cnt % (period_ns*500) ? (1^clk) : clk;	
 		top->clk = clk;
 		top->eval();
 		top->ps2_clk = ps_clk;
