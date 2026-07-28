@@ -6,7 +6,7 @@ module ysyx_100022863_ps2_keyboard_model(
 
 	output				[7:0]	data			,
 	output	reg					ready			,
-	output	reg					overflow	,
+	output	reg					overflow	
 
 );
 
