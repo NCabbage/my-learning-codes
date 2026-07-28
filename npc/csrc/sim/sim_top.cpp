@@ -29,12 +29,12 @@ int main(int argc, char** argv){
 	int num = 0;
 	bool s = 0;
 /////////////////////////////////////////////
-	while(cnt < 1000000){
+	while(cnt < 10000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
 /////////////////////////////////////////////变量赋值
-		if(cnt % (period_ns*1000/2) == 0){ 
+		if(cnt % (period_ns*1000) == 0){ 
 			count ++;
 			if(count == 5) s = 1;
 			ps_clk_cnt = ps_clk;
