@@ -27,10 +27,10 @@ int main(int argc, char** argv){
 	bool ps_clk_cnt, ps_data_cnt;
 	int count = 0;
 	int num = 0;
-	int s = 0;
+	bool s = 0;
 /////////////////////////////////////////////
-	while(cnt < 100000){
-		if(cnt < 5 * period_ns * 1000) rst_n = 0;
+	while(cnt < 10000000){
+		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
 /////////////////////////////////////////////变量赋值
@@ -47,7 +47,6 @@ int main(int argc, char** argv){
 			}
 			ps_data = send(~ps_clk && ps_clk, ps_data_cnt, num, "11101110000", s);
 			clk = 1 ^ clk;	
-			w = rand() & 0x1;
 			top->clk = clk;
 			top->eval();
 			top->ps2_clk = ps_clk;

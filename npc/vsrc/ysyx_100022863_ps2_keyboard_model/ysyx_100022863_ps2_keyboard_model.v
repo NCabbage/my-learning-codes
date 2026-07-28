@@ -25,7 +25,7 @@ end
 assign sampling = ps2_clk_sync[2] & ~ps2_clk_sync[1];
 
 always@(posedge clk) begin
-	if(clrn) begin
+	if(!clrn) begin
 		count			<= 0;
 		w_ptr			<= 0;
 		r_ptr			<= 0;
