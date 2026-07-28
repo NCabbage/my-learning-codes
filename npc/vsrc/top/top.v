@@ -6,7 +6,7 @@ module top(
 
 	output				[7:0]	data			,
 	output							ready			,
-	output							overflow	,
+	output							overflow	
 
 );
 
