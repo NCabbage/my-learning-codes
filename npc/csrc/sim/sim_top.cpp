@@ -33,7 +33,6 @@ int main(int argc, char** argv){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
-		top->eval();
 /////////////////////////////////////////////变量赋值
 		if(cnt % (period_ns*1000/2) == 0){ 
 			count ++;
@@ -47,12 +46,16 @@ int main(int argc, char** argv){
 				s = 0;
 			}
 			ps_data = send(~ps_clk && ps_clk, ps_data_cnt, num, "11101110000", s);
-			clk = 1 ^ clk;	
-			top->clk = clk;
-			top->ps2_clk = ps_clk;
-			top->ps2_data = ps_data;
-			top->clrn = rst_n;
-		}
+	}
+
+		clk = 1 ^ clk;	
+		top->clk = clk;
+		top->eval();
+		top->ps2_clk = ps_clk;
+		top->ps2_data = ps_data;
+		top->clrn = rst_n;
+	
+
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
 //		assert(top->result == (a + b) || top->result == (a - b));
