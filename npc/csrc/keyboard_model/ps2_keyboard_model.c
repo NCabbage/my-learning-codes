@@ -15,6 +15,7 @@ bool send(int up, int ps_clk_period, int count, int ps_data, int num, const char
 	
 	if(!en)
 		ps_data = 1;
+
 	return ps_data;
 }
 

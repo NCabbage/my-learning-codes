@@ -28,6 +28,7 @@ int main(int argc, char** argv){
 	int count = 0;			//记录半个周期数
 	int num = 0;
 	bool s = 0;
+	bool nenextdata_n = 1;
 /////////////////////////////////////////////
 	while(cnt < 10000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
@@ -44,7 +45,7 @@ int main(int argc, char** argv){
 				num = 0;
 //				s = 0;
 			}
-			ps_data = send(~ps_clk && ps_clk_cnt, 60, count, ps_data_cnt, num, "11101110000", s);
+			ps_data = send(~ps_clk && ps_clk_cnt, 60, count, ps_data, num, "11101110000", s);
 			if(~ps_clk && ps_clk_cnt && s) num ++;
 	}
 
