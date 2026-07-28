@@ -10,7 +10,7 @@ module top(
 
 );
 
-ysyx_100022863_FSM ysyx_100022863_FSM_inst(
+ysyx_100022863_ps2_keyboard_model ysyx_100022863_ps2_keyboard_model_inst(
 
 	.clk			(clk			),	 
 	.clrn			(clrn			),
