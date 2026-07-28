@@ -1,9 +1,9 @@
 # 引入上级 Makefile，获得 git_commit 等定义
 include ../Makefile
 
-# 定义编译相关的变量
+# 定义编译相关的变量:
 VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
-SOURCES = csrc/sim/sim_top.cpp $(shell find $(abspath ./vsrc) -name "*.v")
+SOURCES = csrc/sim/sim_top.cpp csrc/keyboard_model/ps2_keyboard_model.c $(shell find $(abspath ./vsrc) -name "*.v")
 TARGET = sim_top
 WAVE = /wave.fst
 TOPNAME = top
