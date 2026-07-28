@@ -5,7 +5,7 @@ bool ge_clk(int ps_clk, int count, int ps_clk_period){
 	return ps_clk;
 }
 
-bool send(int up, int ps_data, int num, char code[15]){
+bool send(int up, int ps_data, int num, const char code[15]){
 
 	if(up)
 		ps_data = code[num] - '0';
