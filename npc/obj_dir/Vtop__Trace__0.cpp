@@ -16,7 +16,7 @@ void Vtop___024root__trace_chg_0(void* voidSelf, VerilatedFst::Buffer* bufp) {
     Vtop___024root__trace_chg_0_sub_0((&vlSymsp->TOP), bufp);
 }
 
-extern const VlUnpacked<CData/*3:0*/, 64> Vtop__ConstPool__TABLE_h680b5c63_0;
+void Vtop___024root__trace_chg_dtype____0(Vtop___024root* vlSelf, VerilatedFst::Buffer* bufp, uint32_t offset, const VlUnpacked<CData/*7:0*/, 8>& __VdtypeVar);
 
 void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buffer* bufp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root__trace_chg_0_sub_0\n"); );
@@ -24,27 +24,47 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
-    bufp->chgBit(oldp+0,(vlSelfRef.clk));
-    bufp->chgBit(oldp+1,(vlSelfRef.rst_n));
-    bufp->chgBit(oldp+2,(vlSelfRef.w));
-    bufp->chgBit(oldp+3,(vlSelfRef.z));
-    bufp->chgCData(oldp+4,(vlSelfRef.top__DOT__ysyx_100022863_FSM_inst__DOT__state),4);
-    bufp->chgCData(oldp+5,(Vtop__ConstPool__TABLE_h680b5c63_0
-                           [(((IData)(vlSelfRef.w) 
-                              << 5U) | (((IData)(vlSelfRef.top__DOT__ysyx_100022863_FSM_inst__DOT__state) 
-                                         << 1U) | (IData)(vlSelfRef.rst_n)))]),4);
+    if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[1U]))) {
+        bufp->chgSData(oldp+0,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer),10);
+        Vtop___024root__trace_chg_dtype____0(vlSelf, bufp, 1, vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo);
+        bufp->chgCData(oldp+9,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr),3);
+        bufp->chgCData(oldp+10,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr),3);
+        bufp->chgCData(oldp+11,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count),4);
+        bufp->chgCData(oldp+12,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync),3);
+        bufp->chgBit(oldp+13,((IData)((4U == (6U & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync))))));
+    }
+    bufp->chgBit(oldp+14,(vlSelfRef.clk));
+    bufp->chgBit(oldp+15,(vlSelfRef.clrn));
+    bufp->chgBit(oldp+16,(vlSelfRef.ps2_clk));
+    bufp->chgBit(oldp+17,(vlSelfRef.ps2_data));
+    bufp->chgBit(oldp+18,(vlSelfRef.nextdata_n));
+    bufp->chgCData(oldp+19,(vlSelfRef.data),8);
+    bufp->chgBit(oldp+20,(vlSelfRef.ready));
+    bufp->chgBit(oldp+21,(vlSelfRef.overflow));
+}
+
+void Vtop___024root__trace_chg_dtype____0(Vtop___024root* vlSelf, VerilatedFst::Buffer* bufp, uint32_t offset, const VlUnpacked<CData/*7:0*/, 8>& __VdtypeVar) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root__trace_chg_dtype____0\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode +  offset);
+    bufp->chgCData(oldp+0,(__VdtypeVar[7]),8);
+    bufp->chgCData(oldp+1,(__VdtypeVar[6]),8);
+    bufp->chgCData(oldp+2,(__VdtypeVar[5]),8);
+    bufp->chgCData(oldp+3,(__VdtypeVar[4]),8);
+    bufp->chgCData(oldp+4,(__VdtypeVar[3]),8);
+    bufp->chgCData(oldp+5,(__VdtypeVar[2]),8);
+    bufp->chgCData(oldp+6,(__VdtypeVar[1]),8);
+    bufp->chgCData(oldp+7,(__VdtypeVar[0]),8);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedFst* /*unused*/) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root__trace_cleanup\n"); );
-    // Locals
-    VlUnpacked<CData/*0:0*/, 1> __Vm_traceActivity;
-    for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
-        __Vm_traceActivity[__Vi0] = 0;
-    }
     // Body
     Vtop___024root* const __restrict vlSelf VL_ATTR_UNUSED = static_cast<Vtop___024root*>(voidSelf);
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     vlSymsp->__Vm_activity = false;
-    __Vm_traceActivity[0U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[0U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[1U] = 0U;
 }

@@ -35,7 +35,7 @@ always@(posedge clk) begin
 	else if(sampling) begin
 		if(count == 4'b10)begin
 			if((buffer[0]) && (ps2_data) && (^buffer[9:1])) begin
-				fifo[w_ptr] <= buffer[w_ptr];
+				fifo[w_ptr] <= buffer[8:1];
 				w_ptr <= w_ptr + 3'b1;
 				ready <= 1'b1;
 				overflow <= overflow | (r_ptr == (w_ptr + 3'b1));

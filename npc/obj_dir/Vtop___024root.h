@@ -15,16 +15,29 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
 
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
-    VL_IN8(rst_n,0,0);
-    VL_IN8(w,0,0);
-    VL_OUT8(z,0,0);
-    CData/*3:0*/ top__DOT__ysyx_100022863_FSM_inst__DOT__state;
+    VL_IN8(clrn,0,0);
+    VL_IN8(ps2_clk,0,0);
+    VL_IN8(ps2_data,0,0);
+    VL_IN8(nextdata_n,0,0);
+    VL_OUT8(data,7,0);
+    VL_OUT8(ready,0,0);
+    VL_OUT8(overflow,0,0);
+    CData/*2:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
+    CData/*2:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
+    CData/*3:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
+    CData/*2:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
+    CData/*0:0*/ __VstlFirstIteration;
+    CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;
+    SData/*9:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer;
     IData/*31:0*/ __VactIterCount;
+    VlUnpacked<CData/*7:0*/, 8> top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo;
+    VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;
