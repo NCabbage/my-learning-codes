@@ -5,6 +5,8 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
+#include "keyboard_model.h"
+
 const int	period_ns = 10;
 int cnt = 0;
 int main(int argc, char** argv){
@@ -21,6 +23,10 @@ int main(int argc, char** argv){
 	int rst_n;
 /////////////////////////////////////////////
 	int w;
+	bool ps_clk = 1, ps_data = 1;
+	bool ps_clk_cnt, ps_data_cnt;
+	int count = 0;
+	int num = 0;
 /////////////////////////////////////////////
 	while(cnt < 100000){
 		if(cnt < 5 * period_ns * 1000) rst_n = 0;
@@ -28,12 +34,20 @@ int main(int argc, char** argv){
 		cnt ++;
 /////////////////////////////////////////////变量赋值
 		if(cnt % (period_ns*1000/2) == 0){ 
+			count ++;
+			ps_clk_cnt = ps_clk;
+			ps_clk = ge_clk(ps_clk_cnt, count, 60);
+			ps_data_cnt = ps_data;
+			if(~ps_clk && ps_clk) num ++;
+			if(num ==  11) num = 0;
+			ps_data = send(~ps_clk && ps_clk, ps_data_ps_data_cnt, num, 0x770);
 			clk = 1 ^ clk;	
 			w = rand() & 0x1;
 			top->clk = clk;
 			top->eval();
-			top->w = w;
-			top->rst_n = rst_n;
+			top->ps_clk = ps_clk;
+			top->ps_data = ps_data;
+			top->clrn = rst_n;
 		}
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
