@@ -36,11 +36,10 @@ int main(int argc, char** argv){
 		cnt ++;
 /////////////////////////////////////////////变量赋值
 		ps_clk_cnt = ps_clk;
-		ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
-	
 		if(cnt % (period_ns*500) == 0){ 
 			count ++;
 			if(count == 5) s = 1;
+			ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
 			ps_data_cnt = ps_data;
 			if(num ==  11){ 
 				num = 0;
