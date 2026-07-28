@@ -48,7 +48,7 @@ always@(posedge clk) begin
 		end
 	
 		if(ready) begin
-			if(!next_data_n) begin
+			if(!nextdata_n) begin
 				r_ptr <= r_ptr + 3'b1;
 				if(w_ptr == (r_ptr + 1))
 					ready <= 1'b0;
