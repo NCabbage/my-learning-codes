@@ -43,7 +43,7 @@ int main(int argc, char** argv){
 			if(~ps_clk && ps_clk_cnt && s) num ++;
 			if(num ==  11){ 
 				num = 0;
-				s = 0;
+//				s = 0;
 			}
 			ps_data = send(~ps_clk && ps_clk, 60, count, ps_data_cnt, num, "11101110000", s);
 	}
