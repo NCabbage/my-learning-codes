@@ -10,7 +10,7 @@ bool ge_clk(int ps_clk, int count, int ps_clk_period, bool en){
 
 bool send(int up, int ps_clk_period, int count, int ps_data, int num, const char code[15], bool en){
 
-	if(((count / 2) % ps_clk_period == 0)  && up && en)
+	if((count % (ps_clk_period * 2) == 0)  && up && en)
 		ps_data = code[num] - '0';
 	
 	if(!en)
