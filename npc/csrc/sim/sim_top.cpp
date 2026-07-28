@@ -45,8 +45,8 @@ int main(int argc, char** argv){
 			w = rand() & 0x1;
 			top->clk = clk;
 			top->eval();
-			top->ps_clk = ps_clk;
-			top->ps_data = ps_data;
+			top->ps2_clk = ps_clk;
+			top->ps2_data = ps_data;
 			top->clrn = rst_n;
 		}
 /////////////////////////////////////////////////////////
