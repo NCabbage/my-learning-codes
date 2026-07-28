@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 	int w;
 	bool ps_clk = 1, ps_data = 1;
 	bool ps_clk_cnt, ps_data_cnt;
-	int count = 0;
+	int count = 0;			//记录半个周期数
 	int num = 0;
 	bool s = 0;
 /////////////////////////////////////////////
