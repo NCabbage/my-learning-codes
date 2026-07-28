@@ -40,12 +40,12 @@ int main(int argc, char** argv){
 			ps_clk_cnt = ps_clk;
 			ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
 			ps_data_cnt = ps_data;
-			if(~ps_clk && ps_clk_cnt && s) num ++;
 			if(num ==  11){ 
 				num = 0;
 //				s = 0;
 			}
 			ps_data = send(~ps_clk && ps_clk, 60, count, ps_data_cnt, num, "11101110000", s);
+			if(~ps_clk && ps_clk_cnt && s) num ++;
 	}
 
 		clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
