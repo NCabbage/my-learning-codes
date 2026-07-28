@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 /////////////////////////////////////////////变量赋值
 		if(cnt % (period_ns*1000/2) == 0){ 
 			count ++;
-			if(count == 12000) s = 1;
+			if(count == 2) s = 1;
 			ps_clk_cnt = ps_clk;
 			ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
 			ps_data_cnt = ps_data;
