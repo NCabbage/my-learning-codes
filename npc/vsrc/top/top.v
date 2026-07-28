@@ -5,8 +5,8 @@ module top(
 	input								ps_data		,
 
 	output				[7:0]	data			,
-	output	reg					ready			,
-	output	reg					overflow	,
+	output							ready			,
+	output							overflow	,
 
 );
 
