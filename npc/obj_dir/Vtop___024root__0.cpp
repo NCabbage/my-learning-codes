@@ -75,8 +75,8 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
                                          & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
                                             >> 1U))))) {
                         __Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 
-                            = (1U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
-                                     >> (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr)));
+                            = (0x000000ffU & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
+                                              >> 1U));
                         __Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 
                             = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
                         __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 1U;
