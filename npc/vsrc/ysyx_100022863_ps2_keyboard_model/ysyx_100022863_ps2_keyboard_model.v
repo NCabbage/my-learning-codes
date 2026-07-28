@@ -2,7 +2,8 @@ module ysyx_100022863_ps2_keyboard_model(
 	input								clk				,
 	input								clrn			,
 	input								ps2_clk		,
-	input								ps2_data		,
+	input								ps2_data	,
+	input								nextdata_n,
 
 	output				[7:0]	data			,
 	output	reg					ready			,
