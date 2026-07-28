@@ -40,7 +40,7 @@ int main(int argc, char** argv){
 			ps_data_cnt = ps_data;
 			if(~ps_clk && ps_clk) num ++;
 			if(num ==  11) num = 0;
-			ps_data = send(~ps_clk && ps_clk, ps_data_ps_data_cnt, num, 0x770);
+			ps_data = send(~ps_clk && ps_clk, ps_data_cnt, num, 0x770);
 			clk = 1 ^ clk;	
 			w = rand() & 0x1;
 			top->clk = clk;
