@@ -45,7 +45,7 @@ int main(int argc, char** argv){
 				num = 0;
 				s = 0;
 			}
-			ps_data = send(~ps_clk && ps_clk, 60, ps_data_cnt, num, "11101110000", s);
+			ps_data = send(~ps_clk && ps_clk, 60, count, ps_data_cnt, num, "11101110000", s);
 	}
 
 		clk = 1 ^ clk;	
