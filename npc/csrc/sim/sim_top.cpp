@@ -40,7 +40,7 @@ int main(int argc, char** argv){
 			ps_clk_cnt = ps_clk;
 			ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
 			ps_data_cnt = ps_data;
-			if(~ps_clk && ps_clk && s) num ++;
+			if(~ps_clk && ps_clk_cnt && s) num ++;
 			if(num ==  11){ 
 				num = 0;
 				s = 0;
