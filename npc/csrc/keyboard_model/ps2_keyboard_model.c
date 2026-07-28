@@ -1,5 +1,5 @@
 bool ge_clk(int ps_clk, int count, int ps_clk_period, bool en){
-	if(((((count+1) / 2) % (ps_clk_period / 2)) == 0) && en)
+	if(((count) % (ps_clk_period)) == 0) && en)
 		ps_clk = 1 ^ ps_clk;
 	
 	if(!en)
