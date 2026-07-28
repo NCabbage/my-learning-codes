@@ -12,7 +12,7 @@ bool ge_clk(int ps_clk, int count, int ps_clk_period, bool en){
 
 bool send(int up, int ps_clk_period, int count, int ps_data, int num, const char code[15], bool en){
 
-	if(up && en){
+	if((((count + ps_clk_period / 2) % (ps_clk_period * 2)) == 0) && en){
 		ps_data = code[num] - '0';
 		printf("%d %d ok\n", up, count);
 	}
