@@ -34,7 +34,7 @@ int main(int argc, char** argv){
 		else rst_n = 1;
 		cnt ++;
 /////////////////////////////////////////////变量赋值
-		if(cnt % (period_ns*1000) == 0){ 
+		if(cnt % (period_ns*500) == 0){ 
 			count ++;
 			if(count == 5) s = 1;
 			ps_clk_cnt = ps_clk;
