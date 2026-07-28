@@ -29,7 +29,7 @@ int main(int argc, char** argv){
 	int num = 0;
 	bool s = 0;
 /////////////////////////////////////////////
-	while(cnt < 100000){
+	while(cnt < 1000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
