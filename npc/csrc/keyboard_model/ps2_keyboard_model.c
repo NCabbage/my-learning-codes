@@ -14,7 +14,7 @@ bool send(int up, int ps_clk_period, int count, int ps_data, int num, const char
 
 	if(up && en){
 		ps_data = code[num] - '0';
-		printf("%d ok\n", count);
+		printf("%d %d ok\n", up, count);
 	}
 
 	if(!en)
