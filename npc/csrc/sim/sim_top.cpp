@@ -27,6 +27,7 @@ int main(int argc, char** argv){
 	bool ps_clk_cnt, ps_data_cnt;
 	int count = 0;
 	int num = 0;
+	int s = 0;
 /////////////////////////////////////////////
 	while(cnt < 100000){
 		if(cnt < 5 * period_ns * 1000) rst_n = 0;
@@ -35,12 +36,16 @@ int main(int argc, char** argv){
 /////////////////////////////////////////////变量赋值
 		if(cnt % (period_ns*1000/2) == 0){ 
 			count ++;
+			if(count == 12000) s = 1;
 			ps_clk_cnt = ps_clk;
-			ps_clk = ge_clk(ps_clk_cnt, count, 60);
+			ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
 			ps_data_cnt = ps_data;
-			if(~ps_clk && ps_clk) num ++;
-			if(num ==  11) num = 0;
-			ps_data = send(~ps_clk && ps_clk, ps_data_cnt, num, "11101110000");
+			if(~ps_clk && ps_clk && s) num ++;
+			if(num ==  11){ 
+				num = 0;
+				s = 0;
+			}
+			ps_data = send(~ps_clk && ps_clk, ps_data_cnt, num, "11101110000", s);
 			clk = 1 ^ clk;	
 			w = rand() & 0x1;
 			top->clk = clk;
