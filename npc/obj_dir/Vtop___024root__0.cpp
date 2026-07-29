@@ -26,14 +26,6 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
-    CData/*7:0*/ __Vdly__seg1;
-    __Vdly__seg1 = 0;
-    CData/*7:0*/ __VdlyMask__seg1;
-    __VdlyMask__seg1 = 0;
-    CData/*7:0*/ __Vdly__seg0;
-    __Vdly__seg0 = 0;
-    CData/*7:0*/ __VdlyMask__seg0;
-    __VdlyMask__seg0 = 0;
     CData/*2:0*/ __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
     __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync = 0;
     CData/*0:0*/ __Vdly__ready;
@@ -61,19 +53,6 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
         = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
     __VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0U;
-    if ((1U & (~ (IData)(vlSelfRef.ready)))) {
-        vlSelfRef.seg1 = 0U;
-        vlSelfRef.seg0 = 0U;
-    }
-    if (vlSelfRef.ready) {
-        __Vdly__seg1 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
-                        [(0x0000000fU & ((IData)(vlSelfRef.data) 
-                                         >> 4U))]);
-        __VdlyMask__seg1 = 0xffU;
-        __Vdly__seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
-                        [(0x0000000fU & (IData)(vlSelfRef.data))]);
-        __VdlyMask__seg0 = 0xffU;
-    }
     __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
         = ((6U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync) 
                   << 1U)) | (IData)(vlSelfRef.ps2_clk));
@@ -128,27 +107,29 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = 0U;
         vlSelfRef.overflow = 0U;
     }
-    vlSelfRef.seg1 = (((IData)(__Vdly__seg1) & (IData)(__VdlyMask__seg1)) 
-                      | ((IData)(vlSelfRef.seg1) & 
-                         (~ (IData)(__VdlyMask__seg1))));
-    __VdlyMask__seg1 = 0U;
-    vlSelfRef.seg0 = (((IData)(__Vdly__seg0) & (IData)(__VdlyMask__seg0)) 
-                      | ((IData)(vlSelfRef.seg0) & 
-                         (~ (IData)(__VdlyMask__seg0))));
-    __VdlyMask__seg0 = 0U;
+    if (vlSelfRef.ready) {
+        vlSelfRef.seg1 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
+                          [(0x0000000fU & ((IData)(vlSelfRef.data) 
+                                           >> 4U))]);
+        vlSelfRef.seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
+                          [(0x0000000fU & (IData)(vlSelfRef.data))]);
+    } else {
+        vlSelfRef.seg1 = 0U;
+        vlSelfRef.seg0 = 0U;
+    }
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
-    vlSelfRef.ready = __Vdly__ready;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
     if (__VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0) {
         vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo[__VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0] 
             = __VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
     }
+    vlSelfRef.ready = __Vdly__ready;
     vlSelfRef.data = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo
         [vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr];
 }

@@ -70,7 +70,6 @@ int main(int argc, char** argv){
 	top->ps2_clk = ps_clk;
 	top->ps2_data = ps_data;
 	top->clrn = rst_n;
-	top->nextdata_n = !s;
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
