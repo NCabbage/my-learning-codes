@@ -145,7 +145,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->overflow = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16341344440165733293ull);
     vlSelf->seg0 = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 8493502720866162066ull);
     vlSelf->seg1 = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 12479572413206868450ull);
-    vlSelf->top__DOT__rst_n = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14231290532059103644ull);
     vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer = VL_SCOPED_RAND_RESET_I(10, __VscopeHash, 4343261509521963652ull);
     for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
         vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo[__Vi0] = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 16063127741267073342ull);
