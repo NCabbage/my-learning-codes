@@ -57,14 +57,19 @@ int main(int argc, char** argv){
 				num = 0;
 				s = 0;
 			}
+
+		if(!s){
+			ps_data = 1;
+			ps_clk = 1;
+		}
 	}
 
-		clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
-		top->clk = clk;
-		top->eval();
-		top->ps2_clk = ps_clk;
-		top->ps2_data = ps_data;
-		top->clrn = s;
+	clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
+	top->clk = clk;
+	top->eval();
+	top->ps2_clk = ps_clk;
+	top->ps2_data = ps_data;
+	top->clrn = s;
 	
 
 /////////////////////////////////////////////////////////
