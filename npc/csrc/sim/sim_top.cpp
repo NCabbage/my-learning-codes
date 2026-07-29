@@ -28,7 +28,7 @@ int main(int argc, char** argv){
 	int count = 0;			//记录半个周期数
 	int num = 0;
 	bool s = 0;
-	bool nenextdata_n = 1;
+	bool nextdata_n = 1;
 	const char* code = "01010101010";
 	int ps_co = 0;				//s按下后的半周期数
 /////////////////////////////////////////////
@@ -70,7 +70,7 @@ int main(int argc, char** argv){
 	top->ps2_clk = ps_clk;
 	top->ps2_data = ps_data;
 	top->clrn = rst_n;
-	top->nenextdata_n = !s;
+	top->nextdata_n = !s;
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
