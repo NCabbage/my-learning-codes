@@ -37,7 +37,7 @@ ysyx_100022863_seg ysyx_100022863_seg_inst0(
 ysyx_100022863_seg ysyx_100022863_seg_inst1(
 
 	.clk				(clk				),
-	.rst_n			(ready			),
+	.rst_n			(~ready			),
 	.data				(data[7:4]	),
 
 	.seg				(seg1				)
