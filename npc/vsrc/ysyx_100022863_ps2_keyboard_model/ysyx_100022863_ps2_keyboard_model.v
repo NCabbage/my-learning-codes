@@ -73,7 +73,7 @@ always@(posedge clk)
 
 always@(posedge clk)
 		if(!clrn)
-			data_post = 0;
+			data_post <= 0;
 		else if(ready_post && !ready)
 			data_post <= data;
 

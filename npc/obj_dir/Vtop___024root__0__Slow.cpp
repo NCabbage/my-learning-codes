@@ -154,6 +154,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 3798688850706182072ull);
     vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 14480979310404146197ull);
     vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 1207676001407060821ull);
+    vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__data_post = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 6835170361959096893ull);
+    vlSelf->top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ready_post = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10123426806157739500ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

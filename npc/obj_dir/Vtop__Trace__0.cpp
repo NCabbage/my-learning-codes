@@ -33,18 +33,20 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
         bufp->chgCData(oldp+12,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count),4);
         bufp->chgCData(oldp+13,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync),3);
         bufp->chgBit(oldp+14,((IData)((4U == (6U & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync))))));
+        bufp->chgCData(oldp+15,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__data_post),8);
+        bufp->chgBit(oldp+16,(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ready_post));
     }
-    bufp->chgBit(oldp+15,(vlSelfRef.clk));
-    bufp->chgBit(oldp+16,(vlSelfRef.clrn));
-    bufp->chgBit(oldp+17,(vlSelfRef.ps2_clk));
-    bufp->chgBit(oldp+18,(vlSelfRef.ps2_data));
-    bufp->chgCData(oldp+19,(vlSelfRef.data),8);
-    bufp->chgBit(oldp+20,(vlSelfRef.ready));
-    bufp->chgBit(oldp+21,(vlSelfRef.overflow));
-    bufp->chgCData(oldp+22,(vlSelfRef.seg0),8);
-    bufp->chgCData(oldp+23,(vlSelfRef.seg1),8);
-    bufp->chgCData(oldp+24,((0x0000000fU & (IData)(vlSelfRef.data))),4);
-    bufp->chgCData(oldp+25,((0x0000000fU & ((IData)(vlSelfRef.data) 
+    bufp->chgBit(oldp+17,(vlSelfRef.clk));
+    bufp->chgBit(oldp+18,(vlSelfRef.clrn));
+    bufp->chgBit(oldp+19,(vlSelfRef.ps2_clk));
+    bufp->chgBit(oldp+20,(vlSelfRef.ps2_data));
+    bufp->chgCData(oldp+21,(vlSelfRef.data),8);
+    bufp->chgBit(oldp+22,(vlSelfRef.ready));
+    bufp->chgBit(oldp+23,(vlSelfRef.overflow));
+    bufp->chgCData(oldp+24,(vlSelfRef.seg0),8);
+    bufp->chgCData(oldp+25,(vlSelfRef.seg1),8);
+    bufp->chgCData(oldp+26,((0x0000000fU & (IData)(vlSelfRef.data))),4);
+    bufp->chgCData(oldp+27,((0x0000000fU & ((IData)(vlSelfRef.data) 
                                             >> 4U))),4);
 }
 
