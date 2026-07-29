@@ -4,7 +4,7 @@ module ysyx_100022863_ps2_keyboard_model(
 	input								ps2_clk		,
 	input								ps2_data	,
 
-	output							en				,
+	output	reg					en				,
 	output				[7:0]	data			,
 	output	reg					ready			,
 	output	reg					overflow	
