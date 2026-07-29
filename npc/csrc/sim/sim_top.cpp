@@ -54,7 +54,7 @@ int main(int argc, char** argv){
 			ps_data_cnt = ps_data;
 			if(num ==  11){ 
 				num = 0;
-//				s = 0;
+				s = 0;
 			}
 	}
 
