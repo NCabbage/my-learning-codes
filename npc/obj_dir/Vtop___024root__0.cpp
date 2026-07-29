@@ -130,8 +130,8 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
             = __VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
     }
     vlSelfRef.top__DOT__en = ((IData)(vlSelfRef.clrn) 
-                              && ((0xf0U != (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__data_post)) 
-                                  & (0U != (IData)(vlSelfRef.data))));
+                              && (1U & (~ ((0xf0U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__data_post)) 
+                                           | (0U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__data_post))))));
     if (vlSelfRef.clrn) {
         if (((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ready_post) 
              & (~ (IData)(vlSelfRef.ready)))) {

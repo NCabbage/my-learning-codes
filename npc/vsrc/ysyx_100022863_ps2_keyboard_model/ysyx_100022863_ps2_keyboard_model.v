@@ -64,8 +64,11 @@ always@(posedge clk)
 	else if(data_post == 8'hf0 || data_post == 8'h0) begin
 		en <= 0;
 	end
-	else begin
+	else if(date_post != 8'hf0)begin
 		en  <= 1 ;
+	end
+	else begin
+		en <= en;
 	end
 
 always@(posedge clk)
