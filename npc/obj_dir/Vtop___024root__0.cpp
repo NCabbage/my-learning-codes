@@ -19,6 +19,122 @@ bool Vtop___024root___trigger_anySet__act(const VlUnpacked<QData/*63:0*/, 1> &in
     return (0U);
 }
 
+void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_nba\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
+        {
+            // Inlined CFunc: _nba_sequent__TOP__0
+            CData/*2:0*/ __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync = 0;
+            CData/*0:0*/ __Vinline_0__nba_sequent__TOP__0___Vdly__ready;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__ready = 0;
+            CData/*2:0*/ __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr = 0;
+            CData/*3:0*/ __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = 0;
+            CData/*2:0*/ __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = 0;
+            CData/*7:0*/ __Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
+            __Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0;
+            CData/*2:0*/ __Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
+            __Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0;
+            CData/*0:0*/ __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
+            __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
+                = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__ready 
+                = vlSelfRef.ready;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
+                = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
+                = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
+                = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
+            __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0U;
+            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
+                = ((6U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync) 
+                          << 1U)) | (IData)(vlSelfRef.ps2_clk));
+            if (vlSelfRef.clrn) {
+                if ((IData)((4U == (6U & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync))))) {
+                    if ((0x0aU == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) {
+                        if ((((~ (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer)) 
+                              & (IData)(vlSelfRef.ps2_data)) 
+                             & VL_REDXOR_32((0x000001ffU 
+                                             & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
+                                                >> 1U))))) {
+                            __Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 
+                                = (0x000000ffU & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
+                                                  >> 1U));
+                            __Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 
+                                = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
+                            __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 1U;
+                            __Vinline_0__nba_sequent__TOP__0___Vdly__ready = 1U;
+                            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
+                                = (7U & ((IData)(1U) 
+                                         + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr)));
+                            vlSelfRef.overflow = ((IData)(vlSelfRef.overflow) 
+                                                  | ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr) 
+                                                     == 
+                                                     (7U 
+                                                      & ((IData)(1U) 
+                                                         + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr)))));
+                        }
+                        __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = 0U;
+                    } else {
+                        if ((9U >= (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) {
+                            vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer 
+                                = (((~ ((IData)(1U) 
+                                        << (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) 
+                                    & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer)) 
+                                   | (0x03ffU & ((IData)(vlSelfRef.ps2_data) 
+                                                 << (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))));
+                        }
+                        __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
+                            = (0x0000000fU & ((IData)(1U) 
+                                              + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count)));
+                    }
+                    if (vlSelfRef.ready) {
+                        if ((1U & (~ (IData)(vlSelfRef.nextdata_n)))) {
+                            __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
+                                = (7U & ((IData)(1U) 
+                                         + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr)));
+                            if (((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr) 
+                                 == ((IData)(1U) + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr)))) {
+                                __Vinline_0__nba_sequent__TOP__0___Vdly__ready = 0U;
+                            }
+                        }
+                    }
+                }
+            } else {
+                __Vinline_0__nba_sequent__TOP__0___Vdly__ready = 0U;
+                __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = 0U;
+                __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr = 0U;
+                __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = 0U;
+                vlSelfRef.overflow = 0U;
+            }
+            vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
+                = __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
+            vlSelfRef.ready = __Vinline_0__nba_sequent__TOP__0___Vdly__ready;
+            vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
+                = __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
+            vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
+                = __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
+            vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
+                = __Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
+            if (__Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0) {
+                vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo[__Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0] 
+                    = __Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
+            }
+            vlSelfRef.data = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo
+                [vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr];
+        }
+        vlSelfRef.__Vm_traceActivity[1U] = 1U;
+    }
+}
+
 void Vtop___024root___trigger_orInto__act_vec_vec(VlUnpacked<QData/*63:0*/, 1> &out, const VlUnpacked<QData/*63:0*/, 1> &in) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___trigger_orInto__act_vec_vec\n"); );
     // Locals
@@ -77,123 +193,7 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
     // Body
     __VnbaExecute = Vtop___024root___trigger_anySet__act(vlSelfRef.__VnbaTriggered);
     if (__VnbaExecute) {
-        {
-            // Inlined CFunc: _eval_nba
-            if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
-                {
-                    // Inlined CFunc: _nba_sequent__TOP__0
-                    CData/*2:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync = 0;
-                    CData/*0:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready = 0;
-                    CData/*2:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr = 0;
-                    CData/*3:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = 0;
-                    CData/*2:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = 0;
-                    CData/*7:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0;
-                    CData/*2:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0;
-                    CData/*0:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
-                        = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready 
-                        = vlSelfRef.ready;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
-                        = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
-                        = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
-                        = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0U;
-                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
-                        = ((6U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync) 
-                                  << 1U)) | (IData)(vlSelfRef.ps2_clk));
-                    if (vlSelfRef.clrn) {
-                        if ((IData)((4U == (6U & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync))))) {
-                            if ((0x0aU == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) {
-                                if ((((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
-                                      & (IData)(vlSelfRef.ps2_data)) 
-                                     & VL_REDXOR_32(
-                                                    (0x000001ffU 
-                                                     & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
-                                                        >> 1U))))) {
-                                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 
-                                        = (0x000000ffU 
-                                           & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
-                                              >> 1U));
-                                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 
-                                        = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
-                                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 1U;
-                                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready = 1U;
-                                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
-                                        = (7U & ((IData)(1U) 
-                                                 + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr)));
-                                    vlSelfRef.overflow 
-                                        = ((IData)(vlSelfRef.overflow) 
-                                           | ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr) 
-                                              == (7U 
-                                                  & ((IData)(1U) 
-                                                     + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr)))));
-                                }
-                                __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = 0U;
-                            } else {
-                                if ((9U >= (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) {
-                                    vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer 
-                                        = (((~ ((IData)(1U) 
-                                                << (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) 
-                                            & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer)) 
-                                           | (0x03ffU 
-                                              & ((IData)(vlSelfRef.ps2_data) 
-                                                 << (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))));
-                                }
-                                __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
-                                    = (0x0000000fU 
-                                       & ((IData)(1U) 
-                                          + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count)));
-                            }
-                            if (vlSelfRef.ready) {
-                                if ((1U & (~ (IData)(vlSelfRef.nextdata_n)))) {
-                                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
-                                        = (7U & ((IData)(1U) 
-                                                 + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr)));
-                                    if (((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr) 
-                                         == ((IData)(1U) 
-                                             + (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr)))) {
-                                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready = 0U;
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready = 0U;
-                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count = 0U;
-                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr = 0U;
-                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = 0U;
-                        vlSelfRef.overflow = 0U;
-                    }
-                    vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
-                        = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
-                    vlSelfRef.ready = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__ready;
-                    vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
-                        = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
-                    vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
-                        = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
-                    vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
-                        = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
-                    if (__Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0) {
-                        vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo[__Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0] 
-                            = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0;
-                    }
-                    vlSelfRef.data = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo
-                        [vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr];
-                }
-                vlSelfRef.__Vm_traceActivity[1U] = 1U;
-            }
-        }
+        Vtop___024root___eval_nba(vlSelf);
         Vtop___024root___trigger_clear__act(vlSelfRef.__VnbaTriggered);
     }
     return (__VnbaExecute);
