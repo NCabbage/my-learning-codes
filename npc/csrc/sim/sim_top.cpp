@@ -52,7 +52,7 @@ int main(int argc, char** argv){
 		if(s && ps_co % 30 == 0) ps_clk = 1 ^ ps_clk;
 
 			ps_data_cnt = ps_data;
-			if(num ==  11){ 
+			if(num ==  10){ 
 				num = 0;
 				s = 0;
 			}
