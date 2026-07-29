@@ -63,6 +63,8 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     __VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0U;
     if ((1U & (~ (IData)(vlSelfRef.top__DOT__rst_n)))) {
         vlSelfRef.seg1 = 0U;
+    }
+    if ((1U & (~ (IData)(vlSelfRef.ready)))) {
         vlSelfRef.seg0 = 0U;
     }
     if (vlSelfRef.top__DOT__rst_n) {
@@ -70,6 +72,8 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
                         [(0x0000000fU & ((IData)(vlSelfRef.data) 
                                          >> 4U))]);
         __VdlyMask__seg1 = 0xffU;
+    }
+    if (vlSelfRef.ready) {
         __Vdly__seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
                         [(0x0000000fU & (IData)(vlSelfRef.data))]);
         __VdlyMask__seg0 = 0xffU;
@@ -138,11 +142,11 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     __VdlyMask__seg0 = 0U;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
-    vlSelfRef.ready = __Vdly__ready;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
+    vlSelfRef.ready = __Vdly__ready;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
     if (__VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0) {
