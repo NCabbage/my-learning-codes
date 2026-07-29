@@ -47,7 +47,7 @@ int main(int argc, char** argv){
 				ps_co ++;
 			}
 
-		if(ps_co % 60 == 0 && s) num++;
+		if(ps_co % 120 == 0 && s) num++;
 
 		if(s && ps_co % 60 == 0) ps_clk = 1 ^ ps_clk;
 
