@@ -41,6 +41,11 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     bufp->chgCData(oldp+19,(vlSelfRef.data),8);
     bufp->chgBit(oldp+20,(vlSelfRef.ready));
     bufp->chgBit(oldp+21,(vlSelfRef.overflow));
+    bufp->chgCData(oldp+22,(vlSelfRef.seg0),8);
+    bufp->chgCData(oldp+23,(vlSelfRef.seg1),8);
+    bufp->chgCData(oldp+24,((0x0000000fU & (IData)(vlSelfRef.data))),4);
+    bufp->chgCData(oldp+25,((0x0000000fU & ((IData)(vlSelfRef.data) 
+                                            >> 4U))),4);
 }
 
 void Vtop___024root__trace_chg_dtype____0(Vtop___024root* vlSelf, VerilatedFst::Buffer* bufp, uint32_t offset, const VlUnpacked<CData/*7:0*/, 8>& __VdtypeVar) {
