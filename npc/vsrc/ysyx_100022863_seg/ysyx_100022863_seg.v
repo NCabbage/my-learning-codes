@@ -1,10 +1,10 @@
 module ysyx_100022863_seg(
 
-	input					clk		,
-	input					rst_n	,
-	input		[3:0]	data	,
+	input							clk		,
+	input							rst_n	,
+	input				[3:0]	data	,
 
-	output	[7:0]	seg
+	output	reg	[7:0]	seg
 );
 
 always@(posedge clk)
