@@ -30,7 +30,7 @@ int main(int argc, char** argv){
 	bool s = 0;
 	bool nenextdata_n = 1;
 	const char* code = "11101110000";
-	int ps_co = 0;
+	int ps_co = 0;				//s按下后的半周期数
 /////////////////////////////////////////////
 	while(cnt < 10000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
@@ -49,7 +49,7 @@ int main(int argc, char** argv){
 
 		if(ps_co % 60 == 0 && s) num++;
 
-		if(s && ps_co % 30 == 0) ps_clk = 1 ^ ps_clk;
+		if(s && ps_co == 0) ps_clk = 1 ^ ps_clk;
 
 			ps_data_cnt = ps_data;
 			if(num ==  10){ 
