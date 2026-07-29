@@ -61,11 +61,11 @@ always@(posedge clk)
 	if(!clrn)begin
 		en <= 0;
 	end
-	else if(data_post != 8'hf0 && data != 8'h0) begin
-		en <= 1;
+	else if(data_post == 8'hf0 || data_post == 8'h0) begin
+		en <= 0;
 	end
 	else begin
-		en  <= 0;
+		en  <= 1 ;
 	end
 
 always@(posedge clk)
