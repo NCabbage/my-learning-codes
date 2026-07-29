@@ -57,13 +57,13 @@ end
 
 always@(posedge clk)
 	if(!clrn)begin
-		en = 0;
+		en <= 0;
 	end
 	else if(data != 8'hF0 && data != 0) begin
-		en = 1;
+		en <= 1;
 	end
 	else begin
-		en  = 0;
+		en  <= 0;
 	end
 
 assign data = fifo[r_ptr];
