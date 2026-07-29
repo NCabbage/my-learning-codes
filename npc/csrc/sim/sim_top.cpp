@@ -29,6 +29,8 @@ int main(int argc, char** argv){
 	int num = 0;
 	bool s = 0;
 	bool nenextdata_n = 1;
+	const char code = "11101110000";
+	int ps_co = 0;
 /////////////////////////////////////////////
 	while(cnt < 10000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
@@ -39,14 +41,20 @@ int main(int argc, char** argv){
 		if(cnt % (period_ns*500) == 0){ 
 			count ++;
 			if(count == 5) s = 1;
-			ps_clk = ge_clk(ps_clk_cnt, count, 60, s);
+			if(s == 1){
+				ps_data = code[num];
+				ps_co ++;
+			}
+
+		if(ps_co % 60 == 0) num++;
+
+		if(s && ps_co % 30 == 0) ps_clk = 1 ^ ps_clk;
+
 			ps_data_cnt = ps_data;
 			if(num ==  11){ 
 				num = 0;
 //				s = 0;
 			}
-			ps_data = send(!ps_clk && ps_clk_cnt, 60, count, ps_data, num, "11101110000", s);
-			if(ps_clk && !ps_clk_cnt && s) num ++;
 	}
 
 		clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
