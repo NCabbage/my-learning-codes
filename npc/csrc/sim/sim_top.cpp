@@ -43,7 +43,7 @@ int main(int argc, char** argv){
 			if(count == 5) s = 1;
 			if(s == 1){
 				ps_data = code[num] - '0';
-				printf("%d\n", ps_data);
+				printf("%d %d\n", ps_data, num);
 				ps_co ++;
 			}
 
