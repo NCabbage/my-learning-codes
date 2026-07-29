@@ -3,7 +3,6 @@ module ysyx_100022863_ps2_keyboard_model(
 	input								clrn			,
 	input								ps2_clk		,
 	input								ps2_data	,
-	input								nextdata_n,
 
 	output				[7:0]	data			,
 	output	reg					ready			,
@@ -48,11 +47,9 @@ always@(posedge clk) begin
 		end
 	
 		if(ready) begin
-//			if(!nextdata_n) begin
 				r_ptr <= r_ptr + 3'b1;
 				if(w_ptr == (r_ptr + 1))
 					ready <= 1'b0;
-//			end
 		end
 	end
 end

@@ -254,8 +254,5 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
     if (VL_UNLIKELY(((vlSelfRef.ps2_data & 0xfeU)))) {
         Verilated::overWidthError("ps2_data");
     }
-    if (VL_UNLIKELY(((vlSelfRef.nextdata_n & 0xfeU)))) {
-        Verilated::overWidthError("nextdata_n");
-    }
 }
 #endif  // VL_DEBUG

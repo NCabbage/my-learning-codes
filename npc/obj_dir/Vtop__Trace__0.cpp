@@ -37,14 +37,13 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     bufp->chgBit(oldp+15,(vlSelfRef.clrn));
     bufp->chgBit(oldp+16,(vlSelfRef.ps2_clk));
     bufp->chgBit(oldp+17,(vlSelfRef.ps2_data));
-    bufp->chgBit(oldp+18,(vlSelfRef.nextdata_n));
-    bufp->chgCData(oldp+19,(vlSelfRef.data),8);
-    bufp->chgBit(oldp+20,(vlSelfRef.ready));
-    bufp->chgBit(oldp+21,(vlSelfRef.overflow));
-    bufp->chgCData(oldp+22,(vlSelfRef.seg0),8);
-    bufp->chgCData(oldp+23,(vlSelfRef.seg1),8);
-    bufp->chgCData(oldp+24,((0x0000000fU & (IData)(vlSelfRef.data))),4);
-    bufp->chgCData(oldp+25,((0x0000000fU & ((IData)(vlSelfRef.data) 
+    bufp->chgCData(oldp+18,(vlSelfRef.data),8);
+    bufp->chgBit(oldp+19,(vlSelfRef.ready));
+    bufp->chgBit(oldp+20,(vlSelfRef.overflow));
+    bufp->chgCData(oldp+21,(vlSelfRef.seg0),8);
+    bufp->chgCData(oldp+22,(vlSelfRef.seg1),8);
+    bufp->chgCData(oldp+23,((0x0000000fU & (IData)(vlSelfRef.data))),4);
+    bufp->chgCData(oldp+24,((0x0000000fU & ((IData)(vlSelfRef.data) 
                                             >> 4U))),4);
 }
 

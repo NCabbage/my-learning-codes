@@ -14,7 +14,6 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , clrn{vlSymsp->TOP.clrn}
     , ps2_clk{vlSymsp->TOP.ps2_clk}
     , ps2_data{vlSymsp->TOP.ps2_data}
-    , nextdata_n{vlSymsp->TOP.nextdata_n}
     , data{vlSymsp->TOP.data}
     , ready{vlSymsp->TOP.ready}
     , overflow{vlSymsp->TOP.overflow}
