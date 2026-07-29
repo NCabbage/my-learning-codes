@@ -114,7 +114,7 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                                   << 1U)) | (IData)(vlSelfRef.ps2_clk));
                     if (vlSelfRef.clrn) {
                         if ((IData)((4U == (6U & (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync))))) {
-                            if ((2U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) {
+                            if ((0x0aU == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count))) {
                                 if ((((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__buffer) 
                                       & (IData)(vlSelfRef.ps2_data)) 
                                      & VL_REDXOR_32(
