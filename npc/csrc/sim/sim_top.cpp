@@ -49,7 +49,7 @@ int main(int argc, char** argv){
 
 		if(ps_co % 60 == 0 && s) num++;
 
-		if(s && ps_co == 0) ps_clk = 1 ^ ps_clk;
+		if(s && ps_co % 60 == 0) ps_clk = 1 ^ ps_clk;
 
 			ps_data_cnt = ps_data;
 			if(num ==  10){ 
