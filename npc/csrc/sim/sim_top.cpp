@@ -69,8 +69,8 @@ int main(int argc, char** argv){
 	top->eval();
 	top->ps2_clk = ps_clk;
 	top->ps2_data = ps_data;
-	top->clrn = s;
-	
+	top->clrn = rst_n;
+	top->nenextdata_n = !s;
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
