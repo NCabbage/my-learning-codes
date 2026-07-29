@@ -68,7 +68,7 @@ always@(posedge clk)
 		en  <= 0;
 	end
 
-always@(posedge)
+always@(posedge clk)
 	ready_post <= ready;
 
 always@(posedge clk)
