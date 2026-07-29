@@ -17,6 +17,8 @@ reg		[2:0]		w_ptr,  r_ptr	;
 reg		[3:0]		count					;
 reg		[2:0]		ps2_clk_sync	;
 wire					sampling			;
+reg		[7:0]		data_post			;
+reg						ready_post		;
 
 always@(posedge clk) begin
 	ps2_clk_sync <= {ps2_clk_sync[1:0], ps2_clk};
@@ -59,12 +61,21 @@ always@(posedge clk)
 	if(!clrn)begin
 		en <= 0;
 	end
-	else if(data != 8'hF0 && data != 0) begin
+	else if(data_post != 8'hf0 && data != 8'h0) begin
 		en <= 1;
 	end
 	else begin
 		en  <= 0;
 	end
+
+always@(posedge)
+	ready_post <= ready;
+
+always@(posedge clk)
+		if(!clrn)
+			data_post = 0;
+		else if(ready_post && !ready)
+			data_post <= data;
 
 assign data = fifo[r_ptr];
 
