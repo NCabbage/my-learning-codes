@@ -9,7 +9,7 @@ module top(
 	output							ready			,
 	output							overflow	,
 	output			[7:0]		seg0			,
-	output			[7:0]		seg1			,
+	output			[7:0]		seg1	
 
 );
 
