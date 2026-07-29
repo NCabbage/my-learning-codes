@@ -42,17 +42,19 @@ int main(int argc, char** argv){
 			count ++;
 			if(count == 5) s = 1;
 			if(s == 1){
-				ps_data = code[num] - '0';
-				printf("%d %d\n", ps_data, num);
 				ps_co ++;
 			}
 
-		if(ps_co % 120 == 0 && s) num++;
-
+		if(ps_co % 120 == 0 && s){
+			ps_data = code[num] - '0';
+			printf("%d %d\n", code[num], num);
+		
+			num++;
+		}
 		if(s && ps_co % 60 == 0) ps_clk = 1 ^ ps_clk;
 
 			ps_data_cnt = ps_data;
-			if(num ==  10){ 
+			if(num ==  11){ 
 				num = 0;
 				s = 0;
 			}
