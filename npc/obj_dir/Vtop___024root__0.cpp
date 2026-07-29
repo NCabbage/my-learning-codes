@@ -26,6 +26,14 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
+    CData/*7:0*/ __Vdly__seg1;
+    __Vdly__seg1 = 0;
+    CData/*7:0*/ __VdlyMask__seg1;
+    __VdlyMask__seg1 = 0;
+    CData/*7:0*/ __Vdly__seg0;
+    __Vdly__seg0 = 0;
+    CData/*7:0*/ __VdlyMask__seg0;
+    __VdlyMask__seg0 = 0;
     CData/*2:0*/ __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
     __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync = 0;
     CData/*0:0*/ __Vdly__ready;
@@ -53,15 +61,18 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr 
         = vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
     __VdlySet__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__fifo__v0 = 0U;
-    if (vlSelfRef.top__DOT__rst_n) {
-        vlSelfRef.seg1 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
-                          [(0x0000000fU & ((IData)(vlSelfRef.data) 
-                                           >> 4U))]);
-        vlSelfRef.seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
-                          [(0x0000000fU & (IData)(vlSelfRef.data))]);
-    } else {
+    if ((1U & (~ (IData)(vlSelfRef.top__DOT__rst_n)))) {
         vlSelfRef.seg1 = 0U;
         vlSelfRef.seg0 = 0U;
+    }
+    if (vlSelfRef.top__DOT__rst_n) {
+        __Vdly__seg1 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
+                        [(0x0000000fU & ((IData)(vlSelfRef.data) 
+                                         >> 4U))]);
+        __VdlyMask__seg1 = 0xffU;
+        __Vdly__seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
+                        [(0x0000000fU & (IData)(vlSelfRef.data))]);
+        __VdlyMask__seg0 = 0xffU;
     }
     __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
         = ((6U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync) 
@@ -117,6 +128,14 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr = 0U;
         vlSelfRef.overflow = 0U;
     }
+    vlSelfRef.seg1 = (((IData)(__Vdly__seg1) & (IData)(__VdlyMask__seg1)) 
+                      | ((IData)(vlSelfRef.seg1) & 
+                         (~ (IData)(__VdlyMask__seg1))));
+    __VdlyMask__seg1 = 0U;
+    vlSelfRef.seg0 = (((IData)(__Vdly__seg0) & (IData)(__VdlyMask__seg0)) 
+                      | ((IData)(vlSelfRef.seg0) & 
+                         (~ (IData)(__VdlyMask__seg0))));
+    __VdlyMask__seg0 = 0U;
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 
         = __Vdly__top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync;
     vlSelfRef.ready = __Vdly__ready;

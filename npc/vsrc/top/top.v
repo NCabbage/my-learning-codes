@@ -27,7 +27,7 @@ ysyx_100022863_ps2_keyboard_model ysyx_100022863_ps2_keyboard_model_inst(
 ysyx_100022863_seg ysyx_100022863_seg_inst0(
 
 	.clk				(clk				),
-	.rst_n			(rst_n			),
+	.rst_n			(ready			),
 	.data				(data[3:0]	),
 
 	.seg				(seg0				)
