@@ -1,4 +1,4 @@
-moduel ysyx_100022863_seg(
+module ysyx_100022863_seg(
 
 	input					clk		,
 	input					rst_n	,
@@ -29,6 +29,8 @@ always@(posedge clk)
 			4'hd:seg = 8'ha1;
 			4'he:seg = 8'h86;
 			4'hf:seg = 8'h8e;
+			default	:
+				seg = 0;
 	  endcase
 	end
 endmodule
