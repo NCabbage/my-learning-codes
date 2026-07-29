@@ -19,7 +19,7 @@ bool Vtop___024root___trigger_anySet__act(const VlUnpacked<QData/*63:0*/, 1> &in
     return (0U);
 }
 
-extern const VlWide<16>/*511:0*/ Vtop__ConstPool__CONST_h864aafc2_0;
+extern const VlWide<16>/*511:0*/ Vtop__ConstPool__CONST_h14e9ccf2_0;
 
 void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__0\n"); );
@@ -108,13 +108,13 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelfRef.overflow = 0U;
     }
     if (vlSelfRef.ready) {
-        vlSelfRef.seg1 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
-                          [(0x0000000fU & ((IData)(vlSelfRef.data) 
-                                           >> 4U))]);
-        vlSelfRef.seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h864aafc2_0
+        vlSelfRef.seg1 = 0U;
+        vlSelfRef.seg0 = (0x000000ffU & Vtop__ConstPool__CONST_h14e9ccf2_0
                           [(0x0000000fU & (IData)(vlSelfRef.data))]);
     } else {
-        vlSelfRef.seg1 = 0U;
+        vlSelfRef.seg1 = (0x000000ffU & Vtop__ConstPool__CONST_h14e9ccf2_0
+                          [(0x0000000fU & ((IData)(vlSelfRef.data) 
+                                           >> 4U))]);
         vlSelfRef.seg0 = 0U;
     }
     vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ps2_clk_sync 

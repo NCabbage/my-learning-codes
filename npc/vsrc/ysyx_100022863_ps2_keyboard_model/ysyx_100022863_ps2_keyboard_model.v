@@ -4,6 +4,7 @@ module ysyx_100022863_ps2_keyboard_model(
 	input								ps2_clk		,
 	input								ps2_data	,
 
+	output							en				,
 	output				[7:0]	data			,
 	output	reg					ready			,
 	output	reg					overflow	
@@ -53,6 +54,17 @@ always@(posedge clk) begin
 		end
 	end
 end
+
+always@(posedge clk)
+	if(!clrn)begin
+		en = 0;
+	end
+	else if(data != 8'hF0 && data != 0) begin
+		en = 1;
+	end
+	else begin
+		en  = 0;
+	end
 
 assign data = fifo[r_ptr];
 

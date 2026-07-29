@@ -12,6 +12,8 @@ module top(
 
 );
 
+wire		en;
+
 ysyx_100022863_ps2_keyboard_model ysyx_100022863_ps2_keyboard_model_inst(
 
 	.clk				(clk				),	 
@@ -19,6 +21,7 @@ ysyx_100022863_ps2_keyboard_model ysyx_100022863_ps2_keyboard_model_inst(
 	.ps2_clk		(ps2_clk		),
 	.ps2_data		(ps2_data		),
 
+	.en					(en					),
 	.data				(data				),
 	.ready			(ready			),
 	.overflow		(overflow		)
@@ -27,7 +30,7 @@ ysyx_100022863_ps2_keyboard_model ysyx_100022863_ps2_keyboard_model_inst(
 ysyx_100022863_seg ysyx_100022863_seg_inst0(
 
 	.clk				(clk				),
-	.rst_n			(ready			),
+	.rst_n			(en					),
 	.data				(data[3:0]	),
 
 	.seg				(seg0				)
@@ -37,7 +40,7 @@ ysyx_100022863_seg ysyx_100022863_seg_inst0(
 ysyx_100022863_seg ysyx_100022863_seg_inst1(
 
 	.clk				(clk				),
-	.rst_n			(~ready			),
+	.rst_n			(en					),
 	.data				(data[7:4]	),
 
 	.seg				(seg1				)

@@ -59,8 +59,8 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     VL_TRACE_POP_PREFIX(tracep);
     VL_TRACE_PUSH_PREFIX(tracep, "ysyx_100022863_seg_inst1", VerilatedTracePrefixType::SCOPE_MODULE, 0, 0);
     VL_TRACE_DECL_BIT(tracep,c+14,0,"clk",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BIT(tracep,c+19,0,"rst_n",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
-    VL_TRACE_DECL_BUS(tracep,c+24,0,"data",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 3,0);
+    VL_TRACE_DECL_BIT(tracep,c+24,0,"rst_n",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC);
+    VL_TRACE_DECL_BUS(tracep,c+25,0,"data",-1, VerilatedTraceSigDirection::INPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 3,0);
     VL_TRACE_DECL_BUS(tracep,c+22,0,"seg",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 7,0);
     VL_TRACE_POP_PREFIX(tracep);
     VL_TRACE_POP_PREFIX(tracep);
@@ -154,7 +154,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
     bufp->fullCData(oldp+21,(vlSelfRef.seg0),8);
     bufp->fullCData(oldp+22,(vlSelfRef.seg1),8);
     bufp->fullCData(oldp+23,((0x0000000fU & (IData)(vlSelfRef.data))),4);
-    bufp->fullCData(oldp+24,((0x0000000fU & ((IData)(vlSelfRef.data) 
+    bufp->fullBit(oldp+24,((1U & (~ (IData)(vlSelfRef.ready)))));
+    bufp->fullCData(oldp+25,((0x0000000fU & ((IData)(vlSelfRef.data) 
                                              >> 4U))),4);
 }
 
