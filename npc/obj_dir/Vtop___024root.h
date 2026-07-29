@@ -24,7 +24,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VL_OUT8(seg0,7,0);
     VL_OUT8(seg1,7,0);
     CData/*0:0*/ top__DOT__rst_n;
-    CData/*0:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__nextdata_n;
     CData/*2:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__w_ptr;
     CData/*2:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__r_ptr;
     CData/*3:0*/ top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__count;
