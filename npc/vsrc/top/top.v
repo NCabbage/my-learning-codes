@@ -13,7 +13,12 @@ module top(
 
 );
 
-wire		clkout;
+wire					clkout;
+reg		[639:0]		mem	[0:479];
+
+initial begin
+	$readmemh("/home/cappage/ysyx-workbench/npc/image/image.hex", mem);
+end
 
 ysyx_100022863_clkgen 
 #(25000000)
@@ -30,7 +35,7 @@ ysyx_100022863_VGA ysyx_100022863_VGA_inst(
 
 	.pclk				(clkout			),
 	.rst_n			(rst_n			),
-	.vga_data		(24'h76a		),
+	.vga_data		(mem[v_addr * 640 + h_addr]),
 
 	.hsync			(hsync			),
 	.vsync			(vsync			),
