@@ -114,8 +114,6 @@ always@(*)
 			IDLE : 
 				if(data != 0 && data != 8'hF0 && ready_up)
 					next_state = A;
-				else if(data == 8'hF0 && ready_up)
-					next_state = GOT_F0;
 				else
 					next_state = IDLE;
 
@@ -125,7 +123,7 @@ always@(*)
 				else if(data != 0 && data != 8'hF0 && ready_up)
 					next_state = A;
 				else
-					next_state = IDLE;
+					next_state = A;
 
 			GOT_F0 :
 				if(data != 0 && data != 8'hF0 && ready_up)
