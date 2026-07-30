@@ -33,7 +33,7 @@ int main(int argc, char** argv){
 	const char* code1 = "00000111111";
 	int ps_co = 0;				//s按下后的半周期数
 /////////////////////////////////////////////
-	while(cnt < 10000000){
+	while(cnt < 20000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
