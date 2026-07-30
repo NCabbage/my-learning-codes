@@ -1,4 +1,4 @@
-module top(
+module keyboard_top(			//记得改名子
 	input								clk				,
 	input								clrn			,
 	input								ps2_clk		,
