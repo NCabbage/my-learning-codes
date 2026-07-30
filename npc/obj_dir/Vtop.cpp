@@ -11,20 +11,15 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vtop__Syms(contextp(), _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
-    , clrn{vlSymsp->TOP.clrn}
-    , ps2_clk{vlSymsp->TOP.ps2_clk}
-    , ps2_data{vlSymsp->TOP.ps2_data}
-    , data{vlSymsp->TOP.data}
-    , ready{vlSymsp->TOP.ready}
-    , overflow{vlSymsp->TOP.overflow}
-    , seg0{vlSymsp->TOP.seg0}
-    , seg1{vlSymsp->TOP.seg1}
-    , seg2{vlSymsp->TOP.seg2}
-    , seg3{vlSymsp->TOP.seg3}
-    , seg4{vlSymsp->TOP.seg4}
-    , seg5{vlSymsp->TOP.seg5}
-    , ascll{vlSymsp->TOP.ascll}
-    , times{vlSymsp->TOP.times}
+    , rst_n{vlSymsp->TOP.rst_n}
+    , hsync{vlSymsp->TOP.hsync}
+    , vsync{vlSymsp->TOP.vsync}
+    , valid{vlSymsp->TOP.valid}
+    , vga_r{vlSymsp->TOP.vga_r}
+    , vga_g{vlSymsp->TOP.vga_g}
+    , vga_b{vlSymsp->TOP.vga_b}
+    , h_addr{vlSymsp->TOP.h_addr}
+    , v_addr{vlSymsp->TOP.v_addr}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
@@ -150,6 +145,6 @@ VL_ATTR_COLD void Vtop::traceBaseModel(VerilatedTraceBaseC* tfp, int levels, int
             " use --trace-fst with VerilatedFst object, and --trace-vcd with VerilatedVcd object");
     }
     stfp->spTrace()->addModel(this);
-    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 43);
+    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 30);
     Vtop___024root__trace_register(&(vlSymsp->TOP), stfp->spTrace());
 }
