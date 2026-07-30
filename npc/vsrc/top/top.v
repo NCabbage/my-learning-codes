@@ -14,7 +14,7 @@ module top(
 );
 
 wire					clkout;
-reg		[639:0]		mem	[0:479];
+reg		[23:0]		mem	[0:640*480-1];
 
 initial begin
 	$readmemh("/home/cappage/ysyx-workbench/npc/image/image.hex", mem);
