@@ -167,7 +167,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__act(vlSelfRef.__VnbaTriggered, "nba"s);
 #endif
-            VL_FATAL_MT("/home/cappage/ysyx-workbench/npc/vsrc/top/top/top.v", 1, "", "DIDNOTCONVERGE: NBA region did not converge after '--converge-limit' of 10000 tries");
+            VL_FATAL_MT("/home/cappage/ysyx-workbench/npc/vsrc/top/top.v", 1, "", "DIDNOTCONVERGE: NBA region did not converge after '--converge-limit' of 10000 tries");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         vlSelfRef.__VactIterCount = 0U;
@@ -176,7 +176,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__act(vlSelfRef.__VactTriggered, "act"s);
 #endif
-                VL_FATAL_MT("/home/cappage/ysyx-workbench/npc/vsrc/top/top/top.v", 1, "", "DIDNOTCONVERGE: Active region did not converge after '--converge-limit' of 10000 tries");
+                VL_FATAL_MT("/home/cappage/ysyx-workbench/npc/vsrc/top/top.v", 1, "", "DIDNOTCONVERGE: Active region did not converge after '--converge-limit' of 10000 tries");
             }
             vlSelfRef.__VactIterCount = ((IData)(1U) 
                                          + vlSelfRef.__VactIterCount);
