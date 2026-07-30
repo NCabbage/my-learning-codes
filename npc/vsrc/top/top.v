@@ -1,96 +1,45 @@
 module top(
-	input								clk				,
-	input								clrn			,
-	input								ps2_clk		,
-	input								ps2_data	,
-
-	output			[7:0]		data			,
-	output							ready			,
-	output							overflow	,
-	output			[7:0]		seg0			,
-	output			[7:0]		seg1			,
-	output			[7:0]		seg2			,
-	output			[7:0]		seg3			,
-	output			[7:0]		seg4			,
-	output			[7:0]		seg5			,
-	output      [7:0]		ascll     ,
-	output  reg [7:0]		times
-);
-
-wire		en;
-
-ysyx_100022863_ps2_keyboard_model ysyx_100022863_ps2_keyboard_model_inst(
-
-	.clk				(clk				),	 
-	.clrn				(clrn				),
-	.ps2_clk		(ps2_clk		),
-	.ps2_data		(ps2_data		),
-
-	.en					(en					),
-	.data				(data				),
-	.ready			(ready			),
-	.overflow		(overflow		),
-	.ascll			(ascll			),
-	.times			(times			)
-);
-
-ysyx_100022863_seg ysyx_100022863_seg_inst0(
-
-	.clk				(clk				),
-	.rst_n			(en					),
-	.data				(data[3:0]	),
-
-	.seg				(seg0				)
+	input							clk			,				//25M
+	input							rst_n			,
+	
+	output						hsync			,
+	output						vsync			,
+	output						valid			,
+	output		[11:0]	h_addr		,
+	output		[11:0]	v_addr		,
+	output		[7:0]		vga_r			,
+	output		[7:0]		vga_g			,
+	output		[7:0]		vga_b
 
 );
 
-ysyx_100022863_seg ysyx_100022863_seg_inst1(
+wire		clkout;
 
-	.clk				(clk				),
-	.rst_n			(en					),
-	.data				(data[7:4]	),
+ysyx_100022863_clkgen 
+#(25000000)
+ysyx_100022863_clkgen_inst(
 
-	.seg				(seg1				)
+	.clkin		(clk		),
+	.rst_n		(rst_n	),
+	.clken		(1'b1		),
 
+	.clkout		(clkout	)
 );
 
-ysyx_100022863_seg ysyx_100022863_seg_inst2(
+ysyx_100022863_VGA ysyx_100022863_VGA_inst(
 
-	.clk				(clk				),
-	.rst_n			(en					),
-	.data				(ascll[3:0]	),
+	.pclk				(clkout			),
+	.rst_n			(rst_n			),
+	.vga_data		(24'h76a		),
 
-	.seg				(seg2				)
-
-);
-
-ysyx_100022863_seg ysyx_100022863_seg_inst3(
-
-	.clk				(clk				),
-	.rst_n			(en					),
-	.data				(ascll[7:4]	),
-
-	.seg				(seg3				)
-
-);
-
-ysyx_100022863_seg ysyx_100022863_seg_inst4(
-
-	.clk				(clk				),
-	.rst_n			(clrn				),
-	.data				(times[3:0]	),
-
-	.seg				(seg4				)
-
-);
-
-ysyx_100022863_seg ysyx_100022863_seg_inst5(
-
-	.clk				(clk				),
-	.rst_n			(clrn				),
-	.data				(times[7:4]	),
-
-	.seg				(seg5				)
+	.hsync			(hsync			),
+	.vsync			(vsync			),
+	.valid			(valid			),
+	.h_addr			(h_addr			),
+	.v_addr			(v_addr			),
+	.vga_r			(vga_r			),
+	.vga_g			(vga_g			),
+	.vga_b			(vga_b			)
 
 );
 
