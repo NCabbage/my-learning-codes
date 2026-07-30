@@ -9,7 +9,7 @@ module ysyx_100022863_seg(
 
 always@(posedge clk)
 	if(!rst_n) begin
-		seg <= 0;
+		seg <= 8'hff;
 	end
 	else begin
 		case(data)

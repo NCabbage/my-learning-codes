@@ -27,9 +27,10 @@ int main(int argc, char** argv){
 	bool ps_clk_cnt, ps_data_cnt;
 	int count = 0;			//记录半个周期数
 	int num = 0;
-	bool s = 0;
+	int s = 0;
 	bool nextdata_n = 1;
 	const char* code = "01000101111";
+	const char* code = "00000111111";
 	int ps_co = 0;				//s按下后的半周期数
 /////////////////////////////////////////////
 	while(cnt < 10000000){
@@ -41,12 +42,19 @@ int main(int argc, char** argv){
 		if(cnt % (period_ns*500) == 0){ 
 			count ++;
 			if(count == 5) s = 1;
+			if(count == 1500){
+			 	s = 2;
+				ps_co = 0;
+			}
 			if(s == 1){
 				ps_data = code[num] - '0';
 				printf("%d %d\n", code[num], num);
 				ps_co ++;
+			}else if(s == 2){
+				ps_data = code1[num] - '0';
+				ps_co ++;
 			}
-
+				
 		if(ps_co % 120 == 0 && s){
 			num++;
 		}
