@@ -21,9 +21,9 @@ VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
     // Body
     {
         // Inlined CFunc: _eval_initial__TOP
-        vlSelfRef.vga_r = 0x6aU;
-        vlSelfRef.vga_g = 7U;
-        vlSelfRef.vga_b = 0U;
+        VL_READMEM_N(true, 640, 480, 0, "/home/cappage/ysyx-workbench/npc/image/image.hex"s
+                     ,  &(vlSelfRef.top__DOT__mem), 0
+                     , ~0ULL);
     }
 }
 
@@ -90,6 +90,87 @@ VL_ATTR_COLD bool Vtop___024root___trigger_anySet__stl(const VlUnpacked<QData/*6
     return (0U);
 }
 
+extern const VlWide<20>/*639:0*/ Vtop__ConstPool__CONST_h7ca4bd95_0;
+
+VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___stl_sequent__TOP__0\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Locals
+    SData/*8:0*/ __VdfgRegularize_h6e95ff9d_0_1;
+    __VdfgRegularize_h6e95ff9d_0_1 = 0;
+    // Body
+    vlSelfRef.hsync = (0x0060U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt));
+    vlSelfRef.vsync = (2U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt));
+    vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid 
+        = ((0x0090U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt)) 
+           & (0x0310U >= (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt)));
+    vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid 
+        = ((0x0023U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt)) 
+           & (0x009bU >= (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt)));
+    vlSelfRef.h_addr = (0x00000fffU & (((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt) 
+                                        - (IData)(0x0145U)) 
+                                       & (- (IData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid)))));
+    vlSelfRef.valid = ((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid) 
+                       & (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid));
+    vlSelfRef.v_addr = (0x00000fffU & (((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt) 
+                                        - (IData)(0x0036U)) 
+                                       & (- (IData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid)))));
+    __VdfgRegularize_h6e95ff9d_0_1 = (0x000001ffU & 
+                                      (((IData)(0x00000280U) 
+                                        * (IData)(vlSelfRef.v_addr)) 
+                                       + (IData)(vlSelfRef.h_addr)));
+    if ((0x01dfU >= (IData)(__VdfgRegularize_h6e95ff9d_0_1))) {
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[0U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][0U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[1U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][1U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[2U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][2U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[3U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][3U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[4U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][4U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[5U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][5U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[6U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][6U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[7U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][7U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[8U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][8U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[9U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][9U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[10U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][10U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[11U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][11U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[12U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][12U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[13U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][13U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[14U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][14U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[15U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][15U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[16U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][16U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[17U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][17U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[18U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][18U];
+        vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[19U] 
+            = vlSelfRef.top__DOT__mem[__VdfgRegularize_h6e95ff9d_0_1][19U];
+    } else {
+        VL_ASSIGN_W(640, vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0, Vtop__ConstPool__CONST_h7ca4bd95_0);
+    }
+    vlSelfRef.vga_r = (0x000000ffU & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[0U]);
+    vlSelfRef.vga_g = (0x000000ffU & (vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[0U] 
+                                      >> 8U));
+    vlSelfRef.vga_b = (0x000000ffU & (vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[0U] 
+                                      >> 0x00000010U));
+}
+
 VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_phase__stl\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -113,27 +194,7 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
         {
             // Inlined CFunc: _eval_stl
             if ((1ULL & vlSelfRef.__VstlTriggered[0U])) {
-                {
-                    // Inlined CFunc: _stl_sequent__TOP__0
-                    vlSelfRef.hsync = (0x0060U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt));
-                    vlSelfRef.vsync = (2U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt));
-                    vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid 
-                        = ((0x0090U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt)) 
-                           & (0x0310U >= (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt)));
-                    vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid 
-                        = ((0x0023U < (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt)) 
-                           & (0x009bU >= (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt)));
-                    vlSelfRef.h_addr = (0x00000fffU 
-                                        & (((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt) 
-                                            - (IData)(0x0145U)) 
-                                           & (- (IData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid)))));
-                    vlSelfRef.valid = ((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid) 
-                                       & (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid));
-                    vlSelfRef.v_addr = (0x00000fffU 
-                                        & (((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt) 
-                                            - (IData)(0x0036U)) 
-                                           & (- (IData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid)))));
-                }
+                Vtop___024root___stl_sequent__TOP__0(vlSelf);
                 {
                     // Inlined CFunc: __Vm_traceActivitySetAll
                     vlSelfRef.__Vm_traceActivity[0U] = 1U;
@@ -176,18 +237,19 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->valid = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4944192500720994163ull);
     vlSelf->h_addr = VL_SCOPED_RAND_RESET_I(12, __VscopeHash, 8809760890132780221ull);
     vlSelf->v_addr = VL_SCOPED_RAND_RESET_I(12, __VscopeHash, 4595446588323432923ull);
-    vlSelf->vga_r = 106U;
-    ;
-    vlSelf->vga_g = 7U;
-    ;
-    vlSelf->vga_b = 0U;
-    ;
+    vlSelf->vga_r = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 2055607138462276192ull);
+    vlSelf->vga_g = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 5773750216550251743ull);
+    vlSelf->vga_b = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 17771436561197612375ull);
     vlSelf->top__DOT__clkout = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10056611469490561674ull);
+    for (int __Vi0 = 0; __Vi0 < 480; ++__Vi0) {
+        VL_SCOPED_RAND_RESET_W(640, vlSelf->top__DOT__mem[__Vi0], __VscopeHash, 14643669522875338024ull);
+    }
     vlSelf->top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11012301591435163990ull);
     vlSelf->top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14795769210308125405ull);
     vlSelf->top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt = VL_SCOPED_RAND_RESET_I(12, __VscopeHash, 2343794923217989460ull);
     vlSelf->top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt = VL_SCOPED_RAND_RESET_I(12, __VscopeHash, 209393041652116814ull);
     vlSelf->top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7603170699718688852ull);
+    VL_ZERO_RESET_W(640, vlSelf->__VdfgRegularize_h6e95ff9d_0_0);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

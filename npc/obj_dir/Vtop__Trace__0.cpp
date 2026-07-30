@@ -23,20 +23,24 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[1U]))) {
-        bufp->chgBit(oldp+0,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid));
-        bufp->chgBit(oldp+1,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid));
-        bufp->chgSData(oldp+2,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt),12);
-        bufp->chgSData(oldp+3,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt),12);
+        bufp->chgIData(oldp+0,((0x00ffffffU & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0[0U])),24);
+        bufp->chgBit(oldp+1,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid));
+        bufp->chgBit(oldp+2,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid));
+        bufp->chgSData(oldp+3,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt),12);
+        bufp->chgSData(oldp+4,(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt),12);
     }
-    bufp->chgBit(oldp+4,(vlSelfRef.clk));
-    bufp->chgBit(oldp+5,(vlSelfRef.rst_n));
-    bufp->chgBit(oldp+6,(vlSelfRef.hsync));
-    bufp->chgBit(oldp+7,(vlSelfRef.vsync));
-    bufp->chgBit(oldp+8,(vlSelfRef.valid));
-    bufp->chgSData(oldp+9,(vlSelfRef.h_addr),12);
-    bufp->chgSData(oldp+10,(vlSelfRef.v_addr),12);
-    bufp->chgBit(oldp+11,(vlSelfRef.top__DOT__clkout));
-    bufp->chgIData(oldp+12,(vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount),32);
+    bufp->chgBit(oldp+5,(vlSelfRef.clk));
+    bufp->chgBit(oldp+6,(vlSelfRef.rst_n));
+    bufp->chgBit(oldp+7,(vlSelfRef.hsync));
+    bufp->chgBit(oldp+8,(vlSelfRef.vsync));
+    bufp->chgBit(oldp+9,(vlSelfRef.valid));
+    bufp->chgSData(oldp+10,(vlSelfRef.h_addr),12);
+    bufp->chgSData(oldp+11,(vlSelfRef.v_addr),12);
+    bufp->chgCData(oldp+12,(vlSelfRef.vga_r),8);
+    bufp->chgCData(oldp+13,(vlSelfRef.vga_g),8);
+    bufp->chgCData(oldp+14,(vlSelfRef.vga_b),8);
+    bufp->chgBit(oldp+15,(vlSelfRef.top__DOT__clkout));
+    bufp->chgIData(oldp+16,(vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount),32);
 }
 
 void Vtop___024root__trace_cleanup(void* voidSelf, VerilatedFst* /*unused*/) {

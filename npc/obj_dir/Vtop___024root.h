@@ -36,7 +36,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     SData/*11:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt;
     SData/*11:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt;
     IData/*31:0*/ top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount;
+    VlWide<20>/*639:0*/ __VdfgRegularize_h6e95ff9d_0_0;
     IData/*31:0*/ __VactIterCount;
+    VlUnpacked<VlWide<20>/*639:0*/, 480> top__DOT__mem;
     VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
