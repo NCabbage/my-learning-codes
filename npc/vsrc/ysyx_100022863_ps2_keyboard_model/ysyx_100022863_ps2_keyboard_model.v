@@ -25,8 +25,7 @@ reg		[7:0]		ROM [0:255]		;
 
 parameter		IDLE		= 4'b0001,
 						GOT_F0	=	4'b0010,
-						END			= 4'b0100,
-						A				= 4'b1000;
+						A				= 4'b0100;
 
 initial begin
 
