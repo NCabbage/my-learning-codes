@@ -50,8 +50,8 @@ assign h_valid = (x_cnt > h_active) && (x_cnt <= h_backporch);
 assign v_valid = (y_cnt > v_active) && (y_cnt <= v_backporch);
 assign valid	 = h_valid && v_valid;
 
-assign h_addr = h_valid ? (x_cnt - 12'b145) : 12'b0;
-assign v_addr = v_valid ? (y_cnt - 12'b36)	: 12'b0;
+assign h_addr = h_valid ? (x_cnt - 12'h145) : 12'b0;
+assign v_addr = v_valid ? (y_cnt - 12'h36)	: 12'b0;
 
 assign vga_r = vga_data[7:0];
 assign vga_g = vga_data[15:8];
