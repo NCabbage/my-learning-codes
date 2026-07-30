@@ -1,6 +1,6 @@
 module ysyx_100022863_clkgen(
     input clkin,
-    input rst,
+    input rst_n,
     input clken,
     output reg clkout
     );
@@ -9,7 +9,7 @@ module ysyx_100022863_clkgen(
 
   reg[31:0] clkcount;
   always @ (posedge clkin)
-    if(rst)
+    if(!rst_n)
     begin
         clkcount=0;
         clkout=1'b0;
