@@ -39,20 +39,18 @@ bool Vtop___024root___eval_phase__act(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_phase__act\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    CData/*0:0*/ __VactExecute;
     // Body
     {
         // Inlined CFunc: _eval_triggers_vec__act
         vlSelfRef.__VactTriggered[0U] = (QData)((IData)(
-                                                        ((((IData)(vlSelfRef.top__DOT__clkout) 
-                                                           & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__top__DOT__clkout__0))) 
+                                                        ((((IData)(vlSelfRef.clk) 
+                                                           & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__clk__0))) 
                                                           << 1U) 
-                                                         | ((IData)(vlSelfRef.clk) 
-                                                            & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__clk__0))))));
-        vlSelfRef.__Vtrigprevexpr___TOP__clk__0 = vlSelfRef.clk;
+                                                         | ((IData)(vlSelfRef.top__DOT__clkout) 
+                                                            & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__top__DOT__clkout__0))))));
         vlSelfRef.__Vtrigprevexpr___TOP__top__DOT__clkout__0 
             = vlSelfRef.top__DOT__clkout;
+        vlSelfRef.__Vtrigprevexpr___TOP__clk__0 = vlSelfRef.clk;
     }
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
@@ -60,30 +58,7 @@ bool Vtop___024root___eval_phase__act(Vtop___024root* vlSelf) {
     }
 #endif
     Vtop___024root___trigger_orInto__act_vec_vec(vlSelfRef.__VnbaTriggered, vlSelfRef.__VactTriggered);
-    __VactExecute = Vtop___024root___trigger_anySet__act(vlSelfRef.__VactTriggered);
-    if (__VactExecute) {
-        {
-            // Inlined CFunc: _eval_act
-            if ((1ULL & vlSelfRef.__VactTriggered[0U])) {
-                {
-                    // Inlined CFunc: _act_sequent__TOP__0
-                    if (vlSelfRef.rst_n) {
-                        vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount 
-                            = ((IData)(1U) + vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount);
-                        if ((2U <= vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount)) {
-                            vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount = 0U;
-                            vlSelfRef.top__DOT__clkout 
-                                = (1U & (~ (IData)(vlSelfRef.top__DOT__clkout)));
-                        }
-                    } else {
-                        vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount = 0U;
-                        vlSelfRef.top__DOT__clkout = 0U;
-                    }
-                }
-            }
-        }
-    }
-    return (__VactExecute);
+    return (0U);
 }
 
 void Vtop___024root___trigger_clear__act(VlUnpacked<QData/*63:0*/, 1> &out) {
@@ -112,6 +87,37 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
             if ((2ULL & vlSelfRef.__VnbaTriggered[0U])) {
                 {
                     // Inlined CFunc: _nba_sequent__TOP__0
+                    IData/*31:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount = 0;
+                    CData/*0:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout = 0;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount 
+                        = vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout 
+                        = vlSelfRef.top__DOT__clkout;
+                    if (vlSelfRef.rst_n) {
+                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount 
+                            = ((IData)(1U) + vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount);
+                        if ((2U <= vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount)) {
+                            __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout 
+                                = (1U & (~ (IData)(vlSelfRef.top__DOT__clkout)));
+                            __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount = 0U;
+                        } else {
+                            __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout 
+                                = vlSelfRef.top__DOT__clkout;
+                        }
+                    } else {
+                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout = 0U;
+                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount = 0U;
+                    }
+                    vlSelfRef.top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount 
+                        = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount;
+                    vlSelfRef.top__DOT__clkout = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__0___Vdly__top__DOT__clkout;
+                }
+            }
+            if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
+                {
+                    // Inlined CFunc: _nba_sequent__TOP__1
                     if (vlSelfRef.rst_n) {
                         vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt 
                             = ((0x0320U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt))

@@ -5,8 +5,6 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
-#include "../keyboard_model/ps2_keyboard_model.h"
-
 const int	period_ns = 10;
 int cnt = 0;
 int main(int argc, char** argv){

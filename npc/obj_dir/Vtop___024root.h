@@ -27,8 +27,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __Vtrigprevexpr___TOP__top__DOT__clkout__0;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;
     VL_OUT16(h_addr,11,0);
