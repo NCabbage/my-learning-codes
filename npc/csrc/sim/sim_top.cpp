@@ -20,62 +20,17 @@ int main(int argc, char** argv){
 	bool clk = 0;
 	int rst_n;
 /////////////////////////////////////////////
-	int w;
-	bool ps_clk = 1, ps_data = 1;
-	bool ps_clk_cnt, ps_data_cnt;
-	int count = 0;			//记录半个周期数
-	int num = 0;
-	int s = 0;
-	bool nextdata_n = 1;
-	const char* code = "01000101111";
-	const char* code1 = "00000111111";
-	int ps_co = 0;				//s按下后的半周期数
 /////////////////////////////////////////////
 	while(cnt < 20000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
 /////////////////////////////////////////////变量赋值
-		ps_clk_cnt = ps_clk;
-		if(cnt % (period_ns*500) == 0){ 
-			count ++;
-			if(count == 5) s = 1;
-			if(count == 1500){
-			 	s = 2;
-				ps_co = 0;
-			}
-			if(s == 1){
-				ps_data = code[num] - '0';
-				printf("%d %d\n", code[num], num);
-				ps_co ++;
-			}else if(s == 2){
-				ps_data = code1[num] - '0';
-				ps_co ++;
-			}
-				
-		if(ps_co % 120 == 0 && s){
-			num++;
-		}
-		if(s && ps_co % 60 == 0) ps_clk = 1 ^ ps_clk;
-
-			ps_data_cnt = ps_data;
-			if(num ==  11){ 
-				num = 0;
-				s = 0;
-			}
-
-		if(!s){
-			ps_data = 1;
-			ps_clk = 1;
-		}
-	}
 
 	clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
 	top->clk = clk;
 	top->eval();
-	top->ps2_clk = ps_clk;
-	top->ps2_data = ps_data;
-	top->clrn = rst_n;
+	top->rst_n = rst_n;
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
