@@ -30,7 +30,7 @@ int main(int argc, char** argv){
 	int s = 0;
 	bool nextdata_n = 1;
 	const char* code = "01000101111";
-	const char* code = "00000111111";
+	const char* code1 = "00000111111";
 	int ps_co = 0;				//s按下后的半周期数
 /////////////////////////////////////////////
 	while(cnt < 10000000){

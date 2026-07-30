@@ -74,12 +74,12 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
                         = ((IData)(vlSelfRef.clrn) ? 
                            ((1U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
                              ? ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                 ? 8U : ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)
+                                 ? 4U : ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)
                                           ? 2U : 1U))
-                             : ((8U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
+                             : ((4U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
                                  ? ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)
                                      ? 2U : ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                              ? 8U : 1U))
+                                              ? 4U : 1U))
                                  : ((2U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
                                      ? ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
                                          ? 1U : 2U)
@@ -153,7 +153,7 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         = ((6U & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__ready_sync) 
                   << 1U)) | (IData)(vlSelfRef.ready));
     __Vdly__top__DOT__en = ((IData)(vlSelfRef.clrn) 
-                            && ((8U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state)) 
+                            && ((4U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state)) 
                                 || ((2U != (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state)) 
                                     && (IData)(vlSelfRef.top__DOT__en))));
     if (vlSelfRef.top__DOT__en) {
@@ -174,7 +174,7 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelfRef.seg0 = 0x000000ffU;
     }
     if (vlSelfRef.clrn) {
-        __Vdly__times = (0x000000ffU & (((8U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state)) 
+        __Vdly__times = (0x000000ffU & (((4U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state)) 
                                          & (2U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__next_state)))
                                          ? ((IData)(1U) 
                                             + (IData)(vlSelfRef.times))
@@ -275,13 +275,13 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__next_state 
             = ((1U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
                 ? ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                    ? 8U : ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)
-                             ? 2U : 1U)) : ((8U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
+                    ? 4U : ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)
+                             ? 2U : 1U)) : ((4U == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
                                              ? ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)
                                                  ? 2U
                                                  : 
                                                 ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                                                  ? 8U
+                                                  ? 4U
                                                   : 1U))
                                              : ((2U 
                                                  == (IData)(vlSelfRef.top__DOT__ysyx_100022863_ps2_keyboard_model_inst__DOT__state))
