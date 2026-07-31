@@ -8,7 +8,7 @@ module ysyx_100022863_PC(
 	output		[7:0]		opcode		
 );
 
-reg		[7:0]		ROM	[0:15]	;
+reg		[7:0]		ROM	[0:255]	;
 reg		[7:0]		PC					;
 
 initial begin : rom_init
