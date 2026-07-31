@@ -24,6 +24,7 @@ always@(*)
 		li_en		= 0;
 		bner_en = 0;
 		out_en  = 0;
+		bner_addr = 0;
 	end
 	else begin
 		case(opcode[7:6])
@@ -36,6 +37,7 @@ always@(*)
 				li_en = 0;
 				bner_en = 0;
 				out_en = 0;
+				bner_addr = 0;
 			end
 
 			2'b01 : begin
@@ -47,6 +49,7 @@ always@(*)
 				li_en = 0;
 				bner_en = 0;
 				out_en = 1'b1;
+				bner_addr = 0;
 			end
 
 			2'b10 : begin
@@ -58,6 +61,7 @@ always@(*)
 				add_en = 0;
 				out_en = 0;
 				bner_en = 0;
+				bner_addr = 0;
 			end
 
 			2'b11 : begin
@@ -81,6 +85,7 @@ always@(*)
 				li_en		= 0;
 				bner_en = 0;
 				out_en	= 0;
+				bner_addr = 0;
 			end
 		endcase
 	end
