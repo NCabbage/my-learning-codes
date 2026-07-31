@@ -34,7 +34,7 @@ always@(*)
 			end
 
 			2'b01 : begin
-				out_en = 1'b1:
+				out_en = 1'b1;
 			end
 
 			2'b10 : begin
