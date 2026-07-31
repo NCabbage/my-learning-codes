@@ -58,6 +58,7 @@ ysyx_100022863_GPR ysyx_100022863_GPR_inst(
 	.rs1					(rs1			),
 	.rs2					(rs2			),
 	.in_data			(in_data	),
+	.out_en				(out_en		),
 
 	.rs1_data			(rs1_data	),
 	.rs2_data			(rs2_data	)
