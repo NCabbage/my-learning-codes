@@ -210,11 +210,11 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__add_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13042454124169457146ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__li_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 368397149828329997ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__bner_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3898777768419950838ull);
-    vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__out_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11947429977030204995ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__A = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 17368189224189928196ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__B = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 704484758698212666ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1_data = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 10777721252412738713ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__rs2_data = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 3805096434039224322ull);
+    vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__out_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11947429977030204995ull);
     for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__GPR[__Vi0] = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 5220140255083450379ull);
     }
