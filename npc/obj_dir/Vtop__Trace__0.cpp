@@ -84,9 +84,7 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
                            & ((~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2)) 
                               & (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)))));
     bufp->chgBit(oldp+36,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en));
-    bufp->chgBit(oldp+37,(((IData)(vlSelfRef.rst_n) 
-                           & ((~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)) 
-                              & (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2)))));
+    bufp->chgBit(oldp+37,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__out_en));
     bufp->chgCData(oldp+38,((((IData)(vlSelfRef.rst_n) 
                               & ((~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2)) 
                                  & (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)))
