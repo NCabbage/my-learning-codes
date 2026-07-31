@@ -229,7 +229,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                   & (- (IData)(((IData)(vlSelfRef.rst_n) 
                                                 & ((~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)) 
                                                    & (~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2))))))))),8);
-    bufp->fullBit(oldp+23,(((~ (0U != (IData)(vlSelfRef.ans))) 
+    bufp->fullBit(oldp+23,(((0U != (IData)(vlSelfRef.ans)) 
                             & (IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en))));
 }
 
