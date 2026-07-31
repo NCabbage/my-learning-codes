@@ -17,7 +17,7 @@ wire	[3:0]		imm				;
 wire					add_en		;
 wire					li_en			;
 wire					bner_en		;	
-wire					out_en		;
+//wire					out_en		;
 wire	[7:0]		in_data		;
 wire	[7:0]		A					;
 wire	[7:0]		B					;
