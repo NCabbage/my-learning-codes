@@ -152,8 +152,9 @@ void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdly__top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC 
             = (0x000000ffU & (((0U != (IData)(vlSelfRef.ans)) 
                                & (IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en))
-                               ? (IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_addr)
-                               : ((IData)(4U) + (IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC))));
+                               ? ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_addr) 
+                                  << 2U) : ((IData)(4U) 
+                                            + (IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC))));
         if (vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__out_en) {
             vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1_data 
                 = vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__GPR[2U];

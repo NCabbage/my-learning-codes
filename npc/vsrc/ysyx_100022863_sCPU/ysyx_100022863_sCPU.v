@@ -68,6 +68,7 @@ ysyx_100022863_sALU ysyx_100022863_sALU_inst(
 
 	.A						(rs1_data	),
 	.B						(rs2_data	),
+	.en						(bner_en || add_en)
 	.bner_en			(bner_en	),
 
 	.ans					(ans			)
