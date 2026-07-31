@@ -33,6 +33,10 @@ always@(*)
 				add_en = 1'b1;
 			end
 
+			2'b01 : begin
+				out_en = 1'b1:
+			end
+
 			2'b10 : begin
 				rd	= opcode[5:4];
 				imm = opcode[3:0];

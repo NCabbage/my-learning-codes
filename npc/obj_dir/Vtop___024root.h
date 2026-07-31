@@ -25,11 +25,11 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__add_en;
     CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__li_en;
     CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__bner_en;
+    CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__out_en;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__A;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__B;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1_data;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rs2_data;
-    CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__out_en;
     CData/*3:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
