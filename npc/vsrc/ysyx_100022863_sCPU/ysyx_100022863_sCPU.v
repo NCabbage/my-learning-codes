@@ -19,8 +19,6 @@ wire					li_en			;
 wire					bner_en		;	
 wire					out_en		;
 wire	[7:0]		in_data		;
-wire	[7:0]		A					;
-wire	[7:0]		B					;
 wire	[7:0]		rs1_data	;
 wire	[7:0]		rs2_data	;
 
