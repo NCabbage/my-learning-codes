@@ -54,7 +54,8 @@ ysyx_100022863_ctrl ysyx_100022863_ctrl_inst(
 assign in_data = li_en ? imm : (add_en ? ans : 8'b0);
 
 ysyx_100022863_GPR ysyx_100022863_GPR_inst(
-
+	.clk					(clk			),
+	.rst_n				(rst_n		),
 	.rd						(rd				),
 	.rs1					(rs1			),
 	.rs2					(rs2			),
