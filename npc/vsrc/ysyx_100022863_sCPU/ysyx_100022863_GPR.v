@@ -5,6 +5,7 @@ module ysyx_100022863_GPR(
 	input					[1:0]			rs1				,
 	input					[1:0]			rs2				,
 	input					[7:0]			in_data		,
+	input										out_en		,
 
 	output	reg		[7:0]			rs1_data	,
 	output	reg		[7:0]			rs2_data
@@ -20,6 +21,9 @@ always@(posedge clk)
 		for(i=0;i<4;i=i+1)begin
 			GPR[i] <= 8'b0;
 		end
+	end
+	else if(out_en)begin
+		rs1_data <= GPR[2];
 	end
 	else begin
 		rs1_data <= GPR[rs1];

@@ -42,7 +42,11 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     bufp->chgBit(oldp+26,(vlSelfRef.clk));
     bufp->chgBit(oldp+27,(vlSelfRef.rst_n));
     bufp->chgCData(oldp+28,(vlSelfRef.ans),8);
-    bufp->chgCData(oldp+29,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__bner_addr),4);
+    bufp->chgCData(oldp+29,((0x0000000fU & ((vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
+                                             [((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                               >> 2U)] 
+                                             >> 2U) 
+                                            & (- (IData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en)))))),4);
     bufp->chgCData(oldp+30,((3U & ((- (IData)((1U & 
                                                (~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2))))) 
                                    & ((- (IData)((1U 
