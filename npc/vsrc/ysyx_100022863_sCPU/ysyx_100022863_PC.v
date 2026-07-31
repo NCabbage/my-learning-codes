@@ -3,13 +3,13 @@ module ysyx_100022863_PC(
 	input							clk				,
 	input							rst_n			,
 	input							bner_en		,
-	input			[3:0]		bner_addr	,
+	input			[8:0]		bner_addr	,
 
 	output		[7:0]		opcode		
 );
 
 reg		[7:0]		ROM	[0:15]	;
-reg		[8:0]		PC					;
+reg		[7:0]		PC					;
 
 initial begin : rom_init
     integer i;

@@ -10,7 +10,7 @@ module ysyx_100022863_ctrl(
 	output	reg					add_en		,
 	output	reg					li_en			,
 	output	reg					bner_en		,	
-	output	reg	[3:0]		bner_addr	,
+	output	reg	[7:0]		bner_addr	,
 	output	reg					out_en
 );
 
@@ -70,7 +70,7 @@ always@(*)
 				li_en			= 0;
 				add_en		= 0;
 				out_en		= 0;
-				bner_addr = opcode[5:2];
+				bner_addr = {4'b0, opcode[5:2]};
 				rs1				= 2'b0;
 				rs2				= opcode[1:0];
 				bner_en		= 1'b1;

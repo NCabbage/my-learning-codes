@@ -62,7 +62,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     VL_TRACE_DECL_BUS(tracep,c+17,0,"opcode",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 7,0);
 
     Vtop___024root__trace_init_dtype____1(vlSelf, tracep, "ROM", 0, c+0, VerilatedTraceSigDirection::NONE);
-    VL_TRACE_DECL_BUS(tracep,c+25,0,"PC",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 3,0);
+    VL_TRACE_DECL_BUS(tracep,c+25,0,"PC",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 8,0);
     VL_TRACE_PUSH_PREFIX(tracep, "rom_init", VerilatedTracePrefixType::SCOPE_MODULE, 0, 0);
     VL_TRACE_DECL_BUS(tracep,c+16,0,"i",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::INTEGER, 31,0);
     VL_TRACE_POP_PREFIX(tracep);
@@ -187,19 +187,20 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
     Vtop___024root__trace_full_dtype____0(vlSelf, bufp, 0, vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM);
     bufp->fullIData(oldp+16,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i),32);
     bufp->fullCData(oldp+17,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
-                             [((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
-                               >> 2U)]),8);
+                             [(0x0000000fU & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                              >> 2U))]),8);
     bufp->fullCData(oldp+18,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1_data),8);
     bufp->fullCData(oldp+19,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__rs2_data),8);
     Vtop___024root__trace_full_dtype____1(vlSelf, bufp, 20, vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__GPR);
     bufp->fullIData(oldp+24,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__i),32);
-    bufp->fullCData(oldp+25,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC),4);
+    bufp->fullSData(oldp+25,(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC),9);
     bufp->fullBit(oldp+26,(vlSelfRef.clk));
     bufp->fullBit(oldp+27,(vlSelfRef.rst_n));
     bufp->fullCData(oldp+28,(vlSelfRef.ans),8);
     bufp->fullCData(oldp+29,((0x0000000fU & ((vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
-                                              [((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
-                                                >> 2U)] 
+                                              [(0x0000000fU 
+                                                & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                                   >> 2U))] 
                                               >> 2U) 
                                              & (- (IData)((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en)))))),4);
     bufp->fullCData(oldp+30,((3U & ((- (IData)((1U 
@@ -207,8 +208,9 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                     & ((- (IData)((1U 
                                                    & (~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0))))) 
                                        & ((vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
-                                           [((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
-                                             >> 2U)] 
+                                           [(0x0000000fU 
+                                             & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                                >> 2U))] 
                                            >> 2U) & 
                                           (- (IData)((IData)(vlSelfRef.rst_n)))))))),2);
     bufp->fullCData(oldp+31,((((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
@@ -221,13 +223,15 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
     bufp->fullCData(oldp+32,((3U & ((- (IData)((1U 
                                                 & (~ (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2))))) 
                                     & ((vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
-                                        [((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
-                                          >> 2U)] >> 4U) 
-                                       & (- (IData)((IData)(vlSelfRef.rst_n))))))),2);
+                                        [(0x0000000fU 
+                                          & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                             >> 2U))] 
+                                        >> 4U) & (- (IData)((IData)(vlSelfRef.rst_n))))))),2);
     bufp->fullCData(oldp+33,((0x0000000fU & ((- (IData)((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0))) 
                                              & (vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
-                                                [((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
-                                                  >> 2U)] 
+                                                [(0x0000000fU 
+                                                  & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                                     >> 2U))] 
                                                 & ((- (IData)((IData)(vlSelfRef.rst_n))) 
                                                    & (- (IData)(
                                                                 (1U 
@@ -246,8 +250,9 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                ? (0x0000000fU & ((- (IData)((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0))) 
                                                  & (vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM
                                                     [
-                                                    ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
-                                                     >> 2U)] 
+                                                    (0x0000000fU 
+                                                     & ((IData)(vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC) 
+                                                        >> 2U))] 
                                                     & ((- (IData)((IData)(vlSelfRef.rst_n))) 
                                                        & (- (IData)(
                                                                     (1U 
