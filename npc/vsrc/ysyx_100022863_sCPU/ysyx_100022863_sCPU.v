@@ -67,7 +67,7 @@ ysyx_100022863_GPR ysyx_100022863_GPR_inst(
 	.rs2_data			(rs2_data	)
 );
 
-ysyx_100022863_ALU ysyx_100022863_ALU_inst(
+ysyx_100022863_sALU ysyx_100022863_sALU_inst(
 
 	.A						(rs1_data	),
 	.B						(rs2_data	),
