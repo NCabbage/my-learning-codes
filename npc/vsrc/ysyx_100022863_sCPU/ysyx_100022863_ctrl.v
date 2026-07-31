@@ -10,7 +10,7 @@ module ysyx_100022863_ctrl(
 	output					add_en		,
 	output					li_en			,
 	output					bner_en		,	
-	output					bner_addr	,
+	output	[7:0]				bner_addr	,
 	output					out_en
 );
 

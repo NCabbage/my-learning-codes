@@ -7,12 +7,8 @@ module ysyx_100022863_sCPU(
 
 );
 
-wire					bner_en		;
 wire	[7:0]		bner_addr	;
 wire	[7:0]		opcode		;
-
-wire		[7:0]		opcode	;
-wire						rst_n		;
 
 wire	[1:0]		rs1				;
 wire	[1:0]		rs2				;
@@ -21,9 +17,7 @@ wire	[3:0]		imm				;
 wire					add_en		;
 wire					li_en			;
 wire					bner_en		;	
-wire					bner_addr	;
 wire					out_en		;
-wire	[7:0]		ans				;
 wire	[7:0]		in_data		;
 wire	[7:0]		A					;
 wire	[7:0]		B					;
