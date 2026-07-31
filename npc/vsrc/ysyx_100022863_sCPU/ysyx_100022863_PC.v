@@ -31,7 +31,7 @@ always@(posedge clk)
 	if(!rst_n)
 		PC <= 8'b0;
 	else if(bner_en)
-		PC <= bner_addr;
+		PC <= bner_addr << 2;
 	else
 		PC <= PC + 8'd4;
 
