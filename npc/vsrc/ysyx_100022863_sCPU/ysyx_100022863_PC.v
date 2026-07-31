@@ -9,7 +9,7 @@ module ysyx_100022863_PC(
 );
 
 reg		[7:0]		ROM	[0:15]	;
-reg		[3:0]		PC					;
+reg		[8:0]		PC					;
 
 initial begin : rom_init
     integer i;
@@ -29,11 +29,11 @@ end
 
 always@(posedge clk)
 	if(!rst_n)
-		PC <= 4'b0;
+		PC <= 8'b0;
 	else if(bner_en)
 		PC <= bner_addr;
 	else
-		PC <= PC + 4'd4;
+		PC <= PC + 8'd4;
 
 assign opcode = ROM[(PC >> 2)];
 
