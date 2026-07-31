@@ -21,6 +21,9 @@ wire					out_en		;
 wire	[7:0]		in_data		;
 wire	[7:0]		A					;
 wire	[7:0]		B					;
+wire	[7:0]		rs1_data	;
+wire	[7:0]		rs2_data	;
+
 
 ysyx_100022863_PC ysyx_100022863_PC_inst(
 
@@ -48,7 +51,7 @@ ysyx_100022863_ctrl ysyx_100022863_ctrl_inst(
 	.out_en				(out_en		)
 );
 
-assign in_data = li ? imm : (add_en ? ans : 8'b0);
+assign in_data = li_en ? imm : (add_en ? ans : 8'b0);
 
 ysyx_100022863_GPR ysyx_100022863_GPR_inst(
 
