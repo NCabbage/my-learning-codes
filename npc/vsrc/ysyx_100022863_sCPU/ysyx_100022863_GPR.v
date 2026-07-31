@@ -9,7 +9,7 @@ module ysyx_100022863_GPR(
 
 );
 
-reg		[7:0]		GPR	[0:3];
+wire		[7:0]		GPR	[0:3];
 
 assign rs1_data = GPR[rs1];
 assign rs2_data = GPR[rs2];

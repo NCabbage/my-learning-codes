@@ -17,7 +17,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VL_IN8(clk,0,0);
     VL_IN8(rst_n,0,0);
     VL_OUT8(ans,7,0);
-    CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__bner_addr;
     CData/*1:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1;
     CData/*1:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rs2;
     CData/*1:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rd;
@@ -28,6 +27,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__out_en;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__A;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__B;
+    CData/*3:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT____Vcellout__ysyx_100022863_ctrl_inst__bner_addr;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC;
     CData/*0:0*/ __VstlDidInit;
     CData/*0:0*/ __VstlFirstIteration;
