@@ -17,7 +17,7 @@ integer	i;
 
 always@(posedge clk)
 	if(!rst_n) begin
-		for(i=0;i<4:i=i+1)begin
+		for(i=0;i<4;i=i+1)begin
 			GPR[i] <= 8'b0;
 		end
 	end
