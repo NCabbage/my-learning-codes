@@ -34,7 +34,7 @@ VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
         // Inlined CFunc: _eval_initial__TOP
         vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i = 0U;
         while (VL_GTS_III(32, 0x00000100U, vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i)) {
-            vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM[(0x000000ffU 
+            vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM[(0x0000000fU 
                                                                                 & vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i)] = 0U;
             vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i 
                 = ((IData)(1U) + vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i);
@@ -219,7 +219,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__GPR[__Vi0] = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 5220140255083450379ull);
     }
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__i = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10148419593956372068ull);
-    for (int __Vi0 = 0; __Vi0 < 256; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
         vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM[__Vi0] = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 3355996766072555400ull);
     }
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 6154097295995480722ull);

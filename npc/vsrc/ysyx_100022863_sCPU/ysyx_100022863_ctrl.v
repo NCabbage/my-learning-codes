@@ -45,6 +45,16 @@ always@(*)
 				rs2				= opcode[1:0];
 				bner_en		= 1'b1;
 			end
+
+			default : begin
+				rs1			= 0;
+				rs2			= 0;
+				rd			= 0;
+				imm			= 0;
+				add_en	= 0;
+				li_en		= 0;
+				bner_en = 0;
+			end
 		endcase
 	end
 
