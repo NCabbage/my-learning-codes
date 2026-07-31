@@ -19,12 +19,9 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
         vlSelfRef.__Vm_traceActivity[0U] = 1U;
         vlSelfRef.__Vm_traceActivity[1U] = 1U;
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        vlSelfRef.__Vm_traceActivity[3U] = 1U;
     }
     vlSelfRef.__Vtrigprevexpr___TOP__clk__0 = vlSelfRef.clk;
     vlSelfRef.__Vtrigprevexpr___TOP__rst_n__0 = vlSelfRef.rst_n;
-    vlSelfRef.__Vtrigprevexpr___TOP__top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__clk__0 
-        = vlSelfRef.top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__clk;
     vlSelfRef.__Vtrigprevexpr___TOP__clk__1 = vlSelfRef.clk;
 }
 
@@ -56,7 +53,6 @@ VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
         vlSelfRef.__Vm_traceActivity[0U] = 1U;
         vlSelfRef.__Vm_traceActivity[1U] = 1U;
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        vlSelfRef.__Vm_traceActivity[3U] = 1U;
     }
 }
 
@@ -154,7 +150,6 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
                     vlSelfRef.__Vm_traceActivity[0U] = 1U;
                     vlSelfRef.__Vm_traceActivity[1U] = 1U;
                     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-                    vlSelfRef.__Vm_traceActivity[3U] = 1U;
                 }
             }
         }
@@ -193,10 +188,7 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__act(const VlUnpacked<QData/*63
         VL_DBG_MSGS("         No '" + tag + "' region triggers active\n");
     }
     if ((1U & (IData)(triggers[0U]))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @(posedge top.ysyx_100022863_sCPU_inst.ysyx_100022863_GPR_inst.clk)\n");
-    }
-    if ((1U & (IData)((triggers[0U] >> 1U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @(posedge clk)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @(posedge clk)\n");
     }
 }
 #endif  // VL_DEBUG
@@ -223,8 +215,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1_data = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 10777721252412738713ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__rs2_data = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 3805096434039224322ull);
     vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT____Vcellout__ysyx_100022863_ctrl_inst__bner_addr = 0;
-    vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13987359058204234092ull);
-    vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__rst_n = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10057286892706567289ull);
     for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__GPR[__Vi0] = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 5220140255083450379ull);
     }
@@ -245,12 +235,11 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VactTriggered[__Vi0] = 0;
     }
-    vlSelf->__Vtrigprevexpr___TOP__top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__clk__0 = 0;
     vlSelf->__Vtrigprevexpr___TOP__clk__1 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
-    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }

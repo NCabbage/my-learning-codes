@@ -3,7 +3,7 @@ module ysyx_100022863_PC(
 	input							clk				,
 	input							rst_n			,
 	input							bner_en		,
-	input			[7:0]		bner_addr	,
+	input			[3:0]		bner_addr	,
 
 	output		[7:0]		opcode		
 );
