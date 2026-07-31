@@ -29,7 +29,7 @@ end
 
 always@(posedge clk)
 	if(!rst_n)
-		PC <= 8'b0;
+		PC <= 8'd0;
 	else if(bner_en)
 		PC <= bner_addr;
 	else
