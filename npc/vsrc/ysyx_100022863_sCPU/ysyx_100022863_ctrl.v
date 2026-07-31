@@ -45,6 +45,7 @@ always@(*)
 				rs2				= opcode[1:0];
 				bner_en		= 1'b1;
 			end
+		endcase
 	end
 
 endmodule
