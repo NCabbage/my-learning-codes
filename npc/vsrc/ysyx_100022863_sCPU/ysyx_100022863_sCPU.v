@@ -29,12 +29,6 @@ ysyx_100022863_PC ysyx_100022863_PC_inst(
 
 	.clk				(clk			),
 	.rst_n			(rst_n		),
-%Warning-LATCH: /home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_sCPU/ysyx_100022863_ctrl.v:17:1: Latch inferred for signal 'top.ysyx_100022863_sCPU_inst.rd' (not all control paths of combinational always assign a value)
-                                                                                                    : ... Suggest use of always_latch for intentional latches
-   17 | always@(*)
-      | ^~~~~~
-                ... For warning description see https://verilator.org/warn/LATCH?v=5.051
-                ... Use "/* verilator lint_off LATCH */" and lint_on around source to disable this message.
 	.bner_en		(bner_en && !(|ans)),
 	.bner_addr	(bner_addr),
 
