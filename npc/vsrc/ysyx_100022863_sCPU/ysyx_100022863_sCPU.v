@@ -7,7 +7,7 @@ module ysyx_100022863_sCPU(
 
 );
 
-wire	[7:0]		bner_addr	;
+wire	[4:0]		bner_addr	;
 wire	[7:0]		opcode		;
 
 wire	[1:0]		rs1				;

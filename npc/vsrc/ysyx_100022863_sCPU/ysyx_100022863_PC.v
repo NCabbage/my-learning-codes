@@ -14,7 +14,7 @@ reg		[7:0]		PC					;
 initial begin : rom_init
     integer i;
     for (i = 0; i < 256; i = i + 1) begin
-        ROM[i] = 32'h00000000; // 先全部清零
+        ROM[i] = 8'b0; // 先全部清零
     end
     // 然后手动填入几条测试指令
     ROM[0] = 8'b10001010; // 第1条指令
