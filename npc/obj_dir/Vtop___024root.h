@@ -20,8 +20,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rs1_data;
     CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__rs2_data;
     CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en;
-    CData/*3:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_addr;
+    CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_addr;
     CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__out_en;
+    CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC;
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_0;
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_2;
     CData/*1:0*/ __VdfgRegularize_h6e95ff9d_0_6;
@@ -34,7 +35,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__1;
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;
-    SData/*8:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC;
     IData/*31:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__i;
     IData/*31:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i;
     IData/*31:0*/ __VactIterCount;
@@ -44,7 +44,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
-    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
+    VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;
