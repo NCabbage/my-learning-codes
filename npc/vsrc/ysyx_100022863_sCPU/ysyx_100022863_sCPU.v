@@ -27,7 +27,7 @@ ysyx_100022863_PC ysyx_100022863_PC_inst(
 
 	.clk				(clk			),
 	.rst_n			(rst_n		),
-	.bner_en		(bner_en && !(|ans)),
+	.bner_en		(bner_en && (|ans)),
 	.bner_addr	(bner_addr),
 
 	.opcode			(opcode		)
