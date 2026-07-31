@@ -3,7 +3,7 @@ module ysyx_100022863_sCPU(
 	input					clk		,
 	input					rst_n	,
 	
-	output	[7:0]	ans		,
+	output	[7:0]	ans		
 
 );
 
