@@ -9,7 +9,7 @@ module ysyx_100022863_PC(
 );
 
 reg		[7:0]		ROM	[0:255]	;
-reg		[7:0]		PC					;
+reg		[3:0]		PC					;
 
 initial begin : rom_init
     integer i;
