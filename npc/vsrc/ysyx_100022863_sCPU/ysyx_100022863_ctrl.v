@@ -3,15 +3,15 @@ module ysyx_100022863_ctrl(
 	input		[7:0]		opcode	,
 	input						rst_n		,
 
-	output	[1:0]		rs1				,
-	output	[1:0]		rs2				,
-	output	[1:0]		rd				,
-	output	[3:0]		imm				,
-	output					add_en		,
-	output					li_en			,
-	output					bner_en		,	
-	output	[7:0]				bner_addr	,
-	output					out_en
+	output	reg	[1:0]		rs1				,
+	output	reg	[1:0]		rs2				,
+	output	reg	[1:0]		rd				,
+	output	reg	[3:0]		imm				,
+	output	reg					add_en		,
+	output	reg					li_en			,
+	output	reg					bner_en		,	
+	output	reg	[7:0]		bner_addr	,
+	output	reg					out_en
 );
 
 always@(*)
