@@ -29,11 +29,11 @@ end
 
 always@(posedge clk)
 	if(!rst_n)
-		PC <= 8'b0;
+		PC <= 4'b0;
 	else if(bner_en)
 		PC <= bner_addr;
 	else
-		PC <= PC + 8'd4;
+		PC <= PC + 4'd4;
 
 assign opcode = ROM[(PC >> 2)];
 
