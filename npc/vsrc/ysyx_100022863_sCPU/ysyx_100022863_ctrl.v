@@ -43,7 +43,7 @@ always@(*)
 			2'b01 : begin
 				rs1 = 0;
 				rs2 = 0;
-				rd = 0;
+				rd = 5;
 				imm = 0;
 				add_en = 0;
 				li_en = 0;
@@ -65,7 +65,7 @@ always@(*)
 			end
 
 			2'b11 : begin
-				rd				= 0;
+				rd				= 5;
 				imm				= 0;
 				li_en			= 0;
 				add_en		= 0;
@@ -79,7 +79,7 @@ always@(*)
 			default : begin
 				rs1			= 0;
 				rs2			= 0;
-				rd			= 0;
+				rd			= 5;
 				imm			= 0;
 				add_en	= 0;
 				li_en		= 0;

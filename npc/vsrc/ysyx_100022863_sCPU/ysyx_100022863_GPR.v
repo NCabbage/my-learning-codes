@@ -12,7 +12,7 @@ module ysyx_100022863_GPR(
 
 );
 
-reg		[7:0]		GPR	[0:3];
+reg		[7:0]		GPR	[0:5];
 
 integer	i;
 
