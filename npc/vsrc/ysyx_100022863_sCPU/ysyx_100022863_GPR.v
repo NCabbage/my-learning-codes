@@ -26,7 +26,7 @@ always@(posedge clk)
 		GPR[rd]	 <= in_data	;
 	end
 
-assign rs1_data = GPR[rs1];
+assign rs1_data = out_en ? GPR[2] : GPR[rs1];
 assign rs2_data = GPR[rs2];
 
 endmodule
