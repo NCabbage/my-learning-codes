@@ -29,7 +29,7 @@ always@(*)
 	else begin
 		case(opcode[7:6])
 			2'b00 : begin
-				rd  = opcode[5:4];
+				rd  = {1'b0, opcode[5:4]};
 				rs1 = opcode[3:2];
 				rs2 = opcode[1:0];
 				add_en = 1'b1;
@@ -53,7 +53,7 @@ always@(*)
 			end
 
 			2'b10 : begin
-				rd	= opcode[5:4];
+				rd	= {1'b1, opcode[5:4]};
 				imm = opcode[3:0];
 				li_en = 1'b1;
 				rs1 = 0;
