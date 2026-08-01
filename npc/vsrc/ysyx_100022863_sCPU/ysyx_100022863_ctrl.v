@@ -53,7 +53,7 @@ always@(*)
 			end
 
 			2'b10 : begin
-				rd	= {1'b1, opcode[5:4]};
+				rd	= {1'b0, opcode[5:4]};
 				imm = opcode[3:0];
 				li_en = 1'b1;
 				rs1 = 0;
