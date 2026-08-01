@@ -12,7 +12,7 @@ wire	[7:0]		opcode		;
 
 wire	[1:0]		rs1				;
 wire	[1:0]		rs2				;
-wire	[1:0]		rd				;
+wire	[2:0]		rd				;
 wire	[3:0]		imm				;
 wire					add_en		;
 wire					li_en			;

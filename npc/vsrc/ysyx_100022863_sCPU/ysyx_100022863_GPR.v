@@ -1,7 +1,7 @@
 module ysyx_100022863_GPR(
 	input										clk				,
 	input										rst_n			,
-	input					[1:0]			rd				,
+	input					[2:0]			rd				,
 	input					[1:0]			rs1				,
 	input					[1:0]			rs2				,
 	input					[7:0]			in_data		,

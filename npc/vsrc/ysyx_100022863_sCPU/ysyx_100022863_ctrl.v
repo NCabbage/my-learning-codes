@@ -5,7 +5,7 @@ module ysyx_100022863_ctrl(
 
 	output	reg	[1:0]		rs1				,
 	output	reg	[1:0]		rs2				,
-	output	reg	[1:0]		rd				,
+	output	reg	[2:0]		rd				,
 	output	reg	[3:0]		imm				,
 	output	reg					add_en		,
 	output	reg					li_en			,
@@ -43,7 +43,7 @@ always@(*)
 			2'b01 : begin
 				rs1 = 0;
 				rs2 = 0;
-				rd = 5;
+				rd = 3'd4;
 				imm = 0;
 				add_en = 0;
 				li_en = 0;
@@ -65,7 +65,7 @@ always@(*)
 			end
 
 			2'b11 : begin
-				rd				= 5;
+				rd				= 3'd4;
 				imm				= 0;
 				li_en			= 0;
 				add_en		= 0;
@@ -79,7 +79,7 @@ always@(*)
 			default : begin
 				rs1			= 0;
 				rs2			= 0;
-				rd			= 5;
+				rd			= 3'd4;
 				imm			= 0;
 				add_en	= 0;
 				li_en		= 0;
