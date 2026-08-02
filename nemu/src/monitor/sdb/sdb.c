@@ -120,7 +120,8 @@ static int cmd_s(char *args){
 static int cmd_info(char *args){
 
 	if(args == NULL){
-		  printf("need one character\n");
+		printf("need one character\n");
+		return 0;
 	}
 
 	if(strcmp(args, "r") == 0){
