@@ -97,13 +97,20 @@ static int cmd_help(char *args) {
 
 static int cmd_s(char *args){
 
-	int n;
-
-	if(sscanf(args, "%d", &n) == 1){			//有数字解析成功
-	  cpu_exec(n);
-	}else{
-		cpu_exec(1);
+	int n = 1;
+	
+	if(args != NULL){
+		if(sscanf(args, "%d", &n) != 1){			//有数字解析成功
+			printf("Invalid argument: need a number\n");
+			return 0;
+		}
 	}
+		if(n < 0){
+			printf("need a postive number!!!");
+			return 0;
+		}
+
+	cpu_exec(n);
 	return 0;
 }
 
