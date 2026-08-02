@@ -18,7 +18,8 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
-
+#include "memory/host.h"
+#include "memory/paddr.h"
 static int is_batch_mode = false;
 
 void init_regex();
@@ -58,6 +59,8 @@ static int cmd_s(char *args);
 
 static int cmd_info(char *args);
 
+static int cmd_x(char *args);
+
 static struct {
   const char *name;
   const char *description;
@@ -68,7 +71,7 @@ static struct {
   { "q", "Exit NEMU", cmd_q },
   { "s", "step n", cmd_s },
 	{ "info", "look reg", cmd_info},
-
+	{	"x", "watch memory", cmd_x},
   /* TODO: Add more commands */
 
 };
@@ -125,10 +128,28 @@ static int cmd_info(char *args){
 	}
 
 	if(strcmp(args, "r") == 0){
-		printf("ok");
 		isa_reg_display();	
 	}
 
+	return 0;
+}
+
+static int cmd_x(char *args){
+
+	int len;
+	unsigned int addr;
+
+	if(args != NULL){
+		if(sscanf(args, "%d %x", &len, &addr) != 2){
+			printf("please x len 0xaddr\n");
+			return 0;
+		}
+	}
+
+	for(int i=0;i<len;i++){
+		printf("addr: %x value : %x\n", (unsigned int)host_read(guest_to_host(addr+i), 8), addr);
+	}
+	
 	return 0;
 }
 
