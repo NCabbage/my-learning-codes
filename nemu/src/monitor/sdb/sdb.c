@@ -125,6 +125,8 @@ static int cmd_info(char *args){
 			printf("need one character\n");
 			return 0;
 		}
+	}else{
+		  printf("need one character\n");
 	}
 
 	if(strcmp(c, "r") == 0){
