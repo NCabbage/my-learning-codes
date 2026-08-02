@@ -56,6 +56,8 @@ static int cmd_help(char *args);
 
 static int cmd_s(char *args);
 
+static int cmd_info(char *args);
+
 static struct {
   const char *name;
   const char *description;
@@ -65,6 +67,7 @@ static struct {
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
   { "s", "step n", cmd_s },
+	{ "info", "look reg", cmd_info},
 
   /* TODO: Add more commands */
 
@@ -100,7 +103,7 @@ static int cmd_s(char *args){
 	int n = 1;
 	
 	if(args != NULL){
-		if(sscanf(args, "%d", &n) != 1){			//有数字解析成功
+		if(sscanf(args, "%d", &n) != 1){			//数字解析失败
 			printf("Invalid argument: need a number\n");
 			return 0;
 		}
@@ -111,6 +114,23 @@ static int cmd_s(char *args){
 		}
 
 	cpu_exec(n);
+	return 0;
+}
+
+static int cmd_info(char *args){
+
+	char* c = "";
+	if(args != NULL){
+		if(sscanf(args, "%s", c) != 1){
+			printf("need one character\n");
+			return 0;
+		}
+	}
+
+	if(strcmp(c, "r") == 0){
+		isa_reg_display();	
+	}
+
 	return 0;
 }
 
