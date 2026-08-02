@@ -119,17 +119,11 @@ static int cmd_s(char *args){
 
 static int cmd_info(char *args){
 
-	char* c = "";
-	if(args != NULL){
-		if(sscanf(args, "%s", c) != 1){
-			printf("need one character\n");
-			return 0;
-		}
-	}else{
+	if(args == NULL){
 		  printf("need one character\n");
 	}
 
-	if(strcmp(c, "r") == 0){
+	if(strcmp(args, "r") == 0){
 		printf("ok");
 		isa_reg_display();	
 	}
