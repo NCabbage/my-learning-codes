@@ -147,7 +147,7 @@ static int cmd_x(char *args){
 	}
 
 	for(int i=0;i<len;i++){
-		printf("addr: %x value : %x\n", (unsigned int)host_read(guest_to_host(addr+i), 8), addr);
+		printf("addr: %x value : %x\n", (addr+(unsigned int)i), (unsigned int)host_read(guest_to_host(addr+i), 4));
 	}
 	
 	return 0;
