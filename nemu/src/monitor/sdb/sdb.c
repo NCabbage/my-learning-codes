@@ -61,6 +61,8 @@ static int cmd_info(char *args);
 
 static int cmd_x(char *args);
 
+static int cmd_p(char *args);
+
 static struct {
   const char *name;
   const char *description;
@@ -72,6 +74,7 @@ static struct {
   { "s", "step n", cmd_s },
 	{ "info", "look reg", cmd_info},
 	{	"x", "watch memory", cmd_x},
+	{ "p", "exprion", cmd_p},
   /* TODO: Add more commands */
 
 };
@@ -150,6 +153,13 @@ static int cmd_x(char *args){
 		printf("addr: %x value : %x\n", (addr+(unsigned int)i), (unsigned int)host_read(guest_to_host(addr+i), 4));
 	}
 	
+	return 0;
+}
+
+static int cmd_p(char *args){
+	bool success;
+	expr(args, &success);
+
 	return 0;
 }
 
