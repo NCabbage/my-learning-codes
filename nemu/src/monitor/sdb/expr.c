@@ -66,7 +66,7 @@ typedef struct token {
   char str[32];
 } Token;
 
-static Token tokens[32] __attribute__((used)) = {};
+static Token tokens[32] __attribute__((used)) = {};							//告诉编译器，暂时不用不发警告，不要优化掉
 static int nr_token __attribute__((used))  = 0;
 
 static bool make_token(char *e) {
@@ -88,7 +88,14 @@ static bool make_token(char *e) {
 
         position += substr_len;
 
-	
+				if(substr_len > 32){
+					printf("too long!!!!");
+					return 0;
+				}
+				tokens[nr_token].type = rules[i].token_type;
+				memcpy(tokens[nr_token].str, substr_start, substr_len);
+				tokens[nr_token].str[substr_len] = '\0';
+				nr_token ++;
 
         /* TODO: Now a new token is recognized with rules[i]. Add codes
          * to record the token in the array `tokens'. For certain types
@@ -115,8 +122,8 @@ static bool make_token(char *e) {
 
 word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
-  	printf("success!!\n");
     *success = false;
+    printf("success!!\n");
     return 0;
   }
 
