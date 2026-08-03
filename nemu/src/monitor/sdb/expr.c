@@ -124,7 +124,6 @@ word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
     printf("success!!\n");
-    return 0;
   }
 
 	printf("%d %s\n", tokens[0].type, tokens[0].str);
