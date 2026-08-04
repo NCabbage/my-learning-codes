@@ -141,7 +141,7 @@ long long val(int x, int y){
 	int pos = 0, pos_r = 0, pos_l = 0;
 	int type = 0;
 	int k = 0;						//bracket tag
-
+	
 	for(int i=x;i<=y;i++){
 		if(tokens[i].type == '(') k++;
 		else if(tokens[i].type == ')') k--;
@@ -189,13 +189,13 @@ long long val(int x, int y){
 								 break;
 			default :
 								printf("budui\n");	
-								TODO();
+		//						TODO();
 								break;
 		}
 
 	}
 
-
+	return -1;
 }
 
 word_t expr(char *e, bool *success) {
