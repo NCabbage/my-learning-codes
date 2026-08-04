@@ -166,7 +166,7 @@ long long val(int x, int y){
 
 	printf("type:%d pos:%d\n", type, pos);
 	
-	if(pos-1  < 0 && flag) TODO();
+	if(pos-1  < 0 && !flag) TODO();
 
 	if(x == y){
 		return (long long) atoi(tokens[x].str);
