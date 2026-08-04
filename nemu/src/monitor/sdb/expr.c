@@ -21,7 +21,7 @@
 #include <regex.h>
 
 enum {								//把TK_NOTYPR映射为256,后面的自动加1
-  TK_NOTYPE = 256, TK_EQ,TK_NUM,
+  TK_NOTYPE = 256, TK_EQ, TK_NUM,
   /* TODO: Add more token types */
 
 };
@@ -132,15 +132,58 @@ static bool make_token(char *e) {
   return true;
 }
 
+long long val(int x, int y){
+	
+	int pos = 0;
+	int type = 0;
+
+	for(int i=x;i<=y;i++){
+		if(tokens[i].type == '+' || tokens[i].type == '-'){
+			pos = i;
+		}
+	}
+
+	if(!pos)
+		for(int i=x;i<=y;i++){
+			if(tokens[i].type == '*' || tokens[i].type == '/'){
+				pos  = i;
+			}
+		}
+
+	type = pos ? tokens[pos].type : 0;
+
+	if(x == y){
+		return (long long) atoi(tokens[x].str);
+	}else{
+		switch(type){
+			case '+' : return val(x, pos-1) + val(pos+1, y);
+								 break;
+			case '-' : return val(x, pos-1) - val(pos+1, y);
+								 break;
+			case '*' : return val(x, pos-1) * val(pos+1, y);
+								 break;
+			case '/' : return val(x, pos-1) / val(pos+1, y);
+								 break;
+			default :
+								printf("budui\n");	
+								TODO();
+								break;
+		}
+
+	}
+
+
+}
 
 word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
-    printf("success!!\n");
   }
 
   /* TODO: Insert codes to evaluate the expression. */
-	//TODO();
+	long long ans = val(0, nr_token);
+	printf("%lld\n", ans);
+	*success = true;
 
   return 0;
 }
