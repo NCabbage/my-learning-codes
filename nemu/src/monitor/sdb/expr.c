@@ -88,6 +88,13 @@ static bool make_token(char *e) {
 
         position += substr_len;
 
+        switch (rules[i].token_type) {
+					case ' '	:printf("kongge\n");
+					case '+'	:printf("jiahao\n")	;
+					case 257	:printf("dengyu\n") ;
+					default: printf("no this type\n");
+        }
+
 				if(substr_len > 32){
 					printf("too long!!!!");
 					return 0;
@@ -102,11 +109,6 @@ static bool make_token(char *e) {
          * to record the token in the array `tokens'. For certain types
          * of tokens, some extra actions should be performed.
          */
-
-        switch (rules[i].token_type) {
-          default: TODO();
-        }
-
         break;
       }
     }
