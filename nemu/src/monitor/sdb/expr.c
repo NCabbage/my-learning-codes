@@ -150,7 +150,7 @@ long long val(int x, int y){
 			pos = i;
 		}
 
-		if(k == 0 && i != y) flag = 1;
+		if(k == 0 && i != y) flag = 0;
 	}
 
 	if(!pos)
