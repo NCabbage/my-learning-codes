@@ -138,7 +138,7 @@ static bool make_token(char *e) {
 
 long long val(int x, int y){
 	
-	int pos = 0, pos_r = 0, pos_l = 0;
+	int pos = 0;
 	int type = 0;
 	int k = 0;						//bracket tag
 	int flag = 1;
@@ -163,18 +163,6 @@ long long val(int x, int y){
 		}
 
 	type = pos ? tokens[pos].type : 0;
-
-	pos_r = pos + 1;
-	pos_l = pos - 1;
-
-	if(tokens[x].type == '(')
-		x = x + 1;
-	if(tokens[pos_l].type == ')')
-		pos_l = pos_l - 1;
-	if(tokens[pos_r].type == '(')
-		pos_r = pos_r + 1;
-	if(tokens[y].type == ')')
-		y = y - 1;
 
 	printf("type:%d pos:%d\n", type, pos);
 
