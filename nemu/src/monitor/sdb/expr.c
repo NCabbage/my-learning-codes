@@ -89,10 +89,10 @@ static bool make_token(char *e) {
         position += substr_len;
 
         switch (rules[i].token_type) {
-					case 256	:printf("kongge\n");
-					case '+'	:printf("jiahao\n")	;
-					case 257	:printf("dengyu\n") ;
-					default: printf("no this type\n");
+					case 256	:printf("kongge\n");break;
+					case '+'	:printf("jiahao\n")	;break;
+					case 257	:printf("dengyu\n") ;break;
+					default: printf("no this type\n");break;
         }
 
 				if(substr_len > 32){
