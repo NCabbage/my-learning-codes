@@ -97,7 +97,7 @@ static bool make_token(char *e) {
 				tokens[nr_token].str[substr_len] = '\0';
 				nr_token ++;
 
-	printf("%d %s\n", tokens[0].type, tokens[0].str);
+	printf("success:%d %s\n", tokens[0].type, tokens[0].str);
         /* TODO: Now a new token is recognized with rules[i]. Add codes
          * to record the token in the array `tokens'. For certain types
          * of tokens, some extra actions should be performed.
