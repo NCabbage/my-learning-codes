@@ -41,6 +41,7 @@ static struct rule {
 	{"\\*", '*'},
 	{"\\/", '/'},
 	{"\[0-9]", TK_NUM},
+	{"\\-", '-'},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -95,7 +96,12 @@ static bool make_token(char *e) {
 					case 256	: continue;
 					case '+'	: break;
 					case 257	: break;
-					default : break;
+					case 258  : break;
+					case '*'	: break;
+					case '/'	: break;
+					case '-'	: break;
+					default : printf("no this type");
+										break;
         }
 
 				if(substr_len > 32){
