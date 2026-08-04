@@ -181,14 +181,12 @@ long long val(int x, int y){
 			case '/' : return val(x, pos-1) / val(pos+1, y);
 								 break;
 			default :
-								printf("budui\n");	
-		//						TODO();
+								printf("budui type = %d\n", type);	
+								TODO();
 								break;
 		}
 
 	}
-
-	return -1;
 }
 
 word_t expr(char *e, bool *success) {
