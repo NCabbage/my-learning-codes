@@ -21,7 +21,7 @@
 #include <regex.h>
 
 enum {								//把TK_NOTYPR映射为256,后面的自动加1
-  TK_NOTYPE = 256, TK_EQ,
+  TK_NOTYPE = 256, TK_EQ,TK_NUM,
   /* TODO: Add more token types */
 
 };
@@ -38,6 +38,9 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
+	{"\\*", '*'},
+	{"\\/", '/'},
+	{"\[0-9]", TK_NUM},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -104,7 +107,6 @@ static bool make_token(char *e) {
 				tokens[nr_token].str[substr_len] = '\0';
 				nr_token ++;
 
-	printf("success:%d %s\n", tokens[nr_token-1].type, tokens[nr_token-1].str);
         /* TODO: Now a new token is recognized with rules[i]. Add codes
          * to record the token in the array `tokens'. For certain types
          * of tokens, some extra actions should be performed.
