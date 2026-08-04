@@ -42,6 +42,8 @@ static struct rule {
 	{"\\/", '/'},
 	{"\[0-9]+", TK_NUM},
 	{"\\-", '-'},
+	{"\\(", '('},
+	{"\\)", ')'},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -134,23 +136,39 @@ static bool make_token(char *e) {
 
 long long val(int x, int y){
 	
-	int pos = 0;
+	int pos = 0, pos_r = 0;
 	int type = 0;
+	int k = 0;						//bracket tag
 
 	for(int i=x;i<=y;i++){
-		if(tokens[i].type == '+' || tokens[i].type == '-'){
+		if(tokens[i].type == '(') k++;
+		else if(tokens[i].type == ')') k--;
+		if((tokens[i].type == '+' || tokens[i].type == '-') && k == 0){
 			pos = i;
 		}
 	}
 
 	if(!pos)
 		for(int i=x;i<=y;i++){
-			if(tokens[i].type == '*' || tokens[i].type == '/'){
+		if(tokens[i].type == '(') k++;
+		else if(tokens[i].type == ')') k--;
+		if((tokens[i].type == '*' || tokens[i].type == '/') && k == 0){
 				pos  = i;
 			}
 		}
 
 	type = pos ? tokens[pos].type : 0;
+
+	pos_r = pos + 1;
+
+	if(tokens[x].type == '(')
+		x = x + 1;
+	if(tokens[pos].type == ')')
+		pos = pos - 1;
+	if(tokens[pos_r].type == '(')
+		pos_r = pos_r + 1;
+	if(tokens[y].type == ')')
+		y = y - 1;
 
 	if(x == y){
 		return (long long) atoi(tokens[x].str);
