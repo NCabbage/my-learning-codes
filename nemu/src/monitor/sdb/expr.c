@@ -141,13 +141,16 @@ long long val(int x, int y){
 	int pos = 0, pos_r = 0, pos_l = 0;
 	int type = 0;
 	int k = 0;						//bracket tag
-	
+	int flag = 1;
+
 	for(int i=x;i<=y;i++){
 		if(tokens[i].type == '(') k++;
 		else if(tokens[i].type == ')') k--;
 		if((tokens[i].type == '+' || tokens[i].type == '-') && k == 0){
 			pos = i;
 		}
+
+		if(k == 0 && i != y) flag = 1;
 	}
 
 	if(!pos)
@@ -177,6 +180,8 @@ long long val(int x, int y){
 
 	if(x == y){
 		return (long long) atoi(tokens[x].str);
+	}else if(flag){
+		return val(x+1, y-1);
 	}else{
 		switch(type){
 			case '+' : return val(x, pos-1) + val(pos+1, y);
