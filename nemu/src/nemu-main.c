@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 #else
   init_monitor(argc, argv);
 #endif
-
+/*
 printf("ok");
 FILE *fp = fopen("/home/cappage/ysyx-workbench/nemu/tools/gen-expr/input", "r");
 unsigned expected;
@@ -40,7 +40,7 @@ while (fscanf(fp, "%u %[^\n]", &expected, exprtion) == 2) {
     printf("%d %u\n",success, ans);
 }
 fclose(fp);
-
+*/
   /* Start engine. */
   engine_start();
 
