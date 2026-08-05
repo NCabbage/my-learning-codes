@@ -74,6 +74,7 @@ typedef struct token {
 
 static Token tokens[6553600] __attribute__((used)) = {};							//告诉编译器，暂时不用不发警告，不要优化掉
 static int nr_token __attribute__((used))  = 0;
+bool dv = 1;
 
 static bool make_token(char *e) {
   int position = 0;
@@ -135,7 +136,7 @@ static bool make_token(char *e) {
 }
 
 uint32_t val(int x, int y){
-	
+	if(dv == 0) return 0;
 	int pos = 0;
 	int type = 0;
 	int k = 0;						//bracket tag
@@ -174,8 +175,15 @@ uint32_t val(int x, int y){
 								 break;
 			case '*' : return val(x, pos-1) * val(pos+1, y);
 								 break;
-			case '/' : return val(x, pos-1) / val(pos+1, y);
-								 break;
+			case '/' : uint32_t a = val(x, pos-1);
+					   uint32_t b = val(pos+1, y);
+					   if(b == 0){printf("divisor == 0\n");
+							dv = 1;
+							return 0;
+						}else{
+							return a / b;
+						}
+							break;
 			default :
 								printf("budui type = %d\n", type);	
 								TODO();
