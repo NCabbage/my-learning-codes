@@ -19,6 +19,7 @@ void init_monitor(int, char *[]);
 void am_init_monitor();
 void engine_start();
 int is_exit_status_bad();
+word_t expr(char *e, bool *success);
 
 int main(int argc, char *argv[]) {
   /* Initialize the monitor. */
@@ -27,6 +28,16 @@ int main(int argc, char *argv[]) {
 #else
   init_monitor(argc, argv);
 #endif
+
+FILE *fp = fopen("input", "r");
+unsigned expected;
+char exprtion[65536];
+bool success=0;
+while (fscanf(fp, "%u %[^\n]", &expected, exprtion) == 2) {
+    word_t ans = expr(exprtion, &success);
+    printf("%d %u\n",success, ans);
+}
+fclose(fp);
 
   /* Start engine. */
   engine_start();
