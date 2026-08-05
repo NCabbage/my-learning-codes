@@ -28,11 +28,12 @@ int main(int argc, char *argv[]) {
 #else
   init_monitor(argc, argv);
 #endif
-
+printf("ok");
 FILE *fp = fopen("input", "r");
 unsigned expected;
 char exprtion[65536];
 bool success=0;
+
 while (fscanf(fp, "%u %[^\n]", &expected, exprtion) == 2) {
     word_t ans = expr(exprtion, &success);
     printf("%d %u\n",success, ans);
