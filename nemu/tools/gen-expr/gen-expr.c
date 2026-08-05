@@ -37,7 +37,7 @@ uint32_t choose(uint32_t n){
 
 void gen_num(){
 	char tmp[32];
-	sprintf(tmp,  "%u", choose(65536));
+	sprintf(tmp,  "%u", choose(100));
 	strcat(buf, tmp);
 }
 
