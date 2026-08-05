@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
   init_monitor(argc, argv);
 #endif
 printf("ok");
-FILE *fp = fopen("input", "r");
+FILE *fp = fopen("/home/cappage/ysyx-workbench/nemu/tools/gen-expr/input", "r");
 unsigned expected;
 char exprtion[65536];
 bool success=0;
