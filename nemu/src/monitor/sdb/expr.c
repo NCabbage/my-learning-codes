@@ -168,8 +168,10 @@ uint32_t val(int x, int y){
 
 	type = pos ? tokens[pos].type : 0;
 
-	if(x == y-1 && tokens[x].type == DEREF)
+	if(x == y-1 && tokens[x].type == DEREF){
+		printf("%x\n", atoi(tokens[x].str));
 		return paddr_read(atoi(tokens[x].str), 1);
+	}
 
 	if(x == y){
 		return (long long) atoi(tokens[x].str);
