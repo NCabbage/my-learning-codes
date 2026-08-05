@@ -134,7 +134,7 @@ static bool make_token(char *e) {
   return true;
 }
 
-long long val(int x, int y){
+uint32_t val(int x, int y){
 	
 	int pos = 0;
 	int type = 0;
