@@ -147,6 +147,11 @@ uint32_t val(int x, int y){
 	int k = 0;						//bracket tag
 	int flag = 1;
 
+	if(x == y-1 && tokens[x].type == DEREF){
+		printf("%x\n", atoi(tokens[x].str));
+		return paddr_read(atoi(tokens[x].str), 1);
+	}
+
 	for(int i=x;i<=y;i++){
 		if(tokens[i].type == '(') k++;
 		else if(tokens[i].type == ')') k--;
@@ -167,11 +172,6 @@ uint32_t val(int x, int y){
 		}
 
 	type = pos ? tokens[pos].type : 0;
-
-	if(x == y-1 && tokens[x].type == DEREF){
-//		printf("%x\n", atoi(tokens[x].str));
-		return paddr_read(atoi(tokens[x].str), 1);
-	}
 
 	if(x == y){
 		return (long long) atoi(tokens[x].str);
