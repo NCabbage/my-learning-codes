@@ -167,7 +167,6 @@ long long val(int x, int y){
 	}else if(flag){
 		return val(x+1, y-1);
 	}else{
-		printf("ok\n");
 		switch(type){
 			case '+' : return val(x, pos-1) + val(pos+1, y);
 								 break;
