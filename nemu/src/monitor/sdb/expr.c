@@ -196,9 +196,8 @@ word_t expr(char *e, bool *success) {
   }
 
   /* TODO: Insert codes to evaluate the expression. */
-	long long ans = val(0, nr_token-1);
-	printf("ans = %lld\n", ans);
+	word_t ans = val(0, nr_token-1);
 	*success = true;
 
-  return 0;
+  return ans;
 }
