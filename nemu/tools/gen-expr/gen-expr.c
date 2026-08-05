@@ -77,12 +77,7 @@ int main(int argc, char *argv[]) {
     gen_rand_expr();
 
     sprintf(code_buf, code_format, buf);
-	
-	if(strstr(buf, "/0") != NULL){
-		i--;
-		continue;
-	}
-	
+
     FILE *fp = fopen("/tmp/.code.c", "w");
     assert(fp != NULL);
     fputs(code_buf, fp);

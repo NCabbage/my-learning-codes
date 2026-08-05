@@ -14,14 +14,13 @@
 ***************************************************************************************/
 
 #include <isa.h>
-
+#include <memory/paddr.h>
 /* We use the POSIX regex functions to process regular expressions.
  * Type 'man regex' for more information about POSIX regex functions.
  */
 #include <regex.h>
-
-enum {								//把TK_NOTYPR映射为256,后面的自动加1
-  TK_NOTYPE = 256, TK_EQ, TK_NUM,
+enum{
+  TK_NOTYPE = 256, TK_EQ, TK_NUM, TK_AND, TK_NOEQ, DEREF
   /* TODO: Add more token types */
 
 };
@@ -35,15 +34,18 @@ static struct rule {
    * Pay attention to the precedence level of different rules.
    */
 
-  {" +", TK_NOTYPE},    // spaces
-  {"\\+", '+'},         // plus
-  {"==", TK_EQ},        // equal
+  	{" +", TK_NOTYPE},    // spaces
+  	{"\\+", '+'},         // plus
+  	{"==", TK_EQ},        // equal
 	{"\\*", '*'},
 	{"\\/", '/'},
 	{"\[0-9]+", TK_NUM},
 	{"\\-", '-'},
 	{"\\(", '('},
 	{"\\)", ')'},
+	{"\\&&", TK_AND},
+	{"\\!=", TK_NOEQ},
+	
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -105,6 +107,9 @@ static bool make_token(char *e) {
 					case '-'	: break;
 					case '('	: break;
 					case ')'	: break;
+					case 259	: break;
+					case 260	: break;
+					case 261	: break;
 					default : printf("no this type");
 										break;
         }
@@ -163,6 +168,9 @@ uint32_t val(int x, int y){
 
 	type = pos ? tokens[pos].type : 0;
 
+	if(x == y-1 && tokens[x].type == DEREF)
+		return paddr_read(atoi(tokens[x].str), 1);
+
 	if(x == y){
 		return (long long) atoi(tokens[x].str);
 	}else if(flag){
@@ -179,7 +187,6 @@ uint32_t val(int x, int y){
 					   uint32_t b = val(pos+1, y);
 					   if(b == 0){printf("divisor == 0\n");
 							dv = 1;
-							printf("NO!!!!!\n");
 							return 0;
 						}else{
 							return a / b;
@@ -198,6 +205,13 @@ word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
   }
+
+	
+	for (int i = 0; i < nr_token; i ++) {
+		if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type == DEREF || '(')) {
+			tokens[i].type = DEREF;
+		}
+	}
 
   /* TODO: Insert codes to evaluate the expression. */
 	word_t ans = val(0, nr_token-1);
