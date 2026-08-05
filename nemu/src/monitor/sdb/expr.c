@@ -179,6 +179,7 @@ uint32_t val(int x, int y){
 					   uint32_t b = val(pos+1, y);
 					   if(b == 0){printf("divisor == 0\n");
 							dv = 1;
+							printf("NO!!!!!\n");
 							return 0;
 						}else{
 							return a / b;
