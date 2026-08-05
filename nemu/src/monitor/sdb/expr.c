@@ -72,7 +72,7 @@ typedef struct token {
   char str[32];
 } Token;
 
-static Token tokens[65536] __attribute__((used)) = {};							//告诉编译器，暂时不用不发警告，不要优化掉
+static Token tokens[655360] __attribute__((used)) = {};							//告诉编译器，暂时不用不发警告，不要优化掉
 static int nr_token __attribute__((used))  = 0;
 
 static bool make_token(char *e) {
