@@ -153,8 +153,8 @@ uint32_t val(int x, int y){
 	printf("%d %d\n", x,  y);
 
 	if((tokens[x].type == TK_ADDR) && x == y) return strtol(tokens[x].str, '\0', 16);
-	else return val(x, x) + val(x, y);
-	return 0;
+	else return val(x, x) + val(x+1, y);
+
 	if(tokens[x].type == DEREF){
 		uint32_t addr = val(x+1, y);
 		printf("%x\n", addr);
