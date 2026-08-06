@@ -15,6 +15,7 @@
 
 #include <isa.h>
 #include <memory/paddr.h>
+#include "memory/host.h"
 /* We use the POSIX regex functions to process regular expressions.
  * Type 'man regex' for more information about POSIX regex functions.
  */
@@ -149,7 +150,7 @@ uint32_t val(int x, int y){
 
 	if(tokens[x].type == DEREF){
 		printf("%lx\n", strtol(tokens[x+1].str, '\0', 16));
-		return paddr_read(strtol(tokens[x+1].str, '\0', 16), 1);
+		return (uint64_t)host_read((guest_to_host((paddr_t)strtol(tokens[x+1].str, '\0', 16))), 4);
 	}
 
 	for(int i=x;i<=y;i++){
