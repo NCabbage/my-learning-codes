@@ -34,10 +34,11 @@ static struct rule {
   /* TODO: Add more rules.
    * Pay attention to the precedence level of different rules.
    */
-
-  	{" +", TK_NOTYPE},    // spaces
-  	{"\\+", '+'},         // plus
-  	{"==", TK_EQ},        // equal
+	//位置和优先级有关
+	{"0x[0-9a-fA-F]+", TK_ADDR},	
+  {" +", TK_NOTYPE},    // spaces
+  {"\\+", '+'},         // plus
+  {"==", TK_EQ},        // equal
 	{"\\*", '*'},
 	{"\\/", '/'},
 	{"\[0-9]+", TK_NUM},
@@ -46,8 +47,7 @@ static struct rule {
 	{"\\)", ')'},
 	{"\\&&", TK_AND},
 	{"\\!=", TK_NOEQ},
-	{"0[xX][0-9a-fA-F]+", TK_ADDR},
-	
+
 };
 
 #define NR_REGEX ARRLEN(rules)
