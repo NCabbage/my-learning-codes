@@ -148,7 +148,7 @@ uint32_t val(int x, int y){
 	int flag = 1;
 
 	if(tokens[x].type == DEREF){
-		printf("%ld\n", strtol(tokens[x+1].str, '\0', 16));
+		printf("%lx\n", strtol(tokens[x+1].str, '\0', 16));
 		return paddr_read(strtol(tokens[x+1].str, '\0', 16), 1);
 	}
 
