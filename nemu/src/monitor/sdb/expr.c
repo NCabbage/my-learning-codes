@@ -148,8 +148,8 @@ uint32_t val(int x, int y){
 	int flag = 1;
 
 	if(x == y-1 && tokens[x].type == DEREF){
-		printf("%x\n", atoi(tokens[x].str));
-		return paddr_read(atoi(tokens[x].str), 1);
+		printf("%ld\n", strtol(tokens[x].str, '\0', 16));
+		return paddr_read(strtol(tokens[x].str, '\0', 16), 1);
 	}
 
 	for(int i=x;i<=y;i++){
