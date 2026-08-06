@@ -180,7 +180,7 @@ uint32_t val(int x, int y){
 	type = pos ? tokens[pos].type : 0;
 
 	if(x == y){
-		return (long long) atoi(tokens[x].str);
+		return (uint32_t) atoi(tokens[x].str);
 	}else if(flag){
 		return val(x+1, y-1);
 	}else{
