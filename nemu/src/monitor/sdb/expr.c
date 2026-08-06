@@ -147,9 +147,9 @@ uint32_t val(int x, int y){
 	int k = 0;						//bracket tag
 	int flag = 1;
 
-	if(x == y-1 && tokens[x].type == DEREF){
-		printf("%ld\n", strtol(tokens[x].str, '\0', 16));
-		return paddr_read(strtol(tokens[x].str, '\0', 16), 1);
+	if(tokens[x].type == DEREF){
+		printf("%ld\n", strtol(tokens[x+1].str, '\0', 16));
+		return paddr_read(strtol(tokens[x+1].str, '\0', 16), 1);
 	}
 
 	for(int i=x;i<=y;i++){
