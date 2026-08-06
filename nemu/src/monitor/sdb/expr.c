@@ -112,6 +112,7 @@ static bool make_token(char *e) {
 					case 259	: break;
 					case 260	: break;
 					case 261	: break;
+					case 262	: break;
 					default : printf("no this type");
 										break;
         }
