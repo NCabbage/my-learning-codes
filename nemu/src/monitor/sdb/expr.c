@@ -150,9 +150,12 @@ uint32_t val(int x, int y){
 	int k = 0;						//bracket tag
 	int flag = 1;
 
+	if(tokens[x].type == TK_ADDR) return strtol(tokens[x].str, '\0', 16);
+
 	if(tokens[x].type == DEREF){
+		int addr = val(x+1, y);
 		printf("%lx\n", strtol(tokens[x+1].str, '\0', 16));
-		return (uint64_t)host_read((guest_to_host((paddr_t)strtol(tokens[x+1].str, '\0', 16))), 4);
+		return (uint64_t)host_read((guest_to_host(addr)), 4);
 	}
 
 	for(int i=x;i<=y;i++){
