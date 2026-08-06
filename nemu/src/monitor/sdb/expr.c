@@ -153,8 +153,8 @@ uint32_t val(int x, int y){
 	if(tokens[x].type == TK_ADDR) return strtol(tokens[x].str, '\0', 16);
 
 	if(tokens[x].type == DEREF){
-		int addr = val(x+1, y);
-		printf("%lx\n", strtol(tokens[x+1].str, '\0', 16));
+		uint32_t addr = val(x+1, y);
+		printf("%x\n", addr);
 		return (uint64_t)host_read((guest_to_host(addr)), 4);
 	}
 
