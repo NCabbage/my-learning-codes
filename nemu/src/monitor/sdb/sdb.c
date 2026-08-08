@@ -191,8 +191,8 @@ static int cmd_d(char *args){
 	uint32_t addr;
 
 	if(args != NULL){
-		if(sscanf(args, "%d", &addr) == 1){
-			printf("1\n");
+		if(sscanf(args, "%u", &addr) == 1){
+			printf("%u\n", addr);
 			free_wp(addr);
 			printf("delete note successly!!\n");
 		}
