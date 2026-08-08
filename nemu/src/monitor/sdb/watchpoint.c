@@ -48,7 +48,10 @@ void free_wp(uint32_t addr){
 			if((curr->next)->addr == addr) break;
 			else curr = curr -> next;
 		}	
-
+		
+		if(curr == NULL){ printf("no this watchpoint!\n");
+			return ;
+		}
 		cnt = free_;
 		free_ = curr -> next;
 		curr -> next = free_ -> next;
