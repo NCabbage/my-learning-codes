@@ -155,7 +155,7 @@ uint32_t val(int x, int y){
 	 	if(x == y){
 	 		printf("here\n");
 	 		long result = strtol(tokens[x].str, NULL, 16);
-			printf("here after strtol, result = %ld\n", result);
+			printf("here after strtol, result = %lx\n", result);
 			return result;
 		}else{
 			switch(tokens[x+1].type){
