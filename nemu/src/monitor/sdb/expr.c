@@ -232,7 +232,7 @@ word_t expr(char *e, bool *success) {
 			tokens[i].type = DEREF;
 		}
 	}
-	printf("here\n");
+	printf("%d\n", nr_token);
   /* TODO: Insert codes to evaluate the expression. */
 	word_t ans = val(0, nr_token-1);
 	*success = true;
