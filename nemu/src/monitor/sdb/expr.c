@@ -153,10 +153,7 @@ uint32_t val(int x, int y){
 	if(y < 0) return 1;
 	if(tokens[x].type == TK_ADDR){
 	 	if(x == y){
-	 		printf("here\n");
-	 		long result = strtol(tokens[x].str, NULL, 16);
-			printf("here after strtol, result = %lx\n", result);
-			return (uint32_t)result;
+	 		return strtol(tokens[x].str, NULL, 16);
 		}else{
 			switch(tokens[x+1].type){
 			case '+' : return val(x, x) + val(x+2, y);break;
@@ -239,7 +236,6 @@ word_t expr(char *e, bool *success) {
 	printf("%d %d\n", nr_token, tokens[0].type);
   /* TODO: Insert codes to evaluate the expression. */
 	word_t ans = val(0, nr_token-1);
-	printf("ans = %u\n", ans);
 	*success = true;
 
   return ans;
