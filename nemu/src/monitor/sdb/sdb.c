@@ -176,9 +176,13 @@ static int cmd_p(char *args){
 
 static int cmd_w(char *args){
 	uint32_t addr;
+	char cnt[32];
+	bool *success = 0;
 
 	if(args != NULL){
-		if(sscanf(args, "%u", &addr) == 1){
+		if(sscanf(args, "%s", cnt) == 1){
+			addr = expr(cnt, success);
+			if(!success) printf("addr error\n");
 			new_wp(addr);
 			printf("add watchpoint successly\n");
 		}
