@@ -39,7 +39,6 @@ WP* new_wp(uint32_t addr){
 }
 
 void free_wp(uint32_t addr){
-	printf("%d %u", head->NO, head->addr);
 	WP *cnt, *curr;
 	curr = head;
 
