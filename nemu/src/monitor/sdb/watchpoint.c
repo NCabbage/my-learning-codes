@@ -42,15 +42,15 @@ void free_wp(uint32_t addr){
 
 	WP *cnt, *curr;
 	curr = head;
-	
+
+	printf("?");
+
 	if(curr->addr != addr){
 		while(curr != NULL){
 			if((curr->next)->addr == addr) break;
 			else curr = curr -> next;
 		}	
 	}
-
-	printf("%d", curr->addr);
 
 	cnt = free_;
 	free_ = curr -> next;
