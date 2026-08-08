@@ -177,11 +177,11 @@ static int cmd_p(char *args){
 static int cmd_w(char *args){
 	uint32_t addr;
 	char cnt[64];
-	bool *success = 0;
+	bool success=0;
 
 	if(args != NULL){
 		if(sscanf(args, "%63s", cnt) == 1){
-			addr = expr(cnt, success);
+			addr = expr(cnt, &success);
 			printf("addr:%u\n", addr);
 			if(!success) printf("addr error\n");
 			new_wp(addr);
