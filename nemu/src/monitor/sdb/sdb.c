@@ -184,8 +184,9 @@ static int cmd_w(char *args){
 static int cmd_d(char *args){
 	int NO;
 	if(sscanf(args, "%d", &NO) == 0){
+		printf("NO = %d\n", NO);
 		free_wp(NO);
-		printf("delete note  successly!!");
+		printf("delete note successly!!");
 	}
 
 	return 0;
