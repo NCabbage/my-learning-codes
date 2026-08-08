@@ -156,7 +156,7 @@ uint32_t val(int x, int y){
 	 		printf("here\n");
 	 		long result = strtol(tokens[x].str, NULL, 16);
 			printf("here after strtol, result = %lx\n", result);
-			return result;
+			return (uint32_t)result;
 		}else{
 			switch(tokens[x+1].type){
 			case '+' : return val(x, x) + val(x+2, y);break;
