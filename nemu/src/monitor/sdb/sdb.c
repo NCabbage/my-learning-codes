@@ -184,12 +184,13 @@ static int cmd_w(char *args){
 static int cmd_d(char *args){
 	int NO;
 	printf("d\n");
-	if(sscanf(args, "%d", &NO) == 0){
-		printf("NO = %d\n", NO);
-		free_wp(NO);
-		printf("delete note successly!!");
+	if(args != NULL){
+		if(sscanf(args, "%d", &NO) == 1){
+			printf("NO = %d\n", NO);
+			free_wp(NO);
+			printf("delete note successly!!");
+		}
 	}
-
 	return 0;
 }
 
