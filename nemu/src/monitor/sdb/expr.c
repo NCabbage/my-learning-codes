@@ -152,8 +152,10 @@ uint32_t val(int x, int y){
 
 	if(y < 0) return 1;
 	if(tokens[x].type == TK_ADDR){
-	 	if(x == y)return (uint32_t)strtol(tokens[x].str, NULL, 16);
-		else{
+	 	if(x == y){
+	 		printf("here\n");
+	 		return (uint32_t)strtol(tokens[x].str, NULL, 16);
+		}else{
 			switch(tokens[x+1].type){
 			case '+' : return val(x, x) + val(x+2, y);break;
 			case '-' : return val(x, x) - val(x+2, y);break;
@@ -163,7 +165,7 @@ uint32_t val(int x, int y){
 			}
 		}
 	}
-	printf("here\n");
+
 	if(tokens[x].type == DEREF){
 		uint32_t addr = val(x+1, y);
 		printf("%x\n", addr);
