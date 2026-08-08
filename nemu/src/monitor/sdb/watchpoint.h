@@ -8,6 +8,6 @@ typedef struct watchpoint {
 } WP;
 
 WP* new_wp(uint32_t addr);
-void free_wp(int NO);
+void free_wp(uint32_t addr);
 void watchpoint_display();
 

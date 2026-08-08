@@ -180,7 +180,7 @@ static int cmd_w(char *args){
 	if(args != NULL){
 		if(sscanf(args, "%u", &addr) == 1){
 			new_wp(addr);
-			printf("add watchpoint successly\n");
+			printf("add watchpoint successly");
 		}
 	}
 
@@ -188,12 +188,11 @@ static int cmd_w(char *args){
 }
 
 static int cmd_d(char *args){
-	int NO;
-	printf("d\n");
+	uint32_t addr;
+
 	if(args != NULL){
-		if(sscanf(args, "%d", &NO) == 1){
-			printf("NO = %d\n", NO);
-			free_wp(NO);
+		if(sscanf(args, "%u", &addr) == 1){
+			free_wp(addr);
 			printf("delete note successly!!");
 		}
 	}

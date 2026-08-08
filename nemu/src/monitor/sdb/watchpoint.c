@@ -38,13 +38,13 @@ WP* new_wp(uint32_t addr){
 	return head;
 }
 
-void free_wp(int NO){
+void free_wp(uint32_t addr){
 
 	WP *cnt, *curr;
 	curr = head;
 	
 	while(curr != NULL){
-		if((curr->next)->NO == NO) break;
+		if((curr->next)->addr == addr) break;
 		else curr = curr -> next;
 	}	
 
