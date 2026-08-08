@@ -15,6 +15,8 @@
 
 #include "sdb.h"
 #include "watchpoint.h"
+#include "memory/host.h"
+#include "memory/paddr.h"
 
 #define NR_WP 32
 
@@ -49,14 +51,12 @@ void free_wp(uint32_t addr){
 			else curr = curr -> next;
 		}	
 		
-		if(curr == NULL){ printf("no this watchpoint!\n");
-			return ;
-		}
 		cnt = free_;
 		free_ = curr -> next;
 		curr -> next = free_ -> next;
 		free_ -> next = cnt;
 		free_ -> addr = 0;
+		free_ -> old_val = 0;
 	}else{
 	
 		cnt = free_;
@@ -64,6 +64,7 @@ void free_wp(uint32_t addr){
 		free_-> next =  cnt -> next;
 		head = NULL;
 		free_ -> addr = 0;
+		free_ -> old_val = 0;
 	}
 
 	return ;
@@ -84,6 +85,24 @@ void watchpoint_display(){
 		cnt_f = cnt_f -> next;
 	}
 
+}
+
+void watchpoint_check(){
+
+	WP *cnt = head;
+	
+	while(cnt != NULL){
+		uint32_t addr = cnt -> addr;
+		uint32_t new_val = (unsigned int)host_read(guest_to_host(addr), 4);
+		if(cnt->old_val != new_val){
+			nemu_state.state = NEMU_STOP;
+			printf("the 0x%x hsa changed from %x to %x\n", addr, cnt->old_val, new_val);
+			return ;
+		}
+		cnt = cnt -> next;
+	}
+	
+	return ;
 }
 
 void init_wp_pool() {
