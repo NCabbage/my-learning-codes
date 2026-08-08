@@ -152,7 +152,7 @@ uint32_t val(int x, int y){
 
 	if(y < 0) return 1;
 	if(tokens[x].type == TK_ADDR){
-	 	if(x == y)return strtol(tokens[x].str, '\0', 16);
+	 	if(x == y)return (uint32_t)strtol(tokens[x].str, NULL, 16);
 		else{
 			switch(tokens[x+1].type){
 			case '+' : return val(x, x) + val(x+2, y);break;
