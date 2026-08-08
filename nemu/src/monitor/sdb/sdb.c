@@ -182,6 +182,7 @@ static int cmd_w(char *args){
 	if(args != NULL){
 		if(sscanf(args, "%s", cnt) == 1){
 			addr = expr(cnt, success);
+			printf("%x\n", addr);
 			if(!success) printf("addr error\n");
 			new_wp(addr);
 			printf("add watchpoint successly\n");
