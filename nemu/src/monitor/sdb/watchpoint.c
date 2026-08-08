@@ -74,7 +74,7 @@ void watchpoint_display(){
 	WP* cnt;
 	cnt = head;
 	while(cnt != NULL){
-		printf("NO:%d addr:%u\n", cnt->NO, cnt->addr);
+		printf("NO:%d addr:%x\n", cnt->NO, cnt->addr);
 		cnt = cnt -> next;
 	}
 	printf("------------------\n");
