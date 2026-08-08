@@ -28,6 +28,61 @@ typedef struct watchpoint {
 static WP wp_pool[NR_WP] = {};
 static WP *head = NULL, *free_ = NULL;
 
+WP* new_wp();
+void free_wp(int NO);
+void watchpoint_display();
+
+WP* new_wp(){
+
+	if(free_ == NULL){
+		printf("the number of wp is too much!!!");
+		assert(0);
+	}
+
+	WP* cnt;
+	cnt = head;
+	head = free_;
+	free_ = free_ -> next;
+	head -> next = cnt;
+
+	return head;
+}
+
+void free_wp(int NO){
+
+	WP *cnt, *curr;
+	curr = head;
+	
+	while(curr != NULL){
+		if((curr->next)->NO == NO) break;
+		else curr = curr -> next;
+	}	
+
+	cnt = free_;
+	free_ = curr -> next;
+	curr -> next = free_ -> next;
+	free_ ->  next = cnt;
+	
+	return ;
+}
+
+void watchpoint_display(){
+	WP* cnt;
+	cnt = head;
+	while(cnt != NULL){
+		printf("NO:%d\n", cnt->NO);
+		cnt = cnt -> next;
+	}
+	printf("------------------\n");
+	WP* cnt_f;
+	cnt_f = free_;
+	while(cnt_f != NULL){
+		printf("NO:%d\n", cnt_f->NO);
+		cnt_f = cnt_f -> next;
+	}
+
+}
+
 void init_wp_pool() {
   int i;
   for (i = 0; i < NR_WP; i ++) {

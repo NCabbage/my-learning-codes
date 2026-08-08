@@ -150,7 +150,6 @@ uint32_t val(int x, int y){
 	int k = 0;						//bracket tag
 	int flag = 1;
 
-	printf("%d %d\n", x, y);
 	if(y < 0) return 1;
 	if(tokens[x].type == TK_ADDR){
 	 	if(x == y)return strtol(tokens[x].str, '\0', 16);

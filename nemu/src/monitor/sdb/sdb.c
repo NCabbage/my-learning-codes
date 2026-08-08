@@ -20,6 +20,8 @@
 #include "sdb.h"
 #include "memory/host.h"
 #include "memory/paddr.h"
+#include "watchpoint.h"
+
 static int is_batch_mode = false;
 
 void init_regex();
@@ -63,6 +65,10 @@ static int cmd_x(char *args);
 
 static int cmd_p(char *args);
 
+static int cmd_w(char *args);
+
+static int cmd_d(char *args);
+
 static struct {
   const char *name;
   const char *description;
@@ -75,6 +81,8 @@ static struct {
 	{ "info", "look reg", cmd_info},
 	{	"x", "watch memory", cmd_x},
 	{ "p", "exprion", cmd_p},
+	{ "w", "add watchpoint", cmd_w},
+	{ "d", "delete watchpoint", cmd_d},
   /* TODO: Add more commands */
 
 };
@@ -132,6 +140,8 @@ static int cmd_info(char *args){
 
 	if(strcmp(args, "r") == 0){
 		isa_reg_display();	
+	}else if(strcmp(args, "w") == 0){
+		watchpoint_display();
 	}
 
 	return 0;
@@ -160,6 +170,23 @@ static int cmd_p(char *args){
 	bool success;
 	word_t ans = expr(args, &success);
 	printf("%d\n", ans);
+
+	return 0;
+}
+
+static int cmd_w(char *args){
+	printf("add note successly!\n");
+	new_wp();
+
+	return 0;
+}
+
+static int cmd_d(char *args){
+	int NO;
+	if(sscanf(args, "%d", &NO) == 0){
+		free_wp(NO);
+		printf("delete note  successly!!");
+	}
 
 	return 0;
 }
