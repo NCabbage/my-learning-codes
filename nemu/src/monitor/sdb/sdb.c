@@ -192,6 +192,7 @@ static int cmd_d(char *args){
 
 	if(args != NULL){
 		if(sscanf(args, "%u", &addr) == 1){
+			printf("1\n");
 			free_wp(addr);
 			printf("delete note successly!!\n");
 		}
