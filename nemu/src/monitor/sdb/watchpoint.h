@@ -11,5 +11,5 @@ typedef struct watchpoint {
 WP* new_wp(uint32_t addr);
 void free_wp(uint32_t addr);
 void watchpoint_display();
-void watchpoint_check();
+int watchpoint_check();
 

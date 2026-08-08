@@ -87,7 +87,7 @@ void watchpoint_display(){
 
 }
 
-void watchpoint_check(){
+int watchpoint_check(){
 
 	WP *cnt = head;
 	
@@ -97,12 +97,12 @@ void watchpoint_check(){
 		if(cnt->old_val != new_val){
 			nemu_state.state = NEMU_STOP;
 			printf("the 0x%x hsa changed from %x to %x\n", addr, cnt->old_val, new_val);
-			return ;
+			return 1;
 		}
 		cnt = cnt -> next;
 	}
 	
-	return ;
+	return 0;
 }
 
 void init_wp_pool() {
