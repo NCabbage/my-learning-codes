@@ -41,7 +41,6 @@ WP* new_wp(uint32_t addr){
 void free_wp(uint32_t addr){
 	WP *cnt, *curr;
 	curr = head;
-	printf("ok");
 	if(curr == NULL) return;
 
 	if(curr->addr != addr){
