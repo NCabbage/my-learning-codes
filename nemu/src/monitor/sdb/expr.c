@@ -153,6 +153,7 @@ uint32_t val(int x, int y){
 	if(y < 0) return 1;
 	if(tokens[x].type == TK_ADDR){
 	 	if(x == y){
+	 		printf("str = %s, len = %lu\n", tokens[x].str, strlen(tokens[x].str));
 	 		printf("here\n");
 	 		return (uint32_t)strtol(tokens[x].str, NULL, 16);
 		}else{
