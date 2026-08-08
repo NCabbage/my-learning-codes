@@ -22,7 +22,7 @@
 static WP wp_pool[NR_WP] = {};
 static WP *head = NULL, *free_ = NULL;
 
-WP* new_wp(){
+WP* new_wp(uint32_t addr){
 
 	if(free_ == NULL){
 		printf("the number of wp is too much!!!");
@@ -34,7 +34,7 @@ WP* new_wp(){
 	head = free_;
 	free_ = free_ -> next;
 	head -> next = cnt;
-
+	head -> addr = addr;
 	return head;
 }
 
@@ -52,6 +52,7 @@ void free_wp(int NO){
 	free_ = curr -> next;
 	curr -> next = free_ -> next;
 	free_ ->  next = cnt;
+	free_ -> addr = 0;
 	
 	return ;
 }
@@ -60,7 +61,7 @@ void watchpoint_display(){
 	WP* cnt;
 	cnt = head;
 	while(cnt != NULL){
-		printf("NO:%d\n", cnt->NO);
+		printf("NO:%d addr:%u\n", cnt->NO, cnt->addr);
 		cnt = cnt -> next;
 	}
 	printf("------------------\n");

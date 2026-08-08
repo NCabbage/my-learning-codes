@@ -175,8 +175,14 @@ static int cmd_p(char *args){
 }
 
 static int cmd_w(char *args){
-	printf("add note successly!\n");
-	new_wp();
+	uint32_t addr;
+
+	if(args != NULL){
+		if(sscanf(args, "%u", &addr) == 1){
+			new_wp(addr);
+			printf("add watchpoint successly");
+		}
+	}
 
 	return 0;
 }
