@@ -49,14 +49,21 @@ void free_wp(uint32_t addr){
 			if((curr->next)->addr == addr) break;
 			else curr = curr -> next;
 		}	
+
+		cnt = free_;
+		free_ = curr -> next;
+		curr -> next = free_ -> next;
+		free_ -> next = cnt;
+		free_ -> addr = 0;
+	}else{
+	
+		cnt = free_;
+		free_ = curr;
+		free_-> next =  cnt -> next;
+		head = NULL;
+		free_ -> addr = 0;
 	}
 
-	cnt = free_;
-	free_ = curr -> next;
-	curr -> next = free_ -> next;
-	free_ ->  next = cnt;
-	free_ -> addr = 0;
-	
 	return ;
 }
 
