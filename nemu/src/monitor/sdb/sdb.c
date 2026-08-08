@@ -180,7 +180,7 @@ static int cmd_w(char *args){
 	if(args != NULL){
 		if(sscanf(args, "%u", &addr) == 1){
 			new_wp(addr);
-			printf("add watchpoint successly");
+			printf("add watchpoint successly\n");
 		}
 	}
 
