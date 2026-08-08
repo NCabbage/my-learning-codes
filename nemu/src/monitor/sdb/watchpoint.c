@@ -43,11 +43,12 @@ void free_wp(uint32_t addr){
 	WP *cnt, *curr;
 	curr = head;
 	
-	while(curr != NULL){
-		if((curr->next)->addr == addr) break;
-		else curr = curr -> next;
+	if(curr->addr != addr){
+		while(curr != NULL){
+			if((curr->next)->addr == addr) break;
+			else curr = curr -> next;
+		}	
 	}	
-
 	cnt = free_;
 	free_ = curr -> next;
 	curr -> next = free_ -> next;
