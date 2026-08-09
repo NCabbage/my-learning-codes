@@ -61,8 +61,8 @@ void free_wp(uint32_t addr){
 	
 		cnt = free_;
 		free_ = curr;
+		head = free_ -> next;
 		free_-> next =  cnt -> next;
-		head = NULL;
 		free_ -> addr = 0;
 		free_ -> old_val = 0;
 	}
