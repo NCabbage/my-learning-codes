@@ -149,8 +149,6 @@ uint32_t val(int x, int y){
 	int type = 0;
 	int k = 0;						//bracket tag
 	int flag = 1;
-	for(int i=x;i<=y;i++)
-		printf("%d %s\n", tokens[i].type, tokens[i].str);
 	
 	if(y < 0) return 1;
 	if(tokens[x].type == TK_ADDR){
