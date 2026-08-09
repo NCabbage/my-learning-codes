@@ -158,7 +158,7 @@ uint32_t val(int x, int y){
 			switch(tokens[x+1].type){
 			case '+' : return val(x, x) + val(x+2, y);break;
 			case '-' : return val(x, x) - val(x+2, y);break;
-			case '*' : return val(x, x) * val(x+2, y);break;
+			case '*' : printf("zdjd\n");return val(x, x) * val(x+2, y);break;
 			case '/' : return val(x, x) / val(x+2, y);break;
 			default:	return 0;break;
 			}
