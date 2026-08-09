@@ -232,12 +232,12 @@ word_t expr(char *e, bool *success) {
 	
 	for (int i = 0; i < nr_token; i ++) {
 		printf("%s %d\n", tokens[i].str, tokens[i].type);
-		if (tokens[i].type == '*' && (i == 0 || '(')) {
+		if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type == (DEREF || '('))) {
 			tokens[i].type = DEREF;
 		}
 		printf("%s %d\n", tokens[i].str, tokens[i].type);
 	}
-	printf("%d %d\n", nr_token, tokens[0].type);
+
   /* TODO: Insert codes to evaluate the expression. */
 	word_t ans = val(0, nr_token-1);
 	*success = true;
