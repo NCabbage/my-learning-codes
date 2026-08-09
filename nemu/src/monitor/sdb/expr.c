@@ -231,11 +231,9 @@ word_t expr(char *e, bool *success) {
 
 	
 	for (int i = 0; i < nr_token; i ++) {
-		printf("%s %d\n", tokens[i].str, tokens[i].type);
 		if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type == (DEREF || '('))) {
 			tokens[i].type = DEREF;
 		}
-		printf("%s %d\n", tokens[i].str, tokens[i].type);
 	}
 
   /* TODO: Insert codes to evaluate the expression. */
