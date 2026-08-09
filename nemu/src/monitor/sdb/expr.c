@@ -160,7 +160,7 @@ uint32_t val(int x, int y){
 			switch(tokens[x+1].type){
 			case '+' : return val(x, x) + val(x+2, y);break;
 			case '-' : return val(x, x) - val(x+2, y);break;
-			case '*' : printf("zdjd\n");return val(x, x) * val(x+2, y);break;
+			case '*' : return val(x, x) * val(x+2, y);break;
 			case '/' : return val(x, x) / val(x+2, y);break;
 			default:	return 0;break;
 			}
@@ -169,7 +169,6 @@ uint32_t val(int x, int y){
 
 	if(tokens[x].type == DEREF){
 		uint32_t addr = val(x+1, y);
-		printf("%x\n", addr);
 		return (uint64_t)host_read((guest_to_host(addr)), 4);
 	}
 
