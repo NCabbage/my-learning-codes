@@ -194,9 +194,11 @@ static int cmd_w(char *args){
 
 static int cmd_d(char *args){
 	uint32_t addr;
-
+	char cnt[64];
+	bool success = 0;
 	if(args != NULL){
-		if(sscanf(args, "%u", &addr) == 1){
+		if(sscanf(args, "%63s", cnt) == 1){
+			addr = expr(cnt, &success);
 			free_wp(addr);
 			printf("delete note successly!!\n");
 		}
