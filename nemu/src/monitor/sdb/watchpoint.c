@@ -88,7 +88,6 @@ void watchpoint_display(){
 }
 
 int watchpoint_check(){
-	printf("watchpoint_check\n");
 	WP *cnt = head;
 	
 	while(cnt != NULL){
