@@ -98,6 +98,7 @@ int watchpoint_check(){
 			printf("the 0x%x hsa changed from %x to %x\n", addr, cnt->old_val, new_val);
 			return 1;
 		}
+		nemu_state.state = NEMU_RUNNING;
 		cnt = cnt -> next;
 	}
 	
