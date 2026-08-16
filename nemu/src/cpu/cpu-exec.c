@@ -107,7 +107,7 @@ void cpu_exec(uint64_t n) {
     case NEMU_END: case NEMU_ABORT: case NEMU_QUIT:
       printf("Program execution has ended. To restart the program, exit NEMU and run again.\n");
       return;
-    case NEMU_STOP: printf("Program has stopped.\n"); return;
+    case NEMU_STOP: printf("Program has stopped.\n"); break;
     default: nemu_state.state = NEMU_RUNNING;					//原先是4改成NEMU_RUNNING
   }
 
