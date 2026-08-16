@@ -95,8 +95,8 @@ int watchpoint_check(){
 		uint32_t new_val = (unsigned int)host_read(guest_to_host(addr), 4);
 		if(cnt->old_val != new_val){
 			nemu_state.state = NEMU_STOP;
-			cnt->old_val = new_val;
 			printf("the 0x%x hsa changed from %x to %x\n", addr, cnt->old_val, new_val);
+			cnt->old_val = new_val;
 			return 1;
 		}
 		cnt = cnt -> next;
