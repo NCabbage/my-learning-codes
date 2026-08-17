@@ -79,7 +79,7 @@ static struct {
   { "q", "Exit NEMU", cmd_q },
   { "s", "step n", cmd_s },
 	{ "info", "look reg", cmd_info},
-	{	"x", "watch memory", cmd_x},
+	{ "x", "watch memory", cmd_x},
 	{ "p", "exprion", cmd_p},
 	{ "w", "add watchpoint", cmd_w},
 	{ "d", "delete watchpoint", cmd_d},
