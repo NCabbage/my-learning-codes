@@ -44,8 +44,7 @@ int sprintf(char *out, const char *fmt, ...) {
   *p = '\0';
   va_end(args);
   return p-out;				//return the number of written characters
-  
-  return 0;
+
 }
 
 int snprintf(char *out, size_t n, const char *fmt, ...) {
