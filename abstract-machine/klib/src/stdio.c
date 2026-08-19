@@ -26,7 +26,7 @@ int sprintf(char *out, const char *fmt, ...) {
   		f ++;
   		if(*f == 's'){
 			char *str = va_arg(args, char*);
-  			while(str){
+  			while(*str){
   				*p = *str;
   				p ++;
   				str ++;		//copy one by one
