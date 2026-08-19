@@ -31,6 +31,7 @@ int sprintf(char *out, const char *fmt, ...) {
   				p ++;
   				str ++;		//copy one by one
   			}
+  			f ++;
   		}
   	}else{
   		*p = *f;
