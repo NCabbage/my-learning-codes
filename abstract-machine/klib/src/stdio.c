@@ -11,19 +11,19 @@ int printf(const char *fmt, ...) {
 }
 
 int vsprintf(char *out, const char *fmt, va_list ap) {
-  panic("Not implemented");
+  panic("Not implemented vsprintf");
 }
 
 int sprintf(char *out, const char *fmt, ...) {
-  panic("Not implemented");
+  panic("Not implemented sprintf");
 }
 
 int snprintf(char *out, size_t n, const char *fmt, ...) {
-  panic("Not implemented");
+  panic("Not implemented snprintf");
 }
 
 int vsnprintf(char *out, size_t n, const char *fmt, va_list ap) {
-  panic("Not implemented");
+  panic("Not implemented vsnprintf");
 }
 
 #endif
