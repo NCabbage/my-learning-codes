@@ -15,7 +15,36 @@ int vsprintf(char *out, const char *fmt, va_list ap) {
 }
 
 int sprintf(char *out, const char *fmt, ...) {
-  putch('A');
+  va_list args;
+  va_start(args, fmt);
+  
+  char *p = out;				//save original output address -- out 
+  const char *f = fmt;
+  
+  while(*f){
+  	if(*f == '%'){
+  		f ++;
+  		if(*f == 's'){
+			char *str = va_arg(args, char*);
+  			while(str){
+  				*p = *str;
+  				p ++;
+  				str ++;		//copy one by one
+  			}
+  		}
+  	}else{
+  		*p = *f;
+  		p ++;
+  		f ++;
+  	}
+  
+  }
+  
+  
+  *p = '\0';
+  va_end(args);
+  return p-out;				//return the number of written characters
+  
   return 0;
 }
 
