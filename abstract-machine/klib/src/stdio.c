@@ -15,7 +15,8 @@ int vsprintf(char *out, const char *fmt, va_list ap) {
 }
 
 int sprintf(char *out, const char *fmt, ...) {
-  panic("Not implemented sprintf");
+  putch('A');
+  return 0;
 }
 
 int snprintf(char *out, size_t n, const char *fmt, ...) {
