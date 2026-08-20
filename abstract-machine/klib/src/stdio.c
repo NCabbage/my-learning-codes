@@ -45,6 +45,7 @@ int sprintf(char *out, const char *fmt, ...) {
   			p ++;
   			num = num / 10;
   			}
+  		f ++;
   		}
   	}else{
   		*p = *f;
