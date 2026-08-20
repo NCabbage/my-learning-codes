@@ -43,6 +43,7 @@ int sprintf(char *out, const char *fmt, ...) {
   			while(num){
   			*p = (num % 10) + '0';
   			putch(*p);
+  			putch('\n');
   			p ++;
   			num = num / 10;
   			}
