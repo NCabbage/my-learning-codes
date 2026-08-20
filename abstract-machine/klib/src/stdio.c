@@ -48,7 +48,7 @@ int sprintf(char *out, const char *fmt, ...) {
   				i ++;
   				num = num / 10;
   			}
- 			
+ 			i --;
   			while(i){
   				*p = cnt[i];
   				i --;
