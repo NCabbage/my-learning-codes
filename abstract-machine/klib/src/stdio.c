@@ -43,14 +43,14 @@ int sprintf(char *out, const char *fmt, ...) {
   			
   			while(num){
   				cnt[i] = (num % 10) + '0';
+  				putch(cnt[i]);
+   				putch('\n');
   				i ++;
   				num = num / 10;
   			}
-  			
+ 			
   			while(i){
   				*p = cnt[i];
-  				putch(cnt[i]);
-  				putch('\n');
   				i --;
   				p ++;
   			}
