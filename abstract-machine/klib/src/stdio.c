@@ -33,11 +33,11 @@ int sprintf(char *out, const char *fmt, ...) {
   			}
   			f ++;
   		}else if(*f == 'd'){
-  			char *str = va_arg(args, char*);
-  			while(*str){
-  			*p = *str;
+  			char num = va_arg(args, int);
+  			while(num){
+  			*p = (char)(num % 10);
   			p ++;
-  			str ++;		//copy one by one
+  			num = num / 10;
   			}
   		}
   	}else{
