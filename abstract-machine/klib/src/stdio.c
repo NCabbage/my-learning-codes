@@ -49,6 +49,8 @@ int sprintf(char *out, const char *fmt, ...) {
   			
   			while(i){
   				*p = cnt[i];
+  				putch(*p);
+  				putch('\n');
   				i --;
   				p ++;
   			}
