@@ -32,6 +32,13 @@ int sprintf(char *out, const char *fmt, ...) {
   				str ++;		//copy one by one
   			}
   			f ++;
+  		}else if(*f == 'd'){
+  			char *str = va_arg(args, char*);
+  			while(*str){
+  			*p = *str;
+  			p ++;
+  			str ++;		//copy one by one
+  			}
   		}
   	}else{
   		*p = *f;
