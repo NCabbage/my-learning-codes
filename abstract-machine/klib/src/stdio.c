@@ -34,18 +34,23 @@ int sprintf(char *out, const char *fmt, ...) {
   			f ++;
   		}else if(*f == 'd'){
   			int num = va_arg(args, int);
-  			
+  			char cnt[32];
+  			int i=0;
   			if(num ==  0){
-  				*p = (num % 10) + '0';
+  				*p = '0';
   				p ++;
   			}
   			
   			while(num){
-  			*p = (num % 10) + '0';
-  			putch(*p);
-  			putch('\n');
-  			p ++;
-  			num = num / 10;
+  				cnt[i] = (num % 10) + '0';
+  				i ++;
+  				num = num / 10;
+  			}
+  			
+  			while(i){
+  				*p = cnt[i];
+  				i --;
+  				p ++;
   			}
   		f ++;
   		}
