@@ -33,7 +33,7 @@ int sprintf(char *out, const char *fmt, ...) {
   			}
   			f ++;
   		}else if(*f == 'd'){
-  			char num = va_arg(args, int);
+  			int num = va_arg(args, int);
   			while(num){
   			*p = (char)(num % 10);
   			p ++;
