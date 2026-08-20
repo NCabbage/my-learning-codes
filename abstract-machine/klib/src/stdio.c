@@ -37,7 +37,7 @@ int sprintf(char *out, const char *fmt, ...) {
   		}else if(*f == 'd'){
   			int num = va_arg(args, int);
   			char cnt[32];
-  			int i=0;
+  			int i=1;
   			if(num ==  0){
   				*p = '0';
   				p ++;
@@ -50,7 +50,7 @@ int sprintf(char *out, const char *fmt, ...) {
   				i ++;
   				num = num / 10;
   			}
- 			
+ 			i --;
   			while(i){
   				*p = cnt[i];
   				putch(cnt[i]);
