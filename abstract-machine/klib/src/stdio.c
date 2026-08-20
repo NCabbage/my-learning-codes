@@ -24,6 +24,7 @@ int sprintf(char *out, const char *fmt, ...) {
   while(*f){
   	if(*f == '%'){
   		f ++;
+  		
   		if(*f == 's'){
 			char *str = va_arg(args, char*);
   			while(*str){
@@ -32,6 +33,7 @@ int sprintf(char *out, const char *fmt, ...) {
   				str ++;		//copy one by one
   			}
   			f ++;
+  			
   		}else if(*f == 'd'){
   			int num = va_arg(args, int);
   			char cnt[32];
@@ -49,19 +51,19 @@ int sprintf(char *out, const char *fmt, ...) {
  			i --;
   			while(i){
   				*p = cnt[i];
-  				putch(cnt[i]);
+  				putch(*p);
    				putch('\n');
   				i --;
   				p ++;
   			}
   		f ++;
   		}
+  		
   	}else{
   		*p = *f;
   		p ++;
   		f ++;
   	}
-  
   }
   
   
