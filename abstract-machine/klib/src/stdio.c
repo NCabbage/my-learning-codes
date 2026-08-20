@@ -34,7 +34,7 @@ int sprintf(char *out, const char *fmt, ...) {
   			}
   			f ++;
   			
-  		}else if(*f == 'd'){
+  		}else if(*f == 'd'){					//slove the number type
   			int num = va_arg(args, int);
   			char cnt[32];
   			int i=1;
@@ -45,16 +45,12 @@ int sprintf(char *out, const char *fmt, ...) {
   			
   			while(num){
   				cnt[i] = (num % 10) + '0';
-//  				putch(cnt[i]);
-//  				putch('\n');
   				i ++;
   				num = num / 10;
   			}
  			i --;
   			while(i){
   				*p = cnt[i];
-  				putch(cnt[i]);
-   				putch('\n');
   				i --;
   				p ++;
   			}
