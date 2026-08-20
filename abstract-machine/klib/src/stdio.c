@@ -34,8 +34,14 @@ int sprintf(char *out, const char *fmt, ...) {
   			f ++;
   		}else if(*f == 'd'){
   			int num = va_arg(args, int);
+  			
+  			if(num ==  0){
+  				*p = (num % 10) + '0';
+  				p ++;
+  			}
+  			
   			while(num){
-  			*p = (char)(num % 10);
+  			*p = (num % 10) + '0';
   			p ++;
   			num = num / 10;
   			}
