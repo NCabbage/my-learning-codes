@@ -14,6 +14,8 @@ char *strcpy(char *dst, const char *src) {
   	src ++;
   }
   
+  *dst = '\0';
+  
   return dst;
 }
 
@@ -31,6 +33,8 @@ char *strcat(char *dst, const char *src) {
   	dst ++;
   	src ++;
   }
+  
+  *dst = '\0';
   
   return dst;
 }
