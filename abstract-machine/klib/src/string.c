@@ -67,14 +67,13 @@ int strncmp(const char *s1, const char *s2, size_t n) {
 }
 
 void *memset(void *s, int c, size_t n) {
-  int* p = (int*)s;
+  unsigned char *p = (unsigned char *)s;			//void* is a generic pointer
+  unsigned char val = (unsigned char)c;
   
-  while(n){
-  	*p = c;
-  	p ++;
-  	n --;
-  }
-  
+  for(size_t i=0;i<n;i++)							//size_t is the value of sizeof();
+  	p[i] = val;
+  	
+  	
   return s;
 }
 
