@@ -41,6 +41,15 @@ char *strcat(char *dst, const char *src) {
   
   *p = '\0';
   
+  char *debug = dst;
+  
+  while(*debug){
+  	putch(*debug);
+  	debug ++;
+  }
+  
+  putch('\n');
+  
   return dst;
 }
 
