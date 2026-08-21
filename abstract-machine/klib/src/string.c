@@ -9,13 +9,15 @@ size_t strlen(const char *s) {
 }
 
 char *strcpy(char *dst, const char *src) {
+  char *p = dst;			//keep old address
+
   while(*src){
-  	*dst = *src;
+  	*p = *src;
   	src ++;
-  	dst ++;
+  	p ++;
   }
   
-  *dst = '\0';
+  *p = '\0';
   
   return dst;
 }
@@ -25,17 +27,19 @@ char *strncpy(char *dst, const char *src, size_t n) {
 }
 
 char *strcat(char *dst, const char *src) {
-  while(*dst){
-  	dst ++;
+  char *p = dst;
+  
+  while(*p){
+  	p ++;
   }
 
   while(*src){
-  	*dst = *src;
-  	dst ++;
+  	*p = *src;
+  	p ++;
   	src ++;
   }
   
-  *dst = '\0';
+  *p = '\0';
   
   return dst;
 }
