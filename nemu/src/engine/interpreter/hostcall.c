@@ -17,7 +17,7 @@
 #include <cpu/ifetch.h>
 #include <isa.h>
 #include <cpu/difftest.h>
-//test
+#include <trace.h>
 void set_nemu_state(int state, vaddr_t pc, int halt_ret) {
   difftest_skip_ref();
   nemu_state.state = state;
@@ -48,4 +48,5 @@ void invalid_inst(vaddr_t thispc) {
         "* Every line of untested code is always wrong!\n\n", ANSI_FG_RED), isa_logo);
 
   set_nemu_state(NEMU_ABORT, thispc, -1);
+  buf_read();
 }

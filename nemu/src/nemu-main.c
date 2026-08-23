@@ -14,6 +14,7 @@
 ***************************************************************************************/
 
 #include <common.h>
+#include <trace.h>
 
 void init_monitor(int, char *[]);
 void am_init_monitor();
@@ -23,6 +24,7 @@ word_t expr(char *e, bool *success);
 
 int main(int argc, char *argv[]) {
   /* Initialize the monitor. */
+  
 #ifdef CONFIG_TARGET_AM
   am_init_monitor();
 #else
@@ -42,6 +44,7 @@ while (fscanf(fp, "%u %[^\n]", &expected, exprtion) == 2) {
 fclose(fp);
 */
   /* Start engine. */
+  buf_init();
   engine_start();
 
   return is_exit_status_bad();
