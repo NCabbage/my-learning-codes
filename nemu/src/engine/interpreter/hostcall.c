@@ -17,7 +17,7 @@
 #include <cpu/ifetch.h>
 #include <isa.h>
 #include <cpu/difftest.h>
-
+//test
 void set_nemu_state(int state, vaddr_t pc, int halt_ret) {
   difftest_skip_ref();
   nemu_state.state = state;
