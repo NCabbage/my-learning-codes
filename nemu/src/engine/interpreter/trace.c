@@ -18,14 +18,13 @@ bool buf_read(){
 	
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
-		printf("PC:%u\n", b.pc[num]);
+		printf("PC:%x\n", b.pc[num]);
 	}
 	
 	return true;
 }
 
 bool buf_write(vaddr_t pc){
-	printf("debug:%x\n", pc);
 	if(isFull()){
 		b.head = (b.head + 1) % BUF_SIZE;
 		b.pc[b.tail] = pc;
