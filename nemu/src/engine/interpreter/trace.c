@@ -18,8 +18,8 @@ bool buf_read(){
 	
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
-		if((b.head + i) % BUF_SIZE != b.tail) printf("   %x: %x\n", b.pc[num], b.inst[num]);
-		else printf("——>%x: %x\n", b.pc[num], b.inst[num]);
+		if((b.head + i) % BUF_SIZE != b.tail) printf("   %08x: %08x\n", b.pc[num], b.inst[num]);
+		else printf("——>%08x: %08x\n", b.pc[num], b.inst[num]);
 	}
 	
 	return true;
