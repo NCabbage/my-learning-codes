@@ -32,7 +32,7 @@ bool buf_write(vaddr_t pc){
 		b.tail = (b.tail + 1) % BUF_SIZE;
 	}else{
 		b.pc[b.tail] = pc;
-		b.tail = (b.tail + 1) % BUF_SIZE;
+		b.tail ++;
 	}
 	
 	return true;
