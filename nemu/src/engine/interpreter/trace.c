@@ -28,7 +28,7 @@ bool buf_write(vaddr_t pc){
 	printf("debug:%u\n", pc);
 	if(isFull()){
 		b.head += 1;
-		b.tail += 1;
+		b.tail = (b.tail + 1) % BUF_SIZE;
 		b.pc[b.tail] = pc;
 	}
 	
