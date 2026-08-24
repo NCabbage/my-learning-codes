@@ -25,6 +25,7 @@ bool buf_read(){
 }
 
 bool buf_write(vaddr_t pc){
+	printf("debug:%u\n", pc);
 	if(isFull()){
 		b.head += 1;
 		b.tail += 1;
