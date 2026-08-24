@@ -45,7 +45,7 @@ while (fscanf(fp, "%u %[^\n]", &expected, exprtion) == 2) {
 fclose(fp);
 */
   /* Start engine. */
-  
+  	printf("here\n");
 #ifdef CONFIG_MTRACE
 	printf("Memory trace init over!\n");
 	mtrace_init();
