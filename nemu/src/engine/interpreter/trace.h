@@ -3,13 +3,12 @@
 #define BUF_SIZE 32
 
 typedef struct _iringbuf{
-
 	int head;
 	int tail;
 	vaddr_t pc[BUF_SIZE];
 	uint32_t inst[BUF_SIZE];
 	char p[BUF_SIZE][128];
-
+	
 }iringbuf;
 
 bool buf_init();

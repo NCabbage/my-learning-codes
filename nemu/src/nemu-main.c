@@ -15,6 +15,7 @@
 
 #include <common.h>
 #include <trace.h>
+#include <mtrace.h>
 
 void init_monitor(int, char *[]);
 void am_init_monitor();
@@ -44,6 +45,11 @@ while (fscanf(fp, "%u %[^\n]", &expected, exprtion) == 2) {
 fclose(fp);
 */
   /* Start engine. */
+  
+#ifdef CONFIG_MTRACE
+	mtrace_init();
+#endif
+  
   buf_init();
   engine_start();
 

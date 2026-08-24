@@ -167,6 +167,13 @@ config WATCHPOINT
   help
     look the val change
 
+config WATCHPOINT
+  depends on TARGET_NATIVE_ELF
+  bool "Enable trace memory"
+  default n
+  help
+    look the val change
+
 choice
   prompt "Reference design"
   default DIFFTEST_REF_SPIKE if ISA_riscv
