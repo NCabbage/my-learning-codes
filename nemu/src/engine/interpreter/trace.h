@@ -7,6 +7,7 @@ typedef struct _iringbuf{
 	int head;
 	int tail;
 	vaddr_t pc[BUF_SIZE];
+	
 
 }iringbuf;
 
