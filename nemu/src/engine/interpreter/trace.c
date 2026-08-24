@@ -18,8 +18,8 @@ bool buf_read(){
 	
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
-		if((b.head + i) % BUF_SIZE != b.tail) printf("   %08x: %08x ", b.pc[num], b.inst[num]);
-		else printf("——>%08x: %08x ", b.pc[num], b.inst[num]);
+		if((b.head + i) % BUF_SIZE != b.tail) printf("   %08x: %08x    ", b.pc[num], b.inst[num]);
+		else printf("——>%08x: %08x    ", b.pc[num], b.inst[num]);
 		
 		char *p = b.p[num];
 		void disassemble(char *str, int size, uint64_t pc, uint8_t *code, int nbyte);
