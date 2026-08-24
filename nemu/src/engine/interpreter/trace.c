@@ -18,7 +18,8 @@ bool buf_read(){
 	
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
-		printf("PC:%x\n", b.pc[num]);
+		if((b.head + i) % BUF_SIZE != b.tail) printf("   PC:%x\n", b.pc[num]);
+		else printf("——>PC:%x\n", b.pc[num]);
 	}
 	
 	return true;
