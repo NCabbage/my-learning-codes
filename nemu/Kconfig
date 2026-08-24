@@ -167,7 +167,7 @@ config WATCHPOINT
   help
     look the val change
 
-config WATCHPOINT
+config MTRACE
   depends on TARGET_NATIVE_ELF
   bool "Enable trace memory"
   default n
