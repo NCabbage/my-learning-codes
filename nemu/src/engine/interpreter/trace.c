@@ -11,9 +11,35 @@ bool buf_init(){
 }
 
 bool buf_read(){
+	if(isFull()){
+		printf("the trace buf is empty\n");
+		return false;
+	}
+	
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
 		printf("PC:%u\n", b.pc[num]);
 	}
+	
 	return true;
+}
+
+bool buf_write(vaddr_t pc){
+	if(isFull()){
+		b.head += 1;
+		b.tail += 1;
+		b.pc[b.tail] = pc;
+	}
+	
+	return true;
+}
+
+bool isEmpty(){
+	if(b.head == b.tail) return true;
+	return false;
+}
+
+bool isFull(){
+	if(b.head == (b.tail + 1) % BUF_SIZE) return true;
+	return false;
 }
