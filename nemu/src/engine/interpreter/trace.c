@@ -17,7 +17,7 @@ bool buf_read(){
 	}
 	
 	for(int i=0;i<BUF_SIZE;i++){
-		int num = (b.tail + i) % BUF_SIZE;
+		int num = (b.head + i) % BUF_SIZE;
 		printf("PC:%x\n", b.pc[num]);
 	}
 	
@@ -25,14 +25,16 @@ bool buf_read(){
 }
 
 bool buf_write(vaddr_t pc){
+	if(isEmpty()) b.pc[b.tail] = pc;
+
 	printf("debug:%x\n", pc);
 	if(isFull()){
 		b.head = (b.head + 1) % BUF_SIZE;
-		b.pc[b.tail] = pc;
 		b.tail = (b.tail + 1) % BUF_SIZE;
-	}else{
 		b.pc[b.tail] = pc;
+	}else{
 		b.tail ++;
+		b.pc[b.tail] = pc;
 	}
 	
 	return true;
