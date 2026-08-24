@@ -8,6 +8,7 @@ typedef struct _iringbuf{
 	int tail;
 	vaddr_t pc[BUF_SIZE];
 	uint32_t inst[BUF_SIZE];
+	char p[BUF_SIZE][128];
 
 }iringbuf;
 

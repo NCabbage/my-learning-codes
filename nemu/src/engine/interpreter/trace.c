@@ -20,6 +20,10 @@ bool buf_read(){
 		int num = (b.head + i) % BUF_SIZE;
 		if((b.head + i) % BUF_SIZE != b.tail) printf("   %08x: %08x\n", b.pc[num], b.inst[num]);
 		else printf("——>%08x: %08x\n", b.pc[num], b.inst[num]);
+		
+		char *p = b.p[num];
+		void disassemble(char *str, int size, uint64_t pc, uint8_t *code, int nbyte);
+  		disassemble(p, 128, (uint64_t)b.pc[num],  (uint8_t *)&b.inst[num], 4);
 	}
 	
 	return true;
@@ -27,19 +31,17 @@ bool buf_read(){
 
 bool buf_write(vaddr_t pc, uint32_t i){
 	if(isEmpty()){
-		b.pc[b.tail] = pc;
-		b.inst[b.tail] = i;
+		
 	}
 	if(isFull()){
 		b.head = (b.head + 1) % BUF_SIZE;
 		b.tail = (b.tail + 1) % BUF_SIZE;
-		b.pc[b.tail] = pc;
-		b.inst[b.tail] = i;
 	}else{
 		b.tail ++;
-		b.pc[b.tail] = pc;
-		b.inst[b.tail] = i;
 	}
+	
+	b.pc[b.tail] = pc;
+	b.inst[b.tail] = i;
 	
 	return true;
 }
