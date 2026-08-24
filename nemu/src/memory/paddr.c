@@ -32,7 +32,7 @@ static word_t pmem_read(paddr_t addr, int len) {
   word_t ret = host_read(guest_to_host(addr), len);
 #ifdef CONFIG_MTRACE
   vaddr_t pc = cpu.pc;
-  mtrace_write(R, addr, ret, pc);
+//  mtrace_write(R, addr, ret, pc);
 #endif
   return ret;
 }
@@ -41,7 +41,7 @@ static void pmem_write(paddr_t addr, int len, word_t data) {
   host_write(guest_to_host(addr), len, data);
 #ifdef CONFIG_MTRACE
   vaddr_t pc = cpu.pc;
-  mtrace_write(W, addr, ret, pc);
+//  mtrace_write(W, addr, ret, pc);
 #endif
 }
 
