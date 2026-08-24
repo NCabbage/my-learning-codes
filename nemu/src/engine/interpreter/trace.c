@@ -11,7 +11,7 @@ bool buf_init(){
 }
 
 bool buf_read(){
-	if(isFull()){
+	if(isEmpty()){
 		printf("the trace buf is empty\n");
 		return false;
 	}
