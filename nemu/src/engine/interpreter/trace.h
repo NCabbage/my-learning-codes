@@ -7,7 +7,7 @@ typedef struct _iringbuf{
 	int head;
 	int tail;
 	vaddr_t pc[BUF_SIZE];
-	
+	uint32_t inst[BUF_SIZE];
 
 }iringbuf;
 
@@ -15,4 +15,4 @@ bool buf_init();
 bool isEmpty();
 bool isFull();
 bool buf_read();
-bool buf_write();
+bool buf_write(vaddr_t pc, uint32_t i);

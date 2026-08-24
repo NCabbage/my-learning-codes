@@ -130,6 +130,6 @@ static int decode_exec(Decode *s) {
 
 int isa_exec_once(Decode *s) {
   s->isa.inst = inst_fetch(&s->snpc, 4);
-  buf_write(s->pc);
+  buf_write(s->pc, s->isa.inst);
   return decode_exec(s);
 }

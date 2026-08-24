@@ -18,24 +18,27 @@ bool buf_read(){
 	
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
-		if((b.head + i) % BUF_SIZE != b.tail) printf("   PC:%x\n", b.pc[num]);
-		else printf("——>PC:%x\n", b.pc[num]);
+		if((b.head + i) % BUF_SIZE != b.tail) printf("   %x: %x\n", b.pc[num], b.inst[num]);
+		else printf("——>%x: %x\n", b.pc[num], b.inst[num]);
 	}
 	
 	return true;
 }
 
-bool buf_write(vaddr_t pc){
-	if(isEmpty()) b.pc[b.tail] = pc;
-
-	printf("debug:%x\n", pc);
+bool buf_write(vaddr_t pc, uint32_t i){
+	if(isEmpty()){
+		b.pc[b.tail] = pc;
+		b.inst[b.tail] = i;
+	}
 	if(isFull()){
 		b.head = (b.head + 1) % BUF_SIZE;
 		b.tail = (b.tail + 1) % BUF_SIZE;
 		b.pc[b.tail] = pc;
+		b.inst[b.tail] = i;
 	}else{
 		b.tail ++;
 		b.pc[b.tail] = pc;
+		b.inst[b.tail] = i;
 	}
 	
 	return true;
