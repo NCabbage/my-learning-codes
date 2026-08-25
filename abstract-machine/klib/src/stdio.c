@@ -6,7 +6,53 @@
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
 
 int printf(const char *fmt, ...) {
-  putch('A');
+  va_list args;
+  va_start(args, fmt);
+  
+  const char *f = fmt;
+  
+  while(*f){
+  	if(*f == '%'){
+  		f ++;
+  		
+  		if(*f == 's'){
+			char *str = va_arg(args, char*);
+  			while(*str){
+  				putch(*str);
+  				str ++;		//copy one by one
+  			}
+  			f ++;
+  			
+  		}else if(*f == 'd'){					//slove the number type
+  			int num = va_arg(args, int);
+  			char cnt[32];
+  			int i=1;
+  			if(num ==  0){
+  				putch('0');
+  			}
+  			
+  			while(num){
+  				cnt[i] = (num % 10) + '0';
+  				i ++;
+  				num = num / 10;
+  			}
+ 			i --;
+  			while(i){
+  				putch(cnt[i]);
+  				i --;
+  			}
+  		f ++;
+  		}
+  		
+  	}else{
+  		putch(*f);
+  		f ++;
+  	}
+  }
+  
+
+  va_end(args);			//return the number of written characters
+
   return 0;
 }
 
