@@ -15,5 +15,5 @@ void mtrace_init(){
 
 void mtrace_write(char WR, vaddr_t addr, uint32_t val, vaddr_t pc){
 	if(addr >= START && addr <= END)
-	MTRACE_LOG("%c 0x%08x 0x%08x PC=0x%08x\n", WR, addr, val, pc);
+	MTRACE_LOG("%c addr: 0x%08x data: 0x%08x PC: 0x%08x\n", WR, addr, val, pc);
 }
