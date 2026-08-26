@@ -15,12 +15,12 @@ void elf_action(char *elf_file){
 	FILE *fp = fopen(elf_file, "rb");
 	
 	int ret = fread(&ehdr, 1, sizeof(ehdr), fp);
-	if(ret != 1) printf("there is no elf file\n");
+	if(ret == 0) printf("there is no elf file\n");
 	
 	Elf32_Shdr shdr[ehdr.e_shnum];	
 	fseek(fp, ehdr.e_shoff, SEEK_SET);
 	ret = fread(&shdr, 1, sizeof(shdr), fp);
-	if(ret != 1) printf("shdr read error\n");
+	if(ret == 0) printf("shdr read error\n");
 	
 //	for(int i=0;i<ehdr.e_shnum;i++)
 //		printf("sh_name=%u sh_size=%u sh_offset=%x sh_type=%u\n", shdr[i].sh_name, shdr[i].sh_size, shdr[i].sh_offset, shdr[i].sh_type);
