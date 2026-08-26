@@ -1,4 +1,5 @@
 #include <ftrace.h>
+#include <elf.h>
 
 bool load_elf(char *elf_file) {
   
