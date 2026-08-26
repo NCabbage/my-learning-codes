@@ -14,3 +14,4 @@ bool load_elf(char *elf_file) {
   fclose(fp);
   return true;
 }
+
