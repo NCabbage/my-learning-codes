@@ -30,8 +30,17 @@ void elf_action(char *elf_file){
 	fseek(fp, shdr[ehdr.e_shstrndx].sh_offset, SEEK_SET);
 	ret = fread(shstrtab, 1, sizeof(shstrtab), fp);
 	
-	for(int i=0;i<ehdr.e_shnum;i++)
+	uint32_t symtab_idx, strtab_idx;
+	
+	
+	for(int i=0;i<ehdr.e_shnum;i++){
+		char *shdr_name = &shstrtab[ shdr[i].sh_name ];
+		if(strcmp(shdr_name, ".symtab") == 0) symtab_idx = i;
+		if(strcmp(shdr_name, ".strtab") == 0) strtab_idx = i;
 		printf("sh_name=%s, sh_size=%u, sh_offset=%x, sh_type=%u sh_flags= %u\n", &shstrtab[shdr[i].sh_name], shdr[i].sh_size, shdr[i].sh_offset, shdr[i].sh_type, shdr[i].sh_flags);
+	}	
+	
+	printf("%d, %d\n", symtab_idx, strtab_idx);
 	
 	fclose(fp);
 }
