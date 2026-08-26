@@ -13,12 +13,20 @@ typedef struct {
 void elf_action(char *elf_file){
 	load_elf(elf_file);
 	FILE *fp = fopen(elf_file, "rb");
-	int ret = fread(&ehdr, sizeof(ehdr), 1, fp);
-	if(ret != 1) ;
 	
-	printf("e_shoff = %u\n", ehdr.e_shoff);
-	printf("e_shnum = %u\n", ehdr.e_shnum);
-	printf("e_shstrndx = %u\n", ehdr.e_shstrndx);
+	int ret = fread(&ehdr, sizeof(ehdr), 1, fp);
+	if(ret != 1) printf("there is no elf file\n");
+	
+	fseek(fp, ehdr.e_shoff, SEEK_SET);
+	
+	Elf32_Shdr shdr[ehdr.e_shnum];	
+
+	ret = fread(&shdr, sizeof(shdr), 1, fp);
+	if(ret != 1) printf("shdr read error\n");
+	for(int i=0;i<9;i++)
+		printf("sh_name=%u\n", shdr[i].sh_name);
+	
+	fclose(fp);
 }
 
 bool load_elf(char *elf_file) {
