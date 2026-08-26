@@ -24,8 +24,8 @@ void elf_action(char *elf_file){
 	ret = fread(&shdr, sizeof(shdr), 1, fp);
 	if(ret != 1) printf("shdr read error\n");
 	
-	for(int i=0;i<9;i++)
-		printf("sh_name=%u\n", shdr[i].sh_name);
+	for(int i=0;i<ehdr.e_shnum;i++)
+		printf("sh_name=%u sh_size=%u sh_offset=%u sh_type=%u\n", shdr[i].sh_name, shdr[i].sh_size, shdr[i].sh_offset, shdr[i].sh_type);
 	
 	fclose(fp);
 }
