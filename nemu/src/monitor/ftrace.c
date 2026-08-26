@@ -1,6 +1,10 @@
 #include <ftrace.h>
 #include <elf.h>
 
+void elf_action(char *elf_file){
+	load_elf(elf_file);
+}
+
 bool load_elf(char *elf_file) {
   
   printf("elf_file:%s\n", elf_file);
