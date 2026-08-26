@@ -124,6 +124,7 @@ void init_monitor(int argc, char *argv[]) {
   long img_size = load_img();
   
   printf("elf\n");
+    printf("elf_file:%s\n", elf_file);
   load_elf();
 
   /* Initialize differential testing. */

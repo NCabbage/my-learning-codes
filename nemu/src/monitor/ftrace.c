@@ -3,6 +3,7 @@
 static char *elf_file = NULL;
 
 bool load_elf() {
+
   if (elf_file == NULL) {
     Log("No elf is given. Use the default build-in elf.");
     return false;
@@ -10,7 +11,6 @@ bool load_elf() {
 
   FILE *fp = fopen(elf_file, "rb");
   Assert(fp, "Can not open '%s'", elf_file);
-  printf("elf_file:%s\n", elf_file);
   fclose(fp);
   return true;
 }
