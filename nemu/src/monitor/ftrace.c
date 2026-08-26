@@ -16,9 +16,9 @@ void elf_action(char *elf_file){
 	int ret = fread(&ehdr, sizeof(ehdr), 1, fp);
 	if(ret != 1) ;
 	
-//	printf("e_shoff = %u\n", ehdr.e_shoff);
-//	printf("e_shnum = %u\n", ehdr.e_shnum);
-//	printf("e_shstrndx = %u\n", ehdr.e_shstrndx);
+	printf("e_shoff = %u\n", ehdr.e_shoff);
+	printf("e_shnum = %u\n", ehdr.e_shnum);
+	printf("e_shstrndx = %u\n", ehdr.e_shstrndx);
 }
 
 bool load_elf(char *elf_file) {
