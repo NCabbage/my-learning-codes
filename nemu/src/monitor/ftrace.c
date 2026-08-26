@@ -1,9 +1,8 @@
 #include <ftrace.h>
 
-static char *elf_file = NULL;
-
-bool load_elf() {
-
+bool load_elf(char *elf_file) {
+  
+  printf("elf_file:%s\n", elf_file);
   if (elf_file == NULL) {
     Log("No elf is given. Use the default build-in elf.");
     return false;
