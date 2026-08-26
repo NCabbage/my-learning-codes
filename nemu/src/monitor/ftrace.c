@@ -31,7 +31,7 @@ void elf_action(char *elf_file){
 	ret = fread(shstrtab, 1, sizeof(shstrtab), fp);
 	
 	for(int i=0;i<ehdr.e_shnum;i++)
-		printf("sh_name=%s, sh_size=%u, sh_offset=%x, sh_type=%u\n", &shstrtab[shdr[i].sh_name], shdr[i].sh_size, shdr[i].sh_offset, shdr[i].sh_type);
+		printf("sh_name=%s, sh_size=%u, sh_offset=%x, sh_type=%u sh_flags= %u\n", &shstrtab[shdr[i].sh_name], shdr[i].sh_size, shdr[i].sh_offset, shdr[i].sh_type, shdr[i].sh_flags);
 	
 	fclose(fp);
 }
