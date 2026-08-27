@@ -84,7 +84,7 @@ bool load_elf(char *elf_file) {
 
 void output_ftrace(uint32_t pc){
 	for(int i=0;i<func_count;i++){
-		if(pc == func[i].addr) printf("the program has jump to %s addr: %u\n", func[i].name, func[i].addr);
+		if(pc == func[i].addr) printf("the program has jump to %s addr: %x\n", func[i].name, func[i].addr);
 	}
 }
 
