@@ -10,6 +10,7 @@ typedef struct {
 } elf_func;
 
 elf_func func[64];
+int func_count = 0;
 
 void elf_action(char *elf_file){
 	load_elf(elf_file);
@@ -51,7 +52,6 @@ void elf_action(char *elf_file){
 	fseek(fp, shdr[strtab_idx].sh_offset, SEEK_SET);
 	ret = fread(strtab, 1, shdr[strtab_idx].sh_size, fp);
 	
-	int func_count = 0;
 	
 	for(int i=0;i<sym_count;i++){
 		int type = ELF32_ST_TYPE(symtab[i].st_info);
@@ -62,9 +62,9 @@ void elf_action(char *elf_file){
 		}
 	}
 	
-	for (int i = 0; i < func_count; i++) {
-    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
-	}
+//	for (int i = 0; i < func_count; i++) {
+//    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
+//	}
 	
 	fclose(fp);
 }
@@ -80,5 +80,11 @@ bool load_elf(char *elf_file) {
   	Assert(fp, "Can not open '%s'", elf_file);
   	fclose(fp);
   	return true;
+}
+
+void output_ftrace(uint32_t pc){
+	for(int i=0;i<func_count;i++){
+		if(pc == func[i].addr) printf("the program has jump to %s addr: %u", func[i].name, func[i].addr);
+	}
 }
 
