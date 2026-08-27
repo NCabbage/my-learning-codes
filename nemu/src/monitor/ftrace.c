@@ -1,6 +1,7 @@
 #include <ftrace.h>
 #include <elf.h>
 #include <stdio.h>
+#include <string.h>
 
 Elf32_Ehdr ehdr;
 
