@@ -1,13 +1,12 @@
 #include <ftrace.h>
 #include <elf.h>
 #include <stdio.h>
-#include <string.h>
 
 Elf32_Ehdr ehdr;
 
 typedef struct {
     uint32_t addr;
-    char *name;
+    char name[128];
 } elf_func;
 
 elf_func func[64];
