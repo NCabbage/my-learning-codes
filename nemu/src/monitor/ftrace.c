@@ -57,14 +57,14 @@ void elf_action(char *elf_file){
 		int type = ELF32_ST_TYPE(symtab[i].st_info);
 		if (type == STT_FUNC && symtab[i].st_shndx != SHN_UNDEF){
 			func[func_count].addr = symtab[i].st_value;
-			func[func_count].name = &strtab[symtab[i].st_name];
+			strcpy(func[i].name, &strtab[symtab[i].st_name]);
 			func_count++;
 		}
 	}
 	
-//	for (int i = 0; i < func_count; i++) {
-//    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
-//	}
+	for (int i = 0; i < func_count; i++) {
+    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
+	}
 	
 	fclose(fp);
 }
@@ -84,7 +84,9 @@ bool load_elf(char *elf_file) {
 
 void output_ftrace(uint32_t pc){
 	for(int i=0;i<func_count;i++){
-		if(pc == func[i].addr) printf("the program has jump to %s addr: %x\n", func[i].name, func[i].addr);
+		if(pc == func[i].addr){printf("the program has jump to %s addr: %x\n", func[i].name, func[i].addr);
+			return;
+		}
 	}
 }
 
