@@ -57,7 +57,7 @@ void elf_action(char *elf_file){
 		int type = ELF32_ST_TYPE(symtab[i].st_info);
 		if (type == STT_FUNC && symtab[i].st_shndx != SHN_UNDEF){
 			func[func_count].addr = symtab[i].st_value;
-			strcpy(func[i].name, &strtab[symtab[i].st_name]);
+			strcpy(func[func_count].name, &strtab[symtab[i].st_name]);
 			func_count++;
 		}
 	}
