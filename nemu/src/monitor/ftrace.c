@@ -6,9 +6,10 @@ Elf32_Ehdr ehdr;
 
 typedef struct {
     uint32_t addr;
-    char name[64];
+    char *name;
 } elf_func;
 
+elf_func func[64];
 
 void elf_action(char *elf_file){
 	load_elf(elf_file);
@@ -45,12 +46,26 @@ void elf_action(char *elf_file){
 	Elf32_Sym symtab[sym_count];
 	fseek(fp, shdr[symtab_idx].sh_offset, SEEK_SET);
 	ret = fread(symtab, shdr[symtab_idx].sh_entsize, sym_count, fp);
-	printf("ret = %d\n", ret);
 	char strtab[shdr[strtab_idx].sh_size + 1];
 	
 	fseek(fp, shdr[strtab_idx].sh_offset, SEEK_SET);
 	ret = fread(strtab, 1, shdr[strtab_idx].sh_size, fp);
-	printf("ret = %d\n", ret);
+	
+	int func_count = 0;
+	
+	for(int i=0;i<sym_count;i++){
+		int type = ELF32_ST_TYPE(symtab[i].st_info);
+		if (type == STT_FUNC && symtab[i].st_shndx != SHN_UNDEF){
+			func[func_count].addr = symtab[i].st_value;
+			func[func_count].name = &strtab[symtab[i].st_name];
+			func_count++;
+		}
+	}
+	
+	for (int i = 0; i < func_count; i++) {
+    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
+	}
+	
 	fclose(fp);
 }
 
