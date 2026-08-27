@@ -62,9 +62,9 @@ void elf_action(char *elf_file){
 		}
 	}
 	
-	for (int i = 0; i < func_count; i++) {
-    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
-	}
+//	for (int i = 0; i < func_count; i++) {
+//    	printf("0x%08x: %s\n", func[i].addr, func[i].name);
+//	}
 	
 	fclose(fp);
 }
