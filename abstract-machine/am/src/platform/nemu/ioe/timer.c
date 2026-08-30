@@ -8,8 +8,8 @@ void __am_timer_init() {
 
 void __am_timer_uptime(AM_TIMER_UPTIME_T *uptime) {
 	printf("RTC_ADDR: %d", RTC_ADDR);
-	uint32_t lo = inl(0x12345678);
-	uint32_t hi = inl(0x12345678);
+    uint32_t lo = *(volatile uint32_t *)0xa0000048;
+    uint32_t hi = *(volatile uint32_t *)0xa000004c;
 	uptime -> us = ((uint64_t)hi << 32) | lo;
 }
 
