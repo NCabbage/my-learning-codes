@@ -3,12 +3,11 @@
 #include <stdio.h>
 
 void __am_timer_init() {
-	printf("RTC_ADDR: %d\n", RTC_ADDR);
 }
 
 void __am_timer_uptime(AM_TIMER_UPTIME_T *uptime) {
-	uint32_t lo = inl(RTC_ADDR);
-	uint32_t hi = inl(RTC_ADDR + 4);
+	uint32_t lo = inl(0x12345678);
+	uint32_t hi = inl(0x12345678);
 	uptime -> us = ((uint64_t)hi << 32) | lo;
 }
 
