@@ -2,9 +2,6 @@
 #include <nemu.h>
 #include <stdio.h>
 
-#define STR(x) #x
-#pragma message "RTC_ADDR is " STR(RTC_ADDR)
-
 void __am_timer_init() {
 }
 
