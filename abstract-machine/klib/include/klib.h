@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-//#define __NATIVE_USE_KLIB__				//link the glibc
+#define __NATIVE_USE_KLIB__				//link the kilb
 
 // string.h
 void  *memset    (void *s, int c, size_t n);
