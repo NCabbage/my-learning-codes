@@ -18,6 +18,7 @@
 #include <cpu/difftest.h>
 #include <locale.h>
 #include "../monitor/sdb/watchpoint.h"
+#include <ftrace.h>
 
 
 /* The assembly code of instructions executed is only output to the screen
@@ -40,15 +41,17 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #endif
   if (g_print_step) { IFDEF(CONFIG_ITRACE, puts(_this->logbuf)); }
   IFDEF(CONFIG_DIFFTEST, difftest_step(_this->pc, dnpc));
-  if(CONFIG_WATCHPOINT){
-  	if(watchpoint_check())
-  		puts(_this->logbuf);
-  }
+#ifdef CONFIG_WATCHPOINT
+  	if(watchpoint_check()) puts(_this->logbuf);
+#endif
 }
 
 static void exec_once(Decode *s, vaddr_t pc) {
   s->pc = pc;
   s->snpc = pc;
+#ifdef CONFIG_FTRACE
+  output_ftrace(pc);					//output the func trace
+#endif
   isa_exec_once(s);
   cpu.pc = s->dnpc;
 #ifdef CONFIG_ITRACE

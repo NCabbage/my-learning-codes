@@ -46,7 +46,7 @@ fclose(fp);
 */
   /* Start engine. */
 #ifdef CONFIG_MTRACE
-	printf("Memory trace init over!\n");
+	printf("Memory trace is open\n");
 	mtrace_init();
 #endif
   
