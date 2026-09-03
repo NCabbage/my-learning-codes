@@ -57,12 +57,16 @@ void add_mmio_map(const char *name, paddr_t addr, void *space, uint32_t len, io_
 word_t mmio_read(paddr_t addr, int len) {
   IOMap* map = fetch_mmio_map(addr);
   word_t val = map_read(addr, len, map);
+  #ifdef DTRACE_MTRACE
   printf("Device R:the %s has  been read with val %u\n", map->name, val);
+  #endif
   return val;
 }
 
 void mmio_write(paddr_t addr, int len, word_t data) {
   IOMap* map = fetch_mmio_map(addr);
+  #ifdef DTRACE_MTRACE
   printf("Device W:the %s has  been wrote with val %u\n", map->name, data);
+  #endif
   map_write(addr, len, data, map);
 }
