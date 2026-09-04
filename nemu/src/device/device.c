@@ -34,7 +34,6 @@ void send_key(uint8_t, bool);
 void vga_update_screen();
 
 void device_update() {
-	printf("press\n");
   static uint64_t last = 0;
   uint64_t now = get_time();
   if (now - last < 1000000 / TIMER_HZ) {
@@ -53,7 +52,6 @@ void device_update() {
         break;
 #ifdef CONFIG_HAS_KEYBOARD
       // If a key was pressed
-	printf("press\n");
       case SDL_KEYDOWN:
       case SDL_KEYUP: {
         uint8_t k = event.key.keysym.scancode;
