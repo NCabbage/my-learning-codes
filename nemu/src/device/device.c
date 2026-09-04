@@ -44,7 +44,6 @@ void device_update() {
   IFDEF(CONFIG_HAS_VGA, vga_update_screen());
 
 #ifndef CONFIG_TARGET_AM
-	printf("press\n");
   SDL_Event event;
   while (SDL_PollEvent(&event)) {
     switch (event.type) {
@@ -53,6 +52,7 @@ void device_update() {
         break;
 #ifdef CONFIG_HAS_KEYBOARD
       // If a key was pressed
+	printf("press\n");
       case SDL_KEYDOWN:
       case SDL_KEYUP: {
         uint8_t k = event.key.keysym.scancode;
