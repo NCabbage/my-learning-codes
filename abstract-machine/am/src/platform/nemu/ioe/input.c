@@ -12,6 +12,6 @@ void __am_input_keybrd(AM_INPUT_KEYBRD_T *kbd) {
 	}
 	else{
 		kbd->keydown = 1;
-		kbd->keycode = status && 0xff;
+		kbd->keycode = status && 0x7f;
 	}
 }
