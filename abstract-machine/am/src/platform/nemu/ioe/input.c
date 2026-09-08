@@ -11,8 +11,7 @@ void __am_input_keybrd(AM_INPUT_KEYBRD_T *kbd) {
 		kbd->keycode = AM_KEY_NONE;
 	}
 	else{
-		printf("%u", status);
 		kbd->keydown = 1;
-		kbd->keycode = status;
+		kbd->keycode = status && 0xff;
 	}
 }
