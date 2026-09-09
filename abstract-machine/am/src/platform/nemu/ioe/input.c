@@ -6,6 +6,6 @@
 
 void __am_input_keybrd(AM_INPUT_KEYBRD_T *kbd) {
 	uint32_t status = inl(KBD_ADDR);
-	kbd->keydown = status >> 31;
+	kbd->keydown = status >> 15;
 	kbd->keycode = status & 0x7fff;
 }
