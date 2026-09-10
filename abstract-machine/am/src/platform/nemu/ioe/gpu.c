@@ -34,10 +34,10 @@ void __am_gpu_fbdraw(AM_GPU_FBDRAW_T *ctl) {
 	uint32_t *pixels = (uint32_t *)ctl -> pixels;
 	int w = ctl -> w;
 	int h = ctl -> h;
-	int sh = (val & 0xffff);
+	int sw = (val & 0xffff0000) >> 16;
 	
 	for(int i=0;i<w*h;i++)
-		fb[sh * (y+i/h) + x + i%w] = pixels[i];
+		fb[sw * (y+i/w) + x + i%h] = pixels[i];
 	
   	if (ctl->sync) {
   		outl(SYNC_ADDR, 1);
