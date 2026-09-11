@@ -181,6 +181,13 @@ config FTRACE
   help
     look the val change
 
+config DTRACE
+  depends on TARGET_NATIVE_ELF
+  bool "Enable device function"
+  default n
+  help
+    look the val change
+
 choice
   prompt "Reference design"
   default DIFFTEST_REF_SPIKE if ISA_riscv
