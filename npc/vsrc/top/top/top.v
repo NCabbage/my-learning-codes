@@ -1,4 +1,4 @@
-module top(
+module top_vga(
 	input							clk			,				//25M
 	input							rst_n			,
 	
