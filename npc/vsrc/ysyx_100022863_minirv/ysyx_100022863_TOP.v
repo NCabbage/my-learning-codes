@@ -12,15 +12,14 @@ module ysyx_100022863_TOP #(
 
 );
 
-	 wire	[31:0]		rs1			 ;
-	 wire	[31:0]		rs2			 ;
-	 wire	[31:0]		imm			 ;
-	 wire	[31:0]		rd			 ;
-	 wire						addi_en	 ;
+	wire	[31:0]		rs1			 	;
+	wire	[31:0]		rs2			 	;
+	wire	[31:0]		imm			 	;
+	wire	[31:0]		rd			 	;
+	wire				addi_en	 		;
+	wire	[31:0]		alu_addi_result	;
 
-
-
-	 ysyx_100022863_PC inst_ysyx_100022863_PC(
+	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
 		.clk		(clk	),
 		.rst_n	(rst_n),
