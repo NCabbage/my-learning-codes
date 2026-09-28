@@ -36,7 +36,7 @@ module ysyx_100022863_TOP #(
 		.rs2			(rs2			),
 		.imm			(imm			),
 		.rd				(rd				),
-		.addi_en	(addi_en	)
+		.addi_en		(addi_en		)
 
 	);
 
@@ -46,26 +46,26 @@ module ysyx_100022863_TOP #(
 	)inst_ysyx_100022863_GPR
 	(	
 	
-	  .clk				 (clk		),
-    .wdata			 (wdata	),
-    .waddr			 (waddr	),
-    .wen				 (wen		),
-	  .rs1				 (rs1		),
-		.rs2				 (rs2		),
+	  	.clk				 	(clk				),
+    	.wdata			 		(alu_addi_result	),
+    	.waddr			 		(rd					),
+    	.wen				 	(wen				),
+	  	.rs1				 	(rs1				),
+		.rs2				 	(rs2				),
 
-	  .src1				 (src1	),
-	  .src2				 (src2	)
+	  	.src1				 	(src1				),
+	  	.src2				 	(src2				)
 
 	);
 
 	ysyx_100022863_ALU inst_ysyx_100022863_ALU(
 		
-		.src1								(src1		),
-		.src2								(src2		),
-		.imm								(imm		),
-		.addi_en							(addi_en	),
+		.src1								(src1				),
+		.src2								(src2				),
+		.imm								(imm				),
+		.addi_en							(addi_en			),
 
-		.alu_addi_result		(alu_addi_result	)
+		.alu_addi_result					(alu_addi_result	)
 
 	);
 
