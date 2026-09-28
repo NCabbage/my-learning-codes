@@ -12,8 +12,8 @@ module ysyx_100022863_TOP #(
 
 );
 
-	wire	[31:0]		rs1			 	;
-	wire	[31:0]		rs2			 	;
+	wire	[4:0]		rs1			 	;
+	wire	[4:0]		rs2			 	;
 	wire	[31:0]		imm			 	;
 	wire	[4:0]		rd			 	;
 	wire				addi_en	 		;
@@ -43,7 +43,7 @@ module ysyx_100022863_TOP #(
 	);
 
 	ysyx_100022863_GPR #(
-		.ADDR_WIDTH(32),
+		.ADDR_WIDTH(5),
 		.DATA_WIDTH(32)
 	)inst_ysyx_100022863_GPR
 	(	
