@@ -63,7 +63,7 @@ module ysyx_100022863_TOP #(
 		.src1								(src1		),
 		.src2								(src2		),
 		.imm								(imm		),
-		.alu_en							(alu_en	),
+		.addi_en							(addi_en	),
 
 		.alu_addi_result		(alu_addi_result	)
 
