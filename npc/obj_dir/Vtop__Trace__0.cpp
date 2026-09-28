@@ -55,11 +55,10 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
                                              >> 0x00000014U))]),32);
     bufp->chgCData(oldp+12,((0x0000007fU & vlSelfRef.inst)),7);
     bufp->chgCData(oldp+13,((7U & (vlSelfRef.inst >> 0x0000000cU))),3);
-    bufp->chgCData(oldp+14,((vlSelfRef.inst >> 0x00000019U)),7);
-    bufp->chgBit(oldp+15,((0x13U == (0x0000007fU & vlSelfRef.inst))));
-    bufp->chgBit(oldp+16,((0U == (7U & (vlSelfRef.inst 
+    bufp->chgBit(oldp+14,((0x13U == (0x0000007fU & vlSelfRef.inst))));
+    bufp->chgBit(oldp+15,((0U == (7U & (vlSelfRef.inst 
                                         >> 0x0000000cU)))));
-    Vtop___024root__trace_chg_dtype____0(vlSelf, bufp, 17, vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR);
+    Vtop___024root__trace_chg_dtype____0(vlSelf, bufp, 16, vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR);
 }
 
 void Vtop___024root__trace_chg_dtype____0(Vtop___024root* vlSelf, VerilatedFst::Buffer* bufp, uint32_t offset, const VlUnpacked<IData/*31:0*/, 32>& __VdtypeVar) {

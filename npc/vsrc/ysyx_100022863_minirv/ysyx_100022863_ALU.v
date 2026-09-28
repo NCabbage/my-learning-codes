@@ -10,5 +10,6 @@ module ysyx_100022863_ALU(
 );
 
 assign alu_addi_result = addi_en ? src1 + imm : 32'b0;
+assign src2 = 32'b0;
 
 endmodule
