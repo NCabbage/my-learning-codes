@@ -1,6 +1,6 @@
 module ysyx_100022863_TOP #(
 	parameter INST_WIDTH	= 32,
-						PC_WIDTH		= 24,
+						PC_WIDTH		= 24
 )
 (
 
@@ -27,7 +27,7 @@ module ysyx_100022863_TOP #(
 
 		.PC			(PC		)
 
-	)
+	);
 
 	ysyx_100022863_DECODE inst_ysyx_100022863_DECODE(
 		.inst			(inst			),
@@ -38,7 +38,7 @@ module ysyx_100022863_TOP #(
 		.rd				(rd				),
 		.addi_en	(addi_en	)
 
-	)
+	);
 
 	ysyx_100022863_GPR inst_ysyx_100022863_GPR#(
 		.ADDR_WIDTH(32),
@@ -56,7 +56,7 @@ module ysyx_100022863_TOP #(
 	  .src1				 (src1	),
 	  .src2				 (src2	),
 
-	)
+	);
 
 	ysyx_100022863_ALU inst_ysyx_100022863_ALU(
 		
@@ -67,6 +67,6 @@ module ysyx_100022863_TOP #(
 
 		.alu_addi_result		(alu_addi_result	),
 
-	)
+	);
 
 endmodule

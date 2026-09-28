@@ -5,6 +5,18 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
+/////////////////////////////////////////////////////指令存储器
+uint32_t ROM[65536] = {
+	0x00100093,
+	0x00200113,
+	0x00300193
+};
+
+uint32_t peme_read(uint32_t PC){
+	return ROM[PC];
+}
+/////////////////////////////////////////////////////
+
 const int	period_ns = 10;
 int cnt = 0;
 int main(int argc, char** argv){
@@ -19,8 +31,8 @@ int main(int argc, char** argv){
   tfp->open("wave.fst");  //保存位置
 	bool clk = 0;
 	int rst_n;
-/////////////////////////////////////////////
-/////////////////////////////////////////////
+
+////////////////////////////////////////////时钟
 
 	while(cnt < 20000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
@@ -32,6 +44,7 @@ int main(int argc, char** argv){
 	top->clk = clk;
 	top->eval();
 	top->rst_n = rst_n;
+	top->inst = peme_read(top->PC);
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
