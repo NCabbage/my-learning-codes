@@ -124,17 +124,9 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
                                            >> 0x0000001fU))) 
                                << 0x0000000cU) | (vlSelfRef.inst 
                                                   >> 0x00000014U)));
-                    vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1 
-                        = (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
-                           [(0x0000001fU & (vlSelfRef.inst 
-                                            >> 0x0000000fU))] 
-                           + vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
-                           [(0x0000001fU & (vlSelfRef.inst 
-                                            >> 0x00000014U))]);
                     vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jalr_result 
-                        = ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)
-                            ? (0xfffffffeU & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
-                            : vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1);
+                        = (0xfffffffeU & ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))) 
+                                          & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0));
                 }
                 {
                     // Inlined CFunc: __Vm_traceActivitySetAll
@@ -206,7 +198,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5766960547061312524ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17503986769693974937ull);
     vlSelf->__VdfgRegularize_h6e95ff9d_0_0 = 0;
-    vlSelf->__VdfgRegularize_h6e95ff9d_0_1 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
