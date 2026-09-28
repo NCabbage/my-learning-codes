@@ -65,7 +65,7 @@ module ysyx_100022863_TOP #(
 		.imm								(imm		),
 		.alu_en							(alu_en	),
 
-		.alu_addi_result		(alu_addi_result	),
+		.alu_addi_result		(alu_addi_result	)
 
 	);
 
