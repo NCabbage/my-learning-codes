@@ -1,6 +1,6 @@
 module ysyx_100022863_TOP #(
 	parameter INST_WIDTH	= 32,
-						PC_WIDTH		= 24
+						PC_WIDTH		= 32
 )
 (
 

@@ -3,7 +3,7 @@ module ysyx_100022863_PC(
 	input							clk			,
 	input							rst_n		,
 
-	output	[23:0]		PC
+	output	[31:0]		PC
 
 );
 
