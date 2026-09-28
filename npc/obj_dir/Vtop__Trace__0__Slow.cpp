@@ -181,14 +181,21 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
     bufp->fullCData(oldp+7,((0x0000001fU & (vlSelfRef.inst 
                                             >> 7U))),5);
     bufp->fullBit(oldp+8,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en));
-    bufp->fullIData(oldp+9,(((vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
-                              [(0x0000001fU & (vlSelfRef.inst 
-                                               >> 0x0000000fU))] 
-                              + (((- (IData)((vlSelfRef.inst 
-                                              >> 0x0000001fU))) 
-                                  << 0x0000000cU) | 
-                                 (vlSelfRef.inst >> 0x00000014U))) 
-                             & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en))))),32);
+    bufp->fullIData(oldp+9,(((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en)
+                              ? (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
+                                 [(0x0000001fU & (vlSelfRef.inst 
+                                                  >> 0x0000000fU))] 
+                                 + (((- (IData)((vlSelfRef.inst 
+                                                 >> 0x0000001fU))) 
+                                     << 0x0000000cU) 
+                                    | (vlSelfRef.inst 
+                                       >> 0x00000014U)))
+                              : (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
+                                 [(0x0000001fU & (vlSelfRef.inst 
+                                                  >> 0x0000000fU))] 
+                                 + vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
+                                 [(0x0000001fU & (vlSelfRef.inst 
+                                                  >> 0x00000014U))]))),32);
     bufp->fullIData(oldp+10,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
                              [(0x0000001fU & (vlSelfRef.inst 
                                               >> 0x0000000fU))]),32);
