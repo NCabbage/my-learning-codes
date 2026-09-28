@@ -42,6 +42,8 @@ module ysyx_100022863_TOP #(
 
 	);
 
+	assign wen = addi_en;
+
 	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(5),
 		.DATA_WIDTH(32)

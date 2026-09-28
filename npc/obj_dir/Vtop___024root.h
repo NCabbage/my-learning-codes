@@ -16,31 +16,28 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst_n,0,0);
-    VL_OUT8(hsync,0,0);
-    VL_OUT8(vsync,0,0);
-    VL_OUT8(valid,0,0);
-    VL_OUT8(vga_r,7,0);
-    VL_OUT8(vga_g,7,0);
-    VL_OUT8(vga_b,7,0);
-    CData/*0:0*/ top__DOT__clkout;
-    CData/*0:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__h_valid;
-    CData/*0:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__v_valid;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__wen;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__top__DOT__clkout__0;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__rst_n__0;
+    CData/*0:0*/ __VicoDidInit;
+    CData/*0:0*/ __VicoPhaseResult;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__clk__1;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__rst_n__1;
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;
-    VL_OUT16(h_addr,11,0);
-    VL_OUT16(v_addr,11,0);
-    SData/*11:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__x_cnt;
-    SData/*11:0*/ top__DOT__ysyx_100022863_VGA_inst__DOT__y_cnt;
-    IData/*31:0*/ top__DOT__ysyx_100022863_clkgen_inst__DOT__clkcount;
+    VL_IN(inst,31,0);
+    VL_OUT(PC,31,0);
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__imm;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata;
+    IData/*31:0*/ __Vtrigprevexpr___TOP__inst__0;
     IData/*31:0*/ __VactIterCount;
+    VlUnpacked<IData/*31:0*/, 32> top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR;
     VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
+    VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
-    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;

@@ -12,14 +12,8 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vtop__Syms(contextp(), _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , rst_n{vlSymsp->TOP.rst_n}
-    , hsync{vlSymsp->TOP.hsync}
-    , vsync{vlSymsp->TOP.vsync}
-    , valid{vlSymsp->TOP.valid}
-    , vga_r{vlSymsp->TOP.vga_r}
-    , vga_g{vlSymsp->TOP.vga_g}
-    , vga_b{vlSymsp->TOP.vga_b}
-    , h_addr{vlSymsp->TOP.h_addr}
-    , v_addr{vlSymsp->TOP.v_addr}
+    , inst{vlSymsp->TOP.inst}
+    , PC{vlSymsp->TOP.PC}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
@@ -145,6 +139,6 @@ VL_ATTR_COLD void Vtop::traceBaseModel(VerilatedTraceBaseC* tfp, int levels, int
             " use --trace-fst with VerilatedFst object, and --trace-vcd with VerilatedVcd object");
     }
     stfp->spTrace()->addModel(this);
-    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 30);
+    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 52);
     Vtop___024root__trace_register(&(vlSymsp->TOP), stfp->spTrace());
 }
