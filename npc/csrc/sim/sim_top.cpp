@@ -44,7 +44,7 @@ int main(int argc, char** argv){
 	top->clk = clk;
 	top->eval();
 	top->rst_n = rst_n;
-	top->inst = peme_read(top->PC << 2);
+	top->inst = peme_read(top->PC >> 2);
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
