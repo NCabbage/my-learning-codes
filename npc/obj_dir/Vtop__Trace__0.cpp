@@ -34,12 +34,8 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
                                            >> 0x00000014U))),5);
     bufp->chgCData(oldp+6,((0x0000001fU & (vlSelfRef.inst 
                                            >> 7U))),5);
-    bufp->chgBit(oldp+7,((IData)((0x00000013U == (0x0000707fU 
-                                                  & vlSelfRef.inst)))));
-    bufp->chgIData(oldp+8,(((- (IData)((IData)((0x00000013U 
-                                                == 
-                                                (0x0000707fU 
-                                                 & vlSelfRef.inst))))) 
+    bufp->chgBit(oldp+7,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en));
+    bufp->chgIData(oldp+8,(((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en))) 
                             & (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__imm 
                                + vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
                                [(0x0000001fU & (vlSelfRef.inst 
