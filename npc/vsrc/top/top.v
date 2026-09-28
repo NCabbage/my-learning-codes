@@ -7,7 +7,7 @@ module top(
 
 );
 
-module ysyx_100022863_TOP #(
+ysyx_100022863_TOP #(
 	.INST_WIDTH				(32),
 	.PC_WIDTH				(32)
 )u_ysyx_100022863_TOP
