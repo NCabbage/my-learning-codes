@@ -12,7 +12,7 @@ module ysyx_100022863_PC(
 always@(posedge clk or negedge rst_n)
 	if(!rst_n)
 	 	PC <= 32'b0;
-	if(jalr_en)
+	else if(jalr_en)
 		PC <= jalr_PC;
 	else
 		PC <= PC + 4;
