@@ -6,7 +6,7 @@ module ysyx_100022863_DECODE(
 	output	[31:0]		rs2			,
 	output	[31:0]		imm			,
 	output	[31:0]		rd			,
-	output						addi_en	,
+	output						addi_en
 
 );
 
