@@ -3,7 +3,7 @@ module top(
 	input			[INST_WIDTH-1:0]							inst			,
 	input														rst_n			,
 
-	output			[PC_WIDTH-1:0]								PC				,
+	output			[PC_WIDTH-1:0]								PC
 
 );
 
