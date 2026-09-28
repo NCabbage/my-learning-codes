@@ -54,7 +54,7 @@ module ysyx_100022863_TOP #(
 		.rs2				 (rs2		),
 
 	  .src1				 (src1	),
-	  .src2				 (src2	),
+	  .src2				 (src2	)
 
 	);
 
