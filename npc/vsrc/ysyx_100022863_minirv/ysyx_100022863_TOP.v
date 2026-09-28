@@ -18,7 +18,10 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		rd			 	;
 	wire				addi_en	 		;
 	wire	[31:0]		alu_addi_result	;
-
+	wire				wen				;
+	wire	[31:0]		src1			;
+	wire	[31:0]		src2			;
+	
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
 		.clk		(clk	),
