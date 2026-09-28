@@ -40,10 +40,10 @@ module ysyx_100022863_TOP #(
 
 	);
 
-	ysyx_100022863_GPR inst_ysyx_100022863_GPR#(
+	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(32),
 		.DATA_WIDTH(32)
-	)
+	)inst_ysyx_100022863_GPR
 	(	
 	
 	  .clk				 (clk		),
