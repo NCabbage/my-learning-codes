@@ -20,7 +20,7 @@ always @(posedge clk) begin
   	if (wen != 0)
 		GPR[waddr] <= wdata;
 	else
-		GPR[0] = 0;
+		GPR[0] <= 0;
 end
 
 assign src1 = GPR[rs1];
