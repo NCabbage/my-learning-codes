@@ -17,17 +17,20 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		imm			 	;
 	wire	[4:0]		rd			 	;
 	wire				addi_en	 		;
+	wire				jalr_en			;
 	wire	[31:0]		alu_addi_result	;
+	wire	[31:0]		alu_jalr_result	;
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
-		.clk		(clk	),
-		.rst_n	(rst_n),
-
-		.PC			(PC		)
+		.clk		(clk				),
+		.rst_n		(rst_n				),
+		.jalr_en	(jalr_en			),
+		.jalr_PC	(alu_jalr_result	),
+		.PC			(PC					)
 
 	);
 
@@ -38,8 +41,8 @@ module ysyx_100022863_TOP #(
 		.rs2			(rs2			),
 		.imm			(imm			),
 		.rd				(rd				),
-		.addi_en		(addi_en		)
-
+		.addi_en		(addi_en		),
+		.jalr_en		(jalr_en		)
 	);
 
 	assign wen = addi_en;
@@ -64,13 +67,14 @@ module ysyx_100022863_TOP #(
 
 	ysyx_100022863_ALU inst_ysyx_100022863_ALU(
 		
-		.src1								(src1				),
-		.src2								(src2				),
-		.imm								(imm				),
-		.addi_en							(addi_en			),
+		.src1				(src1				),
+		.src2				(src2				),
+		.imm				(imm				),
+		.addi_en			(addi_en			),
+		.jalr_en			(jalr_en			),
 
-		.alu_addi_result					(alu_addi_result	)
-
+		.alu_addi_result	(alu_addi_result	),
+		.alu_jalr_result	(alu_jalr_result	)
 	);
 
 endmodule
