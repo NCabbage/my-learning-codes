@@ -6,7 +6,7 @@ module ysyx_100022863_ALU(
 
 	input							alu_en		,
 
-	output	[31:0]		alu_addi_result		,
+	output	[31:0]		alu_addi_result
 );
 
 assign alu_addi_result = addi_en ? src1 + imm : 31'b0;
