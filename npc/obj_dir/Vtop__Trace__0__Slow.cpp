@@ -194,7 +194,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                ? vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0
                                : vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)),32);
     bufp->fullIData(oldp+11,(((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)
-                               ? vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0
+                               ? (0xfffffffeU & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
                                : vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1)),32);
     bufp->fullIData(oldp+12,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
                              [(0x0000001fU & (vlSelfRef.inst 

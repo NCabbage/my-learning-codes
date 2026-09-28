@@ -175,7 +175,8 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                     // Inlined CFunc: _nba_sequent__TOP__0
                     vlSelfRef.PC = ((IData)(vlSelfRef.rst_n)
                                      ? ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)
-                                         ? vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0
+                                         ? (0xfffffffeU 
+                                            & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)
                                          : ((IData)(4U) 
                                             + vlSelfRef.PC))
                                      : 0U);
