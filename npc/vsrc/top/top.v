@@ -1,9 +1,9 @@
 module top(
-	input														clk				,
-	input			[INST_WIDTH-1:0]							inst			,
-	input														rst_n			,
+	input					clk				,
+	input		[31:0]		inst			,
+	input					rst_n			,
 
-	output			[PC_WIDTH-1:0]								PC
+	output		[31:0]		PC
 
 );
 
