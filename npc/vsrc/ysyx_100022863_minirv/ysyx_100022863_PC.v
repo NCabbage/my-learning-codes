@@ -5,7 +5,7 @@ module ysyx_100022863_PC(
 
 	output	[23:0]		PC
 
-)
+);
 
 always@(posedge clk or negedge rst_n)
 	if(!rst_n)
