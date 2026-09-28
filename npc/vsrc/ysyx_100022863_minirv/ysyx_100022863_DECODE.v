@@ -27,7 +27,6 @@ assign addi_en = opcode_6_0_0010011 && funct3_14_12_000;
 
 //jalr
 wire			opcode_6_0_1100111 	= (opcode == 7'b1100111	);
-wire			funct3_14_12_000	= (funct3 == 3'b000		);
 
 assign jalr_en = opcode_6_0_0010011 && funct3_14_12_000;
 
