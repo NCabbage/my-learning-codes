@@ -12,6 +12,6 @@ module ysyx_100022863_ALU(
 );
 
 assign alu_addi_result = addi_en ? src1 + imm : src1 + src2;
-assign alu_jalr_result = jalr_en ? src1 + imm : src1 + src2;
+assign alu_jalr_result = jalr_en ? ((src1 + imm) >> 1) << 1 : src1 + src2;
 
 endmodule
