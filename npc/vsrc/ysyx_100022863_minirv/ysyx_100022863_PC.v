@@ -9,7 +9,7 @@ module ysyx_100022863_PC(
 
 always@(posedge clk or negedge rst_n)
 	if(!rst_n)
-	 	PC <= 24'b0;
+	 	PC <= 32'b0;
 	else
 		PC <= PC + 4;
 
