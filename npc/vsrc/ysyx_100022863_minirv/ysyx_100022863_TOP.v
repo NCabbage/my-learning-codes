@@ -23,6 +23,7 @@ module ysyx_100022863_TOP #(
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
+	wire	[31:0]		wdata;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
@@ -30,8 +31,8 @@ module ysyx_100022863_TOP #(
 		.rst_n		(rst_n				),
 		.jalr_en	(jalr_en			),
 		.jalr_PC	(alu_jalr_result	),
-		.PC			(PC					)
 
+		.PC			(PC					)
 	);
 
 	ysyx_100022863_DECODE inst_ysyx_100022863_DECODE(
@@ -45,7 +46,8 @@ module ysyx_100022863_TOP #(
 		.jalr_en		(jalr_en		)
 	);
 
-	assign wen = addi_en;
+	assign wen = addi_en | jalr_en;
+	assign wdata = alu_jalr_result | alu_addi_result;
 
 	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(5),
@@ -54,7 +56,7 @@ module ysyx_100022863_TOP #(
 	(	
 	
 	  	.clk				 	(clk				),
-    	.wdata			 		(alu_addi_result	),
+    	.wdata			 		(wdata				),
     	.waddr			 		(rd					),
     	.wen				 	(wen				),
 	  	.rs1				 	(rs1				),
