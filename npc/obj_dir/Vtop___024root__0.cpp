@@ -172,8 +172,10 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                 {
                     // Inlined CFunc: _nba_sequent__TOP__0
                     vlSelfRef.PC = ((IData)(vlSelfRef.rst_n)
-                                     ? ((IData)(4U) 
-                                        + vlSelfRef.PC)
+                                     ? ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en)
+                                         ? vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata
+                                         : ((IData)(4U) 
+                                            + vlSelfRef.PC))
                                      : 0U);
                 }
             }
