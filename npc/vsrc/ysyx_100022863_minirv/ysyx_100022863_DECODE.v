@@ -12,14 +12,13 @@ module ysyx_100022863_DECODE(
 
 wire	[6:0]	opcode		= inst[6:0]		;
 wire	[2:0]	funct3		= inst[14:12]	;
-wire	[6:0]	funct7		= inst[31:25]	;
 
 assign			rd			= inst[11:7]	;
 assign			rs1			= inst[19:15]	;
 assign			rs2			= inst[24:20]	;
 
-wire	opcode_6_0_0010011	= (opcode == 7'b0010011);
-wire	funct3_14_12_000	= (funct3 == 3'b000);
+wire			opcode_6_0_0010011	= (opcode == 7'b0010011);
+wire			funct3_14_12_000	= (funct3 == 3'b000);
 
 assign imm = {{20{inst[31]}}, inst[31:20]};
 assign addi_en = opcode_6_0_0010011 && funct3_14_12_000;

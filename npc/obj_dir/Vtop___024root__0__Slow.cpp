@@ -114,11 +114,14 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
                         = (IData)((0x00000013U == (0x0000707fU 
                                                    & vlSelfRef.inst)));
                     vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata 
-                        = ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en))) 
-                           & (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__imm 
-                              + vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
-                              [(0x0000001fU & (vlSelfRef.inst 
-                                               >> 0x0000000fU))]));
+                        = ((vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
+                            [(0x0000001fU & (vlSelfRef.inst 
+                                             >> 0x0000000fU))] 
+                            + (((- (IData)((vlSelfRef.inst 
+                                            >> 0x0000001fU))) 
+                                << 0x0000000cU) | (vlSelfRef.inst 
+                                                   >> 0x00000014U))) 
+                           & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en))));
                 }
             }
         }
@@ -178,7 +181,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->inst = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9812503827101699671ull);
     vlSelf->rst_n = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1638864771569018232ull);
     vlSelf->PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12700755172620096637ull);
-    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4667655069387866037ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14017508431756229609ull);
     for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
         vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12329170128450555218ull);
