@@ -63,6 +63,12 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
             if ((2ULL & vlSelfRef.__VicoTriggered[0U])) {
                 {
                     // Inlined CFunc: _ico_sequent__TOP__0
+                    vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en 
+                        = (IData)((0x00000013U == (0x0000707fU 
+                                                   & vlSelfRef.inst)));
+                    vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en 
+                        = (IData)((0x00000067U == (0x0000707fU 
+                                                   & vlSelfRef.inst)));
                     vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0 
                         = (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
                            [(0x0000001fU & (vlSelfRef.inst 
@@ -71,15 +77,6 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
                                            >> 0x0000001fU))) 
                                << 0x0000000cU) | (vlSelfRef.inst 
                                                   >> 0x00000014U)));
-                    vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en 
-                        = (IData)((0x00000013U == (0x0000707fU 
-                                                   & vlSelfRef.inst)));
-                    vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en 
-                        = (IData)((0x00000067U == (0x0000707fU 
-                                                   & vlSelfRef.inst)));
-                    vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wen 
-                        = ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en) 
-                           | (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en));
                 }
                 vlSelfRef.__Vm_traceActivity[1U] = 1U;
             }
@@ -192,11 +189,12 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                     __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlyDim0__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 0;
                     CData/*0:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0;
                     __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 0;
+                    CData/*0:0*/ __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v1;
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v1 = 0;
                     __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 0U;
-                    if ((1U & (~ (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wen)))) {
-                        vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[0U] = 0U;
-                    }
-                    if (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wen) {
+                    __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v1 = 0U;
+                    if (((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en) 
+                         | (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))) {
                         __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlyVal__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 
                             = (((IData)(4U) + vlSelfRef.PC) 
                                | (vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0 
@@ -205,10 +203,15 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                             = (0x0000001fU & (vlSelfRef.inst 
                                               >> 7U));
                         __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 1U;
+                    } else {
+                        __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v1 = 1U;
                     }
                     if (__Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0) {
                         vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[__Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlyDim0__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0] 
                             = __Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlyVal__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0;
+                    }
+                    if (__Vinline_0__eval_nba___Vinline_0__nba_sequent__TOP__1___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v1) {
+                        vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[0U] = 0U;
                     }
                     vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0 
                         = (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
