@@ -10,7 +10,7 @@ module ysyx_100022863_GPR
 	input		[ADDR_WIDTH-1:0]	rs2		,
 
 	output	[DATA_WIDTH-1:0]	src1	,
-	output	[DATA_WIDTH-1:0]	src2	,	
+	output	[DATA_WIDTH-1:0]	src2	
 
 );
 
