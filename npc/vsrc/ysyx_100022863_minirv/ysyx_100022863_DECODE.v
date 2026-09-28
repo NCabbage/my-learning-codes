@@ -19,9 +19,8 @@ assign			rs1			= inst[19:15]	;
 assign			rs2			= inst[24:20]	;
 
 wire	opcode_6_0_0010011	= (opcode == 7'b0010011);
-
 wire	funct3_14_12_000	= (funct3 == 3'b000);
 
-assign addi_en = opcode_6_0_0010011 && func3_14_12_000;
+assign addi_en = opcode_6_0_0010011 && funct3_14_12_000;
 
 endmodule
