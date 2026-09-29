@@ -22,6 +22,8 @@ module ysyx_100022863_TOP #(
 
 	wire				addi_en	 		;
 	wire				jalr_en			;
+	wire				add_en			;
+	wire 				lui_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -92,6 +94,7 @@ module ysyx_100022863_TOP #(
 		.addi_en			(addi_en			),
 		.jalr_en			(jalr_en			),
 		.add_en				(add_en				),
+		.lui_en				(lui_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
