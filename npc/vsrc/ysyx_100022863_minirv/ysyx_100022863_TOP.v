@@ -19,12 +19,14 @@ module ysyx_100022863_TOP #(
 	wire	[4:0]		rd			 	;
 	wire	[31:0]		I_imm			;
 	wire	[31:0]		U_imm			;
-	
+
 	wire				addi_en	 		;
 	wire				jalr_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
+	wire	[31:0]		alu_add_result	;
+	wire	[31:0]		alu_lui_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -60,8 +62,8 @@ module ysyx_100022863_TOP #(
 		.lui_en			(lui_en			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en | ;
-	assign wdata = PC + 4 | alu_addi_result | alu_add_result;
+	assign wen = addi_en | jalr_en | add_en | lui_en;
+	assign wdata = PC + 4 | alu_addi_result | alu_add_result | alu_lui_result;
 
 	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(5),
@@ -93,7 +95,8 @@ module ysyx_100022863_TOP #(
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
-		.alu_add_result		(alu_add_result		)
+		.alu_add_result		(alu_add_result		),
+		.alu_lui_result		(alu_lui_result		)
 	);
 
 endmodule
