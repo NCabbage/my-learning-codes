@@ -53,7 +53,7 @@ module ysyx_100022863_TOP #(
 		.rs1			(rs1			),
 		.rs2			(rs2			),
 		.rd				(rd				),
-		.I_imm			(imm			),
+		.I_imm			(I_imm			),
 		.U_imm			(U_imm			),
 
 		.addi_en		(addi_en		),
