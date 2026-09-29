@@ -19,6 +19,8 @@ always@(*)
 
 always@(*)
     if(rd_en)
-        rdata <= pmem_read(raddr);
+        rdata = pmem_read(raddr);
+    else
+        rdata = 0;
 
 endmodule
