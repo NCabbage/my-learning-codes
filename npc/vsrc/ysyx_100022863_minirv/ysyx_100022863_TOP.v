@@ -67,8 +67,8 @@ module ysyx_100022863_TOP #(
 		.lw_en			(lw_en			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en | lui_en;
-	assign wdata = PC + 4 | alu_addi_result | alu_add_result | alu_lui_result;
+	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en;
+	assign wdata = PC + 4 | alu_addi_result | alu_add_result | alu_lui_result | rdata;
 
 	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(5),
@@ -110,6 +110,7 @@ module ysyx_100022863_TOP #(
 wire				rd_en		;
 wire 				wr_en		;
 wire	[31:0]		raddr		;
+wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
 wire	[31:0]		wrmask		;
