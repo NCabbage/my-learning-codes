@@ -110,10 +110,10 @@ module ysyx_100022863_TOP #(
 wire				rd_en;
 wire 				wr_en;
 wire	[31:0]		raddr;
-wire	[31:0]		waddr;
-wire	[31:0]		wdata;
-wire	[31:0]		wmask;
-			
+wire	[31:0]		wraddr;
+wire	[31:0]		wrdata;
+wire	[31:0]		wrmask;
+
 assign rd_en = lw_en;
 assign raddr = alu_lw_result;
 
@@ -123,9 +123,9 @@ ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .rst_n       (rst_n	),
 
     .wr_en       (wr_en	),
-    .waddr       (waddr	),
-    .wdata       (wdata	),
-    .wmask       (wmask	),
+    .waddr       (wraddr),
+    .wdata       (wrdata),
+    .wmask       (wrmask),
 
     .rd_en       (rd_en	),
     .raddr       (raddr	),
