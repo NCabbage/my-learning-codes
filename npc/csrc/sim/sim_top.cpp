@@ -20,6 +20,7 @@ uint32_t peme_read(uint32_t PC){
 }
 
 extern "C" void halt(u_int32_t inst){
+	printf("inst:%x\n", inst);
 	if(inst == 0x00100073) exit(0);
 
 }
