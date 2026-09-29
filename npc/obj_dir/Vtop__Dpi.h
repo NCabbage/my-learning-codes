@@ -17,7 +17,7 @@ extern "C" {
 
     // DPI IMPORTS
     // DPI import at /home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_minirv/ysyx_100022863_TOP.v:1:30
-    extern void halt(const svBitVecVal* inst);
+    extern void halt(int inst);
 
 #ifdef __cplusplus
 }

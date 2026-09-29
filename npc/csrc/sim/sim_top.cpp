@@ -22,7 +22,7 @@ uint32_t peme_read(uint32_t PC){
 extern "C" void halt(int inst){
 	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
-		printf("ebreak!over!\n")
+		printf("ebreak!over!\n");
 		exit(0);
 	}
 
