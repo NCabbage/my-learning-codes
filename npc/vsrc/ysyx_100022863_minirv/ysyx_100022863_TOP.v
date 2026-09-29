@@ -19,10 +19,13 @@ module ysyx_100022863_TOP #(
 	wire	[4:0]		rd			 	;
 	wire	[31:0]		I_imm			;
 	wire	[31:0]		U_imm			;
+	
 	wire				addi_en	 		;
 	wire				jalr_en			;
+
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
+
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
@@ -50,12 +53,14 @@ module ysyx_100022863_TOP #(
 		.rd				(rd				),
 		.I_imm			(imm			),
 		.U_imm			(U_imm			),
+
 		.addi_en		(addi_en		),
 		.jalr_en		(jalr_en		),
-		.add_en 		(add_en			)
+		.add_en 		(add_en			),
+		.lui_en			(lui_en			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en;
+	assign wen = addi_en | jalr_en | add_en | ;
 	assign wdata = PC + 4 | alu_addi_result | alu_add_result;
 
 	ysyx_100022863_GPR #(
