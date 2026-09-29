@@ -1,4 +1,4 @@
-import "DPI-C" function void halt(input uint32_t inst);
+import "DPI-C" function void halt(input logic [31:0] inst);
 
 module ysyx_100022863_TOP #(
 	parameter INST_WIDTH	= 32,
