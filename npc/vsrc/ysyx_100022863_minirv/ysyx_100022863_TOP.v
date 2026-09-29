@@ -103,7 +103,7 @@ module ysyx_100022863_TOP #(
 		.alu_jalr_result	(alu_jalr_result	),
 		.alu_add_result		(alu_add_result		),
 		.alu_lui_result		(alu_lui_result		),
-		.alu_lw_result		(alu_lw_result		),
+		.alu_lw_result		(alu_lw_result		)
 	);
 
 wire				rd_en;
