@@ -21,6 +21,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VL_IN8(rst_n,0,0);
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
@@ -42,6 +43,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;
