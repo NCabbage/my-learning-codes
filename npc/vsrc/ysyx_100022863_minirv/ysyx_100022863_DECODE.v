@@ -11,7 +11,8 @@ module ysyx_100022863_DECODE(
 	output					addi_en		,
 	output					jalr_en		,
 	output					add_en		,
-	output					lui_en
+	output					lui_en		,
+	output					lw_en
 );
 
 wire	[6:0]	opcode		= inst[6:0]		;
@@ -43,5 +44,11 @@ assign add_en = opcode_6_0_0110011 && funct3_14_12_000;
 wire			opcode_6_0_0110111 = (opcode == 7'b0110111	);
 
 assign lui_en = opcode_6_0_0110111;
+
+//lw
+wire			opcode_6_0_0000011 = (opcode == 7'b0000011	);
+wire			funct3_14_12_001   = (funct3 == 3'b010		);
+
+assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
 endmodule

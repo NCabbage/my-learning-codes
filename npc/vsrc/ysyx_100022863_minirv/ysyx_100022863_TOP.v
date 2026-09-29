@@ -24,6 +24,7 @@ module ysyx_100022863_TOP #(
 	wire				jalr_en			;
 	wire				add_en			;
 	wire 				lui_en			;
+	wire				lw_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -61,7 +62,8 @@ module ysyx_100022863_TOP #(
 		.addi_en		(addi_en		),
 		.jalr_en		(jalr_en		),
 		.add_en 		(add_en			),
-		.lui_en			(lui_en			)
+		.lui_en			(lui_en			),
+		.lw_en			(lw_en			)
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en;
@@ -95,11 +97,35 @@ module ysyx_100022863_TOP #(
 		.jalr_en			(jalr_en			),
 		.add_en				(add_en				),
 		.lui_en				(lui_en				),
+		.lw_en				(lw_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
 		.alu_add_result		(alu_add_result		),
-		.alu_lui_result		(alu_lui_result		)
+		.alu_lui_result		(alu_lui_result		),
+		.alu_lw_result		(alu_lw_result		),
 	);
+
+wire				rd_en;
+wire	[31:0]		raddr;
+
+assign rd_en = lw_en;
+assign raddr = alu_lw_result;
+
+ysyx_100022863_LSU u_ysyx_100022863_LSU(
+
+    .clk         (clk	),
+    .rst_n       (rst_n	),
+
+    .wr_en       (wr_en	),
+    .waddr       (waddr	),
+    .wdata       (wdata	),
+    .wmask       (wmask	),
+
+    .rd_en       (rd_en	),
+    .raddr       (raddr	),
+
+    .rdata		 (rdata	)
+);
 
 endmodule

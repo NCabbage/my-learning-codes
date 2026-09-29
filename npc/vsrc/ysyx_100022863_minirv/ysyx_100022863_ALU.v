@@ -9,17 +9,20 @@ module ysyx_100022863_ALU(
 	input					jalr_en				,
 	input					add_en				,
 	input					lui_en				,
+	input					lw_en				,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
 	output		[31:0]		alu_add_result		,
-	output		[31:0]		alu_lui_result
+	output		[31:0]		alu_lui_result		,
+	output		[31:0]		alu_lw_result
 );
 
 
-assign alu_addi_result = addi_en ? src1 + I_imm : 0;
-assign alu_jalr_result = jalr_en ? ((src1 + I_imm) >> 1) << 1 : 0;
-assign alu_add_result  = add_en ? src1 + src2 : 0;
-assign alu_lui_result  = lui_en ? U_imm : 0;
+assign alu_addi_result 	= addi_en	? src1 + I_imm : 0;
+assign alu_jalr_result 	= jalr_en 	? ((src1 + I_imm) >> 1) << 1 : 0;
+assign alu_add_result  	= add_en 	? src1 + src2 : 0;
+assign alu_lui_result  	= lui_en 	? U_imm : 0;
+assign alu_lw_result   	= lw_en 	? src1 + I_imm : 0;
 
 endmodule
