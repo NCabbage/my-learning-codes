@@ -15,7 +15,9 @@ uint32_t ROM[65536] = {
 	0x00008067
 };
 
-uint32_t peme_read(uint32_t PC){
+uint32_t RAM[65536] = {};
+
+uint32_t inst_read(uint32_t PC){
 	return ROM[PC];
 }
 
@@ -26,6 +28,21 @@ extern "C" void halt(int inst){
 //		exit(0);
 	}
 
+}
+
+extern "C" int pmem_read(int raddr){
+	return RAM[raddr];
+}
+
+extern "C" int pmem_write(int waddr, int wdata, byte wmask){
+	uint32_t cnt_data =  0;
+
+	if(wmask[0]) cnt_data += wdata & 0x000000ff;
+	if(wmask[1]) cnt_data += wdata & 0x0000ff00;
+	if(wmask[2]) cnt_data += wdata & 0x00ff0000;
+	if(wmask[3]) cnt_data += wdata & 0xff000000;
+
+	RAM[waddr] = cnt_data;
 }
 
 /////////////////////////////////////////////////////
@@ -57,7 +74,7 @@ int main(int argc, char** argv){
 	top->clk = clk;
 	top->eval();
 	top->rst_n = rst_n;
-	top->inst = peme_read(top->PC >> 2);
+	top->inst = inst_read(top->PC >> 2);
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");

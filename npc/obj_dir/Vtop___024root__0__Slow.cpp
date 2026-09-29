@@ -138,7 +138,12 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
                                                  >> 0x00000014U))]) 
                                & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en)))) 
                               | (((IData)(4U) + vlSelfRef.PC) 
-                                 | (0xfffff000U & vlSelfRef.inst))));
+                                 | (0xfffff000U & (vlSelfRef.inst 
+                                                   & (- (IData)(
+                                                                (0x37U 
+                                                                 == 
+                                                                 (0x0000007fU 
+                                                                  & vlSelfRef.inst)))))))));
                 }
                 {
                     // Inlined CFunc: __Vm_traceActivitySetAll
