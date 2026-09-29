@@ -51,4 +51,6 @@ wire			funct3_14_12_001   = (funct3 == 3'b010		);
 
 assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
+assign wmask = lw_en ? 4'b1111 : 0;
+
 endmodule
