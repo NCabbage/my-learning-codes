@@ -20,14 +20,13 @@ wire	[2:0]	funct3		= inst[14:12]	;
 assign			rd			= inst[11:7]	;
 assign			rs1			= inst[19:15]	;
 assign			rs2			= inst[24:20]	;
-assign			I_imm		= inst[31:20]	;
-assign			U_imm		= inst[31:12]	;
+assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
+assign			U_imm		= inst[31:12] << 12				;
 
 //addi
 wire			opcode_6_0_0010011	= (opcode == 7'b0010011	);
 wire			funct3_14_12_000	= (funct3 == 3'b000		);
 
-assign imm = {{20{inst[31]}}, inst[31:20]};
 assign addi_en = opcode_6_0_0010011 && funct3_14_12_000;
 
 //jalr
