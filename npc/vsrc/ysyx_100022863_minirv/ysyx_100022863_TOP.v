@@ -31,7 +31,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_add_result	;
 	wire	[31:0]		alu_lui_result	;
 	wire	[31:0]		alu_lw_result	;
-	
+
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
@@ -108,8 +108,12 @@ module ysyx_100022863_TOP #(
 	);
 
 wire				rd_en;
+wire 				wr_en;
 wire	[31:0]		raddr;
-
+wire	[31:0]		waddr;
+wire	[31:0]		wdata;
+wire	[31:0]		wmask;
+			
 assign rd_en = lw_en;
 assign raddr = alu_lw_result;
 
