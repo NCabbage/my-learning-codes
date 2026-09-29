@@ -23,7 +23,7 @@ extern "C" void halt(int inst){
 	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
 		printf("ebreak!over!\n");
-		exit(0);
+//		exit(0);
 	}
 
 }
