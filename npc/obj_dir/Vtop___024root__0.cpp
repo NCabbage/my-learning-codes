@@ -90,6 +90,8 @@ bool Vtop___024root___eval_phase__ico(Vtop___024root* vlSelf) {
                                                                                & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lw_en)))), vlSelfRef.__Vfunc_pmem_read__2__Vfuncout);
                         vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata 
                             = vlSelfRef.__Vfunc_pmem_read__2__Vfuncout;
+                    } else {
+                        vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata = 0U;
                     }
                     vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata 
                         = ((vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0 
@@ -261,6 +263,8 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                                                                                & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lw_en)))), vlSelfRef.__Vfunc_pmem_read__2__Vfuncout);
                         vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata 
                             = vlSelfRef.__Vfunc_pmem_read__2__Vfuncout;
+                    } else {
+                        vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata = 0U;
                     }
                 }
             }
