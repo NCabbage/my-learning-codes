@@ -1,14 +1,16 @@
+import "DPI-C" function void halt(input uint32_t inst);
+
 module ysyx_100022863_TOP #(
 	parameter INST_WIDTH	= 32,
 						PC_WIDTH		= 32
 )
 (
 
-	input														clk				,
+	input										clk				,
 	input			[INST_WIDTH-1:0]			inst			,
-	input														rst_n			,
+	input										rst_n			,
 
-	output		[PC_WIDTH-1:0]				PC
+	output			[PC_WIDTH-1:0]				PC
 
 );
 
@@ -23,7 +25,11 @@ module ysyx_100022863_TOP #(
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
-	wire	[31:0]		wdata;
+	wire	[31:0]		wdata			;
+
+	always@(posedge clk){
+		halt(inst);
+	}
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 

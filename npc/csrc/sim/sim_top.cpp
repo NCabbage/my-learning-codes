@@ -18,6 +18,12 @@ uint32_t ROM[65536] = {
 uint32_t peme_read(uint32_t PC){
 	return ROM[PC];
 }
+
+extern "C" void halt(u_int32_t inst){
+	if(inst == 0x00100073) exit(0);
+
+}
+
 /////////////////////////////////////////////////////
 
 const int	period_ns = 10;
