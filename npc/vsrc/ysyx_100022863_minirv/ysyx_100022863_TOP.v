@@ -107,21 +107,19 @@ module ysyx_100022863_TOP #(
 		.alu_lw_result		(alu_lw_result		)
 	);
 
-wire				rd_en;
-wire 				wr_en;
-wire	[31:0]		raddr;
-wire	[31:0]		wraddr;
-wire	[31:0]		wrdata;
-wire	[31:0]		wrmask;
+wire				rd_en		;
+wire 				wr_en		;
+wire				ex_wr_en	;
+wire	[31:0]		raddr		;
+wire	[31:0]		wraddr		;
+wire	[31:0]		wrdata		;
+wire	[31:0]		wrmask		;
 
 assign rd_en = lw_en;
 assign raddr = alu_lw_result;
+always@()
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
-
-    .clk         (clk	),
-    .rst_n       (rst_n	),
-
     .wr_en       (wr_en	),
     .waddr       (wraddr),
     .wdata       (wrdata),
