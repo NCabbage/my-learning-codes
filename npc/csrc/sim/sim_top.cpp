@@ -34,7 +34,7 @@ extern "C" int pmem_read(int raddr){
 	return RAM[raddr];
 }
 
-extern "C" void pmem_write(int waddr, int wdata, byte wmask){
+extern "C" void pmem_write(int waddr, int wdata, uint8_t wmask){
 	uint32_t cnt_data =  0;
 
 	if(wmask & 0x01) cnt_data += wdata & 0x000000ff;
