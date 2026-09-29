@@ -27,9 +27,9 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		src2			;
 	wire	[31:0]		wdata			;
 
-	always@(posedge clk){
+	always@(posedge clk)
 		halt(inst);
-	}
+	
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
