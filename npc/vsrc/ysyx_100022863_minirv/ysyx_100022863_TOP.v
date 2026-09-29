@@ -59,8 +59,8 @@ module ysyx_100022863_TOP #(
 		.rd				(rd				),
 		.I_imm			(I_imm			),
 		.U_imm			(U_imm			),
-		.wmask			(wmask			),
-		
+		.wrmask			(wrmask			),
+
 		.addi_en		(addi_en		),
 		.jalr_en		(jalr_en		),
 		.add_en 		(add_en			),
