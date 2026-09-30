@@ -138,7 +138,7 @@ assign raddr = alu_lw_result | alu_lbu_result;
 assign wr_en = sw_en | sb_en;
 assign wraddr = alu_sw_result | alu_sb_result;
 assign wrdata = src2;
-assign wrmask = sb_en ?  wraddr >> 2 : 4'b1111;
+assign wrmask = sb_en ?  wraddr[1:0]: 4'b1111;
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .wr_en       (wr_en	),
