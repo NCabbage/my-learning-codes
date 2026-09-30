@@ -175,7 +175,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->inst = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9812503827101699671ull);
     vlSelf->rst_n = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1638864771569018232ull);
     vlSelf->PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12700755172620096637ull);
-    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT____Vcellout__inst_ysyx_100022863_DECODE__rdmask = 0;
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__wr_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1915428961174685526ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16591604318983870689ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__wraddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16289036068824269001ull);

@@ -19,7 +19,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst_n,0,0);
-    CData/*3:0*/ top__DOT__u_ysyx_100022863_TOP__DOT____Vcellout__inst_ysyx_100022863_DECODE__rdmask;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__wr_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__rd_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en;
