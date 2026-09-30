@@ -1,4 +1,5 @@
 import "DPI-C" function void halt(input int inst);
+import "DPI-C" function void check(input int inst);
 
 module ysyx_100022863_TOP #(
 	parameter INST_WIDTH	= 32,
@@ -136,6 +137,9 @@ assign wraddr = alu_sw_result | alu_sb_result;
 assign wrdata = src2;
 assign wrmask = wraddr[1:0];
 
+always@(*)
+	check(PC, raddr);
+	
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .sw_en       (sw_en	),
 	.sb_en		 (sb_en	),

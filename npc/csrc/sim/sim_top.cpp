@@ -102,6 +102,11 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	RAM[waddr] = wdata << (wmask*8);
 }
 
+extern "C" void check(int PC, int raddr){
+	printf("PC: %x   raddr: %x\n", PC, raddr);
+}
+
+
 /////////////////////////////////////////////////////
 
 const int	period_ns = 10;
