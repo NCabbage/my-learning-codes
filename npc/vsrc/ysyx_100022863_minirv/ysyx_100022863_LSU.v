@@ -26,6 +26,7 @@ always@(*)
             2'b11: rdata = pmem_read(raddr >> 2) & 32'hff000000;
             default:
                 rdata = 32'b0;
+        endcase
     end
     else
         rdata = 0;
