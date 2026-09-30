@@ -139,7 +139,8 @@ assign wrdata = src2;
 assign wrmask = wraddr[1:0];
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
-    .wr_en       (wr_en	),
+    .sw_en       (sw_en	),
+	.sb_en		 (sb_en	),
     .waddr       (wraddr),
     .wdata       (wrdata),
     .wmask       (wrmask),

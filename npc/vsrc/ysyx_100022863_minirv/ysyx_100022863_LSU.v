@@ -2,7 +2,8 @@ import "DPI-C" function int pmem_read(input int raddre);
 import "DPI-C" function void pmem_write(input int waddr, input int wdata, input int wmask);
 
 module ysyx_100022863_LSU(
-    input               wr_en       ,
+    input               sw_en       ,
+    input               sb_en       ,
     input       [31:0]  waddr       ,
     input       [31:0]  wdata       ,
     input       [1:0]   wmask       ,
@@ -15,9 +16,10 @@ module ysyx_100022863_LSU(
 );
 
 always@(*)
-    if(wr_en)
+    if(sw_en)
         pmem_write(waddr>>2, wdata, {30'b0, wmask});
-
+    else if(sb_en)
+        pmem_write(waddr>>2, wdata[7:0], {30'b0, wmask});
 always@(*)
     if(lw_en)
         rdata = pmem_read(raddr >> 2);
