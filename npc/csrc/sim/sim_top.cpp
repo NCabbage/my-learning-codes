@@ -17,6 +17,60 @@ uint32_t ROM[65536] = {
 
 uint32_t RAM[65536] = {};
 
+
+static void load_rom(const char *filename) {
+    FILE *fp = fopen(filename, "r");
+    if (!fp) {
+        perror(filename);
+        exit(1);
+    }
+
+    char line[2048];
+
+    // 跳过第一行标题 "v3.0 hex words addressed"
+    if (!fgets(line, sizeof(line), fp)) {
+        fclose(fp);
+        return;
+    }
+
+    int total = 0;
+
+    while (fgets(line, sizeof(line), fp)) {
+        // 跳过空行
+        char *p = line;
+        while (*p && isspace((unsigned char)*p)) p++;
+        if (*p == '\0') continue;
+
+        // 找冒号
+        char *colon = strchr(p, ':');
+        if (!colon) continue;
+
+        // 冒号前是字地址（十六进制）
+        unsigned long addr = strtoul(p, NULL, 16);
+
+        // 冒号后是数据
+        p = colon + 1;
+
+        for (int i = 0; i < 8; i++) {
+            while (*p && isspace((unsigned char)*p)) p++;
+            if (*p == '\0' || *p == '\n') break;   // 本行数据结束
+
+            char *end;
+            unsigned long v = strtoul(p, &end, 16);
+            if (end == p) break;                   // 没解析出数据
+
+            if (addr + i < 65536) {
+                ROM[addr + i] = (uint32_t)v;
+            }
+            p = end;
+            total++;
+        }
+    }
+
+    fclose(fp);
+    printf("ROM loaded: %d words from %s\n", total, filename);
+}
+
 uint32_t inst_read(uint32_t PC){
 	return ROM[PC];
 }
@@ -50,6 +104,11 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 const int	period_ns = 10;
 int cnt = 0;
 int main(int argc, char** argv){
+
+/////////////////////////////////////////////////////
+	load_rom("/home/cappage/ysyx-workbench/npc/csrc/program.txt");
+/////////////////////////////////////////////////////
+
   VerilatedContext* contextp = new VerilatedContext;
   contextp->commandArgs(argc, argv);	// 接收传入的参数
 
