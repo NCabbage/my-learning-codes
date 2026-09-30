@@ -20,7 +20,7 @@ reg [31:0] sb_data;
 always@(*)
     if(sw_en)
         pmem_write(waddr>>2, wdata, {28'b0, wmask});
-    else if(sb_en)
+    else if(sb_en)begin
         case(waddr[1:0])
             2'b00: sb_data = {24'b0, wdata[7:0]};
             2'b01: sb_data = {16'b0, wdata[7:0], 8'b0};
@@ -30,8 +30,8 @@ always@(*)
                 sb_data = 32'b0;
         endcase
 
-    pmem_write(waddr>>2, sb_data, {28'b0, wmask});
-    
+        pmem_write(waddr>>2, sb_data, {28'b0, wmask});
+    end
 always@(*)
     if(lw_en)
         rdata = pmem_read(raddr >> 2);
