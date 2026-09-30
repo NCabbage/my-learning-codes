@@ -8,12 +8,14 @@ module ysyx_100022863_DECODE(
 	output		[31:0]		I_imm		,
 	output		[31:0]		U_imm		,
 	output		[3:0]		wrmask		,
+	output		[3:0]		rdmask		.
 
 	output					addi_en		,
 	output					jalr_en		,
 	output					add_en		,
 	output					lui_en		,
-	output					lw_en
+	output					lw_en		,
+	output					lbu_en
 );
 
 wire	[6:0]	opcode		= inst[6:0]		;
@@ -53,5 +55,11 @@ wire			funct3_14_12_001   = (funct3 == 3'b010		);
 assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
 assign wrmask = lw_en ? 4'b1111 : 0;
+
+//lbu
+wire			opcode_6_0_0000011 	= (opcode == 7'b0000011	);
+wire			funct3_14_12_100	= (funct3 == 3'b100		);
+
+assign lbu_en = opcode_6_0_0000011 && funct3_14_12_100;
 
 endmodule

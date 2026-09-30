@@ -25,12 +25,14 @@ module ysyx_100022863_TOP #(
 	wire				add_en			;
 	wire 				lui_en			;
 	wire				lw_en			;
+	wire				lbu_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
 	wire	[31:0]		alu_add_result	;
 	wire	[31:0]		alu_lui_result	;
 	wire	[31:0]		alu_lw_result	;
+	wire	[31:0]		alu_lbu_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -60,15 +62,17 @@ module ysyx_100022863_TOP #(
 		.I_imm			(I_imm			),
 		.U_imm			(U_imm			),
 		.wrmask			(wrmask			),
+		.rdmask			(rdmask			),
 
 		.addi_en		(addi_en		),
 		.jalr_en		(jalr_en		),
 		.add_en 		(add_en			),
 		.lui_en			(lui_en			),
-		.lw_en			(lw_en			)
+		.lw_en			(lw_en			),
+		.lbu_en			(lbu_en			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en;
+	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en;
 	assign wdata = PC + 4 | alu_addi_result | alu_add_result | alu_lui_result | rdata;
 
 	ysyx_100022863_GPR #(
@@ -100,24 +104,27 @@ module ysyx_100022863_TOP #(
 		.add_en				(add_en				),
 		.lui_en				(lui_en				),
 		.lw_en				(lw_en				),
+		.lbu_en				(lbu_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
 		.alu_add_result		(alu_add_result		),
 		.alu_lui_result		(alu_lui_result		),
-		.alu_lw_result		(alu_lw_result		)
+		.alu_lw_result		(alu_lw_result		),
+		.alu_lbu_result		(alu_lbu_result		)
 	);
 
 wire				rd_en		;
 wire 				wr_en		;
 wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
+wire	[3:0]		rdmask		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
 wire	[3:0]		wrmask		;
 
-assign rd_en = lw_en;
-assign raddr = alu_lw_result;
+assign rd_en = lw_en | lbu_en;
+assign raddr = alu_lw_result | alu_lbu_result;
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .wr_en       (wr_en	),
