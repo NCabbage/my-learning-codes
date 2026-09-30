@@ -18,26 +18,34 @@ uint32_t ROM[65536] = {
 uint32_t RAM[65536] = {};
 
 
-static void load_rom(const char *filename) {
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <ctype.h>
+
+// 通用：把 v3.0 hex 格式文件加载到 uint32_t 数组
+// 返回加载的字数
+static int load_hex(const char *filename, uint32_t *dst, int dst_size) {
     FILE *fp = fopen(filename, "r");
     if (!fp) {
-        perror(filename);
-        exit(1);
+        fprintf(stderr, "Cannot open %s\n", filename);
+        return -1;
     }
 
     char line[2048];
+    int total = 0;
 
     // 跳过第一行标题 "v3.0 hex words addressed"
     if (!fgets(line, sizeof(line), fp)) {
         fclose(fp);
-        return;
+        return 0;
     }
 
-    int total = 0;
-
     while (fgets(line, sizeof(line), fp)) {
-        // 跳过空行
         char *p = line;
+
+        // 跳过空白
         while (*p && isspace((unsigned char)*p)) p++;
         if (*p == '\0') continue;
 
@@ -45,22 +53,22 @@ static void load_rom(const char *filename) {
         char *colon = strchr(p, ':');
         if (!colon) continue;
 
-        // 冒号前是字地址（十六进制）
+        // 冒号前：字地址（十六进制）
         unsigned long addr = strtoul(p, NULL, 16);
 
-        // 冒号后是数据
+        // 冒号后：数据
         p = colon + 1;
 
         for (int i = 0; i < 8; i++) {
             while (*p && isspace((unsigned char)*p)) p++;
-            if (*p == '\0' || *p == '\n') break;   // 本行数据结束
+            if (*p == '\0') break;
 
             char *end;
             unsigned long v = strtoul(p, &end, 16);
-            if (end == p) break;                   // 没解析出数据
+            if (end == p) break;   // 解析失败
 
-            if (addr + i < 65536) {
-                ROM[addr + i] = (uint32_t)v;
+            if ((int)(addr + i) < dst_size) {
+                dst[addr + i] = (uint32_t)v;
             }
             p = end;
             total++;
@@ -68,7 +76,7 @@ static void load_rom(const char *filename) {
     }
 
     fclose(fp);
-    printf("ROM loaded: %d words from %s\n", total, filename);
+    return total;
 }
 
 uint32_t inst_read(uint32_t PC){
@@ -76,7 +84,7 @@ uint32_t inst_read(uint32_t PC){
 }
 
 extern "C" void halt(int inst){
-	printf("inst:%x\n", inst);
+//	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
 		printf("ebreak!over!\n");
 //		exit(0);
@@ -106,8 +114,14 @@ int cnt = 0;
 int main(int argc, char** argv){
 
 /////////////////////////////////////////////////////
-	load_rom("/home/cappage/ysyx-workbench/npc/csrc/program.txt");
-	for(int i=0;i<=10000;i++) printf("ROM[%d]: %x   ", i, ROM[i]);
+    int n1 = load_hex("v3.0_hex_words_addressed.txt", ROM, 65536);
+    if (n1 < 0) exit(1);
+    printf("ROM loaded: %d words\n", n1);
+
+    n1 = load_hex("v3.0_hex_words_addressed.txt", RAM, 65536);
+    if (n1 < 0) exit(1);
+    printf("RAM loaded: %d words\n", n1);
+
 /////////////////////////////////////////////////////
 
   VerilatedContext* contextp = new VerilatedContext;
