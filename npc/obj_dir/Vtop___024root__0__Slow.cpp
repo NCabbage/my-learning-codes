@@ -116,6 +116,7 @@ VL_ATTR_COLD bool Vtop___024root___eval_phase__stl(Vtop___024root* vlSelf) {
                     vlSelfRef.__Vm_traceActivity[0U] = 1U;
                     vlSelfRef.__Vm_traceActivity[1U] = 1U;
                     vlSelfRef.__Vm_traceActivity[2U] = 1U;
+                    vlSelfRef.__Vm_traceActivity[3U] = 1U;
                 }
             }
         }
@@ -179,6 +180,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16055804596787932962ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__wmask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 3026096213453284466ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__raddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16918640790826625513ull);
+    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sb_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6039356177267690435ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14017508431756229609ull);
     for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
         vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12329170128450555218ull);
@@ -211,7 +213,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
-    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }
