@@ -5,7 +5,7 @@ module ysyx_100022863_LSU(
     input               wr_en       ,
     input       [31:0]  waddr       ,
     input       [31:0]  wdata       ,
-    input       [3:0]   wmask       ,
+    input       [2:0]   wmask       ,
 
     input               rd_en       ,
     input       [31:0]  raddr       ,

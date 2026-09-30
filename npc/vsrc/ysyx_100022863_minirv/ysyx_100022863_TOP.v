@@ -131,14 +131,14 @@ wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
-wire	[3:0]		wrmask		;
+wire	[2:0]		wrmask		;
 
 assign rd_en = lw_en | lbu_en;
 assign raddr = alu_lw_result | alu_lbu_result;
 assign wr_en = sw_en | sb_en;
 assign wraddr = alu_sw_result | alu_sb_result;
 assign wrdata = src2;
-assign wrmask = sb_en ?  wraddr[1:0]: 4'b1111;
+assign wrmask = wraddr[1:0];
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .wr_en       (wr_en	),

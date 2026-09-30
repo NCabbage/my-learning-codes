@@ -329,11 +329,11 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                        | ((IData)(4U) 
                                           + vlSelfRef.PC)))))),32);
     bufp->fullIData(oldp+34,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr),32);
-    bufp->fullCData(oldp+35,((0x0000000fU & ((vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr 
-                                              >> 2U) 
-                                             | (- (IData)(
-                                                          (1U 
-                                                           & (~ (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en)))))))),4);
+    bufp->fullCData(oldp+35,((0x0000000fU & ((- (IData)(
+                                                        (1U 
+                                                         & (~ (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en))))) 
+                                             | (3U 
+                                                & vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr)))),4);
     bufp->fullCData(oldp+36,((0x0000007fU & vlSelfRef.inst)),7);
     bufp->fullCData(oldp+37,((7U & (vlSelfRef.inst 
                                     >> 0x0000000cU))),3);

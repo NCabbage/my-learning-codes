@@ -37,10 +37,10 @@ extern "C" int pmem_read(int raddr){
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	uint32_t cnt_data =  0;
 
-	if(wmask & 0x01) cnt_data += wdata & 0x000000ff;
-	if(wmask & 0x02) cnt_data += wdata & 0x0000ff00;
-	if(wmask & 0x04) cnt_data += wdata & 0x00ff0000;
-	if(wmask & 0x08) cnt_data += wdata & 0xff000000;
+	if(wmask == 0) cnt_data += wdata & 0x000000ff;
+	if(wmask == 1) cnt_data += wdata & 0x0000ff00;
+	if(wmask == 2) cnt_data += wdata & 0x00ff0000;
+	if(wmask == 3) cnt_data += wdata & 0xff000000;
 
 	RAM[waddr] = cnt_data;
 }
