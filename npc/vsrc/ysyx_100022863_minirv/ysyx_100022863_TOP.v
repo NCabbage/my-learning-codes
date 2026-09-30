@@ -130,12 +130,26 @@ wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
-wire	[1:0]		wrmask		;
+wire	[3:0]		wrmask		;
 
 assign raddr = alu_lw_result | alu_lbu_result;
 assign wraddr = alu_sw_result | alu_sb_result;
 assign wrdata = src2;
-assign wrmask = wraddr[1:0];
+
+always@(*)
+	if(sb_en)
+		case(waddr[1:0])
+			2'b00: wrmask = 4'b0001;
+			2'b01: wrmask = 4'b0010;
+			2'b10: wrmask = 4'b0100;
+			2'b11: wrmask = 4'b1000;
+			default:
+				wrmask = 4'b0;
+		endcase
+	else if(sw_en)
+		wrmask = 4'b1111;
+	else
+		wrmask = 4'b0;
 
 always@(*)
 	check(PC, raddr);
