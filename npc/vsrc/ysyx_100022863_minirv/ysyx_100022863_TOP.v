@@ -138,7 +138,7 @@ assign wrdata = src2;
 
 always@(*)
 	if(sb_en)
-		case(waddr[1:0])
+		case(wraddr[1:0])
 			2'b00: wrmask = 4'b0001;
 			2'b01: wrmask = 4'b0010;
 			2'b10: wrmask = 4'b0100;
