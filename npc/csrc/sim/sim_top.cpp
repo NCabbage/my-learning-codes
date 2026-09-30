@@ -93,7 +93,7 @@ extern "C" void halt(int inst){
 }
 
 extern "C" int pmem_read(int raddr){
-	printf("raddr: %d\n", waddr);
+	printf("raddr: %d\n", raddr);
 	return RAM[raddr];
 }
 
