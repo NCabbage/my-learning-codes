@@ -131,7 +131,7 @@ wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
-wire	[2:0]		wrmask		;
+wire	[1:0]		wrmask		;
 
 assign rd_en = lw_en | lbu_en;
 assign raddr = alu_lw_result | alu_lbu_result;
