@@ -15,7 +15,7 @@ module ysyx_100022863_LSU(
 
 always@(*)
     if(wr_en)
-        pmem_write({2'b00, waddr>>2}, wdata, {30'b0, wmask});
+        pmem_write(waddr>>2, wdata, {30'b0, wmask});
 
 always@(*)
     if(rd_en) begin
