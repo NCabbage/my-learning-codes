@@ -37,6 +37,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_lw_result	;
 	wire	[31:0]		alu_lbu_result	;
 	wire	[31:0]		alu_sw_result	;
+	wire	[31:0]		alu_sb_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
