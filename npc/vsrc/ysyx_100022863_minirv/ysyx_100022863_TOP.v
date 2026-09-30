@@ -112,6 +112,7 @@ module ysyx_100022863_TOP #(
 		.lw_en				(lw_en				),
 		.lbu_en				(lbu_en				),
 		.sw_en				(sw_en				),
+		.sb_en				(sb_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -119,7 +120,8 @@ module ysyx_100022863_TOP #(
 		.alu_lui_result		(alu_lui_result		),
 		.alu_lw_result		(alu_lw_result		),
 		.alu_lbu_result		(alu_lbu_result		),
-		.alu_sw_result 		(alu_sw_result		)
+		.alu_sw_result 		(alu_sw_result		),
+		.alu_sb_result		(alu_sb_result		)
 	);
 
 wire				rd_en		;
