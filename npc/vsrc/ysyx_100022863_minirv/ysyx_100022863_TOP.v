@@ -146,7 +146,8 @@ ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .wdata       (wrdata),
     .wmask       (wrmask),
 
-    .rd_en       (rd_en	),
+    .lw_en       (lw_en	),
+	.lbu_en		 (lbu_en),
     .raddr       (raddr	),
 
     .rdata		 (rdata	)
