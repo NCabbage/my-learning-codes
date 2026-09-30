@@ -19,10 +19,13 @@ always@(*)
 
 always@(*)
     if(rd_en) begin
-        if(raddr[1:0] == 0) rdata = pmem_read(raddr >> 2) & 32'h000000ff;
-        if(raddr[1:0] == 1) rdata = pmem_read(raddr >> 2) & 32'h0000ff00;
-        if(raddr[1:0] == 2) rdata = pmem_read(raddr >> 2) & 32'h00ff0000;
-        if(raddr[1:0] == 3) rdata = pmem_read(raddr >> 2) & 32'hff000000;
+        case(raddr[1:0])
+            2'b00: rdata = pmem_read(raddr >> 2) & 32'h000000ff;
+            2'b01: rdata = pmem_read(raddr >> 2) & 32'h0000ff00;
+            2'b10: rdata = pmem_read(raddr >> 2) & 32'h00ff0000;
+            2'b11: rdata = pmem_read(raddr >> 2) & 32'hff000000;
+            default:
+                rdata = 32'b0;
     end
     else
         rdata = 0;
