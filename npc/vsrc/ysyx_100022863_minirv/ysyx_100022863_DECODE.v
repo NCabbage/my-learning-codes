@@ -57,7 +57,6 @@ assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 assign wrmask = lw_en ? 4'b1111 : 0;
 
 //lbu
-wire			opcode_6_0_0000011 	= (opcode == 7'b0000011	);
 wire			funct3_14_12_100	= (funct3 == 3'b100		);
 
 assign lbu_en = opcode_6_0_0000011 && funct3_14_12_100;
