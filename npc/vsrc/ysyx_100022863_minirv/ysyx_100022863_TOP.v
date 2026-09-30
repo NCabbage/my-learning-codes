@@ -118,7 +118,6 @@ wire				rd_en		;
 wire 				wr_en		;
 wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
-wire	[3:0]		rdmask		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
 wire	[3:0]		wrmask		;
