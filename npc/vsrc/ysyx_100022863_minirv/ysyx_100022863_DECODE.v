@@ -8,7 +8,6 @@ module ysyx_100022863_DECODE(
 	output		[31:0]		I_imm		,
 	output		[31:0]		U_imm		,
 	output		[3:0]		wrmask		,
-	output		[3:0]		rdmask		,
 
 	output					addi_en		,
 	output					jalr_en		,
