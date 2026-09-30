@@ -26,7 +26,7 @@ assign			rd			= inst[11:7]	;
 assign			rs1			= inst[19:15]	;
 assign			rs2			= inst[24:20]	;
 assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
-assign			U_imm		= {inst[31:12], 12'b0}			;
+assign			U_imm		= inst[31:12] << 12				;
 assign			S_imm		= {{20{inst[31]}}, {inst[31:25], inst[11:7]}};
 
 //addi
