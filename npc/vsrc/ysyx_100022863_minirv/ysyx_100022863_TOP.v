@@ -125,7 +125,6 @@ module ysyx_100022863_TOP #(
 		.alu_sb_result		(alu_sb_result		)
 	);
 
-wire 				wr_en		;
 wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
