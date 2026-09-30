@@ -123,7 +123,7 @@ int main(int argc, char** argv){
     printf("RAM loaded: %d words\n", n1);
 
 	for(int i=0;i<10000;i++)
-		printf("RAM[%d]: %x", i, RAM[i]);
+		printf("RAM[%x]: %x", i, RAM[i]);
 
 /////////////////////////////////////////////////////
 
