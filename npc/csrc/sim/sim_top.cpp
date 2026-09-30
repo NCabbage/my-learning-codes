@@ -97,6 +97,7 @@ extern "C" int pmem_read(int raddr){
 }
 
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
+	printf("wmask: %d\n", wmask);
 	RAM[waddr] = wdata << (wmask*8);
 }
 
