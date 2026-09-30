@@ -151,9 +151,6 @@ always@(*)
 	else
 		wrmask = 4'b0;
 
-always@(*)
-	check(PC, raddr);
-
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .sw_en       (sw_en	),
 	.sb_en		 (sb_en	),

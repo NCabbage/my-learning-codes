@@ -98,7 +98,7 @@ extern "C" int pmem_read(int raddr){
 }
 
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
-	printf("waddr: %d\n", waddr);
+//	printf("waddr: %d\n", waddr);
 	
 	uint32_t old = RAM[waddr];
 	uint32_t mask = 0;
@@ -109,6 +109,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x8) mask |= 0xff000000;
 
 	RAM[waddr] = (old & ~mask) | ((uint32_t)wdata & mask);
+	printf("waddr: %x   val:  %x\n", waddr, RAM[waddr]);
 }
 
 extern "C" void check(int PC, int raddr){
