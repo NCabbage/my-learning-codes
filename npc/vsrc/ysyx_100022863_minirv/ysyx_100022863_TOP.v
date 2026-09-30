@@ -125,7 +125,6 @@ module ysyx_100022863_TOP #(
 		.alu_sb_result		(alu_sb_result		)
 	);
 
-wire				rd_en		;
 wire 				wr_en		;
 wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
@@ -133,7 +132,6 @@ wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
 wire	[1:0]		wrmask		;
 
-assign rd_en = lw_en | lbu_en;
 assign raddr = alu_lw_result | alu_lbu_result;
 assign wr_en = sw_en | sb_en;
 assign wraddr = alu_sw_result | alu_sb_result;

@@ -19,7 +19,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst_n,0,0);
-    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__rd_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en;
@@ -47,6 +46,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__raddr;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata;
+    IData/*31:0*/ __Vfunc_pmem_read__2__Vfuncout;
     IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_0;
     IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_1;
     IData/*31:0*/ __Vtrigprevexpr___TOP__inst__0;
