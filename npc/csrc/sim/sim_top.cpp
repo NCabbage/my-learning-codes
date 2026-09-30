@@ -107,6 +107,7 @@ int main(int argc, char** argv){
 
 /////////////////////////////////////////////////////
 	load_rom("/home/cappage/ysyx-workbench/npc/csrc/program.txt");
+	for(int i=0:i<=10000:i++) printf("ROM[%d]: %x   ", i, ROM[i]);
 /////////////////////////////////////////////////////
 
   VerilatedContext* contextp = new VerilatedContext;
