@@ -104,6 +104,7 @@ module ysyx_100022863_TOP #(
 		.src2				(src2				),
 		.I_imm				(I_imm				),
 		.U_imm				(U_imm				),
+		.S_imm				(S_imm				),
 		.addi_en			(addi_en			),
 		.jalr_en			(jalr_en			),
 		.add_en				(add_en				),
