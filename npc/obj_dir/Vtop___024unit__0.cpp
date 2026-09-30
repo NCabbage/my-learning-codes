@@ -4,15 +4,15 @@
 
 #include "Vtop__pch.h"
 
-extern "C" int pmem_read(int raddr);
+extern "C" int pmem_read(int raddre);
 
-void Vtop___024unit____Vdpiimwrap_pmem_read_TOP____024unit(IData/*31:0*/ raddr, IData/*31:0*/ &pmem_read__Vfuncrtn) {
+void Vtop___024unit____Vdpiimwrap_pmem_read_TOP____024unit(IData/*31:0*/ raddre, IData/*31:0*/ &pmem_read__Vfuncrtn) {
     VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop___024unit____Vdpiimwrap_pmem_read_TOP____024unit\n"); );
     // Body
-    int raddr__Vcvt;
-    raddr__Vcvt = raddr;
+    int raddre__Vcvt;
+    raddre__Vcvt = raddre;
     int pmem_read__Vfuncrtn__Vcvt;
-    pmem_read__Vfuncrtn__Vcvt = pmem_read(raddr__Vcvt);
+    pmem_read__Vfuncrtn__Vcvt = pmem_read(raddre__Vcvt);
     pmem_read__Vfuncrtn = (pmem_read__Vfuncrtn__Vcvt);
 }
 

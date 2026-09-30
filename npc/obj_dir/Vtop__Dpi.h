@@ -19,7 +19,7 @@ extern "C" {
     // DPI import at /home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_minirv/ysyx_100022863_TOP.v:1:30
     extern void halt(int inst);
     // DPI import at /home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_minirv/ysyx_100022863_LSU.v:1:29
-    extern int pmem_read(int raddr);
+    extern int pmem_read(int raddre);
     // DPI import at /home/cappage/ysyx-workbench/npc/vsrc/ysyx_100022863_minirv/ysyx_100022863_LSU.v:2:30
     extern void pmem_write(int waddr, int wdata, int wmask);
 
