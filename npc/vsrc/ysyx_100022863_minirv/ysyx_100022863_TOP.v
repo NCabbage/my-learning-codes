@@ -79,7 +79,7 @@ module ysyx_100022863_TOP #(
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en;
-	assign wdata = (({32{jalr_en}}) & (PC + 4 ))| alu_addi_result | alu_add_result | alu_lui_result | rdata;
+	assign wdata = (jalr_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | rdata;
 
 	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(5),
