@@ -122,6 +122,9 @@ int main(int argc, char** argv){
     if (n1 < 0) exit(1);
     printf("RAM loaded: %d words\n", n1);
 
+	for(int i=0;i<10000;i++)
+		printf("RAM[%d]: %x", i, RAM[i]);
+
 /////////////////////////////////////////////////////
 
   VerilatedContext* contextp = new VerilatedContext;
