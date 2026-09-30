@@ -7,14 +7,16 @@ module ysyx_100022863_DECODE(
 	output		[4:0]		rd			,
 	output		[31:0]		I_imm		,
 	output		[31:0]		U_imm		,
-	output		[3:0]		wrmask		,
+	output		[31:0]		S_imm		,
 
 	output					addi_en		,
 	output					jalr_en		,
 	output					add_en		,
 	output					lui_en		,
 	output					lw_en		,
-	output					lbu_en
+	output					lbu_en		,
+	output					sw_en		,
+	output					sb_en
 );
 
 wire	[6:0]	opcode		= inst[6:0]		;
@@ -25,6 +27,7 @@ assign			rs1			= inst[19:15]	;
 assign			rs2			= inst[24:20]	;
 assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
 assign			U_imm		= inst[31:12] << 12				;
+assign			S_imm		= {{20{inst[31]}}, {inst[31:25], inst[11:7]}};
 
 //addi
 wire			opcode_6_0_0010011	= (opcode == 7'b0010011	);
@@ -53,11 +56,18 @@ wire			funct3_14_12_001   = (funct3 == 3'b010		);
 
 assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
-assign wrmask = lw_en ? 4'b1111 : 0;
-
 //lbu
 wire			funct3_14_12_100	= (funct3 == 3'b100		);
 
 assign lbu_en = opcode_6_0_0000011 && funct3_14_12_100;
+
+//sw
+wire			opcode_6_0_0100011	= (opcode == 7'b0100011	);
+wire			funct3_14_12_010	= (funct3 == 3'b010		);
+
+assign sw_en = opcode_6_0_0100011 && funct3_14_12_010;
+
+//sb
+assign sb_en = opcode_6_0_0100011 && funct3_14_12_000;
 
 endmodule

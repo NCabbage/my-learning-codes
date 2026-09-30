@@ -199,7 +199,7 @@ VL_ATTR_COLD void Vtop___024root__trace_const_0_sub_0(Vtop___024root* vlSelf, Ve
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode);
     bufp->fullIData(oldp+70,(0x00000020U),32);
-    bufp->fullBit(oldp+71,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__wr_en));
+    bufp->fullBit(oldp+71,(1U));
     bufp->fullIData(oldp+72,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__wraddr),32);
     bufp->fullIData(oldp+73,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__wrdata),32);
     bufp->fullIData(oldp+74,(5U),32);
