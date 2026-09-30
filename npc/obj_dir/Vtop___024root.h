@@ -47,7 +47,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__raddr;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata;
-    IData/*31:0*/ __Vfunc_pmem_read__4__Vfuncout;
+    IData/*31:0*/ __Vfunc_pmem_read__3__Vfuncout;
     IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_0;
     IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_1;
     IData/*31:0*/ __Vtrigprevexpr___TOP__inst__0;

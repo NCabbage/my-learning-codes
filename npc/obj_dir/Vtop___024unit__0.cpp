@@ -39,15 +39,3 @@ void Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(IData/*31:0*/ inst) {
     inst__Vcvt = inst;
     halt(inst__Vcvt);
 }
-
-extern "C" void check(int PC, int raddr);
-
-void Vtop___024unit____Vdpiimwrap_check_TOP____024unit(IData/*31:0*/ PC, IData/*31:0*/ raddr) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop___024unit____Vdpiimwrap_check_TOP____024unit\n"); );
-    // Body
-    int PC__Vcvt;
-    PC__Vcvt = PC;
-    int raddr__Vcvt;
-    raddr__Vcvt = raddr;
-    check(PC__Vcvt, raddr__Vcvt);
-}
