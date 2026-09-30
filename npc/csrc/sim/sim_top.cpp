@@ -114,11 +114,11 @@ int cnt = 0;
 int main(int argc, char** argv){
 
 /////////////////////////////////////////////////////
-    int n1 = load_hex("v3.0_hex_words_addressed.txt", ROM, 65536);
+    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 65536);
     if (n1 < 0) exit(1);
     printf("ROM loaded: %d words\n", n1);
 
-    n1 = load_hex("v3.0_hex_words_addressed.txt", RAM, 65536);
+    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 65536);
     if (n1 < 0) exit(1);
     printf("RAM loaded: %d words\n", n1);
 
