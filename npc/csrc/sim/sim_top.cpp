@@ -6,9 +6,14 @@
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
 /////////////////////////////////////////////////////指令存储器
+#define MEM_WORDS (64 * 1024 * 1024)
+#define VGA_BASE 0x20000000u
+#define VGA_SIZE  (256 * 256 * 4)
+#define VGA_WORDS (VGA_SIZE / 4)
+
 static uint32_t *ROM;
 static uint32_t *RAM;
-
+static uint32_t *vmem;
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -92,6 +97,10 @@ extern "C" int pmem_read(int raddr){
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %d\n", waddr);
 	
+	if(waddr > VGA_BASE && waddr < VGA_BASE + VGA_SIZE){
+		vmem[waddr - VGA_BASE] = wdata;
+	}
+
 	uint32_t old = RAM[waddr];
 	uint32_t mask = 0;
 
