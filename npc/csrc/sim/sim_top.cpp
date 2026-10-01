@@ -6,7 +6,7 @@
 #include "verilated_fst_c.h"		//用来生成.fst文件
 
 /////////////////////////////////////////////////////指令存储器
-uint32_t ROM[65536*2] = {
+uint32_t ROM[30000000] = {
 	0x01400513,
 	0x010000e7,
 	0x00c000e7,
@@ -15,7 +15,7 @@ uint32_t ROM[65536*2] = {
 	0x00008067
 };
 
-uint32_t RAM[65536*2] = {};
+uint32_t RAM[30000000] = {};
 
 
 #include <stdio.h>
@@ -124,11 +124,11 @@ int cnt = 0;
 int main(int argc, char** argv){
 
 /////////////////////////////////////////////////////
-    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 65536*2);
+    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 30000000);
     if (n1 < 0) exit(1);
     printf("ROM loaded: %d words\n", n1);
 
-    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 65536*2);
+    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 30000000);
     if (n1 < 0) exit(1);
     printf("RAM loaded: %d words\n", n1);
 
