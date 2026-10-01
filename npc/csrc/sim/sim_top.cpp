@@ -99,7 +99,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	
 	if(waddr > VGA_BASE && waddr < VGA_BASE + VGA_SIZE){
 		vmem[waddr - VGA_BASE] = wdata;
-		return 0;
+		return;
 	}
 
 	uint32_t old = RAM[waddr];
