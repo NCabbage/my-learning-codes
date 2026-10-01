@@ -51,7 +51,7 @@ always@(*)
         endcase
     end
     else
-        rdata = 0;
+        rdata = 32'b0;
 
 
 endmodule
