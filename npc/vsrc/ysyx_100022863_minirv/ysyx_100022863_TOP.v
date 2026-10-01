@@ -137,6 +137,9 @@ assign wraddr = alu_sw_result | alu_sb_result;
 assign wrdata = src2;
 
 always@(*)
+	check(PC, raddr);
+
+always@(*)
 	if(sb_en)
 		case(wraddr[1:0])
 			2'b00: wrmask = 4'b0001;
