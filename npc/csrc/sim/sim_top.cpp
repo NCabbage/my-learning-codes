@@ -90,6 +90,9 @@ extern "C" void halt(int inst){
 }
 
 extern "C" int pmem_read(int raddr){
+	if (raddr < 0 || raddr >= MEM_WORDS) {
+        return 0;              // 毛刺 → 返回 0，不崩
+    }
 	printf("raddr: %x\n", raddr);
 	return RAM[raddr];
 }
