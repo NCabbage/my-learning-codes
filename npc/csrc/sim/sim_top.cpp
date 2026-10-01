@@ -163,9 +163,9 @@ int main(int argc, char** argv){
 
 	clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
 	top->clk = clk;
-	top->eval();
 	top->rst_n = rst_n;
 	top->inst = inst_read(top->PC >> 2);
+	top->eval();
 
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
