@@ -47,6 +47,9 @@ module ysyx_100022863_TOP #(
 
 	always@(posedge clk)
 		halt(inst);
+		
+	always@(*)
+		check(PC, raddr);
 	
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
@@ -136,8 +139,6 @@ assign raddr = alu_lw_result | alu_lbu_result;
 assign wraddr = alu_sw_result | alu_sb_result;
 assign wrdata = src2;
 
-always@(*)
-	check(PC, raddr);
 
 always@(*)
 	if(sb_en)
