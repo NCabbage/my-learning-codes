@@ -128,6 +128,9 @@ const int	period_ns = 10;
 int cnt = 0;
 int main(int argc, char** argv){
 
+for (int i = 0; i < argc; i++)
+    printf("argv[%d] = %s\n", i, argv[i]);
+
 /////////////////////////////////////////////////////
     ROM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
     RAM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
