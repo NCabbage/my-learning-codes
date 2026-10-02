@@ -63,7 +63,7 @@ sim:
 # 运行目标
 run:
 	cd obj_dir; \
-	./Vtop /home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32-nemu.bin\
+	./Vtop
 
 watch:
 	gtkwave obj_dir/wave.fst
