@@ -91,7 +91,9 @@ static int load_hex(const char *filename, uint32_t *dst, int dst_size) {
 }
 
 uint32_t inst_read(uint32_t PC){
-	return ROM[PC];
+	if(PC < 0x80000000 >> 2) return 0;
+	else
+		return ROM[PC - 0x80000000 >> 2];
 }
 
 extern "C" void halt(int inst){
@@ -189,7 +191,7 @@ for (int i = 0; i < argc; i++)
 	clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
 	top->clk = clk;
 	top->rst_n = rst_n;
-	top->inst = inst_read((top->PC-0x80000000) >> 2);
+	top->inst = inst_read(top->PC >> 2);
 	top->eval();
 
 /////////////////////////////////////////////////////////
