@@ -48,8 +48,8 @@ module ysyx_100022863_TOP #(
 	always@(posedge clk)
 		halt(inst);
 		
-	always@(*)
-		check(PC, raddr);
+//	always@(*)
+//		check(PC, raddr);
 	
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
