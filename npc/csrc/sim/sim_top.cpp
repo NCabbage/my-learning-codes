@@ -155,12 +155,12 @@ for (int i = 0; i < argc; i++)
 	vmem = (uint32_t *)calloc(VGA_WORDS, sizeof(uint32_t));
 
 //    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 30000000);
-	int n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32-nemu.bin", ROM, MEM_WORDS);
+	int n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-minirv-npc.bin", ROM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("ROM loaded: %d words\n", n1);
 
 //    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 30000000);
-	n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32-nemu.bin", ROM, MEM_WORDS);
+	n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-minirv-npc.bin", ROM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("RAM loaded: %d words\n", n1);
 
