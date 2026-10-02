@@ -104,7 +104,7 @@ extern "C" void halt(int inst){
 }
 
 extern "C" int pmem_read(int raddr){
-	int craddr = raddr - 0x80000000;
+	int craddr = raddr - 0x80000000 >> 2;
 	if (craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     }
@@ -114,7 +114,7 @@ extern "C" int pmem_read(int raddr){
 
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %d\n", waddr);
-	int cwaddr = waddr - 0x80000000;
+	int cwaddr = waddr - 0x80000000 >> 2;
 	if(cwaddr > VGA_BASE && cwaddr < VGA_BASE + VGA_SIZE){
 		vmem[cwaddr - VGA_BASE] = wdata;
 		return;
