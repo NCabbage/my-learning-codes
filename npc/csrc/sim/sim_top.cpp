@@ -128,7 +128,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x4) mask |= 0x00ff0000;
 	if(wmask & 0x8) mask |= 0xff000000;
 
-	RAM[cwaddr] = (old & ~mask) | ((uint32_t)cwdata & mask);
+	RAM[cwaddr] = (old & ~mask) | ((uint32_t)wdata & mask);
 //	printf("waddr: %x   val:  %x\n", waddr, RAM[waddr]);
 }
 
