@@ -21,6 +21,20 @@ static uint32_t *vmem;
 #include <string.h>
 #include <ctype.h>
 
+static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
+    FILE *fp = fopen(filename, "rb");
+    if (!fp) {
+        fprintf(stderr, "Cannot open %s\n", filename);
+        return -1;
+    }
+
+    // 每个字 4 字节，最多读 dst_words 个字
+    size_t n = fread(dst, sizeof(uint32_t), dst_words, fp);
+    fclose(fp);
+
+    return (int)n;
+}
+
 // 通用：把 v3.0 hex 格式文件加载到 uint32_t 数组
 // 返回加载的字数
 static int load_hex(const char *filename, uint32_t *dst, int dst_size) {
@@ -90,22 +104,23 @@ extern "C" void halt(int inst){
 }
 
 extern "C" int pmem_read(int raddr){
-	if (raddr < 0 || raddr >= MEM_WORDS) {
+	int craddr = raddr - 0x80000000;
+	if (craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     }
-	printf("raddr: %x\n", raddr);
-	return RAM[raddr];
+	printf("raddr: %x\n", craddr);
+	return RAM[craddr];
 }
 
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %d\n", waddr);
-	
-	if(waddr > VGA_BASE && waddr < VGA_BASE + VGA_SIZE){
-		vmem[waddr - VGA_BASE] = wdata;
+	int cwaddr = cwaddr - 0x80000000;
+	if(cwaddr > VGA_BASE && cwaddr < VGA_BASE + VGA_SIZE){
+		vmem[cwaddr - VGA_BASE] = cwdata;
 		return;
 	}
 
-	uint32_t old = RAM[waddr];
+	uint32_t old = RAM[cwaddr];
 	uint32_t mask = 0;
 
 	if(wmask & 0x1) mask |= 0x000000ff;
@@ -113,7 +128,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x4) mask |= 0x00ff0000;
 	if(wmask & 0x8) mask |= 0xff000000;
 
-	RAM[waddr] = (old & ~mask) | ((uint32_t)wdata & mask);
+	RAM[cwaddr] = (old & ~mask) | ((uint32_t)cwdata & mask);
 //	printf("waddr: %x   val:  %x\n", waddr, RAM[waddr]);
 }
 
@@ -136,11 +151,13 @@ for (int i = 0; i < argc; i++)
     RAM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
 	vmem = (uint32_t *)calloc(VGA_WORDS, sizeof(uint32_t));
 
-    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 30000000);
+//    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 30000000);
+	int n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32-nemu.bin", ROM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("ROM loaded: %d words\n", n1);
 
-    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 30000000);
+//    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 30000000);
+	n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32-nemu.bin", ROM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("RAM loaded: %d words\n", n1);
 
