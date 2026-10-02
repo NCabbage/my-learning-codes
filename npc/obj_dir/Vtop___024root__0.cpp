@@ -358,7 +358,7 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
                                                    (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))) 
                                                    & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0))
                                  : ((IData)(4U) + vlSelfRef.PC))
-                             : 0U);
+                             : 0x80000000U);
         }
     }
     if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
