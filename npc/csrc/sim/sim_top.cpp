@@ -135,6 +135,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 }
 
 extern "C" void check(int PC, int raddr){
+	if(PC < 0x80000000) return;
 	printf("PC: %x  inst: %x raddr: %x\n", PC, ROM[(PC-0x80000000)>>2], raddr);
 }
 
