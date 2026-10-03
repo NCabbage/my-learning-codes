@@ -26,6 +26,8 @@ image: image-dep
 	@$(OBJCOPY) -S --set-section-flags .bss=alloc,contents -O binary $(IMAGE).elf $(IMAGE).bin
 
 run: insert-arg
-	echo "TODO: add command here to run simulation"
+	cd /home/cappage/ysyx-workbench/npc/obj_dir; \
+	./Vtop 
+	echo "had add path"
 
 .PHONY: insert-arg

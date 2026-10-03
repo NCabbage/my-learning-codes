@@ -145,22 +145,25 @@ extern "C" void check(int PC, int raddr){
 const int	period_ns = 10;
 int cnt = 0;
 int main(int argc, char** argv){
+	if(argc < 2){
+		printf("need the bin path!\n");
+		return 1;
+	}
 
-for (int i = 0; i < argc; i++)
-    printf("argv[%d] = %s\n", i, argv[i]);
-
+	const char *rom_path = argv[1];
+                                    
 /////////////////////////////////////////////////////
     ROM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
     RAM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
 	vmem = (uint32_t *)calloc(VGA_WORDS, sizeof(uint32_t));
 
 //    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 30000000);
-	int n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-minirv-npc.bin", ROM, MEM_WORDS);
+	int n1 = load_bin(rom_path, ROM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("ROM loaded: %d words\n", n1);
 
 //    n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", RAM, 30000000);
-	n1 = load_bin("/home/cappage/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-minirv-npc.bin", ROM, MEM_WORDS);
+	n1 = load_bin(rom_path, RAM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("RAM loaded: %d words\n", n1);
 
@@ -183,7 +186,7 @@ for (int i = 0; i < argc; i++)
 
 ////////////////////////////////////////////时钟
 
-	while(cnt < 200000000){
+	while(cnt < 20000000){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
