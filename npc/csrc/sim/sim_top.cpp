@@ -21,6 +21,8 @@ static uint32_t *vmem;
 #include <string.h>
 #include <ctype.h>
 
+bool halt_flag = false;
+
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
     if (!fp) {
@@ -100,6 +102,7 @@ extern "C" void halt(int inst){
 //	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
 		printf("ebreak!over!\n");
+		halt_flag = true;
 //		exit(0);
 	}
 
@@ -186,7 +189,7 @@ int main(int argc, char** argv){
 
 ////////////////////////////////////////////时钟
 
-	while(cnt < 200000000){
+	while(cnt < 200000000 && !halt_flag){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
