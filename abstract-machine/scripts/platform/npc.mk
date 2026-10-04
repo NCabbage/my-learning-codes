@@ -27,7 +27,6 @@ image: image-dep
 
 run: insert-arg
 	cd /home/cappage/ysyx-workbench/npc/obj_dir; \
-	./Vtop 
-	echo "had add path"
+	./Vtop $(IMAGE).bin
 
 .PHONY: insert-arg
