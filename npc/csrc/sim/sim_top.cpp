@@ -113,7 +113,7 @@ extern "C" int pmem_read(int raddr){
 	if (craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     }
-	printf("raddr: %x\n", craddr);
+//	printf("raddr: %x\n", craddr);
 	return RAM[craddr];
 }
 
