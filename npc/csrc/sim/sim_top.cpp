@@ -118,7 +118,7 @@ extern "C" int pmem_read(int raddr){
         return 0;              // 毛刺 → 返回 0，不崩
     }
 
-	if(craddr_t == 0x20000000){
+	if(craddr == 0x20000000){
     	struct timespec ts;
     	timespec_get(&ts, TIME_UTC);
     	return ts.tv_sec;
