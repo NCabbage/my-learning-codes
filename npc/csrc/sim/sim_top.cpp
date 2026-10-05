@@ -134,6 +134,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(waddr == 0x10000000){
 		putchar(wdata);
 		fflush(stdout);
+		printf("???\n");
 		return;
 	}
 
