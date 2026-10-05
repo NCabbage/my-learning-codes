@@ -1,9 +1,9 @@
-import "DPI-C" function void halt(input int inst);
+import "DPI-C" function void halt(input int inst, input	int a0);
 import "DPI-C" function void check(input int PC, input int raddr);
 
 module ysyx_100022863_TOP #(
-	parameter INST_WIDTH	= 32,
-						PC_WIDTH		= 32
+	parameter 			INST_WIDTH	= 32,
+						PC_WIDTH	= 32
 )
 (
 
@@ -46,7 +46,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		wdata			;
 
 	always@(posedge clk)
-		halt(inst);
+		halt(inst, a0);
 		
 //	always@(*)
 //		check(PC, raddr);
@@ -85,6 +85,8 @@ module ysyx_100022863_TOP #(
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en;
 	assign wdata = (jalr_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | rdata;
 
+	wire	[31:0]		a0;
+
 	ysyx_100022863_GPR #(
 		.ADDR_WIDTH(5),
 		.DATA_WIDTH(32)
@@ -99,7 +101,8 @@ module ysyx_100022863_TOP #(
 		.rs2				 	(rs2				),
 
 	  	.src1				 	(src1				),
-	  	.src2				 	(src2				)
+	  	.src2				 	(src2				),
+		.a0						(a0					)
 
 	);
 

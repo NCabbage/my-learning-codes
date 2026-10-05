@@ -98,10 +98,11 @@ uint32_t inst_read(uint32_t PC){
 		return ROM[PC - (0x80000000 >> 2)];
 }
 
-extern "C" void halt(int inst){
+extern "C" void halt(int inst, int a0){
 //	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
-		printf("ebreak!over!\n");
+		if(!a0)ANSI_FMT("HIT GOOD TRAP", ANSI_FG_GREEN);
+		else ANSI_FMT("HIT BAD TRAP", ANSI_FG_RED);
 		halt_flag = true;
 //		exit(0);
 	}
