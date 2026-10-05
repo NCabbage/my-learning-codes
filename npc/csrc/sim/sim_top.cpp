@@ -101,8 +101,8 @@ uint32_t inst_read(uint32_t PC){
 extern "C" void halt(int inst, int a0){
 //	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
-		if(!a0)ANSI_FMT("HIT GOOD TRAP", 42);
-		else ANSI_FMT("HIT BAD TRAP", 41);
+		if(!a0)printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
+		else printf("\033[1;31mHIT BAD TRAP\033[0m\n");
 		halt_flag = true;
 //		exit(0);
 	}
