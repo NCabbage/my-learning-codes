@@ -118,7 +118,7 @@ extern "C" int pmem_read(int raddr){
         return 0;              // 毛刺 → 返回 0，不崩
     }
 
-	if(caddr_t == 0x20000000){
+	if(craddr_t == 0x20000000){
     	struct timespec ts;
     	timespec_get(&ts, TIME_UTC);
     	return ts.tv_sec;
@@ -200,7 +200,7 @@ int main(int argc, char** argv){
 
 ////////////////////////////////////////////时钟
 
-	while(cnt < 200000000 && !halt_flag){
+	while(cnt < 2000000000 && !halt_flag){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
