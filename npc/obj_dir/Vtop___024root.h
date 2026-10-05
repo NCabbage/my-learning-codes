@@ -40,7 +40,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ __VnbaPhaseResult;
     VL_IN(inst,31,0);
     VL_OUT(PC,31,0);
-    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__a0;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__rdata;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_3__pmem_read;
     IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_2__pmem_read;
