@@ -4,6 +4,7 @@
 #include "Vtop.h"
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
+#include <time.h>
 
 /////////////////////////////////////////////////////指令存储器
 #define MEM_WORDS (64 * 1024 * 1024)
@@ -103,6 +104,7 @@ extern "C" void halt(int inst, int a0){
 	if(inst == 0x00100073){
 		if(!a0)printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
 		else printf("\033[1;31mHIT BAD TRAP\033[0m\n");
+		printf("?");
 		halt_flag = true;
 //		exit(0);
 	}
@@ -111,9 +113,17 @@ extern "C" void halt(int inst, int a0){
 
 extern "C" int pmem_read(int raddr){
 	int craddr = raddr - (0x80000000 >> 2);
-	if (craddr < 0 || craddr >= MEM_WORDS) {
+
+	if(craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     }
+
+	if(caddr_t == 0x20000000){
+    	struct timespec ts;
+    	timespec_get(&ts, TIME_UTC);
+    	return ts.tv_sec;
+	}
+
 //	printf("raddr: %x\n", craddr);
 	return RAM[craddr];
 }
