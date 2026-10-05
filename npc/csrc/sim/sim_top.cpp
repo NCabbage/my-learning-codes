@@ -117,7 +117,7 @@ extern "C" int pmem_read(int raddr){
         return 0;              // 毛刺 → 返回 0，不崩
     }
 
-	if(craddr == 0x20000000){
+	if(craddr == 0x02000000){
     	struct timespec ts;
     	timespec_get(&ts, TIME_UTC);
     	return ts.tv_sec;
@@ -130,6 +130,11 @@ extern "C" int pmem_read(int raddr){
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %d\n", waddr);
 	int cwaddr = waddr - (0x80000000 >> 2);
+
+	if(cwaddr == 0x10000000){
+		putchar(wdata);
+	}
+
 	if(cwaddr > VGA_BASE && cwaddr < VGA_BASE + VGA_SIZE){
 		vmem[cwaddr - VGA_BASE] = wdata;
 		return;
