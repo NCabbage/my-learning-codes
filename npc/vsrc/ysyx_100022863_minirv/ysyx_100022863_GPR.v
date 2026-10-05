@@ -22,6 +22,7 @@ always @(posedge clk) begin
 		GPR[waddr] <= wdata;
 end
 
+assign a0 = GPR[10];
 assign src1 = GPR[rs1];
 assign src2 = GPR[rs2];
 

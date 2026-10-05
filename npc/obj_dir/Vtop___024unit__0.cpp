@@ -30,12 +30,14 @@ void Vtop___024unit____Vdpiimwrap_pmem_write_TOP____024unit(IData/*31:0*/ waddr,
     pmem_write(waddr__Vcvt, wdata__Vcvt, wmask__Vcvt);
 }
 
-extern "C" void halt(int inst);
+extern "C" void halt(int inst, int a0);
 
-void Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(IData/*31:0*/ inst) {
+void Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(IData/*31:0*/ inst, IData/*31:0*/ a0) {
     VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop___024unit____Vdpiimwrap_halt_TOP____024unit\n"); );
     // Body
     int inst__Vcvt;
     inst__Vcvt = inst;
-    halt(inst__Vcvt);
+    int a0__Vcvt;
+    a0__Vcvt = a0;
+    halt(inst__Vcvt, a0__Vcvt);
 }

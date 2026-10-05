@@ -249,7 +249,7 @@ bool Vtop___024root___trigger_anySet__act(const VlUnpacked<QData/*63:0*/, 1> &in
     return (0U);
 }
 
-void Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(IData/*31:0*/ inst);
+void Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(IData/*31:0*/ inst, IData/*31:0*/ a0);
 
 void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_nba\n"); );
@@ -265,7 +265,7 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
             __Vinline_0__nba_sequent__TOP__0___VdlyDim0__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 0;
             CData/*0:0*/ __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0;
             __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 0;
-            Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(vlSelfRef.inst);
+            Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(vlSelfRef.inst, vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__a0);
             __Vinline_0__nba_sequent__TOP__0___VdlySet__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 = 0U;
             if ((((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en) 
                   | ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en) 
