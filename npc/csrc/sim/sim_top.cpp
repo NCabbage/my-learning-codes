@@ -165,7 +165,7 @@ extern "C" void check(int PC, int raddr){
 /////////////////////////////////////////////////////
 
 const int	period_ns = 10;
-int cnt = 0;
+long long cnt = 0;
 int main(int argc, char** argv){
 	if(argc < 2){
 		printf("need the bin path!\n");
