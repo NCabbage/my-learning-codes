@@ -116,7 +116,6 @@ extern "C" int pmem_read(int raddr){
 	if(craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     }
-	printf("raddr: %x\n", raddr);
 
 	if(raddr == 0x02000000){
     	struct timespec ts;
