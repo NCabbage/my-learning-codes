@@ -11,6 +11,7 @@
 #define VGA_BASE 0x20000000u
 #define VGA_SIZE  (256 * 256 * 4)
 #define VGA_WORDS (VGA_SIZE / 4)
+#define DEVICE_BASE 0x10000000
 
 static uint32_t *ROM;
 static uint32_t *RAM;
@@ -113,7 +114,7 @@ extern "C" void halt(int inst, int a0){
 extern "C" int pmem_read(int raddr){
 	int craddr = raddr - (0x80000000 >> 2);
 
-	if(raddr == (0xa000048 >> 2)){
+	if(raddr == ((DEVICE_BASE + 0x00000004) >> 2)){
     	struct timespec ts;
     	timespec_get(&ts, TIME_UTC);
     	return ts.tv_sec;
@@ -131,7 +132,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %d\n", waddr);
 	int cwaddr = waddr - (0x80000000 >> 2);
 
-	if(waddr == (0xa0003f8 >> 2)){
+	if(waddr == (DEVICE_BASE >> 2)){
 		putchar(wdata);
 		fflush(stdout);
 		printf("???\n");

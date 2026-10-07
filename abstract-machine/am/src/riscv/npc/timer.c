@@ -1,5 +1,5 @@
 #include <am.h>
-#include <nemu.h>
+#include <riscv.h>
 #include <stdio.h>
 
 void __am_timer_init() {
