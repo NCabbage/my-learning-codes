@@ -212,7 +212,6 @@ int main(int argc, char** argv){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
-		printf("%ld\n", cnt/4000000000);
 /////////////////////////////////////////////变量赋值
 
 	clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
