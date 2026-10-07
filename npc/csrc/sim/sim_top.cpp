@@ -208,7 +208,7 @@ int main(int argc, char** argv){
 
 ////////////////////////////////////////////时钟
 
-	while(cnt < 200000000000 && !halt_flag){
+	while(cnt < 20000000000 && !halt_flag){
 		if(cnt < 2 * period_ns * 1000) rst_n = 0;
 		else rst_n = 1;
 		cnt ++;
