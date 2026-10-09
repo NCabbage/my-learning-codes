@@ -6,27 +6,28 @@
 #define VERILATED_VTOP___024ROOT_H_  // guard
 
 #include "verilated.h"
+class Vtop___024unit;
 
 
 class Vtop__Syms;
 
 class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
   public:
+    // CELLS
+    Vtop___024unit* __PVT____024unit;
 
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst_n,0,0);
-    VL_OUT8(ans,7,0);
-    CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__rs1_data;
-    CData/*1:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__rs2;
-    CData/*2:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__rd;
-    CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__add_en;
-    CData/*0:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_en;
-    CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_ctrl_inst__DOT__bner_addr;
-    CData/*7:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__PC;
-    CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_0;
-    CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_1;
-    CData/*1:0*/ __VdfgRegularize_h6e95ff9d_0_4;
+    CData/*3:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__wmask;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lw_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lbu_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sw_en;
+    CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en;
+    CData/*7:0*/ __VdfgRegularize_h6e95ff9d_0_1;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
@@ -34,13 +35,25 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ __VicoDidInit;
     CData/*0:0*/ __VicoPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__1;
+    CData/*0:0*/ __Vtrigprevexpr___TOP__rst_n__1;
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;
-    IData/*31:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__i;
-    IData/*31:0*/ top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__rom_init__DOT__i;
+    VL_IN(inst,31,0);
+    VL_OUT(PC,31,0);
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__rdata;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_3__pmem_read;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_2__pmem_read;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_1__pmem_read;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_0__pmem_read;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__raddr;
+    IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata;
+    IData/*31:0*/ __Vfunc_pmem_read__3__Vfuncout;
+    IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_0;
+    IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_2;
+    IData/*31:0*/ __Vtrigprevexpr___TOP__inst__0;
     IData/*31:0*/ __VactIterCount;
-    VlUnpacked<CData/*7:0*/, 6> top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_GPR_inst__DOT__GPR;
-    VlUnpacked<CData/*7:0*/, 256> top__DOT__ysyx_100022863_sCPU_inst__DOT__ysyx_100022863_PC_inst__DOT__ROM;
+    VlUnpacked<IData/*31:0*/, 32> top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR;
     VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
     VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;

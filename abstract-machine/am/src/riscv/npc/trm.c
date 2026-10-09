@@ -1,4 +1,5 @@
 #include <am.h>
+#include "npc.h"
 #include <klib-macros.h>
 
 extern char _heap_start;
@@ -12,10 +13,12 @@ Area heap = RANGE(&_heap_start, PMEM_END);
 static const char mainargs[MAINARGS_MAX_LEN] = TOSTRING(MAINARGS_PLACEHOLDER); // defined in CFLAGS
 
 void putch(char ch) {
+  outb(SERIAL_PORT, ch);
 }
 
 void halt(int code) {
-  while (1);
+	asm volatile("ebreak");
+	while(1);
 }
 
 void _trm_init() {

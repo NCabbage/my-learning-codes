@@ -63,7 +63,7 @@ sim:
 # 运行目标
 run:
 	cd obj_dir; \
-	./Vtop \
+	./Vtop
 
 watch:
 	gtkwave obj_dir/wave.fst

@@ -1,17 +1,25 @@
 module top(
-	input							clk				,				//25M
-	input							rst_n			,
-	
-	output		[7:0]		ans				
-);
+	input					clk				,
+	input		[31:0]		inst			,
+	input					rst_n			,
 
-ysyx_100022863_sCPU ysyx_100022863_sCPU_inst(
-
-	.clk		(clk		),
-	.rst_n	(rst_n	),
-
-	.ans		(ans		)
+	output		[31:0]		PC
 
 );
+
+ysyx_100022863_TOP #(
+	.INST_WIDTH				(32),
+	.PC_WIDTH				(32)
+)u_ysyx_100022863_TOP
+(
+
+	.clk			(clk	),
+	.inst			(inst	),
+	.rst_n			(rst_n	),
+
+	.PC				(PC		)
+
+);
+
 
 endmodule
