@@ -6,8 +6,6 @@
 
 void execute(long long n);
 
-#define NR_CMD 3
-
 static int cmd_c(char *args);
 
 static int cmd_help(char *args);
@@ -41,6 +39,8 @@ static struct{
 	{"c", "Continue the execution of the program", cmd_c},
 	{"q", "get out the pragram", cmd_q}
 };
+
+#define NR_CMD ARRLEN(cmd_table)
 
 void sdb_mainloop(){
 	for(char *str; (str = rl_gets()) != NULL; ){
