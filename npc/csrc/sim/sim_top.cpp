@@ -189,7 +189,7 @@ void execute(int n){
 		}
 
 		tol ++;
-
+		printf("%d\n", tol);
 		if(tol == 5) rst_n = 1;
 
 		n ++;
