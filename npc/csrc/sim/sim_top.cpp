@@ -30,7 +30,9 @@ int rst_n;
 int tol = 0;
 const int	period_ns = 10;
 long long cnt = 0;
+
 Vtop* top;
+VerilatedFstC *tfp;
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
@@ -183,7 +185,8 @@ void execute(int n){
 		top->rst_n = rst_n;
 		top->inst = inst_read(top->PC >> 2);
 		top->eval();
-
+		tfp->dump(contextp->time()); // 记录当前时间的波形数据
+  		contextp->timeInc(1);// 增加时间步长
 		tol ++;
 
 		if(tol == 5) rst_n = 1;
@@ -229,12 +232,12 @@ int main(int argc, char** argv){
   	contextp->commandArgs(argc, argv);	// 接收传入的参数
 
     // 创建顶层模块实例
-  	top = new Vtop{contextp};
+  	*top = new Vtop{contextp};
 	contextp->traceEverOn(true); //打开追踪
-	VerilatedFstC *tfp= new VerilatedFstC;   //初始化fst对象指针
+	*tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
-
+	execute(2000);
 /*原来
 ////////////////////////////////////////////时钟
 
@@ -249,16 +252,16 @@ int main(int argc, char** argv){
 	top->rst_n = rst_n;
 	top->inst = inst_read(top->PC >> 2);
 	top->eval();
-*/
+
 /////////////////////////////////////////////////////////
 //		if(cnt % (period_ns*1000/2) == 0) printf("ok");
 //		assert(top->result == (a + b) || top->result == (a - b));
 
-	execute(2000);
+
 		tfp->dump(contextp->time()); // 记录当前时间的波形数据
-  	contextp->timeInc(1);// 增加时间步长
+  		contextp->timeInc(1);// 增加时间步长
 	}
-	    // 仿真结束后，调用 close() 关闭 VCD 文件。关闭文件是确保所有数据被正确保存的重要步骤。
+*/	    // 仿真结束后，调用 close() 关闭 VCD 文件。关闭文件是确保所有数据被正确保存的重要步骤。
   	tfp->close();
 
     // 释放资源
