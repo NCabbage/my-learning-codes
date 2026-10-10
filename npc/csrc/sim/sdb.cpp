@@ -4,7 +4,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 
-void execute(int n);
+void execute(long long n);
 
 #define NR_CMD 2
 
