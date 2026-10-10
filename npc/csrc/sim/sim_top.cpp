@@ -30,6 +30,7 @@ int rst_n;
 int tol = 0;
 const int	period_ns = 10;
 long long cnt = 0;
+Vtop* top = new Vtop{contextp};
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
@@ -228,7 +229,6 @@ int main(int argc, char** argv){
   	contextp->commandArgs(argc, argv);	// 接收传入的参数
 
     // 创建顶层模块实例
-  	Vtop* top = new Vtop{contextp};
 	contextp->traceEverOn(true); //打开追踪
 	VerilatedFstC *tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
