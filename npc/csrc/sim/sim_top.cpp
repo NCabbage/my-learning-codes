@@ -5,6 +5,7 @@
 #include <verilated.h>
 #include "verilated_fst_c.h"		//用来生成.fst文件
 #include <time.h>
+#include "sdb.h"
 
 /////////////////////////////////////////////////////指令存储器
 #define MEM_WORDS (64 * 1024 * 1024)
