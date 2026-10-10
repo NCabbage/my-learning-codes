@@ -181,7 +181,7 @@ void execute(long long n){
 		while(cnt < period_ns*500*2){
 			cnt ++;
 			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;
-			if(cnt % (period_ns*500) == 0) printf("tol: %d", tol);
+			if(cnt % (period_ns*500) == 0) printf("[clk] flip to %d at cnt=%d\n", 1^clk, cnt);
 			top->clk = clk;
 			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
