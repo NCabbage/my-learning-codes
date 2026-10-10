@@ -232,9 +232,9 @@ int main(int argc, char** argv){
   	contextp->commandArgs(argc, argv);	// 接收传入的参数
 
     // 创建顶层模块实例
-  	*top = new Vtop{contextp};
+  	top = new Vtop{contextp};
 	contextp->traceEverOn(true); //打开追踪
-	*tfp= new VerilatedFstC;   //初始化fst对象指针
+	tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
 	execute(2000);
