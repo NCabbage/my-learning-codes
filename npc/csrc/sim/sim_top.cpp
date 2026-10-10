@@ -145,6 +145,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 
 	if(waddr == (DEVICE_BASE >> 2)){
 		putchar(wdata);
+		printf("[tol=%d] PC=%x char=%c\n", tol, top->PC, wdata);
 		return;
 	}
 
