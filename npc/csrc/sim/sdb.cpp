@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-#include <sdb.h>
+#include "sdb.h"
 
 void execute(long long n);
 
