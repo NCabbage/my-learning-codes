@@ -63,13 +63,13 @@ void sdb_mainloop(){
 }
 
 int cmd_c(char *args){
-	execute(-1);
+	execute(2000000);
 	return 0;
 }
 
 int cmd_help(char *args){
 	for(int i=0;i<NR_CMD;i++)
-		printf("%s\n", cmd_table[i].description);
+		printf("%s %s\n", cmd)table[i].name, cmd_table[i].description);
 
 	return 0;
 }
