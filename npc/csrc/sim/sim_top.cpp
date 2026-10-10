@@ -199,6 +199,28 @@ void execute(long long n){
 	}
 }
 
+void sdb_loop(){
+	char cmd[128];
+	while(1){
+		printf("sdb > ");
+		scanf("%s", cmd);
+		switch (cmd)
+		{
+		case "c":
+			execute(2000000);
+			break;
+		
+		case "q":
+			tfp->close();
+			break;
+
+		case "info r":
+			printf("%d\n", top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR);
+		default:
+			break;
+		}
+	}
+}
 
 /////////////////////////////////////////////////////
 
@@ -239,7 +261,7 @@ int main(int argc, char** argv){
 	tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
-	execute(200);
+	sdb_loop();
 /*原来
 ////////////////////////////////////////////时钟
 
