@@ -173,7 +173,7 @@ extern "C" void check(int PC, int raddr){
 	printf("PC: %x  inst: %x raddr: %x\n", PC, ROM[(PC-0x80000000)>>2], raddr);
 }
 
-void execute(int n){
+void execute(long long n){
 	int cnt = 0;
 
 	for(int i=0;i<n && !halt_flag;i++){
