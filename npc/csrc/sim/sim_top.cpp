@@ -180,14 +180,14 @@ void execute(int n){
 		while(cnt < period_ns*500*2){
 			cnt ++;
 			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
+			top->clk = clk;
+			top->rst_n = rst_n;
+			top->inst = inst_read(top->PC >> 2);
+			top->eval();
+			tfp->dump(contextp->time()); // 记录当前时间的波形数据
+			contextp->timeInc(1);// 增加时间步长
 		}
 
-		top->clk = clk;
-		top->rst_n = rst_n;
-		top->inst = inst_read(top->PC >> 2);
-		top->eval();
-		tfp->dump(contextp->time()); // 记录当前时间的波形数据
-  		contextp->timeInc(1);// 增加时间步长
 		tol ++;
 
 		if(tol == 5) rst_n = 1;
