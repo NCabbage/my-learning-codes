@@ -2,7 +2,7 @@
 include ../Makefile
 
 # 定义编译相关的变量:
-VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst
+VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -LDFLAGS "-lreadline"
 SOURCES = csrc/sim/sim_top.cpp  csrc/sim/sdb.cpp $(shell find $(abspath ./vsrc) -name "*.v")		#加了sdb.cpp
 TARGET = sim_top
 WAVE = /wave.fst
