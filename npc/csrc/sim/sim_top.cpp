@@ -187,7 +187,8 @@ void execute(long long n){
 			tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
 		}
-
+		
+		cnt = 0;
 		tol ++;
 
 		if(tol == 5) rst_n = 1;
