@@ -33,6 +33,7 @@ long long cnt = 0;
 
 Vtop* top;
 VerilatedFstC *tfp;
+VerilatedContext* contextp;
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
@@ -228,7 +229,7 @@ int main(int argc, char** argv){
 
 /////////////////////////////////////////////////////
 
-  	VerilatedContext* contextp = new VerilatedContext;
+  	contextp = new VerilatedContext;
   	contextp->commandArgs(argc, argv);	// 接收传入的参数
 
     // 创建顶层模块实例
