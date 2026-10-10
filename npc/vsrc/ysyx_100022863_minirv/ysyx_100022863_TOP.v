@@ -159,6 +159,7 @@ always@(*)
 		wrmask = 4'b0;
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
+	.clk		 (clk	),
     .sw_en       (sw_en	),
 	.sb_en		 (sb_en	),
     .waddr       (wraddr),
