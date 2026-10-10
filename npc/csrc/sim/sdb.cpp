@@ -6,7 +6,7 @@
 
 void execute(long long n);
 
-#define NR_CMD 2
+#define NR_CMD 3
 
 static int cmd_c(char *args);
 
