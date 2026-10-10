@@ -10,6 +10,8 @@ void execute(int n);
 
 static int cmd_c(char *args);
 
+static int cmd_help(char *args);
+
 static char* rl_gets(){
 	static char* line_read = NULL;
 
@@ -68,4 +70,6 @@ int cmd_c(char *args){
 int cmd_help(char *args){
 	for(int i=0;i<NR_CMD;i++)
 		printf("%s\n", cmd_table[i].description);
+
+	return 0;
 }
