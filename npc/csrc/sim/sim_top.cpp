@@ -238,7 +238,7 @@ int main(int argc, char** argv){
 	tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
-	execute(2000);
+	execute(200000);
 /*原来
 ////////////////////////////////////////////时钟
 
