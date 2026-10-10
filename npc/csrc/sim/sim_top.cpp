@@ -189,7 +189,7 @@ void execute(int n){
 		}
 
 		tol ++;
-		printf("%d\n", tol);
+
 		if(tol == 5) rst_n = 1;
 
 		n ++;
@@ -238,7 +238,7 @@ int main(int argc, char** argv){
 	tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
-	execute(200000000);
+	execute(20000000000);
 /*原来
 ////////////////////////////////////////////时钟
 
