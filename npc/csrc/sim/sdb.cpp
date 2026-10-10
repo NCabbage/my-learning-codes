@@ -3,15 +3,9 @@
 #include <stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <sdb.h>
 
 void execute(long long n);
-
-static int cmd_c(char *args);
-
-static int cmd_help(char *args);
-
-static int cmd_q(char *args);
-
 
 static char* rl_gets(){
 	static char* line_read = NULL;
