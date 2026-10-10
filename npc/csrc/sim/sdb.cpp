@@ -12,6 +12,9 @@ static int cmd_c(char *args);
 
 static int cmd_help(char *args);
 
+static int cmd_q(char *args);
+
+
 static char* rl_gets(){
 	static char* line_read = NULL;
 
@@ -35,7 +38,8 @@ static struct{
 	int (* handler)(char *);
 }  cmd_table [] = {
 	{"help", "Display information about all supported commands", cmd_help},
-	{"c", "Continue the execution of the program", cmd_c}
+	{"c", "Continue the execution of the program", cmd_c},
+	{"q", "get out the pragram", cmd_q}
 };
 
 void sdb_mainloop(){
@@ -72,4 +76,8 @@ int cmd_help(char *args){
 		printf("%s %s\n", cmd_table[i].name, cmd_table[i].description);
 
 	return 0;
+}
+
+int cmd_q(char *args){
+	return -1;
 }
