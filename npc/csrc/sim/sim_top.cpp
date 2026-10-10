@@ -28,6 +28,8 @@ bool halt_flag = false;
 bool clk = 0;
 int rst_n;
 int tol = 0;
+const int	period_ns = 10;
+long long cnt = 0;
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
@@ -194,8 +196,6 @@ void execute(int n){
 
 /////////////////////////////////////////////////////
 
-const int	period_ns = 10;
-long long cnt = 0;
 int main(int argc, char** argv){
 	if(argc < 2){
 		printf("need the bin path!\n");
