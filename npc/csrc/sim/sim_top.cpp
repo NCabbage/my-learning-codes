@@ -180,7 +180,8 @@ void execute(long long n){
 	for(int i=0;i<n && !halt_flag;i++){
 		while(cnt < period_ns*500*2){
 			cnt ++;
-			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;	
+			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;
+			if(cnt % (period_ns*500) == 0) printf("tol: %d", tol);
 			top->clk = clk;
 			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
