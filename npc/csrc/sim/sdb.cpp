@@ -64,3 +64,8 @@ int cmd_c(char *args){
 	execute(-1);
 	return 0;
 }
+
+int cmd_help(char *args){
+	for(int i=0;i<NR_CMD;i++)
+		printf("%s\n", cmd_table[i].description);
+}
