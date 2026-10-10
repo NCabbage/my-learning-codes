@@ -145,6 +145,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 
 	if(waddr == (DEVICE_BASE >> 2)){
 		putchar(wdata);
+		printf("???\n");
 		return;
 	}
 
@@ -181,7 +182,6 @@ void execute(long long n){
 		while(cnt < period_ns*500*2){
 			cnt ++;
 			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;
-			if(cnt % (period_ns*500) == 0) printf("[clk] flip to %d at cnt=%d\n", 1^clk, cnt);
 			top->clk = clk;
 			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
@@ -194,10 +194,6 @@ void execute(long long n){
 		tol ++;
 
 		if(tol == 5) rst_n = 1;
-
-		n ++;
-
-
 	}
 }
 
