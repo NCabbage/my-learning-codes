@@ -31,7 +31,7 @@ always@(*)
     else
         sb_data = 32'b0;
 
-always@(*)
+always@(posedge clk)
     if(sw_en)
         pmem_write(waddr>>2, wdata, {28'b0, wmask});
     else if(sb_en)
