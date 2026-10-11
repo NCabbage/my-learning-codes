@@ -122,4 +122,5 @@ void test(){
 #ifdef CONFIG_ITRACE
 	printf("yesyes\n");
 #endif
+	printf("oh no!\n");
 }
