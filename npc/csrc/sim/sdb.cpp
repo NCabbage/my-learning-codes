@@ -118,8 +118,8 @@ int cmd_s(char *args){
 	return 0;
 }
 
-#ifdef CONFIG_ITRACE
 void test(){
+#ifdef CONFIG_ITRACE
 	printf("yesyes\n");
-}
 #endif
+}
