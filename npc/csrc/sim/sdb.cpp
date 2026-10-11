@@ -4,6 +4,9 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
+#include "Vtop.h"
+
+extern Vtop* top;
 
 void execute(long long n);
 
@@ -31,7 +34,8 @@ static struct{
 }  cmd_table [] = {
 	{"help", "Display information about all supported commands", cmd_help},
 	{"c", "Continue the execution of the program", cmd_c},
-	{"q", "get out the pragram", cmd_q}
+	{"q", "get out the pragram", cmd_q},
+	{"info", "look reg", cmd_info}
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -74,4 +78,13 @@ int cmd_help(char *args){
 
 int cmd_q(char *args){
 	return -1;
+}
+
+int cmd_info(char *args){
+	if(args == NULL) printf("need a character\n");
+
+	if(strcmp(args, "r")){
+		for(int i=0;i<32;i++)
+			printf("GPR[%d]: %x\n", i, top->rootf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]);
+	}
 }
