@@ -13,7 +13,7 @@ static int cmd_info(char *args);
 
 static int cmd_s(char *args);
 
-static void test();
+void test();
 
 void sdb_mainloop();
 
