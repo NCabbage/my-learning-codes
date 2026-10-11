@@ -104,7 +104,7 @@ int cmd_s(char *args){
 
 	int n = 1;
 
-	if(sscanf(args, %d, &n) != 1){
+	if(sscanf(args, "%d", &n) != 1){
 		printf("need a number\n");
 	}
 
