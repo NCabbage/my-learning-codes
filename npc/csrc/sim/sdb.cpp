@@ -82,7 +82,10 @@ int cmd_q(char *args){
 }
 
 int cmd_info(char *args){
-	if(args == NULL) printf("need a character\n");
+	if(args == NULL){
+		printf("need a character\n");
+		return 0;
+	}
 
 	if(strcmp(args, "r") == 0){
 		for(int i=0;i<32;i++)
