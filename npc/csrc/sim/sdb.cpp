@@ -6,6 +6,7 @@
 #include "sdb.h"
 #include "Vtop.h"
 #include "Vtop___024root.h"
+#include "trace.h"
 
 extern Vtop* top;
 
@@ -116,3 +117,9 @@ int cmd_s(char *args){
 
 	return 0;
 }
+
+#ifdef CONFIG_ITRACE
+void test(){
+	printf("yesyes\n");
+}
+#endif
