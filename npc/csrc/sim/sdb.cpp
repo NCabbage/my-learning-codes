@@ -102,7 +102,17 @@ int cmd_s(char *args){
 		return 0;
 	}
 
-	execute(atoi(args));
+	int n = 1;
+
+	if(sscanf(args, %d, &n) != 1){
+		printf("need a number\n");
+	}
+
+	if(n < 0){
+		printf("the number should be postive\n");
+	}
+
+	execute(n);
 
 	return 0;
 }
