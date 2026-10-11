@@ -1,1 +1,1 @@
-#define CONFIG_ITRACE 0
+#define CONFIG_ITRACE 1
