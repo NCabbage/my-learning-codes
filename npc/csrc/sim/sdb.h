@@ -11,6 +11,8 @@ static int cmd_q(char *args);
 
 static int cmd_info(char *args);
 
+static int cmd_s(char *args);
+
 void sdb_mainloop();
 
 #define ARRLEN(arr) (int)(sizeof(arr)/sizeof(arr[0]))

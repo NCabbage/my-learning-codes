@@ -36,7 +36,8 @@ static struct{
 	{"help", "Display information about all supported commands", cmd_help},
 	{"c", "Continue the execution of the program", cmd_c},
 	{"q", "get out the pragram", cmd_q},
-	{"info", "look reg", cmd_info}
+	{"info", "look reg", cmd_info},
+	{"s", "execute n steps", cmd_s}
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -91,6 +92,17 @@ int cmd_info(char *args){
 		for(int i=0;i<32;i++)
 			printf("GPR[%d]: %x\n", i, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]);
 	}
+
+	return 0;
+}
+
+int cmd_s(char *args){
+	if(args == NULL){
+		printf("need a number\n");
+		return 0;
+	}
+
+	execute(atoi(args));
 
 	return 0;
 }
