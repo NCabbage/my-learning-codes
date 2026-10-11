@@ -88,4 +88,6 @@ int cmd_info(char *args){
 		for(int i=0;i<32;i++)
 			printf("GPR[%d]: %x\n", i, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]);
 	}
+
+	return 0;
 }
