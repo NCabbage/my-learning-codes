@@ -133,9 +133,10 @@ int cmd_x(char *args){
 		return 0;
 	}
 
-	int n, addr;
+	int n;
+	unsigned int addr;
 
-	if(sscanf(args, "%d %d", &n, &addr) != 2){
+	if(sscanf(args, "%d %x", &n, &addr) != 2){
 		printf("need two parameter\n");
 		return 0;
 	}
