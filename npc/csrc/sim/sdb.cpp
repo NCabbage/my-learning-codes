@@ -140,6 +140,8 @@ int cmd_x(char *args){
 		return 0;
 	}
 
+	printf("addr: %x\n", addr);
+
 	for(int i=0;i<n;i++){
 		printf("addr: %x  val: %x\n", addr+i, RAM[addr+i]);
 	}
