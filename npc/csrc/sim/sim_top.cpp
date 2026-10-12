@@ -15,8 +15,8 @@
 #define DEVICE_BASE 0x10000000
 
 static uint32_t *ROM;
-static uint32_t *RAM;
 static uint32_t *vmem;
+uint32_t *RAM;
 
 #include <stdio.h>
 #include <stdlib.h>

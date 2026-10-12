@@ -9,6 +9,7 @@
 #include "trace.h"
 
 extern Vtop* top;
+extern uint32_t *RAM;
 
 void execute(long long n);
 
@@ -38,7 +39,8 @@ static struct{
 	{"c", "Continue the execution of the program", cmd_c},
 	{"q", "get out the pragram", cmd_q},
 	{"info", "look reg", cmd_info},
-	{"s", "execute n steps", cmd_s}
+	{"s", "execute n steps", cmd_s},
+	{"x", "watch the memery", cmd_x}
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -123,4 +125,24 @@ void test(){
 	printf("yesyes\n");
 #endif
 	printf("oh no!\n");
+}
+
+int cmd_x(char *args){
+	if(args == NULL){
+		printf("need two parameter\n");
+		return 0;
+	}
+
+	int n, addr;
+
+	if(sscanf(args, "%d %d", &n, &addr) != 2){
+		printf("need two parameter\n");
+		return 0;
+	}
+
+	for(int i=0;i<n;i++){
+		printf("addr: %x  val: %x\n", addr+i, RAM[addr+i]);
+	}
+
+	return 0;
 }
