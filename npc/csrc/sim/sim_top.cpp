@@ -137,6 +137,10 @@ extern "C" int pmem_read(int raddr){
         return 0;              // 毛刺 → 返回 0，不崩
     } 
 
+	uint32_t = inst_r = top->inst & 0b000000000000111000001111111;
+
+	if((inst_r == (0b000000000000010000000000011)) |\
+	(inst_r == (0b000000000000100000000000011)))
 	mtrace_write('R',  raddr << 2, RAM[craddr], top->PC);
 //	printf("raddr: %x\n", craddr);
 	return RAM[craddr];
@@ -240,7 +244,7 @@ int main(int argc, char** argv){
     // 创建顶层模块实例
   	top = new Vtop{contextp};
 	contextp->traceEverOn(true); //打开追踪
-	tfp= new VerilatedFstC;   //初始化fst对象指针
+	tfp = new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
 
