@@ -6,7 +6,7 @@
 static FILE *mtrace_log = NULL;
 
 void mtrace_init(){
-	mtrace_log = fopen("../build/mtrace-log.txt", "w");
+	mtrace_log = fopen("/build/mtrace-log.txt", "w");
 	
 	if(!mtrace_log){
 		mtrace_log = stderr;
