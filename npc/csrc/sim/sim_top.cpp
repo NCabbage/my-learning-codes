@@ -244,7 +244,6 @@ int main(int argc, char** argv){
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
 
-	printf("????");
 	mtrace_init();	
 	sdb_mainloop();
 /*原来
