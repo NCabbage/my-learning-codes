@@ -1,15 +1,10 @@
 #include <stdio.h>
 #include "trace.h"
-#include <unistd.h>
 
 static FILE *mtrace_log = NULL;
 
 void mtrace_init(){
 	mtrace_log = fopen("../build/npc-memory-log.txt", "w");
-
-	char cwd[1024];
-getcwd(cwd, sizeof(cwd));
-fprintf(stderr, "cwd = %s\n", cwd);
 
 	if(!mtrace_log){
 		mtrace_log = stderr;
