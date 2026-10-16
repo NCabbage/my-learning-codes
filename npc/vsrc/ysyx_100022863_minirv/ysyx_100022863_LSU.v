@@ -18,19 +18,19 @@ module ysyx_100022863_LSU(
 
 reg [31:0] sb_data;
 
-always@(*)
+always@(posedge clk)
     if(sb_en)begin
         case(waddr[1:0])
-            2'b00: sb_data = {24'b0, wdata[7:0]};
-            2'b01: sb_data = {16'b0, wdata[7:0], 8'b0};
-            2'b10: sb_data = {8'b0,  wdata[7:0], 16'b0};
-            2'b11: sb_data = {wdata[7:0], 24'b0};
+            2'b00: sb_data <= {24'b0, wdata[7:0]};
+            2'b01: sb_data <= {16'b0, wdata[7:0], 8'b0};
+            2'b10: sb_data <= {8'b0,  wdata[7:0], 16'b0};
+            2'b11: sb_data <= {wdata[7:0], 24'b0};
             default:
-                sb_data = 32'b0;
+                sb_data <= 32'b0;
         endcase
     end
     else
-        sb_data = 32'b0;
+        sb_data <= 32'b0;
 
 always@(posedge clk)
     if(sw_en)
