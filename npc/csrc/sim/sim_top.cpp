@@ -137,7 +137,7 @@ extern "C" int pmem_read(int raddr){
         return 0;              // 毛刺 → 返回 0，不崩
     } 
 
-	uint32_t = inst_r = top->inst & 0b000000000000111000001111111;
+	uint32_t inst_r = top->inst & 0b000000000000111000001111111;
 
 	if((inst_r == (0b000000000000010000000000011)) |\
 	(inst_r == (0b000000000000100000000000011)))
