@@ -120,13 +120,6 @@ int cmd_s(char *args){
 	return 0;
 }
 
-void test(){
-#if CONFIG_ITRACE
-	printf("yesyes\n");
-#endif
-	printf("oh no!\n");
-}
-
 int cmd_x(char *args){
 	if(args == NULL){
 		printf("need two parameter\n");

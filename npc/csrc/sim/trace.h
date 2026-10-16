@@ -11,13 +11,5 @@
 #define MTRACE_LOG(fmt, ...) ((void)0)
 #endif
 
-typedef struct _trace_buf{
-
-	char WR;
-	uint32_t addr;
-	uint32_t val;
-	
-}trace_buf;
-
 void mtrace_init();
 void mtrace_write(char WR, uint32_t addr, uint32_t val, uint32_t pc);
