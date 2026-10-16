@@ -18,3 +18,6 @@ typedef struct _trace_buf{
 	uint32_t val;
 	
 }trace_buf;
+
+void mtrace_init();
+void mtrace_write(char WR, vaddr_t addr, uint32_t val, vaddr_t pc);
