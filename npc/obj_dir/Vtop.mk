@@ -47,6 +47,7 @@ VM_USER_LDLIBS = \
 VM_USER_CLASSES = \
   sdb \
   sim_top \
+  trace \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
@@ -65,6 +66,8 @@ VPATH += $(VM_USER_DIR)
 sdb.o: csrc/sim/sdb.cpp 
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST)  -c -o $@ $<
 sim_top.o: csrc/sim/sim_top.cpp 
+	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST)  -c -o $@ $<
+trace.o: csrc/sim/trace.cpp 
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST)  -c -o $@ $<
 
 ### Link rules... (from --exe)

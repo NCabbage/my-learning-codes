@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <trace.h>
 #include "trace.h"
 
 static FILE *mtrace_log = NULL;
