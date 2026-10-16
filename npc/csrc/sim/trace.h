@@ -20,4 +20,4 @@ typedef struct _trace_buf{
 }trace_buf;
 
 void mtrace_init();
-void mtrace_write(char WR, vaddr_t addr, uint32_t val, vaddr_t pc);
+void mtrace_write(char WR, uint32_t addr, uint32_t val, uint32_t pc);
