@@ -6,6 +6,7 @@
 #include "verilated_fst_c.h"		//用来生成.fst文件
 #include <time.h>
 #include "sdb.h"
+#include <trace.h>
 
 /////////////////////////////////////////////////////指令存储器
 #define MEM_WORDS (64 * 1024 * 1024)
@@ -106,7 +107,8 @@ static int load_hex(const char *filename, uint32_t *dst, int dst_size) {
 }
 
 uint32_t inst_read(uint32_t PC){
-	if(PC < 0x80000000 >> 2) return 0;
+	if(PC < 0x80000000 >> 2) 
+		return 0;
 	else
 		return ROM[PC - (0x80000000 >> 2)];
 }
@@ -135,6 +137,7 @@ extern "C" int pmem_read(int raddr){
         return 0;              // 毛刺 → 返回 0，不崩
     } 
 
+	mtrace_write('R',  raddr << 2, RAM[craddr], top->PC);
 //	printf("raddr: %x\n", craddr);
 	return RAM[craddr];
 }
@@ -160,7 +163,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x2) mask |= 0x0000ff00;
 	if(wmask & 0x4) mask |= 0x00ff0000;
 	if(wmask & 0x8) mask |= 0xff000000;
-
+	mtrace_write('W',  waddr << 2, wdata, top->PC);
 	RAM[cwaddr] = (old & ~mask) | ((uint32_t)wdata & mask);
 //	printf("waddr: %x   val:  %x\n", waddr, RAM[waddr]);
 }
@@ -206,6 +209,11 @@ int main(int argc, char** argv){
 
 	const char *rom_path = argv[1];
                                     
+//////////////////////////////////////////////////////初始化
+
+
+//////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////
     ROM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
     RAM = (uint32_t *)calloc(MEM_WORDS, sizeof(uint32_t));
@@ -235,7 +243,9 @@ int main(int argc, char** argv){
 	tfp= new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
-	test();
+
+	printf("????");
+	mtrace_init();	
 	sdb_mainloop();
 /*原来
 ////////////////////////////////////////////时钟
