@@ -5,7 +5,7 @@
 static FILE *mtrace_log = NULL;
 
 void mtrace_init(){
-	mtrace_log = fopen("build/npc-memory-log.txt", "w");
+	mtrace_log = fopen("../build/npc-memory-log.txt", "w");
 
 	char cwd[1024];
 getcwd(cwd, sizeof(cwd));
