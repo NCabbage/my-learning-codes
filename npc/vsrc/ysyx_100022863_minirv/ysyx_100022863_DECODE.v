@@ -59,7 +59,7 @@ assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 //lbu
 wire			funct3_14_12_100	= (funct3 == 3'b100		);
 
-assign lbu_en = opcode_6_0_0000011 && funct3_14_12_100 && 0;
+assign lbu_en = opcode_6_0_0000011 && funct3_14_12_100;
 
 //sw
 wire			opcode_6_0_0100011	= (opcode == 7'b0100011	);
