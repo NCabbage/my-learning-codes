@@ -2,7 +2,7 @@
 include ../Makefile
 
 # 定义编译相关的变量:
-VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -CFLAGS "-Itools/capstone/include" -LDFLAGS "-L$(abspath $(CAPSTONE_DIR)) -lcapstone"
+VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -CFLAGS "-Itools/capstone/include" -LDFLAGS "-L$(abspath $(CAPSTONE_DIR) -lcapstone)"
 SOURCES = $(wildcard csrc/sim/*.cpp) $(shell find $(abspath ./vsrc) -name "*.v")		#加了sdb.cpp
 TARGET = sim_top
 WAVE = /wave.fst
