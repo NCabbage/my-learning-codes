@@ -42,7 +42,7 @@ VM_USER_CFLAGS = \
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
   -lz \
-  -L/home/cappage/ysyx-workbench/npc/tools/capstone/repo -lcapstone \
+  -L/home/cappage/ysyx-workbench/npc/tools/capstone/repo /home/cappage/ysyx-workbench/npc/-lcapstone \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \
