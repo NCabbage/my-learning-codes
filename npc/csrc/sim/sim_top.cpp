@@ -199,7 +199,7 @@ extern "C" void check(int PC, int raddr){
 
 void execute(long long n){
 	int cnt = 0;
-
+	printf("new\n");
 	for(int i=0;i<n && !halt_flag;i++){
 		while(cnt < period_ns*500*2){
 			cnt ++;
@@ -215,7 +215,7 @@ void execute(long long n){
 		}
 
 #if CONFIG_ITRACE
-		if(cnt == period_ns*500*2)buf_write(top->PC, top->inst);
+		buf_write(top->PC, top->inst);
 #endif
 		
 		cnt = 0;
