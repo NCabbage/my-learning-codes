@@ -2,13 +2,14 @@
 include ../Makefile
 
 # 定义编译相关的变量:
-VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -LDFLAGS "-lreadline"
+VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -CFLAGS "-Itools/capstone/include" -LDFLAGS "-lreadline -L$(CAPSTONE_DIR) -lcapstone"
 SOURCES = $(wildcard csrc/sim/*.cpp) $(shell find $(abspath ./vsrc) -name "*.v")		#加了sdb.cpp
 TARGET = sim_top
 WAVE = /wave.fst
 TOPNAME = top
 NXDC_FILES = constr/top.nxdc
 INC_PATH ?=
+INC_PATH += tools/capstone/include
 
 VERILATOR = verilator
 VERILATOR_CFLAGS += -MMD --build -cc  \
@@ -35,11 +36,17 @@ VSRCS = $(shell find $(abspath ./vsrc) -name "*.v")
 CSRCS = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*.cpp" ! -name "sim_top.cpp")
 CSRCS += $(SRC_AUTO_BIND)
 
+# 定义 Capstone 的路径变量
+CAPSTONE_DIR = tools/capstone
+CAPSTONE_INC = $(CAPSTONE_DIR)/include
+CAPSTONE_LIB = $(CAPSTONE_DIR)
+
 # rules for NVBoard
 include $(NVBOARD_HOME)/scripts/nvboard.mk
 
 # rules for verilator
-INCFLAGS = $(addprefix -I, $(INC_PATH))
+INCFLAGS = $(addprefix -I, $(INC_PATH) )
+CFLAGS += -I$(CAPSTONE_DIR)/include
 CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""		#把TOP_NAME换成V$(TOPNAME)->Vtop
 
 $(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
