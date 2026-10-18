@@ -35,8 +35,6 @@ bool buf_read(){
 		printf("the trace buf is empty\n");
 //		return false;
 //	}
-	
-	printf("???");
 
 	for(int i=0;i<BUF_SIZE;i++){
 		int num = (b.head + i) % BUF_SIZE;
