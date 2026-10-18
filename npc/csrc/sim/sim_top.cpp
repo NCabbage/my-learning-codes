@@ -118,7 +118,11 @@ extern "C" void halt(int inst, int a0){
 	if(inst == 0x00100073){
 		if(!a0){
 			printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
+
+#if CONFIG_ITRACE
 			buf_read();
+#endif
+
 		}else{ 
 			printf("\033[1;31mHIT BAD TRAP\033[0m\n");
 		}
@@ -146,7 +150,11 @@ extern "C" int pmem_read(int raddr){
 
 	if((inst_r == (0b000000000000010000000000011)) |\
 	(inst_r == (0b000000000000100000000000011)))
+
+#if CONFIG_MTRACE
 	mtrace_write('R',  raddr << 2, RAM[craddr], top->PC);
+#endif
+
 //	printf("raddr: %x\n", craddr);
 	return RAM[craddr];
 }
@@ -173,7 +181,11 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x4) mask |= 0x00ff0000;
 	if(wmask & 0x8) mask |= 0xff000000;
 	mtrace_write('W',  waddr << 2, wdata, top->PC);
+
+#if CONFIG_MTRACE
 	RAM[cwaddr] = (old & ~mask) | ((uint32_t)wdata & mask);
+#endif
+
 //	printf("waddr: %x   val:  %x\n", waddr, RAM[waddr]);
 }
 
@@ -196,7 +208,11 @@ void execute(long long n){
 			top->clk = clk;
 			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
+
+#if CONFIG_ITRACE
 			buf_write(top->PC, top->inst);
+#endif
+
 			top->eval();
 			tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
