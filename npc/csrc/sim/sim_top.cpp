@@ -145,13 +145,12 @@ extern "C" int pmem_read(int raddr){
 	if(craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     } 
-
+	
+#if CONFIG_MTRACE
 	uint32_t inst_r = inst_read(top->PC >> 2) & 0b000000000000111000001111111;
 
 	if((inst_r == (0b000000000000010000000000011)) |\
 	(inst_r == (0b000000000000100000000000011)))
-
-#if CONFIG_MTRACE
 	mtrace_write('R',  raddr << 2, RAM[craddr], top->PC);
 #endif
 
