@@ -31,10 +31,10 @@ bool buf_init(){
 }
 
 bool buf_read(){
-	if(isEmpty()){
+//	if(isEmpty()){
 		printf("the trace buf is empty\n");
-		return false;
-	}
+//		return false;
+//	}
 	
 	printf("???");
 
