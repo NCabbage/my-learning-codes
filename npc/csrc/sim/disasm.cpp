@@ -34,7 +34,7 @@ static csh handle;
 void init_disasm() {
   cs_arch arch = CS_ARCH_RISCV;
   cs_mode mode = CS_MODE_RISCV32;
-	int ret = cs_open_dl(arch, mode, &handle);
+	int ret = cs_open(arch, mode, &handle);
   assert(ret == CS_ERR_OK);
 }
 
