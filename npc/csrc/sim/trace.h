@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 #define CONFIG_MTRACE 0
-#define CONFIG_ITRACE 0
+#define CONFIG_ITRACE 1
 
 #define START	0x80000000
 #define END		0xffffffff
