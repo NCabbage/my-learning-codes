@@ -200,7 +200,6 @@ extern "C" void check(int PC, int raddr){
 void execute(long long n){
 	int cnt = 0;
 	for(int i=0;i<n && !halt_flag;i++){
-		printf("PC: %x\n", top->PC);
 		while(cnt < period_ns*500*2){
 			cnt ++;
 			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;
