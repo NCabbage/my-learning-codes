@@ -14,7 +14,7 @@
 ***************************************************************************************/
 
 #include <dlfcn.h>
-#include "../tools/capstone/capstone.h"
+#include <capstone/capstone.h>
 
 #if defined(__APPLE__)
 #define CS_LIB_SUFFIX "5.dylib"
