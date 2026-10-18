@@ -118,9 +118,9 @@ extern "C" void halt(int inst, int a0){
 	if(inst == 0x00100073){
 		if(!a0){
 			printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
+			buf_read();
 		}else{ 
 			printf("\033[1;31mHIT BAD TRAP\033[0m\n");
-			buf_read();
 		}
 	
 		halt_flag = true;
