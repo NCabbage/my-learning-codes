@@ -179,11 +179,11 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x2) mask |= 0x0000ff00;
 	if(wmask & 0x4) mask |= 0x00ff0000;
 	if(wmask & 0x8) mask |= 0xff000000;
+#if CONFIG_MTRACE	
 	mtrace_write('W',  waddr << 2, wdata, top->PC);
-
-#if CONFIG_MTRACE
-	RAM[cwaddr] = (old & ~mask) | ((uint32_t)wdata & mask);
 #endif
+
+	RAM[cwaddr] = (old & ~mask) | ((uint32_t)wdata & mask);
 
 //	printf("waddr: %x   val:  %x\n", waddr, RAM[waddr]);
 }
