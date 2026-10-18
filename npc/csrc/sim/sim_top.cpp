@@ -213,7 +213,7 @@ void execute(long long n){
 			if(cnt == period_ns*500*2)buf_write(top->PC, top->inst);
 #endif
 
-//			if(cnt % (period_ns*250) == 0)top->eval();
+			if(cnt % (period_ns*250) == 0)top->eval();
 //			if(cnt % (period_ns*250) == 0)tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
 		}
@@ -269,9 +269,12 @@ int main(int argc, char** argv){
 	tfp = new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
-
+#if CONFIG_ITRACE
 	buf_init();
+#endif
+#if CONFIG_MTRACE
 	mtrace_init();	
+#endif
 	sdb_mainloop();
 /*原来
 ////////////////////////////////////////////时钟
