@@ -145,7 +145,7 @@ extern "C" int pmem_read(int raddr){
 	if(craddr < 0 || craddr >= MEM_WORDS) {
         return 0;              // 毛刺 → 返回 0，不崩
     } 
-	
+
 #if CONFIG_MTRACE
 	uint32_t inst_r = inst_read(top->PC >> 2) & 0b000000000000111000001111111;
 
@@ -212,7 +212,7 @@ void execute(long long n){
 			if(cnt == period_ns*500*2)buf_write(top->PC, top->inst);
 #endif
 
-			if(cnt % (period_ns*250) == 0)top->eval();
+			top->eval();
 //			if(cnt % (period_ns*250) == 0)tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
 		}

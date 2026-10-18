@@ -70,7 +70,7 @@ void sdb_mainloop(){
 }
 
 int cmd_c(char *args){
-	execute(2000000);
+	execute(20000000);
 	return 0;
 }
 
