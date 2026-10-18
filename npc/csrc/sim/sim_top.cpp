@@ -180,7 +180,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	if(wmask & 0x4) mask |= 0x00ff0000;
 	if(wmask & 0x8) mask |= 0xff000000;
 #if CONFIG_MTRACE	
-	mtrace_write('W',  waddr << 2, wdata, top->PC);
+	mtrace_write('W',  waddr << 2, ((uint32_t)wdata & mask), top->PC);
 #endif
 
 	RAM[cwaddr] = (old & ~mask) | ((uint32_t)wdata & mask);
@@ -208,14 +208,15 @@ void execute(long long n){
 			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
 
-#if CONFIG_ITRACE
-			if(cnt == period_ns*500*2)buf_write(top->PC, top->inst);
-#endif
 
 			top->eval();
 //			if(cnt % (period_ns*250) == 0)tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
 		}
+
+#if CONFIG_ITRACE
+		if(cnt == period_ns*500*2)buf_write(top->PC, top->inst);
+#endif
 		
 		cnt = 0;
 		tol ++;
