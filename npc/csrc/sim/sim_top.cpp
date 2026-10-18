@@ -116,8 +116,13 @@ uint32_t inst_read(uint32_t PC){
 extern "C" void halt(int inst, int a0){
 //	printf("inst:%x\n", inst);
 	if(inst == 0x00100073){
-		if(!a0)printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
-		else printf("\033[1;31mHIT BAD TRAP\033[0m\n");
+		if(!a0){
+			printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
+			buf_read();
+		}else{ 
+			printf("\033[1;31mHIT BAD TRAP\033[0m\n");
+		}
+	
 		halt_flag = true;
 //		exit(0);
 	}
@@ -191,6 +196,7 @@ void execute(long long n){
 			top->clk = clk;
 			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
+			buf_write(top->PC, top->inst);
 			top->eval();
 			tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
@@ -248,6 +254,7 @@ int main(int argc, char** argv){
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
 
+	buf_init();
 	mtrace_init();	
 	sdb_mainloop();
 /*原来
