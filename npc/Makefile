@@ -2,7 +2,7 @@
 include ../Makefile
 
 # 定义编译相关的变量:
-VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -CFLAGS "-Itools/capstone/include" -LDFLAGS "-lreadline -L$(CAPSTONE_DIR) -lcapstone"
+VFLAGS = --cc --exe --build -j 0 -Wall --trace --trace-fst -CFLAGS "-Itools/capstone/include" -LDFLAGS "-L$(abspath $(CAPSTONE_DIR)) -lcapstone"
 SOURCES = $(wildcard csrc/sim/*.cpp) $(shell find $(abspath ./vsrc) -name "*.v")		#加了sdb.cpp
 TARGET = sim_top
 WAVE = /wave.fst
@@ -37,7 +37,7 @@ CSRCS = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*
 CSRCS += $(SRC_AUTO_BIND)
 
 # 定义 Capstone 的路径变量
-CAPSTONE_DIR = tools/capstone
+CAPSTONE_DIR = /home/cappage/ysyx-workbench/npc/tools/capstone/repo
 CAPSTONE_INC = $(CAPSTONE_DIR)/include
 CAPSTONE_LIB = $(CAPSTONE_DIR)
 
