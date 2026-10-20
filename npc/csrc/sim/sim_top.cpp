@@ -268,6 +268,7 @@ int main(int argc, char** argv){
   	tfp->open("wave.fst");  //保存位置
 #if CONFIG_ITRACE
 	buf_init();
+	init_disasm();
 #endif
 #if CONFIG_MTRACE
 	mtrace_init();	
