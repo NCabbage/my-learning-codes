@@ -42,7 +42,7 @@ bool buf_read(){
 		printf("??");
 		if((b.head + i) % BUF_SIZE != b.tail) printf("   %08x: %08x    ", b.pc[num], b.inst[num]);
 		else printf("——>%08x: %08x    ", b.pc[num], b.inst[num]);
-				printf("?");
+		printf("\n");
 //		char *p = b.p[num];
 //		void disassemble(char *str, int size, uint64_t pc, uint8_t *code, int nbyte);
 //  		disassemble(p, 128, (uint64_t)b.pc[num],  (uint8_t *)&b.inst[num], 4);
