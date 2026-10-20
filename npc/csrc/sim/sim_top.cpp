@@ -120,7 +120,7 @@ extern "C" void halt(int inst, int a0){
 			printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
 
 #if CONFIG_ITRACE
-//			buf_read();
+			buf_read();
 #endif
 
 		}else{ 
