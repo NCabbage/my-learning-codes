@@ -36,7 +36,7 @@ bool buf_read(){
 	//	return false;
 //	}
 
-	for(int i=0;i<BUF_SIZE;i++){
+	for(int i=0;i<32;i++){
 		printf("?");
 		int num = 0;
 		printf("??");
