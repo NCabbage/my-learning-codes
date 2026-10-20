@@ -60,7 +60,7 @@ bool buf_write(uint32_t pc, uint32_t i){
 	}else{
 		b.tail ++;
 	}
-	printf("pc: %x, i: %x, tail: %d\n", pc, i, b.tail);
+	printf("pc: %x, i: %x, tail: %d head: %d\n", pc, i, b.tail, b.head);
 	b.pc[b.tail] = pc;
 	b.inst[b.tail] = i;
 	
