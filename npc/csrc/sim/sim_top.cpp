@@ -7,7 +7,9 @@
 #include "verilated_fst_c.h"		//用来生成.fst文件
 #include "sdb.h"
 #include "trace.h"
-
+#include <stdint.h>
+#include <string.h>
+#include <ctype.h>
 /////////////////////////////////////////////////////指令存储器
 #define MEM_WORDS (64 * 1024 * 1024)
 #define VGA_BASE 0x20000000u
@@ -18,12 +20,6 @@
 static uint32_t *ROM;
 static uint32_t *vmem;
 uint32_t *RAM;
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
-#include <ctype.h>
 
 bool halt_flag = false;
 
@@ -36,6 +32,8 @@ long long cnt = 0;
 Vtop* top;
 VerilatedFstC *tfp;
 VerilatedContext* contextp;
+
+char elf_file[128] = "/home/cappage/ysyx-workbench/am-kernels/tests/am-tests/build/amtest-minirv-npc.elf";
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
@@ -276,6 +274,7 @@ int main(int argc, char** argv){
 #if CONFIG_MTRACE
 	mtrace_init();	
 #endif
+	elf_action(elf_file);
 	sdb_mainloop();
 /*原来
 ////////////////////////////////////////////时钟
