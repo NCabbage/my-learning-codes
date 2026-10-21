@@ -1,5 +1,9 @@
 /////////////////////////////////////////////////////mtrace
 #include <stdint.h>
+#include <elf.h>
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
 
 #define CONFIG_MTRACE 0
 #define CONFIG_ITRACE 1
@@ -36,3 +40,11 @@ bool isEmpty();
 bool isFull();
 bool buf_read();
 bool buf_write(uint32_t pc, uint32_t i);
+
+
+///////////////////////////////////////////////////ftrace
+
+
+void elf_action(char *elf_file);
+bool load_elf(char *elf_file);
+void output_ftrace(uint32_t pc);

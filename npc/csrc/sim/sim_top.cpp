@@ -209,7 +209,9 @@ void execute(long long n){
 			top->eval();
 			if(cnt % (period_ns*250) == 0)tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
-		}
+		}	
+
+		output_ftrace(top->PC);
 
 #if CONFIG_ITRACE
 		buf_write(top->PC, top->inst);
