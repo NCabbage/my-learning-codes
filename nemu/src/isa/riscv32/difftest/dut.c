@@ -18,11 +18,14 @@
 #include "../local-include/reg.h"
 
 bool isa_difftest_checkregs(CPU_state *ref_r, vaddr_t pc) {
-	printf("[difftest] step at pc = 0x%08x\n", cpu.pc);
 	
 	for(int i=0;i<16;i++){
-		printf("rgpr[%d]: %x    gpr[%d]: %x\n", i, ref_r->gpr[i], i, cpu.gpr[i]);
-		if(ref_r -> gpr[i] != cpu.gpr[i]){ return false;
+		if(ref_r -> gpr[i] != cpu.gpr[i]){ 
+			printf("the difftest is bad!!!!\n");
+			for(int i=0;i<16;i++){
+				printf("ref_r_gpr[%d]: %x    gpr[%d]: %x\n", i, ref_r->gpr[i], i, cpu.gpr[i]);
+			}
+			return false;
 		}
 	}
 	
