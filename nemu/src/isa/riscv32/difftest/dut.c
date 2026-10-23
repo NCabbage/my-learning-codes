@@ -23,7 +23,7 @@ bool isa_difftest_checkregs(CPU_state *ref_r, vaddr_t pc) {
 		if(ref_r -> gpr[i] != cpu.gpr[i]){ 
 			printf("the difftest is bad!!!!\n");
 			for(int i=0;i<16;i++){
-				printf("ref_r_gpr[%d]: %x    gpr[%d]: %x\n", i, ref_r->gpr[i], i, cpu.gpr[i]);
+				  printf("x%-2d  dut=0x%08x  ref=0x%08x  %s\n", i, cpu.gpr[i], ref_r->gpr[i], (cpu.gpr[i] != ref_r->gpr[i]) ? "<-- MISMATCH" : "");
 			}
 			return false;
 		}
