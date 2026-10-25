@@ -3,10 +3,10 @@
 #include "common.h"
 #include "debug.h"
 #include <stddef.h>
-#include <trace.h>
-#include <color.h>
-#include <paddr.h>
-#include <difftest_def.h>
+#include "trace.h"
+#include "color.h"
+#include "paddr.h"
+#include "difftest_def.h"
 
 void (*ref_difftest_memcpy)(paddr_t addr, void *buf, size_t n, bool direction) = NULL;
 void (*ref_difftest_regcpy)(void *dut, bool direction) = NULL;
