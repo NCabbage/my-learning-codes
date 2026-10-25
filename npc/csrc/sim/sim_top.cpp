@@ -282,7 +282,7 @@ int main(int argc, char** argv){
 	sdb_mainloop();
 #endif
 #if CONFIG_DIFFTEST
-	init_difftest(, , 0);
+	init_difftest(so_file, n1*4, 0);
 #endif
 /*原来
 ////////////////////////////////////////////时钟
