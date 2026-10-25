@@ -1,10 +1,10 @@
 #include <assert.h>
 #include <dlfcn.h>
+#include <common.h>
 #include <debug.h>
 #include <stddef.h>
 #include <trace.h>
 #include <color.h>
-#include <common.h>
 #include <paddr.h>
 #include <difftest_def.h>
 
