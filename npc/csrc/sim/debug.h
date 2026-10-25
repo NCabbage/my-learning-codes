@@ -1,2 +1,1 @@
-#define Log(fmt, ...) \
-  printf("[%s:%d %s] " fmt "\n", __FILE__, __LINE__, __func__, ##__VA_ARGS__)
+#define Log(fmt, ...) printf("[%s:%d %s] " fmt "\n", __FILE__, __LINE__, __func__, ##__VA_ARGS__)
