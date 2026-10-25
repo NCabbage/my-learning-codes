@@ -20,7 +20,7 @@
 
 __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction) {
 
-  printf("[REF] fcasdfasmemcpy: addr=0x%08x n=%zu dir=%d\n", addr, n, (int)direction);
+  printf("[REF] memcpy: addr=0x%08x n=%zu dir=%d\n", addr, n, (int)direction);
   printf("[REF] buf first 4 bytes: %02x %02x %02x %02x\n",
          ((uint8_t*)buf)[0], ((uint8_t*)buf)[1],
          ((uint8_t*)buf)[2], ((uint8_t*)buf)[3]);
