@@ -36,7 +36,7 @@ VerilatedFstC *tfp;
 VerilatedContext* contextp;
 
 char elf_file[128] = "/home/cappage/ysyx-workbench/am-kernels/tests/am-tests/build/amtest-minirv-npc.elf";
-char so_file[128] = "/home/cappage/ysyx-workbench/nemu/build/riscv32-nemu-interpreter-so"
+char so_file[128] = "/home/cappage/ysyx-workbench/nemu/build/riscv32-nemu-interpreter-so";
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
