@@ -10,7 +10,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <ctype.h>
-#include <difftest_def.h>
+#include "difftest_def.h"
 
 /////////////////////////////////////////////////////指令存储器
 #define MEM_WORDS (64 * 1024 * 1024)
