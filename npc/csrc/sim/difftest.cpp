@@ -1,0 +1,42 @@
+#include <assert.h>
+#include <dlfcn.h>
+#include <debug.h>
+#include <stddef.h>
+#include <trace.h>
+#include <color.h>
+#include <common.h>
+#include <paddr.h>
+#include <difftest_def.h>
+
+void (*ref_difftest_memcpy)(paddr_t addr, void *buf, size_t n, bool direction) = NULL;
+void (*ref_difftest_regcpy)(void *dut, bool direction) = NULL;
+void (*ref_difftest_exec)(uint64_t n) = NULL;
+void (*ref_difftest_raise_intr)(uint64_t NO) = NULL;
+
+#if CONFIG_DIFFTEST
+
+static bool is_skip_ref = false;
+static int skip_dut_nr_inst = 0;
+
+void init_difftest(char *ref_so_file, long img_size, int port) {
+  assert(ref_so_file != NULL);
+
+  void *handle;
+  handle = dlopen(ref_so_file, RTLD_LAZY);
+  assert(handle);
+
+  ref_difftest_memcpy = reinterpret_cast<decltype(ref_difftest_memcpy)>(dlsym(handle, "difftest_memcpy"));
+  assert(ref_difftest_memcpy);
+
+  Log("Differential testing: %s", ANSI_FMT("ON", ANSI_FG_GREEN));
+  Log("The result of every instruction will be compared with %s. "
+      "This will help you a lot for debugging, but also significantly reduce the performance. "
+      "If it is not necessary, you can turn it off in menuconfig.", ref_so_file);
+
+  ref_difftest_memcpy(RESET_VECTOR, guest_to_host(RESET_VECTOR), img_size, DIFFTEST_TO_REF);
+}
+
+#else
+//void init_difftest(char *ref_so_file, long img_size, int port) { }
+#endif
+}

@@ -19,7 +19,21 @@
 #include <memory/paddr.h>
 
 __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction) {
-  assert(0);
+	uint32_t *p = (uint32_t *)buf;
+	
+	if(direction == DIFFTEST_TO_REF){
+  		for(int i=0;i<n/4;i++){
+			paddr_write(addr+i*4, 4, p[i]);  		
+		}
+	}else{
+		for(int i=0;i<n;i++){
+			p[i] = paddr_read(addr+i*4, 4);
+		}
+	}
+	
+	printf("memcpy: addr=0x%08x n=%zu buf=%p\n", addr, n, buf);
+	printf("first 4 bytes: %02x %02x %02x %02x\n", ((uint8_t*)buf)[0], ((uint8_t*)buf)[1], ((uint8_t*)buf)[2], ((uint8_t*)buf)[3]);
+	printf("as word: 0x%08x\n", *(uint32_t*)buf);
 }
 
 __EXPORT void difftest_regcpy(void *dut, bool direction) {

@@ -10,6 +10,8 @@
 #include <stdint.h>
 #include <string.h>
 #include <ctype.h>
+#include <difftest_def.h>
+
 /////////////////////////////////////////////////////指令存储器
 #define MEM_WORDS (64 * 1024 * 1024)
 #define VGA_BASE 0x20000000u
@@ -34,6 +36,7 @@ VerilatedFstC *tfp;
 VerilatedContext* contextp;
 
 char elf_file[128] = "/home/cappage/ysyx-workbench/am-kernels/tests/am-tests/build/amtest-minirv-npc.elf";
+char so_file[128] = "/home/cappage/ysyx-workbench/nemu/build/riscv32-nemu-interpreter-so"
 
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
@@ -274,8 +277,13 @@ int main(int argc, char** argv){
 #if CONFIG_MTRACE
 	mtrace_init();	
 #endif
+#if CONFIG_FTRACE
 	elf_action(elf_file);
 	sdb_mainloop();
+#endif
+#if CONFIG_DIFFTEST
+	init_difftest(, , 0);
+#endif
 /*原来
 ////////////////////////////////////////////时钟
 
