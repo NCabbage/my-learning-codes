@@ -120,6 +120,11 @@ int cmd_s(char *args){
 	}
 
 	execute(n);
+
+#if CONFIG_DIFFTEST
+	difftest_step(n);
+#endif
+
 	return 0;
 }
 
