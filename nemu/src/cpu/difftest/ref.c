@@ -33,7 +33,6 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 	
 	if(direction == DIFFTEST_TO_REF){
   		for(int i=0;i<n/4;i++){
- 			printf("addr: %x val: %x\n", addr+i*4, p[i]);
 			paddr_write(addr+i*4, 4, p[i]);  		
 		}
 	}else{
