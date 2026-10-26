@@ -7,6 +7,7 @@
 #include "color.h"
 #include "paddr.h"
 #include "difftest_def.h"
+#include "Vtop.h"
 
 extern Vtop* top;
 
