@@ -221,14 +221,14 @@ void execute(long long n){
 #endif
 		
 		cnt = 0;
-		tol ++;
+// 		tol ++;
 
-		if(tol == 5){
-			rst_n = 1;
-#if CONFIG_DIFFTEST
-			init_difftest(so_file, n1*4, 0);
-#endif
-		}
+// 		if(tol == 5){
+// 			rst_n = 1;
+// #if CONFIG_DIFFTEST
+// 			init_difftest(so_file, n1*4, 0);
+// #endif
+// 		}
 	}
 }
 
@@ -276,6 +276,13 @@ int main(int argc, char** argv){
 	tfp = new VerilatedFstC;   //初始化fst对象指针
   	top->trace(tfp,99);
   	tfp->open("wave.fst");  //保存位置
+
+///////////////////////////////////////////////rst
+	rst = 0;
+	for(int i=0;i<20000;i++);
+	rst = 1;
+///////////////////////////////////////////////
+
 #if CONFIG_ITRACE
 	buf_init();
 	void init_disasm();
@@ -286,6 +293,9 @@ int main(int argc, char** argv){
 #endif
 #if CONFIG_FTRACE
 	elf_action(elf_file);
+#endif
+#if CONFIG_DIFFTEST
+	init_difftest(so_file, n1*4, 0);
 #endif
 	sdb_mainloop();
 /*原来
