@@ -55,7 +55,7 @@ bool difftest_check(){
 	uint32_t ref_gpr[16];
 	uint32_t ref_pc		;
 	
-	ref_difftest_regcpy(ref_gpr, &ref_pc, DIFFTEST_TO_REF);
+	ref_difftest_regcpy(ref_gpr, &ref_pc, DIFFTEST_TO_DUT);
 
 	for(int i=0;i<16;i++){
 		if(ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]){
@@ -78,7 +78,7 @@ bool difftest_check(){
 					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
 					, (top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i] != ref_gpr[i]) ? "<-- MISMATCH" : "");
 			}
-			return false;	
+			return false;
 	}
 	return true;
 }
