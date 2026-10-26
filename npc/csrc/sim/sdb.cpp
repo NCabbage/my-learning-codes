@@ -7,6 +7,7 @@
 #include "Vtop.h"
 #include "Vtop___024root.h"
 #include "trace.h"
+#include "difftest_def.h"
 
 extern Vtop* top;
 extern uint32_t *RAM;
@@ -71,6 +72,10 @@ void sdb_mainloop(){
 
 int cmd_c(char *args){
 	execute(2000000);
+	printf("npc PC: %x\n", top->PC);
+#if CONFIG_FIFFTETS
+	difftest_step(2000000);
+#endif
 	return 0;
 }
 

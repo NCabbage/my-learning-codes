@@ -35,6 +35,9 @@ void init_difftest(char *ref_so_file, long img_size, int port) {
   ref_difftest_regcpy = reinterpret_cast<decltype(ref_difftest_regcpy)>(dlsym(handle, "difftest_regcpy"));
   assert(ref_difftest_regcpy);
 
+  ref_difftest_exec = reinterpret_cast<decltype(ref_difftest_exec)>(dlsym(handle, "difftest_exec"));
+  assert(ref_difftest_exec);
+
   Log("Differential testing: %s", ANSI_FMT("ON", ANSI_FG_GREEN));
   Log("The result of every instruction will be compared with %s. "
       "This will help you a lot for debugging, but also significantly reduce the performance. "
@@ -43,6 +46,10 @@ void init_difftest(char *ref_so_file, long img_size, int port) {
   ref_difftest_memcpy(RESET_VECTOR, guest_to_host(RESET_VECTOR), img_size, DIFFTEST_TO_REF);
   ref_difftest_regcpy(&top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[0], DIFFTEST_TO_REF);
 }//注意top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR在不同设计中会变
+
+void difftest_step(int n){
+	ref_difftest_exec(n);
+}
 
 #else
 //void init_difftest(char *ref_so_file, long img_size, int port) { }
