@@ -278,9 +278,12 @@ int main(int argc, char** argv){
   	tfp->open("wave.fst");  //保存位置
 
 ///////////////////////////////////////////////rst
-	rst = 0;
+	top->rst_n = rst_n;
+	top->eval();
 	for(int i=0;i<20000;i++);
-	rst = 1;
+	rst_n = 1;
+	top->rst_n = rst_n;
+	top->eval();
 ///////////////////////////////////////////////
 
 #if CONFIG_ITRACE
