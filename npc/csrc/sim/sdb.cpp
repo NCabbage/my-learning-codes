@@ -72,7 +72,9 @@ void sdb_mainloop(){
 
 int cmd_c(char *args){
 	execute(2000000);
-
+#if CONFIG_DIFFTEST
+	difftest_step(2000000);
+#endif
 	return 0;
 }
 
@@ -118,9 +120,6 @@ int cmd_s(char *args){
 	}
 
 	execute(n);
-#if CONFIG_DIFFTEST
-	difftest_step(2000000);
-#endif
 	return 0;
 }
 
