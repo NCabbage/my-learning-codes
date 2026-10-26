@@ -8,8 +8,7 @@
 #include "paddr.h"
 #include "difftest_def.h"
 #include "Vtop.h"
-#include <verilated.h>
-#include "verilated_fst_c.h"
+#include "Vtop___024root.h"
 
 extern Vtop* top;
 
