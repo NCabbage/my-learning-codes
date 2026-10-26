@@ -28,9 +28,7 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
          ((uint8_t*)buf)[2], ((uint8_t*)buf)[3]);
   printf("[REF] buf as word[0] = 0x%08x\n", ((uint32_t*)buf)[0]);
   
-  for(int i=0;i<500;i++){
-  	printf("word[%d]: %x\n", i, ((uint32_t*)buf)[0]);
-  }
+
 #endif
 
 	uint32_t *p = (uint32_t *)buf;
@@ -46,7 +44,9 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 	}
 	
 #if CONFIG_TEST
- 
+   for(int i=0;i<500;i++){
+  	printf("word[%d]: %x\n", i, ((uint32_t*)buf)[0]);
+  }
 #endif	
 }
 
