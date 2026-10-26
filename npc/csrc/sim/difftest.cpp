@@ -31,8 +31,8 @@ void init_difftest(char *ref_so_file, long img_size, int port) {
   ref_difftest_memcpy = reinterpret_cast<decltype(ref_difftest_memcpy)>(dlsym(handle, "difftest_memcpy"));
   assert(ref_difftest_memcpy);
 
-  ref_difftest_regcpy = reinterpret_cast<decltype(ref_difftest_memcpy)>(dlsym(handle, "difftest_regcpy");
-  assert(ref_difftest_regcpy));
+  ref_difftest_regcpy = reinterpret_cast<decltype(ref_difftest_memcpy)>(dlsym(handle, "difftest_regcpy"));
+  assert(ref_difftest_regcpy);
 
   Log("Differential testing: %s", ANSI_FMT("ON", ANSI_FG_GREEN));
   Log("The result of every instruction will be compared with %s. "
