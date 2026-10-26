@@ -8,6 +8,8 @@
 #include "Vtop___024root.h"
 #include "trace.h"
 #include "difftest_def.h"
+#include "color.h"
+#include "debug.h"
 
 extern Vtop* top;
 extern uint32_t *RAM;
@@ -71,10 +73,20 @@ void sdb_mainloop(){
 }
 
 int cmd_c(char *args){
-	execute(2000000);
+	for(int i=0;i<2000000;i++){
+		execute(1);
 #if CONFIG_DIFFTEST
-	difftest_step(2000000);
+		difftest_step(1);
+		if(!difftest_check()){
+			Log("", ANSI_FMT("Difftest is wrong!!!!", ANSI_FG_RED))
+			for(int i=0;i<16;i++){
+				printf(“dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x”, i\
+					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
+					, (top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i] != ref_gpr[i]) ? "<-- MISMATCH" : ""));
+			}
+		}
 #endif
+	}
 	return 0;
 }
 

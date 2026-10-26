@@ -51,6 +51,17 @@ void difftest_step(uint64_t n){
 	ref_difftest_exec(n);
 }
 
+bool difftest_check(){
+	uint32_t ref_gpr[16];
+	uint32_t ref_pc		;
+	ref_difftest_regcpy(ref_gpr, &ref_pc, DIFFTEST_TO_REF);
+	for(int i=0;i<16;i++){
+		if(ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]) return false;
+	}
+
+	if(ref_pc != top->PC) return false;
+}
+
 #else
 //void init_difftest(char *ref_so_file, long img_size, int port) { }
 #endif
