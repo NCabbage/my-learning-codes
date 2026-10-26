@@ -105,7 +105,10 @@ int cmd_info(char *args){
 
 int cmd_s(char *args){
 	if(args == NULL){
-			execute(1);
+		printf("[DUT] before: PC=0x%08x\n", top->PC);
+		execute(1);
+		printf("[DUT] after : PC=0x%08x\n", top->PC);
+
 
 #if CONFIG_DIFFTEST
 			difftest_step(1);
