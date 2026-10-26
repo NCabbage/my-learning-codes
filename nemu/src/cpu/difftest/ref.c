@@ -33,11 +33,11 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 	
 	if(direction == DIFFTEST_TO_REF){
   		for(int i=0;i<n/4;i++){
-			paddr_write(addr+i, 4, p[i]);  		
+			paddr_write(addr+i, 1, p[i]);  		
 		}
 	}else{
 		for(int i=0;i<n;i++){
-			p[i] = paddr_read(addr+i, 4);
+			p[i] = paddr_read(addr+i, 1);
 		}
 	}
 	
@@ -54,9 +54,7 @@ __EXPORT void difftest_regcpy(void *dut, uint32_t pc, bool direction) {
 	printf("cpu.pc: %x\n", cpu.pc);
 	if(direction == DIFFTEST_TO_REF){
 		for(int i=0;i<RISCV_GPR_NUM;i++){
-			printf("old!!!cpu.gpr[%d] : %x   p[%d] : %x\n", i, cpu.gpr[i], i, p[i]);
 			cpu.gpr[i] = p[i];
-			printf("new!!!cpu.gpr[%d] : %x   p[%d] : %x\n", i, cpu.gpr[i], i, p[i]);
 		}
 	}else{
 		for(int i=0;i<RISCV_GPR_NUM;i++){
