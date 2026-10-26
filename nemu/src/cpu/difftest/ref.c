@@ -29,16 +29,16 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
   printf("[REF] buf as word[0] = 0x%08x\n", ((uint32_t*)buf)[0]);
 #endif
 
-	uint32_t *p = (uint32_t *)buf;
+	uint8_t *p = (uint8_t *)buf;
 	
 	if(direction == DIFFTEST_TO_REF){
-  		for(int i=0;i<n/4;i++){
+  		for(int i=0;i<4;i++){
   			printf("addr: %x val: %x\n", addr+i, p[i]);
-			paddr_write(addr+i, 1, p[i]);  		
+			paddr_write(addr+i*4, 4, p[i]);  		
 		}
 	}else{
 		for(int i=0;i<n;i++){
-			p[i] = paddr_read(addr+i, 1);
+			p[i] = paddr_read(addr+i*4, 4);
 		}
 	}
 	
