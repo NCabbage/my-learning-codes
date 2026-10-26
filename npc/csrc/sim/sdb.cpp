@@ -118,7 +118,6 @@ int cmd_s(char *args){
 	}
 
 	execute(n);
-	printf("npc PC: %x\n", top->PC);
 #if CONFIG_DIFFTEST
 	difftest_step(2000000);
 #endif
