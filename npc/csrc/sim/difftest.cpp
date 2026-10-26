@@ -48,7 +48,9 @@ void init_difftest(char *ref_so_file, long img_size, int port) {
 }//注意top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR在不同设计中会变
 
 void difftest_step(uint64_t n){
+	printf("[DUT] before: npc PC=0x%08x\n", top->PC);
 	ref_difftest_exec(n);
+	printf("[DUT] after : npc PC=0x%08x\n", top->PC);
 }
 
 #else
