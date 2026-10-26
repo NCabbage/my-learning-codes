@@ -45,7 +45,7 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 	
 #if CONFIG_TEST
    for(int i=0;i<500;i++){
-  	printf("word[%d]: %x\n", i, ((uint32_t*)buf)[0]);
+  	printf("word[%d]: %x\n", i, ((uint32_t*)buf)[i]);
   }
 #endif	
 }
