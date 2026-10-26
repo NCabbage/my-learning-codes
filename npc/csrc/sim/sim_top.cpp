@@ -221,7 +221,12 @@ void execute(long long n){
 		cnt = 0;
 		tol ++;
 
-		if(tol == 5) rst_n = 1;
+		if(tol == 5){
+			rst_n = 1;
+#if CONFIG_DIFFTEST
+			init_difftest(so_file, n1*4, 0);
+#endif
+		}
 	}
 }
 
@@ -279,9 +284,6 @@ int main(int argc, char** argv){
 #endif
 #if CONFIG_FTRACE
 	elf_action(elf_file);
-#endif
-#if CONFIG_DIFFTEST
-	init_difftest(so_file, n1*4, 0);
 #endif
 	sdb_mainloop();
 /*原来
