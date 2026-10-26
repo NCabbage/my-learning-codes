@@ -105,7 +105,11 @@ int cmd_info(char *args){
 
 int cmd_s(char *args){
 	if(args == NULL){
-		printf("need a number\n");
+			execute(1);
+
+#if CONFIG_DIFFTEST
+			difftest_step(1);
+#endif
 		return 0;
 	}
 
