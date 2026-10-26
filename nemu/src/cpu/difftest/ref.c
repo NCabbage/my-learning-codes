@@ -32,19 +32,17 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 	uint8_t *p = (uint8_t *)buf;
 	
 	if(direction == DIFFTEST_TO_REF){
-  		for(int i=0;i<n/4;i++){
+  		for(int i=0;i<n;i++){
   			printf("addr: %x val: %x\n", addr+i, p[i]);
-			paddr_write(addr+i, 4, p[i]);  		
+			paddr_write(addr+i, 1, p[i]);  		
 		}
 	}else{
 		for(int i=0;i<n;i++){
-			p[i] = paddr_read(addr+i, 4);
+			p[i] = paddr_read(addr+i, 1);
 		}
 	}
 	
 #if CONFIG_TEST
-  printf("[REF] after copy, NEMU mem @0x%08x = 0x%08x\n",
-         addr, paddr_read(addr, 4));
 #endif	
 }
 
@@ -65,9 +63,7 @@ __EXPORT void difftest_regcpy(void *dut, uint32_t pc, bool direction) {
 }
 
 __EXPORT void difftest_exec(uint64_t n) {
-  	printf("[REF] before exec: pc=0x%08x\n", cpu.pc);
 	cpu_exec(n);
-	printf("[REF] after  exec: pc=0x%08x\n", cpu.pc);
 }
 
 __EXPORT void difftest_raise_intr(word_t NO) {
