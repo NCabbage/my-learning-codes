@@ -64,9 +64,9 @@ __EXPORT void difftest_regcpy(void *dut, bool direction) {
 }
 
 __EXPORT void difftest_exec(uint64_t n) {
-  	printf("[REF] before exec: pc=0x%08x\n", cpu->pc);
-	execute(n);
-	printf("[REF] after  exec: pc=0x%08x\n", cpu->pc);
+  	printf("[REF] before exec: pc=0x%08x\n", cpu.pc);
+	cpu_exec(n);
+	printf("[REF] after  exec: pc=0x%08x\n", cpu.pc);
 }
 
 __EXPORT void difftest_raise_intr(word_t NO) {
