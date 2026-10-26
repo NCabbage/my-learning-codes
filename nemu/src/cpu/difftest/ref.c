@@ -18,14 +18,16 @@
 #include <difftest-def.h>
 #include <memory/paddr.h>
 
-__EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction) {
+#define CONFIG_TEST 1
 
+__EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction) {
+#if CONFIG_TEST
   printf("[REF] memcpy: addr=0x%08x n=%zu dir=%d\n", addr, n, (int)direction);
   printf("[REF] buf first 4 bytes: %02x %02x %02x %02x\n",
          ((uint8_t*)buf)[0], ((uint8_t*)buf)[1],
          ((uint8_t*)buf)[2], ((uint8_t*)buf)[3]);
   printf("[REF] buf as word[0] = 0x%08x\n", ((uint32_t*)buf)[0]);
-
+#endif
 
 	uint32_t *p = (uint32_t *)buf;
 	
@@ -39,13 +41,26 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 		}
 	}
 	
+#if CONFIG_TEST
   printf("[REF] after copy, NEMU mem @0x%08x = 0x%08x\n",
          addr, paddr_read(addr, 4));
-	
+#endif	
 }
 
 __EXPORT void difftest_regcpy(void *dut, bool direction) {
-  assert(0);
+	uint32_t *p = (uint32_t *)dut;
+
+	if(direction == DIFFTEST_TO_REF){
+		for(int i=0;i<RISCV_GPR_NUM;i++){
+			printf("old!!!cpu.gpr[%d] : %x   p[%d] : %x\n", i, cpu.gpr[i], i, p[i]);
+			cpu.gpr[i] = p[i];
+			printf("new!!!cpu.gpr[%d] : %x   p[%d] : %x\n", i, cpu.gpr[i], i, p[i]);
+		}
+	}else{
+		for(int i=0;i<RISCV_GPR_NUM;i++){
+			p[i] = cpu.gpr[i];
+		}
+	}
 }
 
 __EXPORT void difftest_exec(uint64_t n) {
