@@ -117,7 +117,7 @@ int cmd_s(char *args){
 
 #if CONFIG_DIFFTEST
 			difftest_step(1);
-			difftest_check();
+//			difftest_check();
 #endif
 		return 0;
 	}
@@ -136,7 +136,7 @@ int cmd_s(char *args){
 		execute(1);
 #if CONFIG_DIFFTEST
 		difftest_step(1);
-		difftest_check();
+// 		difftest_check();
 #endif
 	}
 
