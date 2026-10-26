@@ -207,7 +207,6 @@ void execute(long long n){
 			cnt ++;
 			clk = (cnt % (period_ns*500) == 0)? (1^clk) : clk;
 			top->clk = clk;
-			top->rst_n = rst_n;
 			top->inst = inst_read(top->PC >> 2);
 			top->eval();
 			if(cnt % (period_ns*250) == 0)tfp->dump(contextp->time()); // 记录当前时间的波形数据
