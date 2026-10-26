@@ -61,7 +61,7 @@ bool difftest_check(){
 		if(ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]){
 			Log("%s", ANSI_FMT("Difftest is wrong!!!!", ANSI_FG_RED));
 			for(int i=0;i<16;i++){
-				printf("dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x %s", i\
+				printf("dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x %s\n", i\
 					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
 					, (top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i] != ref_gpr[i]) ? "<-- MISMATCH" : "");
 			}
