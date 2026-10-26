@@ -54,9 +54,19 @@ void difftest_step(uint64_t n){
 bool difftest_check(){
 	uint32_t ref_gpr[16];
 	uint32_t ref_pc		;
+	
 	ref_difftest_regcpy(ref_gpr, &ref_pc, DIFFTEST_TO_REF);
+
 	for(int i=0;i<16;i++){
-		if(ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]) return false;
+		if(ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]){
+			Log("", ANSI_FMT("Difftest is wrong!!!!", ANSI_FG_RED))
+			for(int i=0;i<16;i++){
+				printf(“dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x”, i\
+					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
+					, (top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i] != ref_gpr[i]) ? "<-- MISMATCH" : ""));
+			}
+			return false;	
+		}
 	}
 
 	if(ref_pc != top->PC) return false;
