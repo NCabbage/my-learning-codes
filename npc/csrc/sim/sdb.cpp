@@ -77,7 +77,7 @@ int cmd_c(char *args){
 		execute(1);
 #if CONFIG_DIFFTEST
 		difftest_step(1);
-		if(!difftest_check()) printf("no!!!\n");
+		difftest_check();
 #endif
 	}
 	return 0;
@@ -117,6 +117,7 @@ int cmd_s(char *args){
 
 #if CONFIG_DIFFTEST
 			difftest_step(1);
+			difftest_check();
 #endif
 		return 0;
 	}
@@ -131,11 +132,13 @@ int cmd_s(char *args){
 		printf("the number should be postive\n");
 	}
 
-	execute(n);
-
+	for(int i=0;i<n;i++){
+		execute(1);
 #if CONFIG_DIFFTEST
-	difftest_step(n);
+		difftest_step(1);
+		difftest_check();
 #endif
+	}
 
 	return 0;
 }
