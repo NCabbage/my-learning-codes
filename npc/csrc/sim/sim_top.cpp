@@ -279,15 +279,11 @@ int main(int argc, char** argv){
 
 ///////////////////////////////////////////////rst
 	top->rst_n = 0;
-	for (int i = 0; i < 10; i++) {
-	    top->clk = 1; top->eval();
-	    top->clk = 0; top->eval();
-	}
+	top->clk = 0; top->eval();
+	top->clk = 1; top->eval();
+	top->clk = 0; top->eval();
 	top->rst_n = 1;
-	for (int i = 0; i < 10; i++) {
-	    top->clk = 1; top->eval();
-	    top->clk = 0; top->eval();
-	}
+	top->clk = 1; top->eval();
 ///////////////////////////////////////////////
 
 #if CONFIG_ITRACE
