@@ -280,8 +280,10 @@ int main(int argc, char** argv){
 ///////////////////////////////////////////////rst
 	top->rst_n = rst_n;
 	top->eval();
-	for(int i=0;i<20000;i++);
-	rst_n = 1;
+	for(int i=0;i<20000;i++){
+		tol++;
+	}
+	if(tol == 19999) rst_n = 1;
 	top->rst_n = rst_n;
 	top->eval();
 ///////////////////////////////////////////////
