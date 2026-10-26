@@ -73,7 +73,7 @@ void sdb_mainloop(){
 int cmd_c(char *args){
 	execute(2000000);
 	printf("npc PC: %x\n", top->PC);
-#if CONFIG_FIFFTETS
+#if CONFIG_DIFFTEST
 	difftest_step(2000000);
 #endif
 	return 0;
