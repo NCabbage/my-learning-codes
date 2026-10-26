@@ -77,7 +77,7 @@ int cmd_c(char *args){
 		execute(1);
 #if CONFIG_DIFFTEST
 		difftest_step(1);
-		difftest_check();
+		if(!difftest_check()) return -1;
 #endif
 	}
 	return 0;
@@ -110,14 +110,11 @@ int cmd_info(char *args){
 
 int cmd_s(char *args){
 	if(args == NULL){
-		printf("[DUT] before: PC=0x%08x\n", top->PC);
 		execute(1);
-		printf("[DUT] after : PC=0x%08x\n", top->PC);
-
 
 #if CONFIG_DIFFTEST
-			difftest_step(1);
-//			difftest_check();
+		difftest_step(1);
+		if(!difftest_check()) return -1;
 #endif
 		return 0;
 	}
@@ -136,7 +133,7 @@ int cmd_s(char *args){
 		execute(1);
 #if CONFIG_DIFFTEST
 		difftest_step(1);
-// 		difftest_check();
+		if(!difftest_check()) return -1;
 #endif
 	}
 
