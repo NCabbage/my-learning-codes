@@ -27,7 +27,7 @@ bool halt_flag = false;
 
 bool clk = 0;
 int rst_n;
-//int tol = 0;
+int tol = 0;
 const int	period_ns = 10;
 long long cnt = 0;
 
@@ -221,11 +221,14 @@ void execute(long long n){
 #endif
 		
 		cnt = 0;
-//		tol ++;
+		tol ++;
 
-//		if(tol == 5){
-//			rst_n = 1;
-//		}
+		if(tol == 5){
+			rst_n = 1;
+#if CONFIG_DIFFTEST
+			init_difftest(so_file, n1*4, 0);
+#endif
+		}
 	}
 }
 
@@ -283,10 +286,6 @@ int main(int argc, char** argv){
 #endif
 #if CONFIG_FTRACE
 	elf_action(elf_file);
-#endif
-	rst_n = 1;
-#if CONFIG_DIFFTEST
-	init_difftest(so_file, n1*4, 0);
 #endif
 	sdb_mainloop();
 /*原来
