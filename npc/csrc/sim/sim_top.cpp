@@ -38,6 +38,8 @@ VerilatedContext* contextp;
 char elf_file[128] = "/home/cappage/ysyx-workbench/am-kernels/tests/am-tests/build/amtest-minirv-npc.elf";
 char so_file[128] = "/home/cappage/ysyx-workbench/nemu/build/riscv32-nemu-interpreter-so";
 
+int n1 = 0;
+
 static int load_bin(const char *filename, uint32_t *dst, int dst_words) {
     FILE *fp = fopen(filename, "rb");
     if (!fp) {
@@ -251,7 +253,7 @@ int main(int argc, char** argv){
 	vmem = (uint32_t *)calloc(VGA_WORDS, sizeof(uint32_t));
 
 //    int n1 = load_hex("/home/cappage/ysyx-workbench/npc/csrc/program.txt", ROM, 30000000);
-	int n1 = load_bin(rom_path, ROM, MEM_WORDS);
+	n1 = load_bin(rom_path, ROM, MEM_WORDS);
     if (n1 < 0) exit(1);
     printf("ROM loaded: %d words\n", n1);
 
