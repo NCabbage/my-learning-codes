@@ -73,13 +73,13 @@ void sdb_mainloop(){
 }
 
 int cmd_c(char *args){
-//	for(int i=0;i<2000000;i++){
-		execute(2000000);
+	for(int i=0;i<2000000;i++){
+		execute(1);
 #if CONFIG_DIFFTEST
-		difftest_step(2000000);
-//		difftest_check();
+		difftest_step(1);
+		difftest_check();
 #endif
-//	}
+	}
 	return 0;
 }
 
