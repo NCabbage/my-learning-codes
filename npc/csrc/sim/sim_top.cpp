@@ -26,7 +26,7 @@ uint32_t *RAM;
 bool halt_flag = false;
 
 bool clk = 0;
-int rst_n;
+int rst_n = 0;
 int tol = 0;
 const int	period_ns = 10;
 long long cnt = 0;
