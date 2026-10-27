@@ -44,6 +44,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
 	wire	[31:0]		wdata			;
+	wire				error			;
 
 	always@(posedge clk)
 		halt(inst, a0);
@@ -79,7 +80,8 @@ module ysyx_100022863_TOP #(
 		.lw_en			(lw_en			),
 		.lbu_en			(lbu_en			),
 		.sw_en			(sw_en			),
-		.sb_en			(sb_en			)
+		.sb_en			(sb_en			),
+		.error			(error			)
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en;

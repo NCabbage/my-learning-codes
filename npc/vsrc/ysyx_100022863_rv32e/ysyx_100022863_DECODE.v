@@ -2,9 +2,9 @@ module ysyx_100022863_DECODE(
 
 	input		[31:0]		inst		,
 	
-	output		[4:0]		rs1			,
-	output		[4:0]		rs2			,
-	output		[4:0]		rd			,
+	output		[3:0]		rs1			,
+	output		[3:0]		rs2			,
+	output		[3:0]		rd			,
 	output		[31:0]		I_imm		,
 	output		[31:0]		U_imm		,
 	output		[31:0]		S_imm		,
