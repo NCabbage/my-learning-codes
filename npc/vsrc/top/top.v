@@ -3,7 +3,9 @@ module top(
 	input		[31:0]		inst			,
 	input					rst_n			,
 
-	output		[31:0]		PC
+	output		[31:0]		PC				,
+	
+	output					error
 
 );
 
