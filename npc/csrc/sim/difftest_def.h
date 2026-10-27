@@ -1,6 +1,6 @@
 enum { DIFFTEST_TO_DUT, DIFFTEST_TO_REF };
 
-#define CONFIG_DIFFTEST 1
+#define CONFIG_DIFFTEST 0
 
 #define NR_GPR_NUM	16
 
