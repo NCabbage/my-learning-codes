@@ -28,7 +28,7 @@ module ysyx_100022863_ALU(
 
 assign alu_addi_result 	= addi_en	? src1 + I_imm : 0;
 assign alu_jalr_result 	= jalr_en 	? ((src1 + I_imm) >> 1) << 1 : 0;
-assign alu_add_result  	= add_en 	? src1 + src2 + 1 : 0;
+assign alu_add_result  	= add_en 	? src1 + src2 : 0;
 assign alu_lui_result  	= lui_en 	? U_imm : 0;
 assign alu_lw_result   	= lw_en 	? src1 + I_imm : 0;
 assign alu_lbu_result   = lbu_en 	? src1 + I_imm : 0;
