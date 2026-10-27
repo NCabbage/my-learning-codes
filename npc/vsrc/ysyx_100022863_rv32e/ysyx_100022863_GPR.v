@@ -6,13 +6,13 @@ module ysyx_100022863_GPR
   	input		[DATA_WIDTH-1:0]	wdata			,
   	input		[ADDR_WIDTH-1:0]	waddr			,
   	input							wen				,
-	input		[ADDR_WIDTH-1:0]	rs1				,
-	input		[ADDR_WIDTH-1:0]	rs2				,
+	input		[4:0]				rs1				,
+	input		[4:0]				rs2				,
 
-	output		[DATA_WIDTH-1:0]	src1			,
-	output		[DATA_WIDTH-1:0]	src2			,	
+	output		[4-1:0]				src1			,
+	output		[4-1:0]				src2			,	
 
-	output		[DATA_WIDTH-1:0]	a0
+	output		[4-1:0]				a0
 );
 
 reg [DATA_WIDTH-1:0] GPR [2**ADDR_WIDTH-1:0];
