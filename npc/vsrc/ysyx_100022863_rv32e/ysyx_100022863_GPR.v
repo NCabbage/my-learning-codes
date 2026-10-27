@@ -23,7 +23,7 @@ always @(posedge clk) begin
 end
 
 assign a0 = GPR[10];
-assign src1 = GPR[rs1];
-assign src2 = GPR[rs2];
+assign src1 = GPR[rs1[3:0]];
+assign src2 = GPR[rs2[3:0]];
 
 endmodule
