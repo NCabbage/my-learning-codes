@@ -38,8 +38,8 @@ __EXPORT void difftest_memcpy(paddr_t addr, void *buf, size_t n, bool direction)
 __EXPORT void difftest_regcpy(void *dut, uint32_t *pc, bool direction) {
 	uint32_t *p = (uint32_t *)dut;
 
-	cpu.pc = *pc;
 	if(direction == DIFFTEST_TO_REF){
+		cpu.pc = *pc;
 		for(int i=0;i<RISCV_GPR_NUM;i++){
 			cpu.gpr[i] = p[i];
 		}
