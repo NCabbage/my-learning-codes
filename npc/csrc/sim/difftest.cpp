@@ -60,7 +60,7 @@ bool difftest_check(){
 	for(int i=0;i<NR_GPR_NUM;i++){
 		if((ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]) || (ref_pc != top->PC)){
 			Log("%s", ANSI_FMT("Difftest is wrong!!!!", ANSI_FG_RED));
-			printf("npc PC : %x			ref PC : %x\n", top->PC, ref_pc, (top->PC != ref_pc) ? "<-- MISMATCH" : "");
+			printf("npc PC : %x			ref PC : %x %s\n", top->PC, ref_pc, (top->PC != ref_pc) ? "<-- MISMATCH" : "");
 			for(int i=0;i<NR_GPR_NUM;i++){
 				printf("dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x %s\n", i\
 					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
