@@ -4,7 +4,7 @@ module ysyx_100022863_DECODE(
 	
 	output		[4:0]		rs1			,
 	output		[4:0]		rs2			,
-	output		[3:0]		rd			,
+	output		[4:0]		rd			,
 	output		[31:0]		I_imm		,
 	output		[31:0]		U_imm		,
 	output		[31:0]		S_imm		,
@@ -22,7 +22,7 @@ module ysyx_100022863_DECODE(
 wire	[6:0]	opcode		= inst[6:0]		;
 wire	[2:0]	funct3		= inst[14:12]	;
 
-assign			rd			= inst[10:7]	;
+assign			rd			= inst[11:7]	;
 assign			rs1			= inst[19:15]	;
 assign			rs2			= inst[24:20]	;
 assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
