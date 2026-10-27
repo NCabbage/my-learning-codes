@@ -10,6 +10,7 @@
 #include "difftest_def.h"
 #include "color.h"
 #include "debug.h"
+#include "common.h"
 
 extern Vtop* top;
 extern uint32_t *RAM;
@@ -106,7 +107,7 @@ int cmd_info(char *args){
 	}
 
 	if(strcmp(args, "r") == 0){
-		for(int i=0;i<32;i++)
+		for(int i=0;i<NR_GPR_NUM;i++)
 			printf("GPR[%d]: %x\n", i, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]);
 	}
 
