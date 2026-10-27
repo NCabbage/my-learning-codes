@@ -26,6 +26,8 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.error = (IData)((0x01080800U == (0x01080800U 
+                                               & vlSelfRef.inst)));
     vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1 = (0x000000ffU 
                                                 & vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
                                                 [(0x0000000fU 
