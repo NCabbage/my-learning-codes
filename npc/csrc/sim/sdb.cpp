@@ -77,7 +77,7 @@ int cmd_c(char *args){
 		execute(1);
 #if CONFIG_DIFFTEST
 		difftest_step(1);
-		if(!difftest_check()){return -1;printf("NO!!!!\n")}
+		if(!difftest_check()){return -1;printf("NO!!!!\n");}
 #endif
 	}
 	return 0;
