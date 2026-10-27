@@ -17,7 +17,7 @@ module ysyx_100022863_TOP #(
 
 	wire	[4:0]		rs1			 	;
 	wire	[4:0]		rs2			 	;
-	wire	[4:0]		rd			 	;
+	wire	[3:0]		rd			 	;
 	wire	[31:0]		I_imm			;
 	wire	[31:0]		U_imm			;
 	wire	[31:0]		S_imm			;
