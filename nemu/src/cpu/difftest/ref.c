@@ -45,7 +45,6 @@ __EXPORT void difftest_regcpy(void *dut, uint32_t *pc, bool direction) {
 		}
 	}else{
 		*pc = cpu.pc;
-		printf("[REF] PC %x\n", cpu.pc);
 		for(int i=0;i<RISCV_GPR_NUM;i++){
 			p[i] = cpu.gpr[i];
 		}

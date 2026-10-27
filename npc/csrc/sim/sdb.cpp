@@ -78,6 +78,7 @@ int cmd_c(char *args){
 		execute(1);
 		if(top->PC == pc_before){
 			printf("Program halted at PC = 0x%08x\n", top->PC);
+			break;
 		}
 #if CONFIG_DIFFTEST
 		difftest_step(1);
