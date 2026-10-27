@@ -17,7 +17,9 @@ ysyx_100022863_TOP #(
 	.inst			(inst	),
 	.rst_n			(rst_n	),
 
-	.PC				(PC		)
+	.PC				(PC		),
+	
+	.error			(error	)
 
 );
 
