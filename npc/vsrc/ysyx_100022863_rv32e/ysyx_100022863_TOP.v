@@ -88,7 +88,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		a0;
 
 	ysyx_100022863_GPR #(
-		.ADDR_WIDTH(5),
+		.ADDR_WIDTH(4),
 		.DATA_WIDTH(32)
 	)inst_ysyx_100022863_GPR
 	(	
