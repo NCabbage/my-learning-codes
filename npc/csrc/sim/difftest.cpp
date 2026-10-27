@@ -58,9 +58,9 @@ bool difftest_check(){
 	ref_difftest_regcpy(ref_gpr, &ref_pc, DIFFTEST_TO_DUT);
 
 	for(int i=0;i<NR_GPR_NUM;i++){
-		if(ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]){
+		if((ref_gpr[i] != top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]) || (ref_pc != top->PC)){
 			Log("%s", ANSI_FMT("Difftest is wrong!!!!", ANSI_FG_RED));
-			printf("npc PC : %x			ref PC : %x\n", top->PC, ref_pc);
+			printf("npc PC : %x			ref PC : %x\n", top->PC, ref_pc, (top->PC != ref_pc) ? "<-- MISMATCH" : "");
 			for(int i=0;i<NR_GPR_NUM;i++){
 				printf("dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x %s\n", i\
 					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
@@ -70,16 +70,6 @@ bool difftest_check(){
 		}
 	}
 
-	if(ref_pc != top->PC){
-			Log("%s", ANSI_FMT("Difftest is wrong!!!!", ANSI_FG_RED));
-			printf("npc PC : %x			ref PC : %x\n", top->PC, ref_pc);
-			for(int i=0;i<NR_GPR_NUM;i++){
-				printf("dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x %s\n", i\
-					, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
-					, (top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i] != ref_gpr[i]) ? "<-- MISMATCH" : "");
-			}
-			return false;
-	}
 	return true;
 }
 
