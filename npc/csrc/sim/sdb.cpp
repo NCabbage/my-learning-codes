@@ -74,7 +74,11 @@ void sdb_mainloop(){
 
 int cmd_c(char *args){
 	for(int i=0;i<2000000;i++){
+		uint32_t pc_before = top->PC;
 		execute(1);
+		if(top->PC == pc_before){
+			printf("Program halted at PC = 0x%08x\n", top->PC);
+		}
 #if CONFIG_DIFFTEST
 		difftest_step(1);
 		if(!difftest_check()){return -1;printf("NO!!!!\n");}
