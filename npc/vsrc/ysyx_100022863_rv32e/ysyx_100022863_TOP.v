@@ -11,7 +11,9 @@ module ysyx_100022863_TOP #(
 	input			[INST_WIDTH-1:0]			inst			,
 	input										rst_n			,
 
-	output			[PC_WIDTH-1:0]				PC
+	output			[PC_WIDTH-1:0]				PC				,
+
+	output										error
 
 );
 
@@ -44,7 +46,6 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
 	wire	[31:0]		wdata			;
-	wire				error			;
 
 	always@(posedge clk)
 		halt(inst, a0);
