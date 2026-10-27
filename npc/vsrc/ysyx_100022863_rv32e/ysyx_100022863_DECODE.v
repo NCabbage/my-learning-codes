@@ -16,15 +16,23 @@ module ysyx_100022863_DECODE(
 	output					lw_en		,
 	output					lbu_en		,
 	output					sw_en		,
-	output					sb_en
+	output					sb_en		,
+
+	output					error
 );
 
 wire	[6:0]	opcode		= inst[6:0]		;
 wire	[2:0]	funct3		= inst[14:12]	;
 
-assign			rd			= inst[11:7]	;
-assign			rs1			= inst[19:15]	;
-assign			rs2			= inst[24:20]	;
+wire	[4:0]	rd_r		= inst[11:7]	;
+wire	[4:0]	rs1_r		= inst[19:15]	;
+wire	[4:0]	rs2_r		= inst[24:20]	;
+
+assign error = rd[4] & rs1[4] & rs2[4];
+
+assign			rd 			= rd_r[3:0];
+assign			rs1			= rs1_r[3:0];
+assign			rs2			= rs2_r[3:0];
 assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
 assign			U_imm		= inst[31:12] << 12				;
 assign			S_imm		= {{20{inst[31]}}, {inst[31:25], inst[11:7]}};

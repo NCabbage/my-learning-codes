@@ -95,7 +95,7 @@ module ysyx_100022863_TOP #(
 	
 	  	.clk				 	(clk				),
     	.wdata			 		(wdata				),
-    	.waddr			 		(rd[3:0]			),
+    	.waddr			 		(rd					),
     	.wen				 	(wen				),
 	  	.rs1				 	(rs1				),
 		.rs2				 	(rs2				),
