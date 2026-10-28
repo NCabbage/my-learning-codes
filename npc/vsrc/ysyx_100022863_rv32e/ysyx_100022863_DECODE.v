@@ -8,6 +8,7 @@ module ysyx_100022863_DECODE(
 	output		[31:0]		I_imm		,
 	output		[31:0]		U_imm		,
 	output		[31:0]		S_imm		,
+	output		[31:0]		J_imm		,
 
 	output					addi_en		,
 	output					jalr_en		,
@@ -17,6 +18,7 @@ module ysyx_100022863_DECODE(
 	output					lbu_en		,
 	output					sw_en		,
 	output					sb_en		,
+	output					auipc_en	,
 
 	output					error
 );
@@ -36,46 +38,50 @@ assign			rs2			= rs2_r[3:0];
 assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
 assign			U_imm		= inst[31:12] << 12				;
 assign			S_imm		= {{20{inst[31]}}, {inst[31:25], inst[11:7]}};
+assign			J_imm		= {inst[31], inst[30:21], inst[20], inst[19:12], 12'b0};
 
 //addi
-wire			opcode_6_0_0010011	= (opcode == 7'b0010011	);
-wire			funct3_14_12_000	= (funct3 == 3'b000		);
+wire	opcode_6_0_0010011	= (opcode == 7'b0010011	);
+wire	funct3_14_12_000	= (funct3 == 3'b000		);
 
 assign addi_en = opcode_6_0_0010011 && funct3_14_12_000;
 
 //jalr
-wire			opcode_6_0_1100111 	= (opcode == 7'b1100111	);
+wire	opcode_6_0_1100111 	= (opcode == 7'b1100111	);
 
 assign jalr_en = opcode_6_0_1100111 && funct3_14_12_000;
 
 //add
-wire 			opcode_6_0_0110011	= (opcode == 7'b0110011	);
+wire	opcode_6_0_0110011	= (opcode == 7'b0110011	);
 
 assign add_en = opcode_6_0_0110011 && funct3_14_12_000;
 
 //lui
-wire			opcode_6_0_0110111 = (opcode == 7'b0110111	);
+wire	opcode_6_0_0110111 = (opcode == 7'b0110111	);
 
 assign lui_en = opcode_6_0_0110111;
 
 //lw
-wire			opcode_6_0_0000011 = (opcode == 7'b0000011	);
-wire			funct3_14_12_001   = (funct3 == 3'b010		);
+wire	opcode_6_0_0000011 = (opcode == 7'b0000011	);
+wire	unct3_14_12_001   = (funct3 == 3'b010		);
 
 assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
 //lbu
-wire			funct3_14_12_100	= (funct3 == 3'b100		);
+wire	funct3_14_12_100	= (funct3 == 3'b100		);
 
 assign lbu_en = opcode_6_0_0000011 && funct3_14_12_100;
 
 //sw
-wire			opcode_6_0_0100011	= (opcode == 7'b0100011	);
-wire			funct3_14_12_010	= (funct3 == 3'b010		);
+wire	opcode_6_0_0100011	= (opcode == 7'b0100011	);
+wire	funct3_14_12_010	= (funct3 == 3'b010		);
 
 assign sw_en = opcode_6_0_0100011 && funct3_14_12_010;
 
 //sb
 assign sb_en = opcode_6_0_0100011 && funct3_14_12_000;
 
+//auipc
+wire	opcode_6_0_0010111	= (opcode == 7'b0010111	);
+assign auipc_en = opcode_6_0_0010111;
 endmodule
