@@ -280,8 +280,6 @@ int main(int argc, char** argv){
 	top->clk = 0; top->eval();
 	tfp->dump(contextp->time());
 	top->rst_n = 1;
-	top->clk = 1; top->eval();
-	tfp->dump(contextp->time());
 ///////////////////////////////////////////////
 
 #if CONFIG_ITRACE
