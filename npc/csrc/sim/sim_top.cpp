@@ -274,14 +274,14 @@ int main(int argc, char** argv){
 ///////////////////////////////////////////////rst
 	top->rst_n = 0;
 	top->clk = 0; top->eval();
-	tfp->dump(contextp->time()
+	tfp->dump(contextp->time();
 	top->clk = 1; top->eval();
-	tfp->dump(contextp->time()
+	tfp->dump(contextp->time();
 	top->clk = 0; top->eval();
-	tfp->dump(contextp->time()
+	tfp->dump(contextp->time();
 	top->rst_n = 1;
 	top->clk = 1; top->eval();
-	tfp->dump(contextp->time()
+	tfp->dump(contextp->time();
 ///////////////////////////////////////////////
 
 #if CONFIG_ITRACE
