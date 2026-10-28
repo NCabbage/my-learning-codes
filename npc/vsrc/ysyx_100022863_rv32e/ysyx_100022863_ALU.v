@@ -40,7 +40,7 @@ assign alu_lw_result   	= lw_en 	? src1 + I_imm : 0	;
 assign alu_lbu_result   = lbu_en 	? src1 + I_imm : 0	;
 assign alu_sw_result 	= sw_en  	? src1 + S_imm : 0	;
 assign alu_sb_result 	= sb_en		? src1 + S_imm : 0	;
-assign alu_auipc_result = auipc_en	? PC + J_imm : 0	;
+assign alu_auipc_result = auipc_en	? PC + U_imm : 0	;
 assign alu_jal_result 	= jal_en	? PC + J_imm : 0	;
 
 endmodule
