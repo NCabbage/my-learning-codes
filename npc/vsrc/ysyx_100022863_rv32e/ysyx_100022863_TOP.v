@@ -90,8 +90,8 @@ module ysyx_100022863_TOP #(
 		.error			(error			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en;
-	assign wdata = (jalr_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | rdata;
+	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en;
+	assign wdata = (jalr_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | alu_auipc_result | rdata;
 
 	wire	[31:0]		a0;
 
