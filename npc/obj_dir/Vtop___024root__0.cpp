@@ -144,9 +144,12 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                               == 
                                                               (0x0000007fU 
                                                                & vlSelfRef.inst)))))) 
-                 | (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata 
-                    | (((IData)(4U) + vlSelfRef.PC) 
-                       & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))))))));
+                 | (((vlSelfRef.PC + (0xfffff000U & vlSelfRef.inst)) 
+                     & (- (IData)((0x17U == (0x0000007fU 
+                                             & vlSelfRef.inst))))) 
+                    | (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata 
+                       | (((IData)(4U) + vlSelfRef.PC) 
+                          & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)))))))));
 }
 
 #ifdef VL_DEBUG
@@ -274,7 +277,9 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
                      | ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en) 
                         | ((0x37U == (0x0000007fU & vlSelfRef.inst)) 
                            | ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lw_en) 
-                              | (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lbu_en)))))) 
+                              | ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__lbu_en) 
+                                 | (0x17U == (0x0000007fU 
+                                              & vlSelfRef.inst)))))))) 
                  & (0U != (0x0000000fU & (vlSelfRef.inst 
                                           >> 7U))))) {
                 __Vinline_0__nba_sequent__TOP__0___VdlyVal__top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR__v0 
@@ -407,9 +412,14 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
                                                        == 
                                                        (0x0000007fU 
                                                         & vlSelfRef.inst)))))) 
-                         | (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata 
-                            | (((IData)(4U) + vlSelfRef.PC) 
-                               & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))))))));
+                         | (((vlSelfRef.PC + (0xfffff000U 
+                                              & vlSelfRef.inst)) 
+                             & (- (IData)((0x17U == 
+                                           (0x0000007fU 
+                                            & vlSelfRef.inst))))) 
+                            | (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__rdata 
+                               | (((IData)(4U) + vlSelfRef.PC) 
+                                  & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)))))))));
         }
     }
 }
