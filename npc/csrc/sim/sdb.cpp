@@ -113,6 +113,9 @@ int cmd_info(char *args){
 
 	if(strcmp(args, "i") == 0){
 		printf("PC: %x\n", top->PC);
+#if CONFIG_ITRACE
+		buf_read();
+#endif
 	}
 
 	return 0;
