@@ -3,6 +3,7 @@ module ysyx_100022863_PC(
 	input						clk			,
 	input						rst_n		,
 	input						jalr_en		,
+	input						jal_en		,
 	input			[31:0]		next_PC		,
 
 	output	reg		[31:0]		PC
