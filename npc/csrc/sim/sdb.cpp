@@ -112,7 +112,7 @@ int cmd_info(char *args){
 	}
 
 	if(strcmp(args, "i") == 0){
-		printf("PC: %x\ninst: %x\n", top->PC, RAM[PC - (0x80000000 >> 2)]);
+		printf("PC: %x\ninst: %x\n", top->PC, RAM[top->PC - (0x80000000 >> 2)]);
 	}
 
 	return 0;
