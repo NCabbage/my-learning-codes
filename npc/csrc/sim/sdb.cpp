@@ -112,7 +112,7 @@ int cmd_info(char *args){
 	}
 
 	if(strcmp(args, "i") == 0){
-		printf("PC: %x\n", top->PC]);
+		printf("PC: %x\n", top->PC);
 	}
 
 	return 0;
