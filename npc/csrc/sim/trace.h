@@ -6,7 +6,7 @@
 #include <assert.h>
 
 #define CONFIG_MTRACE 0
-#define CONFIG_ITRACE 1
+#define CONFIG_ITRACE 0
 #define CONFIG_FTRACE 0
 
 #define START	0x80000000
