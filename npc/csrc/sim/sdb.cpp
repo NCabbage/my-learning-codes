@@ -42,7 +42,7 @@ static struct{
 	{"help", "Display information about all supported commands", cmd_help},
 	{"c", "Continue the execution of the program", cmd_c},
 	{"q", "get out the pragram", cmd_q},
-	{"info", "look reg", cmd_info},
+	{"info", "r look reg, i look PC and inst", cmd_info},
 	{"s", "execute n steps", cmd_s},
 	{"x", "watch the memery", cmd_x}
 };
@@ -109,6 +109,10 @@ int cmd_info(char *args){
 	if(strcmp(args, "r") == 0){
 		for(int i=0;i<NR_GPR_NUM;i++)
 			printf("GPR[%d]: %x\n", i, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i]);
+	}
+
+	if(strcmp(args, "i") == 0){
+		printf("PC: %x\ninst: %x\n", top->PC, RAM[PC - (0x80000000 >> 2);
 	}
 
 	return 0;
