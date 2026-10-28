@@ -34,6 +34,7 @@ module ysyx_100022863_TOP #(
 	wire				sw_en			;
 	wire				sb_en			;
 	wire				auipc_en		;
+	wire				jal_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -44,6 +45,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_sw_result	;
 	wire	[31:0]		alu_sb_result	;
 	wire	[31:0]		alu_auipc_result;
+	wire	[31:0]		alu_jal_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -56,13 +58,18 @@ module ysyx_100022863_TOP #(
 //	always@(*)
 //		check(PC, raddr);
 	
+	wire	[31:0]		next_PC			;
+
+	assign	next_PC = alu_jalr_result | alu_jal_result;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
 		.clk		(clk				),
 		.rst_n		(rst_n				),
 		.jalr_en	(jalr_en			),
-		.jalr_PC	(alu_jalr_result	),
+		.jal_en		(jal_en				),
+
+		.next_PC	(next_PC			),
 
 		.PC			(PC					)
 	);
@@ -87,11 +94,13 @@ module ysyx_100022863_TOP #(
 		.sw_en			(sw_en			),
 		.sb_en			(sb_en			),
 		.auipc_en		(auipc_en		),
+		.jal_en			(jal_en			),
+
 		.error			(error			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en;
-	assign wdata = (jalr_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | alu_auipc_result | rdata;
+	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en;
+	assign wdata = (jalr_en | jal_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | alu_auipc_result | rdata;
 
 	wire	[31:0]		a0;
 
@@ -132,6 +141,7 @@ module ysyx_100022863_TOP #(
 		.sw_en				(sw_en				),
 		.sb_en				(sb_en				),
 		.auipc_en			(auipc_en			),
+		.jal_en				(jal_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -141,7 +151,8 @@ module ysyx_100022863_TOP #(
 		.alu_lbu_result		(alu_lbu_result		),
 		.alu_sw_result 		(alu_sw_result		),
 		.alu_sb_result		(alu_sb_result		),
-		.alu_auipc_result	(alu_auipc_result	)
+		.alu_auipc_result	(alu_auipc_result	),
+		.alu_jal_result		(alu_jal_result		)
 	);
 
 wire	[31:0]		raddr		;

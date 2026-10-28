@@ -19,6 +19,7 @@ module ysyx_100022863_DECODE(
 	output					sw_en		,
 	output					sb_en		,
 	output					auipc_en	,
+	output					jal_en		,
 
 	output					error
 );
@@ -84,4 +85,8 @@ assign sb_en = opcode_6_0_0100011 && funct3_14_12_000;
 //auipc
 wire	opcode_6_0_0010111	= (opcode == 7'b0010111	);
 assign auipc_en = opcode_6_0_0010111;
+
+//jal
+wire	opcode_6_0_1101111	= (opcode == 7'b1101111	);
+assign	jal_en = opcode_6_0_1101111;
 endmodule
