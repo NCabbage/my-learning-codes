@@ -63,7 +63,7 @@ assign lui_en = opcode_6_0_0110111;
 
 //lw
 wire	opcode_6_0_0000011 = (opcode == 7'b0000011	);
-wire	unct3_14_12_001   = (funct3 == 3'b010		);
+wire	funct3_14_12_001   = (funct3 == 3'b010		);
 
 assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
