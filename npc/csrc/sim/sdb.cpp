@@ -128,6 +128,7 @@ int cmd_s(char *args){
 #if CONFIG_DIFFTEST
 		difftest_step(1);
 		if(!difftest_check()) return -1;
+		one_check();
 #endif
 		return 0;
 	}

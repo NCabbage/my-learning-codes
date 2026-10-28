@@ -73,6 +73,21 @@ bool difftest_check(){
 	return true;
 }
 
+void one_check(){
+	uint32_t ref_gpr[NR_GPR_NUM];
+	uint32_t ref_pc		;
+	
+	ref_difftest_regcpy(ref_gpr, &ref_pc, DIFFTEST_TO_DUT);
+
+	printf("npc PC : %x			ref PC : %x %s\n", top->PC, ref_pc, (top->PC != ref_pc) ? "<-- MISMATCH" : "");
+	for(int i=0;i<NR_GPR_NUM;i++){
+		printf("dut gpr[%d]:0x%08x		ref gpr[%d]:0x%08x %s\n", i\
+			, top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i], i, ref_gpr[i]\
+			, (top->rootp->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[i] != ref_gpr[i]) ? "<-- MISMATCH" : "");
+	}
+
+}
+
 #else
 //void init_difftest(char *ref_so_file, long img_size, int port) { }
 #endif
