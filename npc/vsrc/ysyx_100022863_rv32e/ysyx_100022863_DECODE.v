@@ -67,7 +67,7 @@ assign lui_en = opcode_6_0_0110111;
 
 //lw
 wire	opcode_6_0_0000011 = (opcode == 7'b0000011	);
-wire	funct3_14_12_001   = (funct3 == 3'b010		);
+wire	funct3_14_12_010   = (funct3 == 3'b010		);
 
 assign lw_en = opcode_6_0_0000011 && funct3_14_12_001;
 
@@ -99,5 +99,6 @@ assign	sltiu_en = opcode_6_0_0010011 & funct3_14_12_011;
 
 //bne
 wire	opcode_6_0_1100011	= (opcode == 7'b1100011);
+wire	funct3_14_12_001	= (funct3 == 3'b001);
 assign	bne_en = opcode_6_0_1100011 & funct3_14_12_001;
 endmodule
