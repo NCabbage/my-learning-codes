@@ -282,8 +282,10 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     bufp->chgBit(oldp+61,((3U == (7U & (vlSelfRef.inst 
                                         >> 0x0000000cU)))));
     bufp->chgBit(oldp+62,((0x63U == (0x0000007fU & vlSelfRef.inst))));
-    Vtop___024root__trace_chg_dtype____0(vlSelf, bufp, 63, vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR);
-    bufp->chgIData(oldp+79,((((2U & vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr)
+    bufp->chgBit(oldp+63,((1U == (7U & (vlSelfRef.inst 
+                                        >> 0x0000000cU)))));
+    Vtop___024root__trace_chg_dtype____0(vlSelf, bufp, 64, vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR);
+    bufp->chgIData(oldp+80,((((2U & vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr)
                                ? (((1U & vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr)
                                     ? (0x0000ff00U 
                                        & (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
