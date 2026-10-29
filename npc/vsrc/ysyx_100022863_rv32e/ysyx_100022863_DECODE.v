@@ -22,7 +22,7 @@ module ysyx_100022863_DECODE(
 	output					auipc_en	,
 	output					jal_en		,
 	output					sltiu_en	,
-	output					ben_en		,
+	output					bne_en		,
 
 	output					error
 );
