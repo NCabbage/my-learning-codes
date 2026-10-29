@@ -105,6 +105,16 @@ module ysyx_100022863_TOP #(
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en;
 	assign wdata = (jalr_en | jal_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | alu_auipc_result | alu_sltiu_result | rdata;
 
+	assign wdata =  (jalr_en | jal_en) 	? (PC + 4	)	:
+					(lw_en | lbu_en)	? (rdata	)	:
+					addi_en		? (alu_addi_result	)	:
+					jalr_en		? (alu_jalr_result	)	:
+					add_en		? (alu_add_result	)	:
+					lui_en		? (alu_lui_result	)	:
+					auipc_en	? (alu_auipc_result	)	:
+					jal_en		? (alu_jal_result	)	:
+					sltiu_en	? (alu_sltiu_result	)	:
+
 	wire	[31:0]		a0;
 
 	ysyx_100022863_GPR #(
