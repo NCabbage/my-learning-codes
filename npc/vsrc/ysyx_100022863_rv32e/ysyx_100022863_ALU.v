@@ -44,6 +44,6 @@ assign alu_sw_result 	= sw_en  	? src1 + S_imm : 0	;
 assign alu_sb_result 	= sb_en		? src1 + S_imm : 0	;
 assign alu_auipc_result = auipc_en	? PC + U_imm : 0	;
 assign alu_jal_result 	= jal_en	? PC + J_imm : 0	;
-assign alu_sltiu_result = sltiu_en	? (src1 < I_imm) : 0;
+assign alu_sltiu_result = sltiu_en	? {31'b0, (src1 < I_imm)} : 0;
 
 endmodule
