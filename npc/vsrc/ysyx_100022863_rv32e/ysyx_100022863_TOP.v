@@ -62,7 +62,7 @@ module ysyx_100022863_TOP #(
 		
 //	always@(*)
 //		check(PC, raddr);
-	
+	wire				jump_en = jal_en | jalr_en | bne_en;
 	wire	[31:0]		next_PC			;
 
 	assign	next_PC = 	jal_en 	? alu_jal_result 	:
@@ -74,9 +74,7 @@ module ysyx_100022863_TOP #(
 
 		.clk		(clk				),
 		.rst_n		(rst_n				),
-		.jalr_en	(jalr_en			),
-		.jal_en		(jal_en				),
-		.bne_en		(bne_en				),
+		.jump_en	(jump_en			),
 
 		.next_PC	(next_PC			),
 

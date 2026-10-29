@@ -100,7 +100,7 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     bufp->chgBit(oldp+31,((0x37U == (0x0000007fU & vlSelfRef.inst))));
     bufp->chgBit(oldp+32,((0x17U == (0x0000007fU & vlSelfRef.inst))));
     bufp->chgBit(oldp+33,((0x6fU == (0x0000007fU & vlSelfRef.inst))));
-    bufp->chgBit(oldp+34,((IData)((0x00002067U == (0x0000707fU 
+    bufp->chgBit(oldp+34,((IData)((0x00002063U == (0x0000707fU 
                                                    & vlSelfRef.inst)))));
     bufp->chgIData(oldp+35,(((vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR
                               [(0x0000000fU & (vlSelfRef.inst 
@@ -126,7 +126,7 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
                                 [(0x0000000fU & (vlSelfRef.inst 
                                                  >> 0x0000000fU))] 
                                 < vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__I_imm))),32);
-    bufp->chgIData(oldp+40,(((- (IData)((IData)((0x00002067U 
+    bufp->chgIData(oldp+40,(((- (IData)((IData)((0x00002063U 
                                                  == 
                                                  (0x0000707fU 
                                                   & vlSelfRef.inst))))) 
@@ -239,7 +239,7 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
                               : ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)
                                   ? vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jalr_result
                                   : ((- (IData)((IData)(
-                                                        (0x00002067U 
+                                                        (0x00002063U 
                                                          == 
                                                          (0x0000707fU 
                                                           & vlSelfRef.inst))))) 
