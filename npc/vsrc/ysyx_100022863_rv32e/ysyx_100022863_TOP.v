@@ -106,7 +106,7 @@ module ysyx_100022863_TOP #(
 		.auipc_en		(auipc_en		),
 		.jal_en			(jal_en			),
 		.sltiu_en		(sltiu_en		),
-		.ben_en			(bne_en			),
+		.bne_en			(bne_en			),
 
 		.error			(error			)
 	);
