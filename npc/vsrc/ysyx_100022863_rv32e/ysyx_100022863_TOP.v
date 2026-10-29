@@ -103,8 +103,7 @@ module ysyx_100022863_TOP #(
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en;
-	assign wdata = (jalr_en | jal_en ? PC + 4 : 0)| alu_addi_result | alu_add_result | alu_lui_result | alu_auipc_result | alu_sltiu_result | rdata;
-
+	
 	assign wdata =  (jalr_en | jal_en) 	? (PC + 4	)	:
 					(lw_en | lbu_en)	? (rdata	)	:
 					addi_en		? (alu_addi_result	)	:
