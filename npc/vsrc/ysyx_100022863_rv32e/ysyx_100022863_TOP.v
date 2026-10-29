@@ -160,7 +160,7 @@ module ysyx_100022863_TOP #(
 		.auipc_en			(auipc_en			),
 		.jal_en				(jal_en				),
 		.sltiu_en			(sltiu_en			),
-		.ben_en				(bne_en				),
+		.bne_en				(bne_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -172,7 +172,8 @@ module ysyx_100022863_TOP #(
 		.alu_sb_result		(alu_sb_result		),
 		.alu_auipc_result	(alu_auipc_result	),
 		.alu_jal_result		(alu_jal_result		),
-		.alu_sltiu_result	(alu_sltiu_result	)
+		.alu_sltiu_result	(alu_sltiu_result	),
+		.alu_bne_result		(alu_bne_result		)
 	);
 
 wire	[31:0]		raddr		;
