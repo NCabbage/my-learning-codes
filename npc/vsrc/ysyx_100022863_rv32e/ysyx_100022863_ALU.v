@@ -18,6 +18,7 @@ module ysyx_100022863_ALU(
 	input					sb_en				,
 	input					auipc_en			,
 	input					jal_en				,
+	input					sltiu_en			,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
@@ -28,7 +29,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_sw_result		,
 	output		[31:0]		alu_sb_result		,
 	output		[31:0]		alu_jal_result		,
-	output		[31:0]		alu_auipc_result	
+	output		[31:0]		alu_auipc_result	,
+	output		[31:0]		alu_sltiu_result
 );
 
 
@@ -42,5 +44,6 @@ assign alu_sw_result 	= sw_en  	? src1 + S_imm : 0	;
 assign alu_sb_result 	= sb_en		? src1 + S_imm : 0	;
 assign alu_auipc_result = auipc_en	? PC + U_imm : 0	;
 assign alu_jal_result 	= jal_en	? PC + J_imm : 0	;
+assign alu_sltiu_result = sltiu_en	? (src1 < I_imm) : 0;
 
 endmodule

@@ -310,16 +310,19 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                                   | (0x0000001fU 
                                                      & (vlSelfRef.inst 
                                                         >> 7U))))),32);
-    bufp->fullIData(oldp+28,(((0x00080000U & (vlSelfRef.inst 
-                                              >> 0x0000000cU)) 
-                              | ((0x0007f800U & (vlSelfRef.inst 
-                                                 >> 1U)) 
-                                 | ((0x00000400U & 
-                                     (vlSelfRef.inst 
-                                      >> 0x0000000aU)) 
-                                    | (0x000003ffU 
-                                       & (vlSelfRef.inst 
-                                          >> 0x00000015U)))))),32);
+    bufp->fullIData(oldp+28,((((- (IData)((vlSelfRef.inst 
+                                           >> 0x0000001fU))) 
+                               << 0x00000014U) | ((
+                                                   ((0x000001feU 
+                                                     & (vlSelfRef.inst 
+                                                        >> 0x0000000bU)) 
+                                                    | (1U 
+                                                       & (vlSelfRef.inst 
+                                                          >> 0x00000014U))) 
+                                                   << 0x0000000bU) 
+                                                  | (0x000007feU 
+                                                     & (vlSelfRef.inst 
+                                                        >> 0x00000014U))))),32);
     bufp->fullBit(oldp+29,((0x37U == (0x0000007fU & vlSelfRef.inst))));
     bufp->fullBit(oldp+30,((0x17U == (0x0000007fU & vlSelfRef.inst))));
     bufp->fullBit(oldp+31,((0x6fU == (0x0000007fU & vlSelfRef.inst))));
@@ -341,18 +344,20 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                               & (- (IData)((0x17U == 
                                             (0x0000007fU 
                                              & vlSelfRef.inst)))))),32);
-    bufp->fullIData(oldp+35,(((vlSelfRef.PC + ((0x00080000U 
-                                                & (vlSelfRef.inst 
-                                                   >> 0x0000000cU)) 
-                                               | ((0x0007f800U 
-                                                   & (vlSelfRef.inst 
-                                                      >> 1U)) 
-                                                  | ((0x00000400U 
-                                                      & (vlSelfRef.inst 
-                                                         >> 0x0000000aU)) 
-                                                     | (0x000003ffU 
-                                                        & (vlSelfRef.inst 
-                                                           >> 0x00000015U)))))) 
+    bufp->fullIData(oldp+35,(((vlSelfRef.PC + (((- (IData)(
+                                                           (vlSelfRef.inst 
+                                                            >> 0x0000001fU))) 
+                                                << 0x00000014U) 
+                                               | ((((0x000001feU 
+                                                     & (vlSelfRef.inst 
+                                                        >> 0x0000000bU)) 
+                                                    | (1U 
+                                                       & (vlSelfRef.inst 
+                                                          >> 0x00000014U))) 
+                                                   << 0x0000000bU) 
+                                                  | (0x000007feU 
+                                                     & (vlSelfRef.inst 
+                                                        >> 0x00000014U))))) 
                               & (- (IData)((0x6fU == 
                                             (0x0000007fU 
                                              & vlSelfRef.inst)))))),32);
@@ -411,18 +416,20 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                                             (0x0000007fU 
                                                              & vlSelfRef.inst)) 
                                                            | (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))))))))))),32);
-    bufp->fullIData(oldp+40,((((vlSelfRef.PC + ((0x00080000U 
-                                                 & (vlSelfRef.inst 
-                                                    >> 0x0000000cU)) 
-                                                | ((0x0007f800U 
-                                                    & (vlSelfRef.inst 
-                                                       >> 1U)) 
-                                                   | ((0x00000400U 
-                                                       & (vlSelfRef.inst 
-                                                          >> 0x0000000aU)) 
-                                                      | (0x000003ffU 
-                                                         & (vlSelfRef.inst 
-                                                            >> 0x00000015U)))))) 
+    bufp->fullIData(oldp+40,((((vlSelfRef.PC + (((- (IData)(
+                                                            (vlSelfRef.inst 
+                                                             >> 0x0000001fU))) 
+                                                 << 0x00000014U) 
+                                                | ((((0x000001feU 
+                                                      & (vlSelfRef.inst 
+                                                         >> 0x0000000bU)) 
+                                                     | (1U 
+                                                        & (vlSelfRef.inst 
+                                                           >> 0x00000014U))) 
+                                                    << 0x0000000bU) 
+                                                   | (0x000007feU 
+                                                      & (vlSelfRef.inst 
+                                                         >> 0x00000014U))))) 
                                & (- (IData)((0x6fU 
                                              == (0x0000007fU 
                                                  & vlSelfRef.inst))))) 

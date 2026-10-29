@@ -78,15 +78,19 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
            & ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en))) 
               | (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sw_en)))));
     vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_PC__DOT__next_PC 
-        = (((vlSelfRef.PC + ((0x00080000U & (vlSelfRef.inst 
-                                             >> 0x0000000cU)) 
-                             | ((0x0007f800U & (vlSelfRef.inst 
-                                                >> 1U)) 
-                                | ((0x00000400U & (vlSelfRef.inst 
-                                                   >> 0x0000000aU)) 
-                                   | (0x000003ffU & 
-                                      (vlSelfRef.inst 
-                                       >> 0x00000015U)))))) 
+        = (((vlSelfRef.PC + (((- (IData)((vlSelfRef.inst 
+                                          >> 0x0000001fU))) 
+                              << 0x00000014U) | (((
+                                                   (0x000001feU 
+                                                    & (vlSelfRef.inst 
+                                                       >> 0x0000000bU)) 
+                                                   | (1U 
+                                                      & (vlSelfRef.inst 
+                                                         >> 0x00000014U))) 
+                                                  << 0x0000000bU) 
+                                                 | (0x000007feU 
+                                                    & (vlSelfRef.inst 
+                                                       >> 0x00000014U))))) 
             & (- (IData)((0x6fU == (0x0000007fU & vlSelfRef.inst))))) 
            | (0xfffffffeU & ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en))) 
                              & vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0)));
@@ -483,18 +487,20 @@ bool Vtop___024root___eval_phase__nba(Vtop___024root* vlSelf) {
                 {
                     // Inlined CFunc: _nba_comb__TOP__0
                     vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_PC__DOT__next_PC 
-                        = (((vlSelfRef.PC + ((0x00080000U 
-                                              & (vlSelfRef.inst 
-                                                 >> 0x0000000cU)) 
-                                             | ((0x0007f800U 
-                                                 & (vlSelfRef.inst 
-                                                    >> 1U)) 
-                                                | ((0x00000400U 
-                                                    & (vlSelfRef.inst 
-                                                       >> 0x0000000aU)) 
-                                                   | (0x000003ffU 
-                                                      & (vlSelfRef.inst 
-                                                         >> 0x00000015U)))))) 
+                        = (((vlSelfRef.PC + (((- (IData)(
+                                                         (vlSelfRef.inst 
+                                                          >> 0x0000001fU))) 
+                                              << 0x00000014U) 
+                                             | ((((0x000001feU 
+                                                   & (vlSelfRef.inst 
+                                                      >> 0x0000000bU)) 
+                                                  | (1U 
+                                                     & (vlSelfRef.inst 
+                                                        >> 0x00000014U))) 
+                                                 << 0x0000000bU) 
+                                                | (0x000007feU 
+                                                   & (vlSelfRef.inst 
+                                                      >> 0x00000014U))))) 
                             & (- (IData)((0x6fU == 
                                           (0x0000007fU 
                                            & vlSelfRef.inst))))) 
