@@ -76,6 +76,7 @@ module ysyx_100022863_TOP #(
 		.rst_n		(rst_n				),
 		.jalr_en	(jalr_en			),
 		.jal_en		(jal_en				),
+		.bne_en		(bne_en				),
 
 		.next_PC	(next_PC			),
 
