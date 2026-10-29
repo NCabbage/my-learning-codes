@@ -99,5 +99,5 @@ assign	sltiu_en = opcode_6_0_0010011 & funct3_14_12_011;
 
 //bne
 wire	opcode_6_0_1100011	= (opcode == 7'b1100011);
-assign	bne_en = opcode_6_0_1100111 & funct3_14_12_001;
+assign	bne_en = opcode_6_0_1100011 & funct3_14_12_001;
 endmodule
