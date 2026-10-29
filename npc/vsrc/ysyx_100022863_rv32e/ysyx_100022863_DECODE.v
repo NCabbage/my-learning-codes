@@ -9,6 +9,7 @@ module ysyx_100022863_DECODE(
 	output		[31:0]		U_imm		,
 	output		[31:0]		S_imm		,
 	output		[31:0]		J_imm		,
+	output		[31:0]		B_imm		,
 
 	output					addi_en		,
 	output					jalr_en		,
@@ -21,6 +22,7 @@ module ysyx_100022863_DECODE(
 	output					auipc_en	,
 	output					jal_en		,
 	output					sltiu_en	,
+	output					ben_en		,
 
 	output					error
 );
@@ -41,7 +43,7 @@ assign 			I_imm 		= {{20{inst[31]}}, inst[31:20]}	;
 assign			U_imm		= inst[31:12] << 12				;
 assign			S_imm		= {{20{inst[31]}}, {inst[31:25], inst[11:7]}};
 assign			J_imm		= {{12{inst[31]}}, inst[19:12], inst[20], inst[30:21], 1'b0};
-
+assign			B_imm		= {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
 //addi
 wire	opcode_6_0_0010011	= (opcode == 7'b0010011	);
 wire	funct3_14_12_000	= (funct3 == 3'b000		);

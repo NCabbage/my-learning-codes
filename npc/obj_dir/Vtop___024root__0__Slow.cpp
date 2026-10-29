@@ -180,6 +180,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16055804596787932962ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__wmask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 3026096213453284466ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__raddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16918640790826625513ull);
+    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jalr_result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14234836587774477878ull);
+    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jal_result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2753702215788941800ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14017508431756229609ull);
     for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
         vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12329170128450555218ull);
@@ -193,11 +195,11 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sw_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4983780970376099268ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16967188196640113453ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sltiu_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16967772469835033040ull);
-    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_PC__DOT__next_PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10354289063011391240ull);
     vlSelf->__Vfunc_pmem_read__3__Vfuncout = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_0 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_1 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_2 = 0;
+    vlSelf->__VdfgRegularize_h6e95ff9d_0_3 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
