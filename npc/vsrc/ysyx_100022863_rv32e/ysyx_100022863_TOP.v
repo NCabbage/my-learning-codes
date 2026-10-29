@@ -65,7 +65,10 @@ module ysyx_100022863_TOP #(
 	
 	wire	[31:0]		next_PC			;
 
-	assign	next_PC = alu_jalr_result | alu_jal_result;
+	assign	next_PC = 	jal_en 	? alu_jal_result 	:
+						jalr_en	? alu_jalr_result 	:
+						bne_en	? alu_bne_result	:
+										32'b0;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 
