@@ -200,15 +200,18 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sltu_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9053442196188952367ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__xor_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 500503991206642035ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__or_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5489958311277882352ull);
+    vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__beq_en = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8701374087208302325ull);
     vlSelf->top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_PC__DOT__next_PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10354289063011391240ull);
     vlSelf->__Vfunc_pmem_read__3__Vfuncout = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_0 = 0;
-    vlSelf->__VdfgRegularize_h6e95ff9d_0_2 = 0;
+    vlSelf->__VdfgRegularize_h6e95ff9d_0_3 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_4 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_5 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_6 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_7 = 0;
+    vlSelf->__VdfgRegularize_h6e95ff9d_0_8 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_9 = 0;
+    vlSelf->__VdfgRegularize_h6e95ff9d_0_11 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
