@@ -205,6 +205,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->__VdfgRegularize_h6e95ff9d_0_5 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_6 = 0;
     vlSelf->__VdfgRegularize_h6e95ff9d_0_7 = 0;
+    vlSelf->__VdfgRegularize_h6e95ff9d_0_9 = 0;
+    vlSelf->__VdfgRegularize_h6e95ff9d_0_10 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

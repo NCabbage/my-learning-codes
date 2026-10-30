@@ -35,6 +35,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_4;
     CData/*7:0*/ __VdfgRegularize_h6e95ff9d_0_5;
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_7;
+    CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_9;
+    CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_10;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
