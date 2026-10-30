@@ -26,6 +26,7 @@ module ysyx_100022863_ALU(
 	input					xor_en				,
 	input					or_en				,
 	input					beq_en				,
+	input					srai_en				,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
@@ -43,7 +44,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_sltu_result		,
 	output		[31:0]		alu_xor_result		,
 	output		[31:0]		alu_or_result		,
-	output		[31:0]		alu_beq_result		
+	output		[31:0]		alu_beq_result		,
+	output		[31:0]		alu_srai_result		
 );
 
 
@@ -64,5 +66,6 @@ assign alu_sltu_result	= sltu_en	? {31'b0, (src1 < src2)} : 0	;
 assign alu_xor_result 	= xor_en	? src1 ^ src2 : 0;
 assign alu_or_result	= or_en		? src1 | src2 : 0;
 assign alu_beq_result	= beq_en	? ((src1 == src2) ? PC + B_imm : PC + 4) : 0;
+assign alu_srai_result 	= srai_en 	? (src1 >> imm[4:0]) : 0;
 
 endmodule
