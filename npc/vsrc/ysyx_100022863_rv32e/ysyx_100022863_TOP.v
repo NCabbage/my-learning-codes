@@ -60,7 +60,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_sltu_result	;
 	wire	[31:0]		alu_xor_result	;
 	wire	[31:0]		alu_or_result	;
-	wire	[31:0]		beq_en			;
+	wire	[31:0]		alu_beq_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -186,6 +186,7 @@ module ysyx_100022863_TOP #(
 		.sltu_en			(sltu_en			),
 		.xor_en				(xor_en				),
 		.or_en				(or_en				),
+		.beq_en				(beq_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -202,7 +203,8 @@ module ysyx_100022863_TOP #(
 		.alu_sub_result		(alu_sub_result		),
 		.alu_sltu_result	(alu_sltu_result	),
 		.alu_xor_result		(alu_xor_result		),
-		.alu_or_result		(alu_or_result		)
+		.alu_or_result		(alu_or_result		),
+		.alu_beq_result		(alu_beq_result		)
 	);
 
 wire	[31:0]		raddr		;
