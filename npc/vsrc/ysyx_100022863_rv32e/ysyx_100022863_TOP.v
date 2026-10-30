@@ -43,6 +43,7 @@ module ysyx_100022863_TOP #(
 	wire				xor_en			;
 	wire				or_en			;
 	wire				beq_en			;
+	wire				ebreak_en		;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -68,7 +69,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		wdata			;
 
 	always@(posedge clk)
-		halt(inst, a0);
+		if(ebreak_en) halt(inst, a0);
 		
 //	always@(*)
 //		check(PC, raddr);

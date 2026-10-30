@@ -28,6 +28,7 @@ module ysyx_100022863_DECODE(
 	output					xor_en		,
 	output					or_en		,
 	output					beq_en		,
+	output					ebreak_en	,
 
 	output					error
 );
@@ -39,7 +40,8 @@ wire	[4:0]	rd_r		= inst[11:7]	;
 wire	[4:0]	rs1_r		= inst[19:15]	;
 wire	[4:0]	rs2_r		= inst[24:20]	;
 
-wire	inst_valid = 	addi_en		|	
+wire	inst_valid = 	ebreak_en	|
+						addi_en		|	
 						jalr_en		|	
 						add_en		|	
 						lui_en		|	
@@ -68,6 +70,9 @@ assign			U_imm		= inst[31:12] << 12				;
 assign			S_imm		= {{20{inst[31]}}, {inst[31:25], inst[11:7]}};
 assign			J_imm		= {{12{inst[31]}}, inst[19:12], inst[20], inst[30:21], 1'b0};
 assign			B_imm		= {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
+
+assign ebreak_en = (inst == 32'h00100073);
+
 //addi
 wire	opcode_6_0_0010011	= (opcode == 7'b0010011	);
 wire	funct3_14_12_000	= (funct3 == 3'b000		);
