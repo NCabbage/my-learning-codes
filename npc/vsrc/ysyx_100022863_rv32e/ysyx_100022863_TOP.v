@@ -41,6 +41,7 @@ module ysyx_100022863_TOP #(
 	wire				sub_en			;
 	wire				sltu_en			;
 	wire				xor_en			;
+	wire				or_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -57,6 +58,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_sub_result	;
 	wire	[31:0]		alu_sltu_result	;
 	wire	[31:0]		alu_xor_result	;
+	wire	[31:0]		alu_or_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -113,7 +115,8 @@ module ysyx_100022863_TOP #(
 		.sub_en			(sub_en			),
 		.sltu_en		(sltu_en		),
 		.xor_en			(xor_en			),
-
+		.or_en			(or_en			),
+		
 		.error			(error			)
 	);
 
