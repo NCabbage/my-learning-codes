@@ -103,7 +103,7 @@ wire	funct3_14_12_001	= (funct3 == 3'b001);
 assign	bne_en = opcode_6_0_1100011 & funct3_14_12_001;
 
 //sub
-wire	funct7_31_25_0000000 = (func7 == 7'b0000000);
-assign	sub_en	= opcode_6_0_0110011 & funct3_14_12_000 & funct7_31_25_0000000;
+wire	funct7_31_25_0100000 = (func7 == 7'b0100000);
+assign	sub_en	= opcode_6_0_0110011 & funct3_14_12_000 & funct7_31_25_0100000;
 
 endmodule
