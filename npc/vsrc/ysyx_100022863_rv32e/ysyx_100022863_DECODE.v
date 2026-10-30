@@ -49,7 +49,7 @@ wire	inst_valid = 	addi_en		|
 						sltiu_en	|
 						bne_en		|
 						sub_en		|
-						sltu_en		|
+						sltu_en
 									;
 
 assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) || (!inst_valid && (inst != 32'b0)) ;
