@@ -486,11 +486,17 @@ VL_ATTR_COLD void Vtop___024root__trace_full_0_sub_0(Vtop___024root* vlSelf, Ver
                                ? vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jal_result
                                : ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en)
                                    ? vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jalr_result
-                                   : ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__bne_en))) 
-                                      & ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_8)
-                                          ? ((IData)(4U) 
-                                             + vlSelfRef.PC)
-                                          : vlSelfRef.__VdfgRegularize_h6e95ff9d_0_7))))),32);
+                                   : ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__bne_en)
+                                       ? ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__bne_en))) 
+                                          & ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_8)
+                                              ? ((IData)(4U) 
+                                                 + vlSelfRef.PC)
+                                              : vlSelfRef.__VdfgRegularize_h6e95ff9d_0_7))
+                                       : (((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_8)
+                                            ? vlSelfRef.__VdfgRegularize_h6e95ff9d_0_7
+                                            : ((IData)(4U) 
+                                               + vlSelfRef.PC)) 
+                                          & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__beq_en)))))))),32);
     bufp->fullIData(oldp+60,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR[10U]),32);
     bufp->fullCData(oldp+61,((0x0000007fU & vlSelfRef.inst)),7);
     bufp->fullCData(oldp+62,((7U & (vlSelfRef.inst 

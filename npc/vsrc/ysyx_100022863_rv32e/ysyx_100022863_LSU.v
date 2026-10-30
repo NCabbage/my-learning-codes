@@ -3,6 +3,7 @@ import "DPI-C" function void pmem_write(input int waddr, input int wdata, input 
 
 module ysyx_100022863_LSU(
     input               clk         ,
+
     input               sw_en       ,
     input               sb_en       ,
     input       [31:0]  waddr       ,
@@ -32,10 +33,16 @@ always@(*)
     else
         sb_data = 32'b0;
 
+reg sw_en_r;
+reg sb_en_r;
+
+always@(posedge clk) sw_en_r <= sw_en;
+always@(posedge clk) sb_en_r <= sb_en;
+
 always@(posedge clk)
-    if(sw_en)
+    if(sw_en_r)
         pmem_write(waddr>>2, wdata, {28'b0, wmask});
-    else if(sb_en)
+    else if(sb_en_r)
         pmem_write(waddr>>2, sb_data, {28'b0, wmask});
 
 always@(*)
