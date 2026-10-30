@@ -21,6 +21,7 @@ module ysyx_100022863_ALU(
 	input					jal_en				,
 	input					sltiu_en			,
 	input					bne_en				,
+	input					sub_en				,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
@@ -33,7 +34,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_jal_result		,
 	output		[31:0]		alu_auipc_result	,
 	output		[31:0]		alu_sltiu_result	,
-	output		[31:0]		alu_bne_result
+	output		[31:0]		alu_bne_result		,
+	output		[31:0]		alu_sub_result
 );
 
 
@@ -49,5 +51,5 @@ assign alu_auipc_result = auipc_en	? PC + U_imm : 0	;
 assign alu_jal_result 	= jal_en	? PC + J_imm : 0	;
 assign alu_sltiu_result = sltiu_en	? {31'b0, (src1 < I_imm)} : 0;
 assign alu_bne_result	= bne_en	? ((src1 != src2) ? PC + B_imm : PC + 4) : 0;
-
+assign alu_sub_result	= sub_en 	? (src1 - src2)		;
 endmodule

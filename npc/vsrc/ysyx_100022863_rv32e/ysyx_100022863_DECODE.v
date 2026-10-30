@@ -23,13 +23,14 @@ module ysyx_100022863_DECODE(
 	output					jal_en		,
 	output					sltiu_en	,
 	output					bne_en		,
+	output					sub_en		,
 
 	output					error
 );
 
 wire	[6:0]	opcode		= inst[6:0]		;
 wire	[2:0]	funct3		= inst[14:12]	;
-
+wire	[6:0]	func7		= inst[31:25]	;
 wire	[4:0]	rd_r		= inst[11:7]	;
 wire	[4:0]	rs1_r		= inst[19:15]	;
 wire	[4:0]	rs2_r		= inst[24:20]	;
@@ -100,4 +101,9 @@ assign	sltiu_en = opcode_6_0_0010011 & funct3_14_12_011;
 wire	opcode_6_0_1100011	= (opcode == 7'b1100011);
 wire	funct3_14_12_001	= (funct3 == 3'b001);
 assign	bne_en = opcode_6_0_1100011 & funct3_14_12_001;
+
+//sub
+wire	funct7_31_25_0000000 = (func7 == 7'b0000000);
+assign	sub_en	= opcode_6_0_0110011 & funct3_14_12_000 & funct7_31_25_0000000;
+
 endmodule
