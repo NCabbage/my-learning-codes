@@ -134,6 +134,6 @@ assign	sltu_en	= opcode_6_0_0110011 && funct3_14_12_011 && funct7_31_25_0000000;
 assign	xor_en	= opcode_6_0_0110011 && funct3_14_12_100 && funct7_31_25_0000000;
 
 //or
-wire	funct3_14_12_110	= (funct3 == 3'110);
+wire	funct3_14_12_110	= (funct3 == 3'b110);
 assign	or_en	= opcode_6_0_0110011 && funct3_14_12_110 && funct7_31_25_0000000;
 endmodule
