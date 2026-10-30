@@ -40,6 +40,8 @@ always@(posedge clk) sw_data_r  <= wdata    ;
 always@(posedge clk) sb_data_r  <= sb_data  ;
 always@(posedge clk) waddr_r    <= waddr    ;
 always@(posedge clk) wmask_r    <= wmask    ;
+
+always@(posedge clk)
     if(sw_en)
         pmem_write(waddr_r>>2, sw_data_r, {28'b0, wmask_r});
     else if(sb_en)
