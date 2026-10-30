@@ -58,8 +58,8 @@ assign jalr_en = opcode_6_0_1100111 && funct3_14_12_000;
 
 //add
 wire	opcode_6_0_0110011	= (opcode == 7'b0110011	);
-
-assign add_en = opcode_6_0_0110011 && funct3_14_12_000;
+wire	funct7_31_25_0000000 = (func7 == 7'b0000000 );
+assign add_en = opcode_6_0_0110011 && funct3_14_12_000 && funct7_31_25_0100000;
 
 //lui
 wire	opcode_6_0_0110111 = (opcode == 7'b0110111	);
@@ -95,15 +95,15 @@ assign	jal_en = opcode_6_0_1101111;
 
 //slitu
 wire	funct3_14_12_011	= (funct3 == 3'b011);
-assign	sltiu_en = opcode_6_0_0010011 & funct3_14_12_011;
+assign	sltiu_en = opcode_6_0_0010011 && funct3_14_12_011;
 
 //bne
 wire	opcode_6_0_1100011	= (opcode == 7'b1100011);
 wire	funct3_14_12_001	= (funct3 == 3'b001);
-assign	bne_en = opcode_6_0_1100011 & funct3_14_12_001;
+assign	bne_en = opcode_6_0_1100011 && funct3_14_12_001;
 
 //sub
 wire	funct7_31_25_0100000 = (func7 == 7'b0100000);
-assign	sub_en	= opcode_6_0_0110011 & funct3_14_12_000 & funct7_31_25_0100000;
+assign	sub_en	= opcode_6_0_0110011 && funct3_14_12_000 && funct7_31_25_0100000;
 
 endmodule
