@@ -35,7 +35,21 @@ wire	[4:0]	rd_r		= inst[11:7]	;
 wire	[4:0]	rs1_r		= inst[19:15]	;
 wire	[4:0]	rs2_r		= inst[24:20]	;
 
-assign error = rd_r[4] & rs1_r[4] & rs2_r[4];
+wire	inst_valid = 	addi_en		|	
+						jalr_en		|	
+						add_en		|	
+						lui_en		|	
+						lw_en		|	
+						lbu_en		|	
+						sw_en		|	
+						sb_en		|	
+						auipc_en	|	
+						jal_en		|
+						sltiu_en	|
+						bne_en		|
+						sub_en		;
+						
+assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) | (!inst_valid);
 
 assign			rd 			= rd_r[3:0];
 assign			rs1			= rs1_r[3:0];

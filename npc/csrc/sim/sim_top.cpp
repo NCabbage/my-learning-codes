@@ -118,6 +118,10 @@ uint32_t inst_read(uint32_t PC){
 
 extern "C" void halt(int inst, int a0){
 //	printf("inst:%x\n", inst);
+	if(top->error){
+		printf("\033[1;31inst is not complited in PC: %x\n\033[0m\n" ,top->PC);
+	}
+
 	if(inst == 0x00100073){
 		if(a0 == 0){
 			printf("\033[1;32mHIT GOOD TRAP\033[0m\n");
