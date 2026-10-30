@@ -19,6 +19,8 @@ module ysyx_100022863_LSU(
 reg [31:0] sb_data;
 reg [31:0] sw_data_r;
 reg [31:0] sb_data_r;
+reg [31:0] waddr_r;
+reg [3:0]  wmask_r;
 
 always@(*)
     if(sb_en)begin
@@ -34,14 +36,14 @@ always@(*)
     else
         sb_data = 32'b0;
 
-always@(posedge clk) sw_data_r <= wdata;
-always@(posedge clk) sb_data_r <= sb_data;
-
-always@(posedge clk)
+always@(posedge clk) sw_data_r  <= wdata    ;
+always@(posedge clk) sb_data_r  <= sb_data  ;
+always@(posedge clk) waddr_r    <= waddr    ;
+always@(posedge clk) wmask_r    <= wmask    ;
     if(sw_en)
-        pmem_write(waddr>>2, sw_data_r, {28'b0, wmask});
+        pmem_write(waddr_r>>2, sw_data_r, {28'b0, wmask_r});
     else if(sb_en)
-        pmem_write(waddr>>2, sb_data_r, {28'b0, wmask});
+        pmem_write(waddr_r>>2, sb_data_r, {28'b0, wmask_r});
 
 always@(*)
     if(lw_en)
