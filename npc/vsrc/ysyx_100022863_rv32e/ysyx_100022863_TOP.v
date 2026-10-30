@@ -123,7 +123,8 @@ module ysyx_100022863_TOP #(
 		.error			(error			)
 	);
 
-	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en | sub_en | xor_en;
+	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en | sub_en | xor_en
+				 or_en | beq_en | sltu_en;
 
 	assign wdata =  (jalr_en | jal_en) 	? (PC + 4	)	:
 					(lw_en | lbu_en)	? (rdata	)	:
