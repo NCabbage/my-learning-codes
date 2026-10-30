@@ -25,6 +25,7 @@ module ysyx_100022863_DECODE(
 	output					bne_en		,
 	output					sub_en		,
 	output					sltu_en		,
+	output					xor_en		,
 
 	output					error
 );
@@ -49,7 +50,8 @@ wire	inst_valid = 	addi_en		|
 						sltiu_en	|
 						bne_en		|
 						sub_en		|
-						sltu_en
+						sltu_en		|
+						xor_en
 									;
 
 assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) || (!inst_valid && (inst != 32'b0)) ;
@@ -125,5 +127,8 @@ assign	sub_en	= opcode_6_0_0110011 && funct3_14_12_000 && funct7_31_25_0100000;
 
 //sltu
 assign	sltu_en	= opcode_6_0_0110011 && funct3_14_12_011 && funct7_31_25_0000000;
+
+//xor
+assign	xor_en	= opcode_6_0_0110011 && funct3_14_12_100 && funct7_31_25_0000000;
 
 endmodule
