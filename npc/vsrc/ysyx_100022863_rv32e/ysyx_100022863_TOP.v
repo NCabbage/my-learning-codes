@@ -82,6 +82,7 @@ module ysyx_100022863_TOP #(
 	assign	next_PC = 	jal_en 	? alu_jal_result 	:
 						jalr_en	? alu_jalr_result 	:
 						bne_en	? alu_bne_result	:
+						beq_en	? alu_beq_result	:
 										32'b0;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
