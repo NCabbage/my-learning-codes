@@ -24,6 +24,7 @@ module ysyx_100022863_DECODE(
 	output					sltiu_en	,
 	output					bne_en		,
 	output					sub_en		,
+	output					sltu_en		,
 
 	output					error
 );
@@ -119,5 +120,8 @@ assign	bne_en = opcode_6_0_1100011 && funct3_14_12_001;
 //sub
 wire	funct7_31_25_0100000 = (func7 == 7'b0100000);
 assign	sub_en	= opcode_6_0_0110011 && funct3_14_12_000 && funct7_31_25_0100000;
+
+//sltu
+assign	sltu_en	= opcode_6_0_0110011 && funct3_14_12_011 && funct7_31_25_0000000;
 
 endmodule

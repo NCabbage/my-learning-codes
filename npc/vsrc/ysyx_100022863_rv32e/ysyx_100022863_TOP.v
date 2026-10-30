@@ -107,7 +107,8 @@ module ysyx_100022863_TOP #(
 		.sltiu_en		(sltiu_en		),
 		.bne_en			(bne_en			),
 		.sub_en			(sub_en			),
-
+		.sltu_en		(sltiu_en		),
+		
 		.error			(error			)
 	);
 
