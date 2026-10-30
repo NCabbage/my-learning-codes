@@ -134,6 +134,7 @@ module ysyx_100022863_TOP #(
 					sub_en		? (alu_sub_result	)	:
 					sltu_en		? (alu_sltu_result	)	:
 					xor_en		? (alu_xor_result	)	:
+					or_en		? (alu_or_result	)	:
 								  32'd0;
 	wire	[31:0]		a0;
 
