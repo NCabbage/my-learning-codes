@@ -59,7 +59,7 @@ assign jalr_en = opcode_6_0_1100111 && funct3_14_12_000;
 //add
 wire	opcode_6_0_0110011	= (opcode == 7'b0110011	);
 wire	funct7_31_25_0000000 = (func7 == 7'b0000000 );
-assign add_en = opcode_6_0_0110011 && funct3_14_12_000 && funct7_31_25_0100000;
+assign add_en = opcode_6_0_0110011 && funct3_14_12_000 && funct7_31_25_0000000;
 
 //lui
 wire	opcode_6_0_0110111 = (opcode == 7'b0110111	);
