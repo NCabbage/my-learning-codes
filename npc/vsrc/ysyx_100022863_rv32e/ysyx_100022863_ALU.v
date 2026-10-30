@@ -66,6 +66,6 @@ assign alu_sltu_result	= sltu_en	? {31'b0, (src1 < src2)} : 0	;
 assign alu_xor_result 	= xor_en	? src1 ^ src2 : 0;
 assign alu_or_result	= or_en		? src1 | src2 : 0;
 assign alu_beq_result	= beq_en	? ((src1 == src2) ? PC + B_imm : PC + 4) : 0;
-assign alu_srai_result 	= srai_en 	? (src1 >> imm[4:0]) : 0;
+assign alu_srai_result 	= srai_en 	? (src1 >> I_imm[4:0]) : 0;
 
 endmodule
