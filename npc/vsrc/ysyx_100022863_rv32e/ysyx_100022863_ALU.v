@@ -52,4 +52,5 @@ assign alu_jal_result 	= jal_en	? PC + J_imm : 0	;
 assign alu_sltiu_result = sltiu_en	? {31'b0, (src1 < I_imm)} : 0;
 assign alu_bne_result	= bne_en	? ((src1 != src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_sub_result	= sub_en 	? (src1 - src2)	: 0	;
+
 endmodule

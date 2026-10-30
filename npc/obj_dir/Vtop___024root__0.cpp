@@ -88,7 +88,7 @@ void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) {
            & ((- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en))) 
               | (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sw_en)))));
     vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sub_en 
-        = ((0U == (vlSelfRef.inst >> 0x00000019U)) 
+        = ((0x20U == (vlSelfRef.inst >> 0x00000019U)) 
            & (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en));
     vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2 = ((0x6fU 
                                                  == 
