@@ -116,13 +116,16 @@ uint32_t inst_read(uint32_t PC){
 		return ROM[PC - (0x80000000 >> 2)];
 }
 
-extern "C" void halt(int inst, int a0){
-//	printf("inst:%x\n", inst);
+void check_error(){
 	if(top->error){
 		printf("\033[1;31mHIT inst is not complited in PC: %x\033[0m\n" ,top->PC);
 		halt_flag = true;
 		return;
 	}
+}
+extern "C" void halt(int inst, int a0){
+//	printf("inst:%x\n", inst);
+
 
 	if(inst == 0x00100073){
 		if(a0 == 0){
@@ -208,6 +211,7 @@ extern "C" void check(int PC, int raddr){
 
 void execute(long long n){
 	int cnt = 0;
+	check_error();
 	for(int i=0;i<n && !halt_flag;i++){
 		while(cnt < period_ns*500*2){
 			cnt ++;
