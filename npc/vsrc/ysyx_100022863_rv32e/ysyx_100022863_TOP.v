@@ -39,7 +39,7 @@ module ysyx_100022863_TOP #(
 	wire				sltiu_en		;
 	wire				bne_en			;
 	wire				sub_en			;
-	wire				sltiu_en		;
+	wire				sltu_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -126,6 +126,7 @@ module ysyx_100022863_TOP #(
 					jal_en		? (alu_jal_result	)	:
 					sltiu_en	? (alu_sltiu_result	)	:
 					sub_en		? (alu_sub_result	)	:
+					sltu_en		? (alu_sltu_result	)	:
 								  32'd0;
 	wire	[31:0]		a0;
 
