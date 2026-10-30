@@ -103,6 +103,8 @@ module ysyx_100022863_TOP #(
 		.J_imm			(J_imm			),
 		.B_imm			(B_imm			),
 
+		.ebreak_en		(ebreak_en		),
+
 		.addi_en		(addi_en		),
 		.jalr_en		(jalr_en		),
 		.add_en 		(add_en			),

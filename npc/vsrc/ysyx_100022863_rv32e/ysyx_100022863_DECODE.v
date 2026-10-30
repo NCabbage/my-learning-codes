@@ -10,6 +10,8 @@ module ysyx_100022863_DECODE(
 	output		[31:0]		S_imm		,
 	output		[31:0]		J_imm		,
 	output		[31:0]		B_imm		,
+	
+	output					ebreak_en	,
 
 	output					addi_en		,
 	output					jalr_en		,
@@ -28,7 +30,6 @@ module ysyx_100022863_DECODE(
 	output					xor_en		,
 	output					or_en		,
 	output					beq_en		,
-	output					ebreak_en	,
 
 	output					error
 );
