@@ -48,8 +48,8 @@ wire	inst_valid = 	addi_en		|
 						sltiu_en	|
 						bne_en		|
 						sub_en		;
-						
-assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) | (!inst_valid);
+
+assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) || (!inst_valid) || (inst != 32'b0) ;
 
 assign			rd 			= rd_r[3:0];
 assign			rs1			= rs1_r[3:0];
