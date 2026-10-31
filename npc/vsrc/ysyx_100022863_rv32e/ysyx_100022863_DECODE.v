@@ -34,6 +34,7 @@ module ysyx_100022863_DECODE(
 	output					sh_en		,
 	output					andi_en		,
 	output					sll_en		,
+	output					and_en		,
 
 	output					error
 );
@@ -170,4 +171,6 @@ assign	andi_en = opcode_6_0_0010011 && funct3_14_12_111;
 //sll
 assign	sll_en 	= opcode_6_0_0110011 && funct3_14_12_001 && funct7_31_25_0000000;
 
+//and
+assign	and_en 	= opcode_6_0_0110011 && funct3_14_12_111 && funct7_31_25_0000000;
 endmodule
