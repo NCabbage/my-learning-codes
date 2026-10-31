@@ -88,7 +88,7 @@ module ysyx_100022863_TOP #(
 		
 //	always@(*)
 //		check(PC, raddr);
-	wire				jump_en = jal_en | jalr_en | bne_en | bge_en;
+	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en;
 	wire	[31:0]		next_PC			;
 
 	assign	next_PC = 	jal_en 	? alu_jal_result 	:
