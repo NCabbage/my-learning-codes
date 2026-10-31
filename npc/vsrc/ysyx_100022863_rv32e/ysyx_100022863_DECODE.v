@@ -157,6 +157,6 @@ wire	funct3_14_12_101 	= (funct3 == 3'b101);
 assign	srai_en = opcode_6_0_0010011 && funct3_14_12_101 && funct7_31_25_0100000;
 
 //sh
-assign	sh_en	= opcode_6_0_0100011 && funct3_14_12_101;
+assign	sh_en	= opcode_6_0_0100011 && funct3_14_12_001;
 
 endmodule
