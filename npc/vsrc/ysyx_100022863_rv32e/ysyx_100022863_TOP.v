@@ -53,7 +53,8 @@ module ysyx_100022863_TOP #(
 	wire				xori_en			;
 	wire				bge_en			;
 	wire				srli_en			;
-
+	wire				bgeu_en			;
+	
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
 	wire	[31:0]		alu_add_result	;
@@ -79,6 +80,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_xori_result	;
 	wire	[31:0]		alu_bge_result	;
 	wire 	[31:0]		alu_srli_result	;
+	wire	[31:0]		alu_bgeu_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -90,7 +92,7 @@ module ysyx_100022863_TOP #(
 		
 //	always@(*)
 //		check(PC, raddr);
-	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en;
+	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en | bgeu_en;
 	wire	[31:0]		next_PC			;
 
 	assign	next_PC = 	jal_en 	? alu_jal_result 	:
@@ -98,6 +100,7 @@ module ysyx_100022863_TOP #(
 						bne_en	? alu_bne_result	:
 						beq_en	? alu_beq_result	:
 						bge_en	? alu_bge_result	:
+						bgeu_en ? alu_bgeu_result	:
 										32'b0;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
@@ -149,7 +152,7 @@ module ysyx_100022863_TOP #(
 		.xori_en		(xori_en		),
 		.bge_en			(bge_en			),
 		.srli_en		(srli_en		),
-		
+
 		.error			(error			)
 	);
 

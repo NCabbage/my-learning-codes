@@ -38,6 +38,7 @@ module ysyx_100022863_DECODE(
 	output					xori_en		,
 	output					bge_en		,
 	output					srli_en		,
+	output					bgeu_en		,
 
 	output					error
 );
@@ -189,4 +190,7 @@ assign	bge_en	= opcode_6_0_1100011 && funct3_14_12_101;
 
 //srli
 assign	srli_en	= opcode_6_0_0010011 && funct3_14_12_101 && funct7_31_25_0000000;
+
+//bgeu
+assign	bgeu_en = opcode_6_0_1100011 && funct3_14_12_111
 endmodule
