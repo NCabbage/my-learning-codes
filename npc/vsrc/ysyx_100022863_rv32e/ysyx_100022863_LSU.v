@@ -62,7 +62,7 @@ always@(*)
             2'b00: sh_data = {16'b0, wdata[15:0]};
             2'b10: sh_data = {wdata[15:0], 16'b0};
             default:
-                sh_data = 4'b0;
+                sh_data =  32'b0;
         endcase
     end
     else
