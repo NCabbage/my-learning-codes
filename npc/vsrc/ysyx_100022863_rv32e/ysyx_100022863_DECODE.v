@@ -36,6 +36,7 @@ module ysyx_100022863_DECODE(
 	output					sll_en		,
 	output					and_en		,
 	output					xori_en		,
+	output					bge_en		,
 
 	output					error
 );
@@ -70,7 +71,8 @@ wire	inst_valid = 	ebreak_en	|
 						andi_en		|
 						sll_en		|
 						and_en		|
-						xori_en		
+						xori_en		|
+						bge_en		
 									;
 
 assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) || (!inst_valid && (inst != 32'b0)) ;
@@ -179,4 +181,7 @@ assign	and_en 	= opcode_6_0_0110011 && funct3_14_12_111 && funct7_31_25_0000000;
 
 //xori
 assign	xori_en	= opcode_6_0_0010011 && funct3_14_12_100;
+
+//bge_en
+assign	bge_en	= opcode_6_0_1100011 && funct3_14_12_101;
 endmodule

@@ -42,12 +42,13 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__andi_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sll_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__and_en;
+        CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__xori_en;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_4;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_5;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_7;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_8;
+        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_10;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_11;
-        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_12;
         CData/*0:0*/ __VstlFirstIteration;
         CData/*0:0*/ __VstlPhaseResult;
         CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
@@ -82,9 +83,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ __VactIterCount;
         VlUnpacked<IData/*31:0*/, 16> top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR;
         VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
-        VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
     };
     struct {
+        VlUnpacked<QData/*63:0*/, 2> __VicoTriggered;
         VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
         VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
         VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
