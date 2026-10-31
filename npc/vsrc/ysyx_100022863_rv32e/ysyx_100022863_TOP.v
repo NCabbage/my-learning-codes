@@ -148,7 +148,8 @@ module ysyx_100022863_TOP #(
 		.and_en			(and_en			),
 		.xori_en		(xori_en		),
 		.bge_en			(bge_en			),
-
+		.srli_en		(srli_en		),
+		
 		.error			(error			)
 	);
 
