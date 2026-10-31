@@ -241,17 +241,18 @@ assign wrdata = src2;
 
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
-	.clk		 (clk	),
-    .sw_en       (sw_en	),
-	.sb_en		 (sb_en	),
-    .waddr       (wraddr),
-    .wdata       (wrdata),
+	.clk		 	(clk	),
+    .sw_en       	(sw_en	),
+	.sh_en			(sh_en	),
+	.sb_en		 	(sb_en	),
+    .waddr       	(wraddr	),
+    .wdata       	(wrdata	),
 
-    .lw_en       (lw_en	),
-	.lbu_en		 (lbu_en),
-    .raddr       (raddr	),
+    .lw_en       	(lw_en	),
+	.lbu_en		 	(lbu_en	),
+    .raddr       	(raddr	),
 
-    .rdata		 (rdata	)
+    .rdata		 	(rdata	)
 );
 
 endmodule
