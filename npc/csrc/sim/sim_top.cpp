@@ -118,7 +118,7 @@ uint32_t inst_read(uint32_t PC){
 
 void check_error(){
 	if(top->error){
-		printf("\033[1;31mHIT inst is not complited in PC: %x\033[0m\n" ,top->PC);
+		printf("\033[1;31mInst is not complited in PC: %x\033[0m\n" ,top->PC);
 		halt_flag = true;
 		return;
 	}
