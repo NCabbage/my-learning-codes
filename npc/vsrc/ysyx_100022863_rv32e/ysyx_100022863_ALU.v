@@ -60,8 +60,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_bge_result
 );
 
-wire	signed	ssrc1;
-wire	signed	ssrc2;
+wire	signed	[31:0]	ssrc1;
+wire	signed	[31:0]	ssrc2;
 
 assign	ssrc1 = src1;
 assign	ssrc2 = src2;
