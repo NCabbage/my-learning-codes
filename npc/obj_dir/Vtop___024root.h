@@ -21,7 +21,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     VL_IN8(rst_n,0,0);
     VL_OUT8(error,0,0);
     CData/*3:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sb_mask;
-    CData/*3:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sh_mask;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en;
     CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en;
@@ -42,7 +41,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_5;
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_7;
     CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_8;
-    CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_9;
+    CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_10;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;

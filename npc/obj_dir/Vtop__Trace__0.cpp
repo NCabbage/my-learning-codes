@@ -66,7 +66,13 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
         bufp->chgIData(oldp+28,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sb_data),32);
         bufp->chgIData(oldp+29,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sh_data),32);
         bufp->chgCData(oldp+30,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sb_mask),4);
-        bufp->chgCData(oldp+31,(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sh_mask),4);
+        bufp->chgCData(oldp+31,((((~ (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en)) 
+                                  & (IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sh_en))
+                                  ? (0x0000000fU & 
+                                     (0x0c03U >> (0x0000000cU 
+                                                  & (vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__waddr 
+                                                     << 2U))))
+                                  : 0U)),4);
     }
     bufp->chgBit(oldp+32,(vlSelfRef.clk));
     bufp->chgIData(oldp+33,(vlSelfRef.inst),32);
@@ -182,7 +188,7 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
                               >> (0x0000001fU & (vlSelfRef.inst 
                                                  >> 0x00000014U))) 
                              & (- (IData)((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__srai_en))))),32);
-    bufp->chgBit(oldp+60,(((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_9) 
+    bufp->chgBit(oldp+60,(((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_10) 
                            | ((0x17U == (0x0000007fU 
                                          & vlSelfRef.inst)) 
                               | ((0x6fU == (0x0000007fU 
@@ -227,7 +233,7 @@ void Vtop___024root__trace_chg_0_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buf
     bufp->chgCData(oldp+71,((0x0000001fU & (vlSelfRef.inst 
                                             >> 0x00000014U))),5);
     bufp->chgBit(oldp+72,(((0x00100073U == vlSelfRef.inst) 
-                           | ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_9) 
+                           | ((IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_10) 
                               | ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sw_en) 
                                  | ((IData)(vlSelfRef.top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__sb_en) 
                                     | ((0x17U == (0x0000007fU 
