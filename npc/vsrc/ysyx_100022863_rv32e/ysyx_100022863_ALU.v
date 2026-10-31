@@ -84,6 +84,6 @@ assign alu_andi_result 	= andi_en 	? (src1 & I_imm) : 0;
 assign alu_sll_result	= sll_en	? (src1 << src2[4:0]) : 0;
 assign alu_and_result	= and_en	? (src1 & src2)	: 0;
 assign alu_xori_result	= xori_en	? (src1 ^ I_imm) : 0;
-assign alu_bge_result	= bge_en	? (src1 >= src2 ? PC + B_imm : PC + 4) : 0;
+assign alu_bge_result	= bge_en	? ((signed)src1 >= (signed)src2 ? PC + B_imm : PC + 4) : 0;
 
 endmodule
