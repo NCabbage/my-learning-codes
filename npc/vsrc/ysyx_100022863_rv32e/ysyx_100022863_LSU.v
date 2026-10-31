@@ -22,6 +22,10 @@ reg     [3:0]   sb_mask ;
 reg     [3:0]   sh_mask ;
 
 always@(*)begin
+
+    sb_mask = 4'b0;
+    sh_mask = 4'b0;
+
 	if(sb_en)
 		case(waddr[1:0])
 			2'b00: sb_mask = 4'b0001;
