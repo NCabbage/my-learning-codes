@@ -46,6 +46,7 @@ module ysyx_100022863_TOP #(
 	wire				or_en			;
 	wire				beq_en			;
 	wire				srai_en			;
+	wire				sh_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -65,6 +66,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_or_result	;
 	wire	[31:0]		alu_beq_result	;
 	wire	[31:0]		alu_srai_result	;
+	wire	[31:0]		alu_sh_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -127,6 +129,7 @@ module ysyx_100022863_TOP #(
 		.or_en			(or_en			),
 		.beq_en			(beq_en			),
 		.srai_en		(srai_en		),
+		.sh_en			(sh_en			),
 
 		.error			(error			)
 	);
@@ -198,6 +201,7 @@ module ysyx_100022863_TOP #(
 		.or_en				(or_en				),
 		.beq_en				(beq_en				),
 		.srai_en			(srai_en			),
+		.sh_en				(sh_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -216,7 +220,8 @@ module ysyx_100022863_TOP #(
 		.alu_xor_result		(alu_xor_result		),
 		.alu_or_result		(alu_or_result		),
 		.alu_beq_result		(alu_beq_result		),
-		.alu_srai_result	(alu_srai_result	)
+		.alu_srai_result	(alu_srai_result	),
+		.alu_sh_result		(alu_sh_result		)
 	);
 
 wire	[31:0]		raddr		;
@@ -226,24 +231,14 @@ wire	[31:0]		wrdata		;
 reg		[3:0]		wrmask		;
 
 assign raddr = lw_en ? alu_lw_result : (lbu_en ? alu_lbu_result : 0);
-assign wraddr = alu_sw_result | alu_sb_result;
+
+assign wraddr = sw_en ? alu_sw_result 	:
+				sh_en ? alu_sh_result	:
+				sb_en ? alu_sb_result 	:
+								32'b0	;
+
 assign wrdata = src2;
 
-
-always@(*)
-	if(sb_en)
-		case(wraddr[1:0])
-			2'b00: wrmask = 4'b0001;
-			2'b01: wrmask = 4'b0010;
-			2'b10: wrmask = 4'b0100;
-			2'b11: wrmask = 4'b1000;
-			default:
-				wrmask = 4'b0;
-		endcase
-	else if(sw_en)
-		wrmask = 4'b1111;
-	else
-		wrmask = 4'b0;
 
 ysyx_100022863_LSU u_ysyx_100022863_LSU(
 	.clk		 (clk	),
@@ -251,7 +246,6 @@ ysyx_100022863_LSU u_ysyx_100022863_LSU(
 	.sb_en		 (sb_en	),
     .waddr       (wraddr),
     .wdata       (wrdata),
-    .wmask       (wrmask),
 
     .lw_en       (lw_en	),
 	.lbu_en		 (lbu_en),
