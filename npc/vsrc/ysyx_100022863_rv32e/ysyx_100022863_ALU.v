@@ -33,6 +33,7 @@ module ysyx_100022863_ALU(
 	input					and_en				,
 	input					xori_en				,
 	input					bge_en				,
+	input					srli_en				,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
@@ -57,7 +58,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_sll_result		,
 	output		[31:0]		alu_and_result		,
 	output		[31:0]		alu_xori_result		,
-	output		[31:0]		alu_bge_result
+	output		[31:0]		alu_bge_result		,
+	output		[31:0]		alu_srli_result		
 );
 
 wire	signed	[31:0]	ssrc1;
