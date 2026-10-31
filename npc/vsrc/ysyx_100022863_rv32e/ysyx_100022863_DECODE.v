@@ -178,5 +178,5 @@ assign	sll_en 	= opcode_6_0_0110011 && funct3_14_12_001 && funct7_31_25_0000000;
 assign	and_en 	= opcode_6_0_0110011 && funct3_14_12_111 && funct7_31_25_0000000;
 
 //xori
-assign	xori_en	= opcode_6_0_0010011 && funct3_14_12_111;
+assign	xori_en	= opcode_6_0_0010011 && funct3_14_12_100;
 endmodule
