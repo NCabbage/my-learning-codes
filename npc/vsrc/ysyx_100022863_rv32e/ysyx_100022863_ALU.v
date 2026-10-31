@@ -60,6 +60,11 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_bge_result
 );
 
+wire	signed	ssrc1;
+wire	signed	ssrc2;
+
+assign	ssrc1 = src1;
+assign	ssrc2 = src2;
 
 assign alu_addi_result 	= addi_en	? src1 + I_imm : 0	;
 assign alu_jalr_result 	= jalr_en 	? ((src1 + I_imm) >> 1) << 1 : 0;
@@ -84,6 +89,6 @@ assign alu_andi_result 	= andi_en 	? (src1 & I_imm) : 0;
 assign alu_sll_result	= sll_en	? (src1 << src2[4:0]) : 0;
 assign alu_and_result	= and_en	? (src1 & src2)	: 0;
 assign alu_xori_result	= xori_en	? (src1 ^ I_imm) : 0;
-assign alu_bge_result	= bge_en	? ((signed)src1 >= (signed)src2 ? PC + B_imm : PC + 4) : 0;
+assign alu_bge_result	= bge_en	? (ssrc1 >= ssrc2 ? PC + B_imm : PC + 4) : 0;
 
 endmodule
