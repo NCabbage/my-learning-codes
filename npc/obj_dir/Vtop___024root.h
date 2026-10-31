@@ -22,9 +22,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         VL_IN8(clk,0,0);
         VL_IN8(rst_n,0,0);
         VL_OUT8(error,0,0);
-        CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__bgeu_en;
         CData/*3:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__sb_mask;
-        CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__bgeu_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__addi_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__jalr_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__add_en;
@@ -47,6 +45,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__xori_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__bge_en;
         CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__srli_en;
+        CData/*0:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__bgeu_en;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_5;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_6;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_7;
@@ -66,7 +65,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ __VnbaPhaseResult;
         VL_IN(inst,31,0);
         VL_OUT(PC,31,0);
-        IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__alu_bgeu_result;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__rdata;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_3__pmem_read;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT____VlemCall_2__pmem_read;
@@ -83,10 +81,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_PC__DOT__next_PC;
         IData/*31:0*/ __Vfunc_pmem_read__4__Vfuncout;
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_1;
-    };
-    struct {
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_2;
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_3;
+    };
+    struct {
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_8;
         IData/*31:0*/ __Vtrigprevexpr___TOP__inst__0;
         IData/*31:0*/ __VactIterCount;
