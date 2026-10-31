@@ -23,7 +23,7 @@ wire    [31:0]  sh_mask ;
 
 always@(*)begin
 	if(sb_en)
-		case(wraddr[1:0])
+		case(waddr[1:0])
 			2'b00: sb_mask = 4'b0001;
 			2'b01: sb_mask = 4'b0010;
 			2'b10: sb_mask = 4'b0100;
