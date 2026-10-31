@@ -35,6 +35,8 @@ always@(*)begin
         case(waddr[1:0])
             2'b00: sh_mask = 4'b0011;
             2'b10: sh_mask = 4'b1100;
+            default:
+                sh_mask = 4'b0;
         endcase
 	else if(sw_en)
 		sb_mask = 4'b1111;
@@ -59,6 +61,8 @@ always@(*)
         case(waddr[1:0])
             2'b00: sh_data = {16'b0, wdata[15:0]};
             2'b10: sh_data = {wdata[15:0], 16'b0};
+            default:
+                sh_data = 4'b0;
         endcase
     end
     else
