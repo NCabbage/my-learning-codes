@@ -92,7 +92,7 @@ module ysyx_100022863_TOP #(
 		
 //	always@(*)
 //		check(PC, raddr);
-	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en | bgeu_en;
+	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en | bgeu_en | bgeu_en;
 	wire	[31:0]		next_PC			;
 
 	assign	next_PC = 	jal_en 	? alu_jal_result 	:
@@ -101,7 +101,8 @@ module ysyx_100022863_TOP #(
 						beq_en	? alu_beq_result	:
 						bge_en	? alu_bge_result	:
 						bgeu_en ? alu_bgeu_result	:
-										32'b0;
+						bgeu_en	? alu_bgeu_result	:	
+												32'b0;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
 		.clk		(clk				),
@@ -158,28 +159,28 @@ module ysyx_100022863_TOP #(
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en | sub_en | xor_en |
-				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | bgeu_en;
+				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en;
 
-	assign wdata =  (jalr_en | jal_en) 	? (PC + 4	)	:
-					(lw_en | lbu_en)	? (rdata	)	:
-					addi_en		? (alu_addi_result	)	:
-					jalr_en		? (alu_jalr_result	)	:
-					add_en		? (alu_add_result	)	:
-					lui_en		? (alu_lui_result	)	:
-					auipc_en	? (alu_auipc_result	)	:
-					jal_en		? (alu_jal_result	)	:
-					sltiu_en	? (alu_sltiu_result	)	:
-					sub_en		? (alu_sub_result	)	:
-					sltu_en		? (alu_sltu_result	)	:
-					xor_en		? (alu_xor_result	)	:
-					or_en		? (alu_or_result	)	:
-					srai_en		? (alu_srai_result	)	:
-					andi_en  	? (alu_andi_result	)	:
-					sll_en		? (alu_sll_result	)	:
-					and_en		? (alu_and_result	)	:
-					xori_en		? (alu_xori_result	)	:
-					srli_en		? (alu_srli_result	)	:
-					bgeu_en		? (alu_bgeu_result	)	:
+	assign wdata =  (jalr_en | jal_en) 	? (PC + 4)		:
+					(lw_en | lbu_en)	? rdata			:
+					addi_en		? alu_addi_result		:
+					jalr_en		? alu_jalr_result		:
+					add_en		? alu_add_result		:
+					lui_en		? alu_lui_result		:
+					auipc_en	? alu_auipc_result		:
+					jal_en		? alu_jal_result		:
+					sltiu_en	? alu_sltiu_result		:
+					sub_en		? alu_sub_result		:
+					sltu_en		? alu_sltu_result		:
+					xor_en		? alu_xor_result		:
+					or_en		? alu_or_result			:
+					srai_en		? alu_srai_result		:
+					andi_en  	? alu_andi_result		:
+					sll_en		? alu_sll_result		:
+					and_en		? alu_and_result		:
+					xori_en		? alu_xori_result		:
+					srli_en		? alu_srli_result		:
+
 								  32'd0;
 	wire	[31:0]		a0;
 
