@@ -19,7 +19,7 @@ module ysyx_100022863_LSU(
 reg     [31:0]  sb_data ;
 reg     [31:0]  sh_data ;
 wire    [3:0]   sb_mask ;
-wire    [31:0]  sh_mask ;
+wire    [3:0]   sh_mask ;
 
 always@(*)begin
 	if(sb_en)
