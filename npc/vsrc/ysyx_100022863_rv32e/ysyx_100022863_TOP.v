@@ -54,7 +54,8 @@ module ysyx_100022863_TOP #(
 	wire				bge_en			;
 	wire				srli_en			;
 	wire				bgeu_en			;
-	
+	wire				slli_en			;
+
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
 	wire	[31:0]		alu_add_result	;
@@ -81,7 +82,8 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_bge_result	;
 	wire 	[31:0]		alu_srli_result	;
 	wire	[31:0]		alu_bgeu_result	;
-
+	wire	[31:0]		alu_slli_result	;
+	
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
