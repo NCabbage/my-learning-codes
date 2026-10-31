@@ -221,7 +221,8 @@ module ysyx_100022863_TOP #(
 		.andi_en			(andi_en			),
 		.sll_en				(sll_en				),
 		.and_en				(and_en				),
-
+		.xori_en			(xori_en			),
+		
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
 		.alu_add_result		(alu_add_result		),
