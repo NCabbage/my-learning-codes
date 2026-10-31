@@ -138,7 +138,7 @@ module ysyx_100022863_TOP #(
 		.sh_en			(sh_en			),
 		.andi_en		(andi_en		),
 		.sll_en			(sll_en			),
-
+		.and_en			(and_en			),
 		.error			(error			)
 	);
 
