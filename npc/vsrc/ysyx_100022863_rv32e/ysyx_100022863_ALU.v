@@ -53,7 +53,7 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_sh_result		,
 	output		[31:0]		alu_andi_result		,
 	output		[31:0]		alu_sll_result		,
-	output		[31:0]		alu_add_result		
+	output		[31:0]		alu_and_result		
 );
 
 
