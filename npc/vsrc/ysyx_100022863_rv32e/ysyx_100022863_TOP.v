@@ -228,7 +228,6 @@ wire	[31:0]		raddr		;
 wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
-reg		[3:0]		wrmask		;
 
 assign raddr = lw_en ? alu_lw_result : (lbu_en ? alu_lbu_result : 0);
 
