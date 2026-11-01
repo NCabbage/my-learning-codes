@@ -40,7 +40,8 @@ module ysyx_100022863_ALU(
 	input					bltu_en				,
 	input					slt_en				,
 	input					lh_en				,
-
+	input					sra_en				,
+	
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
 	output		[31:0]		alu_add_result		,
