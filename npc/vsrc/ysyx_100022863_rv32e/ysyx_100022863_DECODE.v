@@ -45,6 +45,7 @@ module ysyx_100022863_DECODE(
 	output					slt_en		,
 	output					lh_en		,
 	output					sra_en		,
+	output					srl_en		,
 
 	output					error
 );
@@ -88,7 +89,8 @@ wire	inst_valid = 	ebreak_en	|
 						bltu_en		|
 						slt_en		|
 						lh_en		|
-						sra_en		
+						sra_en		|
+						srl_en		
 									;
 
 assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) || (!inst_valid && (inst != 32'b0)) ;
@@ -224,5 +226,8 @@ assign	lh_en	= opcode_6_0_0000011 && funct3_14_12_001;
 
 //sra
 assign	sra_en	= opcode_6_0_0110011 && funct3_14_12_101 && funct7_31_25_0100000;
+
+//srl
+assign	srl_en	= opcode_6_0_0110011 && funct3_14_12_101 && funct7_31_25_0000000;
 
 endmodule
