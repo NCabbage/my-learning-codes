@@ -176,8 +176,8 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 	printf("waddr : %x\n", waddr);
 	if(waddr == (DEVICE_BASE >> 2)){\
 		printf("OK\n");
-		putchar(wdata & 0xFF);
-		fflush(stdout);
+//		putchar(wdata);
+//		fflush(stdout);
 		return;
 	}
 	printf("NO\n");
