@@ -43,6 +43,7 @@ module ysyx_100022863_DECODE(
 	output					blt_en		,
 	output					bltu_en		,
 	output					slt_en		,
+	
 	output					error
 );
 
