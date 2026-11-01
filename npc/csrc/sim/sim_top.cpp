@@ -173,7 +173,7 @@ extern "C" int pmem_read(int raddr){
 extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %x\n", waddr << 2);
 	int cwaddr = waddr - (0x80000000 >> 2);
-	printf("cwaddr : %x\n", cwaddr);
+	printf("waddr : %x\n", waddr);
 	if(cwaddr == (DEVICE_BASE >> 2)){
 		putchar(wdata & 0xFF);
 		fflush(stdout);
