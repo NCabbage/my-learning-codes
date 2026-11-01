@@ -107,6 +107,6 @@ assign alu_bgeu_result	= bgeu_en	? ((src1 >= src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_slli_result	= slli_en	? (src1 << I_imm[4:0]) : 0;
 assign alu_blt_result	= blt_en	? ((ssrc1 < ssrc2) ? PC + B_imm : PC + 4) : 0;
 assign alu_bltu_result	= bltu_en	? ((src1 < src2) ? PC + B_imm : PC + 4) : 0;
-assign alu_slt_result	= slt_en	? (ssrc1 < ssrc2) : 0;
+assign alu_slt_result	= slt_en	? {31'b0, (ssrc1 < ssrc2)} : 0;
 
 endmodule
