@@ -81,7 +81,7 @@ always@(posedge clk)
     else if(sh_en)
         pmem_write(waddr>>2, sh_data, {28'b0, sh_mask});
 
-always@(*)
+always@(*)begin
 
     rdata = 32'b0;
 
@@ -105,6 +105,6 @@ always@(*)
         endcase
     else
         rdata = 32'b0;
-
+end
 
 endmodule
