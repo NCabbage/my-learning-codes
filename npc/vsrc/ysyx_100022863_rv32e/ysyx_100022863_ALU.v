@@ -39,6 +39,7 @@ module ysyx_100022863_ALU(
 	input					blt_en				,
 	input					bltu_en				,
 	input					slt_en				,
+	input					lh_en				,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
@@ -69,7 +70,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_slli_result		,
 	output		[31:0]		alu_blt_result		,
 	output		[31:0]		alu_bltu_result		,
-	output		[31:0]		alu_slt_result
+	output		[31:0]		alu_slt_result		,
+	output		[31:0]		alu_lh_result
 );
 
 wire	signed	[31:0]	ssrc1;
@@ -92,14 +94,14 @@ assign alu_sltiu_result = sltiu_en	? {31'b0, (src1 < I_imm)} : 0;
 assign alu_bne_result	= bne_en	? ((src1 != src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_sub_result	= sub_en 	? (src1 - src2)	: 0	;
 assign alu_sltu_result	= sltu_en	? {31'b0, (src1 < src2)} : 0	;
-assign alu_xor_result 	= xor_en	? src1 ^ src2 : 0;
-assign alu_or_result	= or_en		? src1 | src2 : 0;
+assign alu_xor_result 	= xor_en	? src1 ^ src2 : 0	;
+assign alu_or_result	= or_en		? src1 | src2 : 0	;
 assign alu_beq_result	= beq_en	? ((src1 == src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_srai_result 	= srai_en 	? (src1 >> I_imm[4:0]) : 0;
 assign alu_sh_result 	= sh_en		? (src1 + S_imm) : 0;
 assign alu_andi_result 	= andi_en 	? (src1 & I_imm) : 0;
 assign alu_sll_result	= sll_en	? (src1 << src2[4:0]) : 0;
-assign alu_and_result	= and_en	? (src1 & src2)	: 0;
+assign alu_and_result	= and_en	? (src1 & src2)	: 0	;
 assign alu_xori_result	= xori_en	? (src1 ^ I_imm) : 0;
 assign alu_bge_result	= bge_en	? ((ssrc1 >= ssrc2) ? PC + B_imm : PC + 4) : 0;
 assign alu_srli_result	= srli_en	? (src1 >> I_imm[4:0]) : 0;
@@ -108,5 +110,6 @@ assign alu_slli_result	= slli_en	? (src1 << I_imm[4:0]) : 0;
 assign alu_blt_result	= blt_en	? ((ssrc1 < ssrc2) ? PC + B_imm : PC + 4) : 0;
 assign alu_bltu_result	= bltu_en	? ((src1 < src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_slt_result	= slt_en	? {31'b0, (ssrc1 < ssrc2)} : 0;
+assign alu_lh_result	= lh_en		? src1 + I_imm : 0	;
 
 endmodule

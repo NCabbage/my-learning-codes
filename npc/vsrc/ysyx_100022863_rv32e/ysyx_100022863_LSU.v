@@ -10,6 +10,7 @@ module ysyx_100022863_LSU(
     input       [31:0]  wdata       ,
 
     input               lw_en       ,
+    input               lh_en       ,
     input               lbu_en      ,
     input       [31:0]  raddr       ,
 
@@ -81,9 +82,19 @@ always@(posedge clk)
         pmem_write(waddr>>2, sh_data, {28'b0, sh_mask});
 
 always@(*)
+
+    rdata = 32'b0;
+
     if(lw_en)
         rdata = pmem_read(raddr >> 2);
-    else if(lbu_en) begin
+    else if(lh_en)
+        case(raddr[1:0])
+            2'b00: rdata = (pmem_read(raddr >> 2)) & 32'h0000ffff;
+            2'b10: rdata = (pmem_read(raddr >> 2) >> 16) & 32'h0000ffff;
+            default:
+                rdata = 32'b0;
+        endcase
+    else if(lbu_en)
         case(raddr[1:0])
             2'b00: rdata = (pmem_read(raddr >> 2)) & 32'h000000ff;
             2'b01: rdata = (pmem_read(raddr >> 2) >> 8) & 32'h000000ff;
@@ -92,7 +103,6 @@ always@(*)
             default:
                 rdata = 32'b0;
         endcase
-    end
     else
         rdata = 32'b0;
 

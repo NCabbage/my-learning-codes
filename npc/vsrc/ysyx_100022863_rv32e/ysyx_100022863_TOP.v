@@ -58,6 +58,7 @@ module ysyx_100022863_TOP #(
 	wire				blt_en			;
 	wire				bltu_en			;
 	wire				slt_en			;
+	wire				lh_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -89,7 +90,8 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_blt_result	;
 	wire	[31:0]		alu_bltu_result	;
 	wire	[31:0]		alu_slt_result	;
-
+	wire	[31;0]		alu_lh_result	;
+	
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
@@ -100,6 +102,7 @@ module ysyx_100022863_TOP #(
 		
 //	always@(*)
 //		check(PC, raddr);
+
 	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en | bgeu_en | bgeu_en | blt_en | bltu_en;
 	wire	[31:0]		next_PC			;
 
@@ -168,12 +171,12 @@ module ysyx_100022863_TOP #(
 		.blt_en			(blt_en			),
 		.bltu_en		(bltu_en		),
 		.slt_en			(slt_en			),
-		
+
 		.error			(error			)
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en | sub_en | xor_en |
-				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | slli_en | slt_en;
+				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | slli_en | slt_en | lh_en;
 
 	assign wdata =  (jalr_en | jal_en) 	? (PC + 4)		:
 					(lw_en | lbu_en)	? rdata			:
@@ -196,6 +199,7 @@ module ysyx_100022863_TOP #(
 					srli_en		? alu_srli_result		:
 					slli_en		? alu_slli_result		:
 					slt_en		? alu_slt_result		:
+					lh_en		? alu_lh_result			:
 								  32'd0;
 	wire	[31:0]		a0;
 
@@ -296,7 +300,10 @@ wire	[31:0]		rdata		;
 wire	[31:0]		wraddr		;
 wire	[31:0]		wrdata		;
 
-assign raddr = lw_en ? alu_lw_result : (lbu_en ? alu_lbu_result : 0);
+assign raddr = 	lw_en 	? alu_lw_result 	: 
+				lh_en	? alu_lh_result		:
+				lbu_en 	? alu_lbu_result	:
+									32'b0	;
 
 assign wraddr = sw_en ? alu_sw_result 	:
 				sh_en ? alu_sh_result	:
@@ -315,6 +322,7 @@ ysyx_100022863_LSU u_ysyx_100022863_LSU(
     .wdata       	(wrdata	),
 
     .lw_en       	(lw_en	),
+	.lh_en			(lh_en	),
 	.lbu_en		 	(lbu_en	),
     .raddr       	(raddr	),
 
