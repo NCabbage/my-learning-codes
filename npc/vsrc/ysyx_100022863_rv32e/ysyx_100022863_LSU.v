@@ -81,6 +81,8 @@ always@(posedge clk)
     else if(sh_en)
         pmem_write(waddr>>2, sh_data, {28'b0, sh_mask});
 
+wire    [31:0]  mem_data = pmem_read(raddr >> 2);
+
 always@(*)begin
 
     rdata = 32'b0;
@@ -89,17 +91,17 @@ always@(*)begin
         rdata = pmem_read(raddr >> 2);
     else if(lh_en)
         case(raddr[1:0])
-            2'b00: rdata = (pmem_read(raddr >> 2)) & 32'h0000ffff;
-            2'b10: rdata = (pmem_read(raddr >> 2) >> 16) & 32'h0000ffff;
+            2'b00: rdata = {{16{mem_data[15]}}, mem_data[15:0]};
+            2'b10: rdata = {{16{mem_data[31]}}, mem_data[31:16]};
             default:
                 rdata = 32'b0;
         endcase
     else if(lbu_en)
         case(raddr[1:0])
-            2'b00: rdata = (pmem_read(raddr >> 2)) & 32'h000000ff;
-            2'b01: rdata = (pmem_read(raddr >> 2) >> 8) & 32'h000000ff;
-            2'b10: rdata = (pmem_read(raddr >> 2) >> 16) & 32'h000000ff;
-            2'b11: rdata = (pmem_read(raddr >> 2) >> 24) & 32'h000000ff;
+            2'b00: rdata = mem_data & 32'h000000ff;
+            2'b01: rdata = (mem_data >> 8) & 32'h000000ff;
+            2'b10: rdata = (mem_data >> 16) & 32'h000000ff;
+            2'b11: rdata = (mem_data >> 24) & 32'h000000ff;
             default:
                 rdata = 32'b0;
         endcase

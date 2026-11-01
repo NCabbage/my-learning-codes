@@ -90,7 +90,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_blt_result	;
 	wire	[31:0]		alu_bltu_result	;
 	wire	[31:0]		alu_slt_result	;
-	wire	[31;0]		alu_lh_result	;
+	wire	[31:0]		alu_lh_result	;
 	
 	wire				wen				;
 	wire	[31:0]		src1			;
