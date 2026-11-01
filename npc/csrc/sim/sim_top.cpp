@@ -219,7 +219,7 @@ void execute(long long n){
 			top->clk = clk;
 			top->inst = inst_read(top->PC >> 2);
 			top->eval();
-			tfp->dump(contextp->time()); // 记录当前时间的波形数据
+			if(cnt % 100 == 0)tfp->dump(contextp->time()); // 记录当前时间的波形数据
 			contextp->timeInc(1);// 增加时间步长
 		}	
 

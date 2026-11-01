@@ -177,10 +177,10 @@ module ysyx_100022863_TOP #(
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en | sub_en | xor_en |
-				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | slli_en | slt_en | lh_en;
+				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | slli_en | slt_en;
 
 	assign wdata =  (jalr_en | jal_en) 	? (PC + 4)		:
-					(lw_en | lbu_en)	? rdata			:
+					(lw_en | lbu_en | lh_en)	? rdata			:
 					addi_en		? alu_addi_result		:
 					jalr_en		? alu_jalr_result		:
 					add_en		? alu_add_result		:
@@ -200,7 +200,6 @@ module ysyx_100022863_TOP #(
 					srli_en		? alu_srli_result		:
 					slli_en		? alu_slli_result		:
 					slt_en		? alu_slt_result		:
-					lh_en		? alu_lh_result			:
 								  32'd0;
 	wire	[31:0]		a0;
 
