@@ -56,6 +56,7 @@ module ysyx_100022863_TOP #(
 	wire				bgeu_en			;
 	wire				slli_en			;
 	wire				blt_en			;
+	wire				bltu_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -85,6 +86,7 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_bgeu_result	;
 	wire	[31:0]		alu_slli_result	;
 	wire	[31:0]		alu_blt_result	;
+	wire	[31:0]		alu_bltu_result	;
 
 	wire				wen				;
 	wire	[31:0]		src1			;
@@ -96,7 +98,7 @@ module ysyx_100022863_TOP #(
 		
 //	always@(*)
 //		check(PC, raddr);
-	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en | bgeu_en | bgeu_en | blt_en;
+	wire				jump_en = jal_en | jalr_en | bne_en | beq_en | bge_en | bgeu_en | bgeu_en | blt_en | bltu_en;
 	wire	[31:0]		next_PC			;
 
 	assign	next_PC = 	jal_en 	? alu_jal_result 	:
@@ -107,6 +109,7 @@ module ysyx_100022863_TOP #(
 						bgeu_en ? alu_bgeu_result	:
 						bgeu_en	? alu_bgeu_result	:	
 						blt_en	? alu_blt_result	:
+						bltu_en	? alu_bltu_result	:
 												32'b0;
 
 	ysyx_100022863_PC inst_ysyx_100022863_PC(
@@ -161,6 +164,7 @@ module ysyx_100022863_TOP #(
 		.bgeu_en		(bgeu_en		),
 		.slli_en		(slli_en		),
 		.blt_en			(blt_en			),
+		.bltu_en		(bltu_en		),
 
 		.error			(error			)
 	);
@@ -248,6 +252,7 @@ module ysyx_100022863_TOP #(
 		.bgeu_en			(bgeu_en			),
 		.slli_en			(slli_en			),
 		.blt_en				(blt_en				),
+		.bltu_en			(bltu_en			),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -276,7 +281,8 @@ module ysyx_100022863_TOP #(
 		.alu_srli_result	(alu_srli_result	),
 		.alu_bgeu_result	(alu_bgeu_result	),
 		.alu_slli_result	(alu_slli_result	),
-		.alu_blt_result		(alu_blt_result		)
+		.alu_blt_result		(alu_blt_result		),
+		.alu_bltu_result	(alu_bltu_result	)
 	);
 
 wire	[31:0]		raddr		;

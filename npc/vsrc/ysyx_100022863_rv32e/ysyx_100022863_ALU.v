@@ -37,6 +37,7 @@ module ysyx_100022863_ALU(
 	input					bgeu_en				,
 	input					slli_en				,
 	input					blt_en				,
+	input					bltu_en				,
 
 	output		[31:0]		alu_jalr_result		,
 	output		[31:0]		alu_addi_result		,
@@ -65,7 +66,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_srli_result		,
 	output		[31:0]		alu_bgeu_result		,
 	output		[31:0]		alu_slli_result		,
-	output		[31:0]		alu_blt_result
+	output		[31:0]		alu_blt_result		,
+	output		[31:0]		alu_bltu_result
 );
 
 wire	signed	[31:0]	ssrc1;
@@ -102,4 +104,6 @@ assign alu_srli_result	= srli_en	? (src1 >> I_imm[4:0]) : 0;
 assign alu_bgeu_result	= bgeu_en	? ((src1 >= src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_slli_result	= slli_en	? (src1 << I_imm[4:0]) : 0;
 assign alu_blt_result	= blt_en	? ((ssrc1 < ssrc2) ? PC + B_imm : PC + 4) : 0;
+assign alu_bltu_result	= bltu_en	? ((src1 < src2) ? PC + B_imm : PC + 4) : 0;
+
 endmodule
