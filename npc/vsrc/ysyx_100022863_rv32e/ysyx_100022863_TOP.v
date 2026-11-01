@@ -174,7 +174,8 @@ module ysyx_100022863_TOP #(
 		.bltu_en		(bltu_en		),
 		.slt_en			(slt_en			),
 		.lh_en			(lh_en			),
-
+		.sra_en			(sra_en			),
+		
 		.error			(error			)
 	);
 
