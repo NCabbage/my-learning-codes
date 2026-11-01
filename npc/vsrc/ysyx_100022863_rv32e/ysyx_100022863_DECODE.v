@@ -87,7 +87,8 @@ wire	inst_valid = 	ebreak_en	|
 						blt_en		|
 						bltu_en		|
 						slt_en		|
-						lh_en		
+						lh_en		|
+						sra_en		
 									;
 
 assign error = (rd_r[4] & rs1_r[4] & rs2_r[4]) || (!inst_valid && (inst != 32'b0)) ;
