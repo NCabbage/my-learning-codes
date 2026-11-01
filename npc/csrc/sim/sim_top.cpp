@@ -174,7 +174,7 @@ extern "C" void pmem_write(int waddr, int wdata, int wmask){
 //	printf("waddr: %x\n", waddr << 2);
 	int cwaddr = waddr - (0x80000000 >> 2);
 
-	if(waddr == (DEVICE_BASE >> 2)){
+	if(cwaddr == (DEVICE_BASE >> 2)){
 		putchar(wdata);
 		return;
 	}
