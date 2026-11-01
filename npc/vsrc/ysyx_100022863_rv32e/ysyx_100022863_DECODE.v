@@ -44,6 +44,7 @@ module ysyx_100022863_DECODE(
 	output					bltu_en		,
 	output					slt_en		,
 	output					lh_en		,
+	output					sra_en		,
 
 	output					error
 );
@@ -219,5 +220,8 @@ assign	slt_en	= opcode_6_0_0110011 && funct3_14_12_010 && funct7_31_25_0000000;
 
 //lh
 assign	lh_en	= opcode_6_0_0000011 && funct3_14_12_001;
+
+//sra
+assign	sra_en	= opcode_6_0_0110011 && funct3_14_12_101 && funct7_31_25_0100000;
 
 endmodule

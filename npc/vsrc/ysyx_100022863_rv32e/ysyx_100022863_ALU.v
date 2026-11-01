@@ -71,7 +71,8 @@ module ysyx_100022863_ALU(
 	output		[31:0]		alu_blt_result		,
 	output		[31:0]		alu_bltu_result		,
 	output		[31:0]		alu_slt_result		,
-	output		[31:0]		alu_lh_result
+	output		[31:0]		alu_lh_result		,
+	output		[31:0]		alu_sra_result
 );
 
 wire	signed	[31:0]	ssrc1;
@@ -111,5 +112,6 @@ assign alu_blt_result	= blt_en	? ((ssrc1 < ssrc2) ? PC + B_imm : PC + 4) : 0;
 assign alu_bltu_result	= bltu_en	? ((src1 < src2) ? PC + B_imm : PC + 4) : 0;
 assign alu_slt_result	= slt_en	? {31'b0, (ssrc1 < ssrc2)} : 0;
 assign alu_lh_result	= lh_en		? src1 + I_imm : 0	;
+assign alu_sra_result	= sra_en	? (ssrc1 >>> src2[4:0]) : 0;
 
 endmodule

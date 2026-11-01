@@ -59,6 +59,7 @@ module ysyx_100022863_TOP #(
 	wire				bltu_en			;
 	wire				slt_en			;
 	wire				lh_en			;
+	wire				sra_en			;
 
 	wire	[31:0]		alu_addi_result	;
 	wire	[31:0]		alu_jalr_result	;
@@ -91,7 +92,8 @@ module ysyx_100022863_TOP #(
 	wire	[31:0]		alu_bltu_result	;
 	wire	[31:0]		alu_slt_result	;
 	wire	[31:0]		alu_lh_result	;
-	
+	wire	[31:0]		alu_sra_result	;
+
 	wire				wen				;
 	wire	[31:0]		src1			;
 	wire	[31:0]		src2			;
@@ -177,7 +179,7 @@ module ysyx_100022863_TOP #(
 	);
 
 	assign wen = addi_en | jalr_en | add_en | lui_en | lw_en | lbu_en | auipc_en | jal_en | sltiu_en | sub_en | xor_en |
-				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | slli_en | slt_en;
+				or_en | sltu_en | srai_en | andi_en | sll_en | and_en | xori_en | srli_en | slli_en | slt_en | sra_en;
 
 	assign wdata =  (jalr_en | jal_en) 	? (PC + 4)		:
 					(lw_en | lbu_en | lh_en)	? rdata			:
@@ -200,6 +202,7 @@ module ysyx_100022863_TOP #(
 					srli_en		? alu_srli_result		:
 					slli_en		? alu_slli_result		:
 					slt_en		? alu_slt_result		:
+					sra_en		? alu_sra_result		:
 								  32'd0;
 	wire	[31:0]		a0;
 
@@ -263,6 +266,7 @@ module ysyx_100022863_TOP #(
 		.bltu_en			(bltu_en			),
 		.slt_en				(slt_en				),
 		.lh_en				(lh_en				),
+		.sra_en				(sra_en				),
 
 		.alu_addi_result	(alu_addi_result	),
 		.alu_jalr_result	(alu_jalr_result	),
@@ -294,7 +298,8 @@ module ysyx_100022863_TOP #(
 		.alu_blt_result		(alu_blt_result		),
 		.alu_bltu_result	(alu_bltu_result	),
 		.alu_slt_result		(alu_slt_result		),
-		.alu_lh_result		(alu_lh_result		)
+		.alu_lh_result		(alu_lh_result		),
+		.alu_sra_result		(alu_sra_result		)
 	);
 
 wire	[31:0]		raddr		;
