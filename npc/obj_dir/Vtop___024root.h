@@ -54,13 +54,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_5;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_6;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_7;
-        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_8;
+        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_9;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_10;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_11;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_12;
-        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_13;
         CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_14;
-        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_16;
+        CData/*0:0*/ __VdfgRegularize_h6e95ff9d_0_15;
         CData/*0:0*/ __VstlFirstIteration;
         CData/*0:0*/ __VstlPhaseResult;
         CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
@@ -81,18 +80,17 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__u_ysyx_100022863_LSU__DOT__mem_data;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jalr_result;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_jal_result;
-        IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_ALU__DOT__alu_lh_result;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__wdata;
-    };
-    struct {
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_DECODE__DOT__I_imm;
         IData/*31:0*/ top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_PC__DOT__next_PC;
+    };
+    struct {
         IData/*31:0*/ __Vfunc_pmem_read__4__Vfuncout;
         IData/*31:0*/ __Vfunc_pmem_read__5__Vfuncout;
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_1;
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_2;
         IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_3;
-        IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_9;
+        IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_8;
         IData/*31:0*/ __Vtrigprevexpr___TOP__inst__0;
         IData/*31:0*/ __VactIterCount;
         VlUnpacked<IData/*31:0*/, 16> top__DOT__u_ysyx_100022863_TOP__DOT__inst_ysyx_100022863_GPR__DOT__GPR;
